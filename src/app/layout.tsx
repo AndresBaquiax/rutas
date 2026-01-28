@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
+import { Geist } from "next/font/google";
+import Sidebar from "@/components/Sidebar";
+import sidebarItems from "@/data/sidebar.json";
 import "./globals.css";
+
+// Fonts
+const primaryFont = Geist({
+  variable: "--font-primary",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Rutas",
@@ -13,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className={`${primaryFont.variable}`}>
+        <Sidebar items={sidebarItems} />
+        <main className="min-h-screen pt-20">{children}</main>
+      </body>
     </html>
   );
 }

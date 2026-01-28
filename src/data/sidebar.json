@@ -1,0 +1,39 @@
+[
+  {
+    "id": "inicio",
+    "label": "Inicio",
+    "href": "/"
+  },
+  {
+    "id": "recorridos",
+    "label": "Recorridos",
+    "href": "/recorridos",
+    "subItems": [
+      {
+        "id": "recorridos-activos",
+        "label": "Activos",
+        "href": "/recorridos/activos"
+      },
+      {
+        "id": "recorridos-archivados",
+        "label": "Archivados",
+        "href": "/recorridos/archivados"
+      }
+    ]
+  },
+  {
+    "id": "regiones",
+    "label": "Regiones",
+    "href": "/regiones"
+  },
+  {
+    "id": "calendario",
+    "label": "Calendario",
+    "href": "/calendario"
+  },
+  {
+    "id": "footer",
+    "label": "Footer",
+    "href": "/footer"
+  }
+]
