@@ -1,7 +1,7 @@
 {
-    "primaryColor": "330033",
-    "secondaryColor": "0F0F0F",
-    "thirdColor": "D4AF37",
-    "neutralColor": "FFFFFF",
-    "extraColor": "800000"
+    "primaryColor": "#330033",
+    "secondaryColor": "#0F0F0F",
+    "thirdColor": "#D4AF37",
+    "neutralColor": "#FFFFFF",
+    "extraColor": "#800000"
 }
