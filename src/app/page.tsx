@@ -16,7 +16,7 @@ export default function Home() {
       <div 
         className="absolute inset-0" 
         style={{ 
-          background: `linear-gradient(180deg, transparent 0%, ${config.primaryColor}33 25%, ${config.primaryColor}80 50%, ${config.primaryColor}CC 75%, ${config.primaryColor} 100%)`
+          background: `linear-gradient(180deg, transparent 0%, ${config.primaryColor}33 25%, ${config.primaryColor}80 40%, ${config.primaryColor}CC 60%, ${config.primaryColor} 100%)`
         }}
       ></div>
 
@@ -24,8 +24,11 @@ export default function Home() {
       <div className="relative z-10 text-center px-6 max-w-4xl">
         {/* Subtítulo superior */}
         <p 
-          className="text-sm uppercase tracking-widest mb-4 font-medium"
-          style={{ color: config.thirdColor }}
+          className="text-sm uppercase tracking-widest mb-4 font-medium px-6 py-3 rounded-full inline-block"
+          style={{ 
+            color: config.thirdColor,
+            background: `linear-gradient(90deg, ${config.primaryColor}00 0%, ${config.primaryColor}E6 50%, ${config.primaryColor}00 100%)`
+          }}
         >
           Tradición y Fe
         </p>
