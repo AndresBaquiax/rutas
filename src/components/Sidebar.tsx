@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import config from "@/data/config.json";
 import logoImg from "@/assets/logoRutas.svg";
@@ -16,6 +17,9 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ items }: SidebarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [expandedItem, setExpandedItem] = useState<string | null>(null);
+
   // Helper to convert hex to rgba for backgrounds/borders
   const hexToRgba = (hex: string, alpha: number) => {
     const r = parseInt(hex.slice(0, 2), 16);
@@ -120,12 +124,95 @@ export default function Sidebar({ items }: SidebarProps) {
             </div>
           </Link>
 
-          {/* Navigation Section */}
+          {/* Navigation Section - Desktop */}
           <nav className="hidden md:flex items-center gap-2 h-full">
             {renderItems(items)}
           </nav>
+
+          {/* Hamburger Menu Button - Mobile */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block h-0.5 w-6 transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+              style={{ backgroundColor: config.thirdColor }}
+            ></span>
+            <span
+              className={`block h-0.5 w-6 transition-all duration-300 ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+              style={{ backgroundColor: config.thirdColor }}
+            ></span>
+            <span
+              className={`block h-0.5 w-6 transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+              style={{ backgroundColor: config.thirdColor }}
+            ></span>
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div
+          className="md:hidden overflow-hidden transition-all duration-300"
+          style={{ backgroundColor: config.primaryColor }}
+        >
+        <nav className="px-6 py-4 space-y-2">
+          {items.map((item) => (
+            <div key={item.id}>
+              {item.subItems && item.subItems.length > 0 ? (
+                <div>
+                  <button
+                    className="w-full px-4 py-2 font-medium uppercase tracking-wide text-sm flex items-center justify-between"
+                    style={{ color: config.thirdColor }}
+                    onClick={() => setExpandedItem(expandedItem === item.id ? null : item.id)}
+                  >
+                    <span>{item.label}</span>
+                    <span 
+                      className={`text-[10px] transform transition-transform duration-300 ${
+                        expandedItem === item.id ? "rotate-180" : ""
+                      }`}
+                    >
+                      ▼
+                    </span>
+                  </button>
+                  {expandedItem === item.id && (
+                    <div className="pl-4 space-y-1">
+                      {item.subItems.map((subItem) => (
+                        <Link
+                          key={subItem.id}
+                          href={subItem.href}
+                          className="block px-4 py-2 text-sm transition-colors"
+                          style={{ color: config.thirdColor }}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="block px-4 py-2 font-medium uppercase tracking-wide text-sm transition-colors"
+                  style={{ color: config.thirdColor }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
+          ))}
+        </nav>
+      </div>
+      )}
     </header>
   );
 }
