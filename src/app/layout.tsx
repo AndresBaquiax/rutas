@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${primaryFont.variable}`}>
         <Sidebar items={sidebarItems} />
-        <main className="min-h-screen pt-20">{children}</main>
+        <main className="min-h-screen">{children}</main>
       </body>
     </html>
   );
