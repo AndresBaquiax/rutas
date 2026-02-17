@@ -3,5 +3,7 @@
     "secondaryColor": "#0F0F0F",
     "thirdColor": "#D4AF37",
     "neutralColor": "#FFFFFF",
-    "extraColor": "#800000"
+    "extraColor": "#800000",
+    "headerColor": "#140414",
+    "cardColor": "#34113A"
 }

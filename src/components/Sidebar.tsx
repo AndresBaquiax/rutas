@@ -94,9 +94,9 @@ export default function Sidebar({ items }: SidebarProps) {
       <div 
         className="w-full mx-auto px-3 sm:px-4 md:px-6 h-16 sm:h-18 md:h-20 rounded-full shadow-2xl backdrop-blur-md"
         style={{ 
-          backgroundColor: `${config.primaryColor}dd`,
+          backgroundColor: `${config.headerColor}dd`,
           border: `1px solid ${config.thirdColor}40`,
-          boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+          boxShadow: `0 8px 32px 0 ${config.thirdColor}1A`
         }}
       >
         <div className="flex items-center justify-between h-full">
@@ -163,7 +163,7 @@ export default function Sidebar({ items }: SidebarProps) {
         <div
           className="md:hidden mx-2 sm:mx-4 mt-2 rounded-3xl overflow-hidden transition-all duration-300 shadow-2xl border backdrop-blur-sm"
           style={{ 
-            backgroundColor: `${config.primaryColor}f5`,
+            backgroundColor: `${config.headerColor}f5`,
             borderColor: `${config.thirdColor}30`
           }}
         >
