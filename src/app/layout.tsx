@@ -13,6 +13,11 @@ const primaryFont = Geist({
 export const metadata: Metadata = {
   title: "Rutas",
   description: "App de rutas",
+  icons: {
+    icon: "/logoRutas.png",
+    shortcut: "/logoRutas.png",
+    apple: "/logoRutas.png",
+  },
 };
 
 export default function RootLayout({
