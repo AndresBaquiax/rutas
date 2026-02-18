@@ -6,7 +6,7 @@ import "./globals.css";
 
 // Fonts
 const primaryFont = Geist({
-  variable: "--font-primary",
+  variable: "--font-display",
   subsets: ["latin"],
 });
 
