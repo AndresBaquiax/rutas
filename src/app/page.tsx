@@ -1,5 +1,4 @@
 "use client";
-import bgImage from "@/assets/main/1.jpg";
 import config from "@/data/config.json";
 import dataProcesion from "@/data/dataProcesion.json";
 import {
@@ -11,13 +10,15 @@ import {
   PlusIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   
   const alturaTarjetas = "min-h-[350px]"; 
   const [tarjetaHover, setTarjetaHover] = useState<number | null>(null);
   const [tarjetaProcesionHover, setTarjetaProcesionHover] = useState<number | null>(null);
+  const [imagenesCarrusel, setImagenesCarrusel] = useState<string[]>([]);
+  const [indiceCarrusel, setIndiceCarrusel] = useState(0);
 
   const tradiciones = [
     {
@@ -60,18 +61,54 @@ export default function Home() {
     });
   };
 
+  useEffect(() => {
+    const cargarImagenesCarrusel = async () => {
+      try {
+        const respuesta = await fetch("/api/carrusel-fotos");
+        const imagenes = (await respuesta.json()) as string[];
+        setImagenesCarrusel(imagenes);
+      } catch {
+        setImagenesCarrusel([]);
+      }
+    };
+
+    cargarImagenesCarrusel();
+  }, []);
+
+  useEffect(() => {
+    if (imagenesCarrusel.length <= 1) {
+      return;
+    }
+
+    const temporizadorCarrusel = setInterval(() => {
+      setIndiceCarrusel((indiceAnterior) => (indiceAnterior + 1) % imagenesCarrusel.length);
+    }, 5000);
+
+    return () => clearInterval(temporizadorCarrusel);
+  }, [imagenesCarrusel.length]);
+
+  const imagenesHero = imagenesCarrusel.length > 0 ? imagenesCarrusel : ["/carruselFotos/1.jpg"];
+
   return (
     <main style={{ backgroundColor: config.primaryColor }}>
       {/* 1ra seccion */}
-      <section
-        className="min-h-screen flex items-center justify-center relative"
-        style={{
-          backgroundImage: `url(${bgImage.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0">
+          {imagenesHero.map((imagen, indice) => (
+            <div
+              key={imagen}
+              className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+              style={{
+                backgroundImage: `url(${imagen})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                opacity: indice === (indiceCarrusel % imagenesHero.length) ? 1 : 0,
+              }}
+            ></div>
+          ))}
+        </div>
+
         <div
           className="absolute inset-0"
           style={{
@@ -141,170 +178,165 @@ export default function Home() {
       </section>
 
       {/* 2da seccion */}
-      <section className="px-3 sm:px-4 md:px-6 lg:px-8 py-20">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <p
-            className="text-sm uppercase tracking-[0.35em] mb-4"
-            style={{ color: config.thirdColor }}
-          >
-            Patrimonio Cultural
-          </p>
-          <h2
-            className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6"
-            style={{ color: config.neutralColor }}
-          >
-            Tradiciones de <span style={{ color: config.thirdColor }}>Cuaresma</span>
-          </h2>
-          <p className="text-lg" style={{ color: `${config.neutralColor}B3` }}>
-            Las procesiones guatemaltecas son reconocidas mundialmente por su
-            solemnidad, arte y profunda expresión de fe católica.
-          </p>
-        </div>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tradiciones.map((item) => (
-            <article
-              key={item.id}
-              // 1. Agregamos los eventos para detectar el mouse
-              onMouseEnter={() => setTarjetaHover(item.id)}
-              onMouseLeave={() => setTarjetaHover(null)}
-              // 2. Agregamos 'transition-all duration-300' para que el cambio de color sea suave, y 'cursor-pointer'
-              className={`rounded-2xl p-8 border h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer`}
-              style={{
-                // 3. Magia aquí: Si el mouse está encima, borde de color thirdColor. Si no, borde normal.
-                borderColor: tarjetaHover === item.id ? config.thirdColor : `${config.neutralColor}14`,
-                
-                // 4. Resplandor (Glow): Creamos una sombra con tu thirdColor (le agrego '4D' al final para que tenga un poco de transparencia y no brille en exceso)
-                boxShadow: tarjetaHover === item.id ? `0 0 25px ${config.thirdColor}4D` : 'none',
-                
-                // 5. Opcional pero recomendado: que la tarjeta se "levante" un poquito
-                transform: tarjetaHover === item.id ? 'translateY(-8px)' : 'translateY(0)',
-                
-                // Tu fondo original se mantiene igual
-                background: `linear-gradient(135deg, ${config.neutralColor}08 0%, ${config.neutralColor}05 100%)`,
-              }}
-            >
+      <section className="w-full py-20">
+        <div className="w-full max-w-[1920px] mx-auto px-6 lg:px-12">
           
-              <div className="flex items-center gap-4 mb-6">
-                
-                {/* Ícono */}
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: `${config.thirdColor}1F` }}
-                >
-                  <item.Icono className="w-7 h-7" style={{ color: config.thirdColor }} />
-                </div>
-                
-                {/* Título */}
-                <h3
-                  className="text-2xl font-serif font-semibold"
-                  style={{ color: config.neutralColor }}
-                >
-                  {item.titulo}
-                </h3>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <p
+              className="text-sm uppercase tracking-[0.35em] mb-4"
+              style={{ color: config.thirdColor }}
+            >
+              Patrimonio Cultural
+            </p>
+            <h2
+              className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6"
+              style={{ color: config.neutralColor }}
+            >
+              Tradiciones de <span style={{ color: config.thirdColor }}>Cuaresma</span>
+            </h2>
+            <p className="text-lg" style={{ color: `${config.neutralColor}B3` }}>
+              Las procesiones guatemaltecas son reconocidas mundialmente por su
+              solemnidad, arte y profunda expresión de fe católica.
+            </p>
+          </div>
 
-              </div>
-              
-              {/* Descripción */}
-              <p className="text-xl leading-relaxed" style={{ color: `${config.neutralColor}B3` }}>
-                {item.descripcion}
-              </p>
-              
-            </article>
-          ))}
-        </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            {tradiciones.map((item) => (
+              <article
+                key={item.id}
+                onMouseEnter={() => setTarjetaHover(item.id)}
+                onMouseLeave={() => setTarjetaHover(null)}
+                className={`rounded-2xl p-8 border h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer`}
+                style={{
+                  borderColor: tarjetaHover === item.id ? config.thirdColor : `${config.neutralColor}14`,
+                  boxShadow: tarjetaHover === item.id ? `0 0 25px ${config.thirdColor}4D` : 'none',
+                  transform: tarjetaHover === item.id ? 'translateY(-8px)' : 'translateY(0)',
+                  background: `linear-gradient(135deg, ${config.neutralColor}08 0%, ${config.neutralColor}05 100%)`,
+                }}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: `${config.thirdColor}1F` }}
+                  >
+                    <item.Icono className="w-7 h-7" style={{ color: config.thirdColor }} />
+                  </div>
+                  <h3
+                    className="text-2xl font-serif font-semibold"
+                    style={{ color: config.neutralColor }}
+                  >
+                    {item.titulo}
+                  </h3>
+                </div>
+                <p className="text-xl leading-relaxed" style={{ color: `${config.neutralColor}B3` }}>
+                  {item.descripcion}
+                </p>
+              </article>
+            ))}
+          </div>
+
+        </div> 
       </section>
 
       {/* 3ra seccion */}
       <section
-        className="px-3 sm:px-4 md:px-6 lg:px-8 py-20"
+        className="w-full py-20"
         style={{ backgroundColor: config.secondaryColor }}
       >
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <p
-            className="text-sm uppercase tracking-[0.35em] mb-4"
-            style={{ color: config.thirdColor }}
-          >
-            Explora Guatemala
-          </p>
-          <h2
-            className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6"
-            style={{ color: config.neutralColor }}
-          >
-            Recorridos <span style={{ color: config.thirdColor }}>Procesionales</span>
-          </h2>
-          <p className="text-lg" style={{ color: `${config.neutralColor}B3` }}>
-            Conoce las rutas de las procesiones más importantes en diferentes regiones del país.
-          </p>
-        </div>
-
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {dataProcesion.procesiones.map((procesion) => (
-            <article
-              key={procesion.idProcesion}
-              onMouseEnter={() => setTarjetaProcesionHover(procesion.idProcesion)}
-              onMouseLeave={() => setTarjetaProcesionHover(null)}
-              className={`rounded-2xl border p-6 h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer flex flex-col`}
-              style={{
-                borderColor: tarjetaProcesionHover === procesion.idProcesion ? config.thirdColor : `${config.neutralColor}14`,
-                boxShadow: tarjetaProcesionHover === procesion.idProcesion ? `0 0 25px ${config.thirdColor}4D` : 'none',
-                transform: tarjetaProcesionHover === procesion.idProcesion ? 'translateY(-8px)' : 'translateY(0)',
-                background: `linear-gradient(135deg, ${config.neutralColor}08 0%, ${config.neutralColor}05 100%)`,
-              }}
+        <div className="w-full max-w-[1920px] mx-auto px-6 lg:px-12">
+          
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <p
+              className="text-sm uppercase tracking-[0.35em] mb-4"
+              style={{ color: config.thirdColor }}
             >
-              <h3
-                className="text-3xl font-serif font-semibold mb-2"
-                style={{ color: config.neutralColor }}
+              Explora Guatemala
+            </p>
+            <h2
+              className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6"
+              style={{ color: config.neutralColor }}
+            >
+              Recorridos <span style={{ color: config.thirdColor }}>Procesionales</span>
+            </h2>
+            <p className="text-lg" style={{ color: `${config.neutralColor}B3` }}>
+              Conoce las rutas de las procesiones más importantes en diferentes regiones del país.
+            </p>
+          </div>
+
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {dataProcesion.procesiones.map((procesion) => (
+              <article
+                key={procesion.idProcesion}
+                onMouseEnter={() => setTarjetaProcesionHover(procesion.idProcesion)}
+                onMouseLeave={() => setTarjetaProcesionHover(null)}
+                className={`rounded-2xl border p-6 h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer flex flex-col`}
+                style={{
+                  borderColor: tarjetaProcesionHover === procesion.idProcesion ? config.thirdColor : `${config.neutralColor}14`,
+                  boxShadow: tarjetaProcesionHover === procesion.idProcesion ? `0 0 25px ${config.thirdColor}4D` : 'none',
+                  transform: tarjetaProcesionHover === procesion.idProcesion ? 'translateY(-8px)' : 'translateY(0)',
+                  background: `linear-gradient(135deg, ${config.neutralColor}08 0%, ${config.neutralColor}05 100%)`,
+                }}
               >
-                {procesion.nombreProcesion}
-              </h3>
+                <h3
+                  className="text-3xl font-serif font-semibold mb-2"
+                  style={{ color: config.neutralColor }}
+                >
+                  {procesion.nombreProcesion}
+                </h3>
 
-              <div className="flex items-center gap-2 mb-6" style={{ color: `${config.neutralColor}B3` }}>
-                <MapPinIcon className="w-5 h-5" style={{ color: config.thirdColor }} />
-                <p className="text-lg">{procesion.iglesiaProcesion}</p>
-              </div>
-
-              <div className="grid grid-cols-3 gap-3 py-4 border-y mb-5" style={{ borderColor: `${config.neutralColor}14` }}>
-                <div className="text-center">
-                  <ClockIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
-                  <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Duración</p>
-                  <p className="text-base font-semibold" style={{ color: config.neutralColor }}>{procesion.duracionProcesion}</p>
+                <div className="flex items-center gap-2 mb-6" style={{ color: `${config.neutralColor}B3` }}>
+                  <MapPinIcon className="w-5 h-5" style={{ color: config.thirdColor }} />
+                  <p className="text-lg">{procesion.iglesiaProcesion}</p>
                 </div>
-                <div className="text-center">
-                  <UserGroupIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
-                  <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Cargadores</p>
-                  <p className="text-base font-semibold" style={{ color: config.neutralColor }}>{procesion.cantidadCargadores}</p>
-                </div>
-                <div className="text-center">
-                  <CalendarDaysIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
-                  <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Fecha</p>
-                  <p className="text-base font-semibold" style={{ color: config.neutralColor }}>
-                    {formatearFecha(procesion.fechaProcesion)}
-                  </p>
-                </div>
-              </div>
 
-              <p className="text-lg leading-relaxed" style={{ color: `${config.neutralColor}B3` }}>
-                {procesion.descripcionProcesion}
-              </p>
+                <div className="grid grid-cols-3 gap-3 py-4 border-y mb-5" style={{ borderColor: `${config.neutralColor}14` }}>
+                  <div className="text-center">
+                    <ClockIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
+                    <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Duración</p>
+                    <p className="text-base font-semibold" style={{ color: config.neutralColor }}>
+                      {procesion.duracionProcesion}
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <UserGroupIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
+                    <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Cargadores</p>
+                    <p className="text-base font-semibold" style={{ color: config.neutralColor }}>
+                      {procesion.cantidadCargadores}
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <CalendarDaysIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
+                    <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Fecha</p>
+                    <p className="text-base font-semibold" style={{ color: config.neutralColor }}>
+                      {formatearFecha(procesion.fechaProcesion)}
+                    </p>
+                  </div>
+                </div>
 
-              <button
-                type="button"
-                className="mt-auto pt-6 inline-flex flex-col items-start text-lg font-semibold"
-                style={{ color: config.thirdColor }}
-              >
-                <span className="inline-flex items-center gap-2 transition-opacity duration-300 hover:opacity-80">
-                  Ver puntos del recorrido <span aria-hidden="true">&gt;</span>
-                </span>
-                <span
-                  className="h-[1px] mt-1 transition-all duration-300"
-                  style={{
-                    backgroundColor: config.thirdColor,
-                    width: tarjetaProcesionHover === procesion.idProcesion ? '100%' : '0%',
-                  }}
-                ></span>
-              </button>
-            </article>
-          ))}
+                <p className="text-lg leading-relaxed" style={{ color: `${config.neutralColor}B3` }}>
+                  {procesion.descripcionProcesion}
+                </p>
+
+                <button
+                  type="button"
+                  className="mt-auto pt-6 inline-flex flex-col items-start text-lg font-semibold"
+                  style={{ color: config.thirdColor }}
+                >
+                  <span className="inline-flex items-center gap-2 transition-opacity duration-300 hover:opacity-80">
+                    Ver puntos del recorrido <span aria-hidden="true">&gt;</span>
+                  </span>
+                  <span
+                    className="h-[1px] mt-1 transition-all duration-300"
+                    style={{
+                      backgroundColor: config.thirdColor,
+                      width: tarjetaProcesionHover === procesion.idProcesion ? '100%' : '0%',
+                    }}
+                  ></span>
+                </button>
+              </article>
+            ))}
+          </div>
+
         </div>
       </section>
 
