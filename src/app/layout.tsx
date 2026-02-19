@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
 import sidebarItems from "@/data/sidebar.json";
 import "./globals.css";
 
@@ -11,8 +12,8 @@ const primaryFont = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Rutas",
-  description: "App de rutas",
+  title: "Recorridos procesionales GT",
+  description: "Recorridos procesionales cuaresmales en Guatemala",
   icons: {
     icon: "/logoRutas.png",
     shortcut: "/logoRutas.png",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={`${primaryFont.variable}`}>
         <Sidebar items={sidebarItems} />
         <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );

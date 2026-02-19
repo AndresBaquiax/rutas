@@ -62,6 +62,7 @@ export default function Home() {
 
   return (
     <main style={{ backgroundColor: config.primaryColor }}>
+      {/* 1ra seccion */}
       <section
         className="min-h-screen flex items-center justify-center relative"
         style={{
@@ -139,6 +140,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2da seccion */}
       <section className="px-3 sm:px-4 md:px-6 lg:px-8 py-20">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <p
@@ -212,6 +214,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 3ra seccion */}
       <section
         className="px-3 sm:px-4 md:px-6 lg:px-8 py-20"
         style={{ backgroundColor: config.secondaryColor }}
@@ -240,7 +243,7 @@ export default function Home() {
               key={procesion.idProcesion}
               onMouseEnter={() => setTarjetaProcesionHover(procesion.idProcesion)}
               onMouseLeave={() => setTarjetaProcesionHover(null)}
-              className={`rounded-2xl border p-6 h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer`}
+              className={`rounded-2xl border p-6 h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer flex flex-col`}
               style={{
                 borderColor: tarjetaProcesionHover === procesion.idProcesion ? config.thirdColor : `${config.neutralColor}14`,
                 boxShadow: tarjetaProcesionHover === procesion.idProcesion ? `0 0 25px ${config.thirdColor}4D` : 'none',
@@ -283,10 +286,28 @@ export default function Home() {
               <p className="text-lg leading-relaxed" style={{ color: `${config.neutralColor}B3` }}>
                 {procesion.descripcionProcesion}
               </p>
+
+              <button
+                type="button"
+                className="mt-auto pt-6 inline-flex flex-col items-start text-lg font-semibold"
+                style={{ color: config.thirdColor }}
+              >
+                <span className="inline-flex items-center gap-2 transition-opacity duration-300 hover:opacity-80">
+                  Ver puntos del recorrido <span aria-hidden="true">&gt;</span>
+                </span>
+                <span
+                  className="h-[1px] mt-1 transition-all duration-300"
+                  style={{
+                    backgroundColor: config.thirdColor,
+                    width: tarjetaProcesionHover === procesion.idProcesion ? '100%' : '0%',
+                  }}
+                ></span>
+              </button>
             </article>
           ))}
         </div>
       </section>
+
     </main>
   );
 }
