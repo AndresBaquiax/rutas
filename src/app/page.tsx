@@ -1,5 +1,4 @@
 "use client";
-import bgImage from "@/assets/main/1.jpg";
 import config from "@/data/config.json";
 import dataProcesion from "@/data/dataProcesion.json";
 import {
@@ -11,13 +10,15 @@ import {
   PlusIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   
   const alturaTarjetas = "min-h-[350px]"; 
   const [tarjetaHover, setTarjetaHover] = useState<number | null>(null);
   const [tarjetaProcesionHover, setTarjetaProcesionHover] = useState<number | null>(null);
+  const [imagenesCarrusel, setImagenesCarrusel] = useState<string[]>([]);
+  const [indiceCarrusel, setIndiceCarrusel] = useState(0);
 
   const tradiciones = [
     {
@@ -60,18 +61,54 @@ export default function Home() {
     });
   };
 
+  useEffect(() => {
+    const cargarImagenesCarrusel = async () => {
+      try {
+        const respuesta = await fetch("/api/carrusel-fotos");
+        const imagenes = (await respuesta.json()) as string[];
+        setImagenesCarrusel(imagenes);
+      } catch {
+        setImagenesCarrusel([]);
+      }
+    };
+
+    cargarImagenesCarrusel();
+  }, []);
+
+  useEffect(() => {
+    if (imagenesCarrusel.length <= 1) {
+      return;
+    }
+
+    const temporizadorCarrusel = setInterval(() => {
+      setIndiceCarrusel((indiceAnterior) => (indiceAnterior + 1) % imagenesCarrusel.length);
+    }, 5000);
+
+    return () => clearInterval(temporizadorCarrusel);
+  }, [imagenesCarrusel.length]);
+
+  const imagenesHero = imagenesCarrusel.length > 0 ? imagenesCarrusel : ["/carruselFotos/1.jpg"];
+
   return (
     <main style={{ backgroundColor: config.primaryColor }}>
       {/* 1ra seccion */}
-      <section
-        className="min-h-screen flex items-center justify-center relative"
-        style={{
-          backgroundImage: `url(${bgImage.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0">
+          {imagenesHero.map((imagen, indice) => (
+            <div
+              key={imagen}
+              className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+              style={{
+                backgroundImage: `url(${imagen})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                opacity: indice === (indiceCarrusel % imagenesHero.length) ? 1 : 0,
+              }}
+            ></div>
+          ))}
+        </div>
+
         <div
           className="absolute inset-0"
           style={{
