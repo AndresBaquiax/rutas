@@ -1,0 +1,436 @@
+{
+    "nombreProcesion": "Jesus Nazareno",
+    "nombreIglesia": "de San Juan de Dios",
+    "fecha": "2026-02-22",
+    "horaSalida": "15:00",
+    "horaEntrada": "21:00",
+    "cantidadCargadores": 120,
+    "puntosInteres": [
+        {
+            "nombre": "Estadio Mario Camposeco",
+            "descripcion": "Un estadio de fútbol que es un punto de referencia importante en la ciudad y un lugar de encuentro para los aficionados al deporte.",
+            "hora": "15:30"
+        },
+        {
+            "nombre": "Iglesia San Nicolas",
+            "descripcion": "Una iglesia histórica con una arquitectura impresionante, conocida por su belleza y su importancia religiosa en la comunidad.",
+            "hora": "16:00"
+        },
+        {
+            "nombre": "Centro Comercial Utz Ulew Mall",
+            "descripcion": "Un centro comercial moderno con una amplia variedad de tiendas y servicios.",
+            "hora": "16:30"
+        },
+        {
+            "nombre": "Cerveceria Centro Americana",
+            "descripcion": "Una cervecería local que ofrece una experiencia única para los visitantes, con degustaciones de cervezas artesanales y un ambiente acogedor.",
+            "hora": "17:00"
+        },
+        {
+            "nombre": "Parque El Calvario",
+            "descripcion": "Un parque popular que ofrece un espacio verde para relajarse y disfrutar de la naturaleza, con áreas de picnic y senderos para caminar.",
+            "hora": "17:30"
+        },
+        {
+            "nombre": "Calle Real del Calvario",
+            "descripcion": "Una calle histórica que es conocida por su arquitectura colonial y su importancia cultural en la ciudad, con tiendas, restaurantes y edificios emblemáticos.",
+            "hora": "18:00"
+        },
+        {
+            "nombre": "Parque a Centro America",
+            "descripcion": "Un parque central que es un punto de encuentro para la comunidad, con áreas de descanso, fuentes y espacios para eventos culturales y sociales.",
+            "hora": "19:00"
+        },
+        {
+            "nombre": "Teatro municipal de Quetzaltenango",
+            "descripcion": "Un teatro histórico que es un punto de encuentro cultural importante en la ciudad, con una arquitectura impresionante y una rica tradición de presentaciones artísticas.",
+            "hora": "20:30"
+        },
+        {
+            "nombre": "Iglesia San Juan de Dios",
+            "descripcion": "Una iglesia histórica que es el punto de partida y llegada de la procesión, conocida por su arquitectura impresionante y su importancia religiosa en la comunidad.",
+            "hora": "21:00"
+        }
+    ],
+    "coordenadas": [
+        {
+            "latitud": 14.83970537972238,
+            "longitud": -91.51793579578444,
+            "regreso": false
+        },
+        {
+            "latitud": 14.839732603537332,
+            "longitud": -91.51807325897202,
+            "regreso": false
+        },
+        {
+            "latitud": 14.839897891130724,
+            "longitud": -91.51803101423374,
+            "regreso": false
+        },
+        {
+            "latitud": 14.840065771244854,
+            "longitud": -91.51798742831102,
+            "regreso": false
+        },
+        {
+            "latitud": 14.840657563993416,
+            "longitud": -91.51789086881303,
+            "regreso": false
+        },
+        {
+            "latitud": 14.841095087746611,
+            "longitud": -91.51778559208252,
+            "regreso": false
+        },
+        {
+            "latitud": 14.84111129216826,
+            "longitud": -91.51777888657749,
+            "regreso": false
+        },
+        {
+            "latitud": 14.84111323673182,
+            "longitud": -91.5177440178504,
+            "regreso": false
+        },
+        {
+            "latitud": 14.84113138585711,
+            "longitud": -91.51770780802427,
+            "regreso": false
+        },
+        {
+            "latitud": 14.84116249863015,
+            "longitud": -91.51768500924535,
+            "regreso": false
+        },
+        {
+            "latitud": 14.841197500498414,
+            "longitud": -91.51768500925115,
+            "regreso": false
+        },
+        {
+            "latitud": 14.841223427808163,
+            "longitud": -91.51769707920585,
+            "regreso": false
+        },
+        {
+            "latitud": 14.841242225108298,
+            "longitud": -91.51770981971498,
+            "regreso": false
+        },
+        {
+            "latitud": 14.841285005180497,
+            "longitud": -91.5177031141986,
+            "regreso": false
+        },
+        {
+            "latitud": 14.841328433444682,
+            "longitud": -91.5176950675732,
+            "regreso": false
+        },
+        {
+            "latitud": 14.841677154850654,
+            "longitud": -91.51764276451034,
+            "regreso": false
+        },
+        {
+            "latitud": 14.842239775132445,
+            "longitud": -91.51755022833377,
+            "regreso": false
+        },
+        {
+            "latitud": 14.842957227288803,
+            "longitud": -91.51744665948664,
+            "regreso": false
+        },
+        {
+            "latitud": 14.843898959037814,
+            "longitud": -91.51732379829615,
+            "regreso": false
+        },
+        {
+            "latitud": 14.844159833916539,
+            "longitud": -91.51927147944762,
+            "regreso": false
+        },
+        {
+            "latitud": 14.844286703418154,
+            "longitud": -91.52027150318395,
+            "regreso": false
+        },
+        {
+            "latitud": 14.84441750520509,
+            "longitud": -91.5212451709714,
+            "regreso": false
+        },
+        {
+            "latitud": 14.844648406831247,
+            "longitud": -91.52317205275618,
+            "regreso": false
+        },
+        {
+            "latitud": 14.843300339607257,
+            "longitud": -91.52335394274911,
+            "regreso": false
+        },
+        {
+            "latitud": 14.840925118955761,
+            "longitud": -91.52369544994322,
+            "regreso": false
+        },
+        {
+            "latitud": 14.84081007456594,
+            "longitud": -91.52374223519003,
+            "regreso": false
+        },
+        {
+            "latitud": 14.840702170500517,
+            "longitud": -91.52376685889675,
+            "regreso": false
+        },
+        {
+            "latitud": 14.840601407164254,
+            "longitud": -91.52377670833482,
+            "regreso": false
+        },
+        {
+            "latitud": 14.84049508994624,
+            "longitud": -91.52378163301873,
+            "regreso": false
+        },
+        {
+            "latitud": 14.840473953182157,
+            "longitud": -91.52381628572182,
+            "regreso": false
+        },
+        {
+            "latitud": 14.840597108153167,
+            "longitud": -91.52419917125974,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83918368721358,
+            "longitud": -91.52454304050566,
+            "regreso": false
+        },
+        {
+            "latitud": 14.838626892731575,
+            "longitud": -91.5246791626115,
+            "regreso": false
+        },
+        {
+            "latitud": 14.837987776483965,
+            "longitud": -91.52478242767599,
+            "regreso": false
+        },
+        {
+            "latitud": 14.837664976664502,
+            "longitud": -91.52485417676635,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836907391323196,
+            "longitud": -91.52501854758222,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836727675867898,
+            "longitud": -91.52433160338074,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836661268024809,
+            "longitud": -91.52390289119019,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836537698891577,
+            "longitud": -91.52308025078317,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836486421772584,
+            "longitud": -91.52287676468195,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836434304254439,
+            "longitud": -91.52272110650496,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836357808911066,
+            "longitud": -91.52254457800677,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835964404120578,
+            "longitud": -91.52163236897847,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83581645707091,
+            "longitud": -91.5210906088472,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835681959708232,
+            "longitud": -91.5205201520882,
+            "regreso": false
+        },
+        {
+            "latitud": 14.8354902997286,
+            "longitud": -91.5199662175863,
+            "regreso": false
+        },
+        {
+            "latitud": 14.8353310211612,
+            "longitud": -91.51946881423831,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835164433750949,
+            "longitud": -91.5189866871233,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83492888622402,
+            "longitud": -91.51832993371092,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834565893310572,
+            "longitud": -91.5184948895595,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834046682757345,
+            "longitud": -91.51870946621115,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833640258648352,
+            "longitud": -91.51885564664549,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833461354033444,
+            "longitud": -91.51838156622708,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833784512950906,
+            "longitud": -91.51824789527038,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834032864525621,
+            "longitud": -91.51815976739543,
+            "regreso": true
+        },
+        {
+            "latitud": 14.834516645176073,
+            "longitud": -91.5179658844745,
+            "regreso": true
+        },
+        {
+            "latitud": 14.834777222312765,
+            "longitud": -91.51790687586224,
+            "regreso": true
+        },
+        {
+            "latitud": 14.834927687197224,
+            "longitud": -91.51832894333563,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83516752120856,
+            "longitud": -91.5189820616455,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835333508031207,
+            "longitud": -91.5194656891209,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835765856956591,
+            "longitud": -91.51931481483321,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836135329869352,
+            "longitud": -91.51918405712439,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83632525159119,
+            "longitud": -91.51911566082009,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836643516026717,
+            "longitud": -91.51900636080427,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836831492786365,
+            "longitud": -91.5189439994179,
+            "regreso": true
+        },
+        {
+            "latitud": 14.837396070330014,
+            "longitud": -91.51876295029234,
+            "regreso": true
+        },
+        {
+            "latitud": 14.837713036635654,
+            "longitud": -91.51866035583429,
+            "regreso": true
+        },
+        {
+            "latitud": 14.837968171298636,
+            "longitud": -91.5185813736486,
+            "regreso": true
+        },
+        {
+            "latitud": 14.838402459551833,
+            "longitud": -91.51846805029129,
+            "regreso": true
+        },
+        {
+            "latitud": 14.838736277370494,
+            "longitud": -91.51837685525507,
+            "regreso": true
+        },
+        {
+            "latitud": 14.839285941481632,
+            "longitud": -91.51821189941934,
+            "regreso": true
+        },
+        {
+            "latitud": 14.839638555444926,
+            "longitud": -91.51809455277456,
+            "regreso": true
+        },
+        {
+            "latitud": 14.839741282478023,
+            "longitud": -91.51807289976085,
+            "regreso": true
+        },
+        {
+            "latitud": 14.839709521352537,
+            "longitud": -91.51793141327668,
+            "regreso": true
+        }
+    ],
+    "historia":[
+        {
+            "titulo": "Historia y devocion: San Juan de Dios y la procesion de Jesus Nazareno",
+            "subtitulo": "Historia de la iglesia de San Juan de Dios",
+            "historiaIglesia": "La iglesia de San Juan de Dios es un importante lugar de culto en la ciudad de Quetzaltenango, Guatemala. Fue construida en el siglo XVIII y es conocida por su arquitectura colonial y su importancia religiosa en la comunidad. La iglesia ha sido testigo de numerosos eventos históricos y ha sido un punto de referencia para los fieles durante siglos.",
+            "subtituloProcesion": "Historia de la procesión de Jesús Nazareno del templo San Juan de Dios",
+            "historiaProcesion": "La procesión de Jesús Nazareno del templo San Juan de Dios es una tradición religiosa que se celebra cada año en la ciudad de Quetzaltenango, Guatemala. Esta procesión tiene sus raíces en la época colonial, cuando los españoles introdujeron la religión católica en la región. La imagen de Jesús Nazareno es venerada por los fieles y es considerada un símbolo de fe y devoción. Durante la procesión, los participantes llevan la imagen de Jesús Nazareno a través de las calles de la ciudad, acompañados por música, cantos y oraciones. La procesión es un evento importante para la comunidad, ya que representa un momento de reflexión espiritual y unión entre los fieles."
+        }
+    ]
+}

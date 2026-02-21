@@ -1,1 +1,39 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+.custom-scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: var(--scroll-thumb-color) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: var(--scroll-thumb-color);
+	border-radius: 9999px;
+	border: 0;
+	min-height: 36px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	filter: brightness(1.1);
+}
+
+.custom-scrollbar::-webkit-scrollbar-button,
+.custom-scrollbar::-webkit-scrollbar-button:single-button,
+.custom-scrollbar::-webkit-scrollbar-button:vertical:decrement,
+.custom-scrollbar::-webkit-scrollbar-button:vertical:increment,
+.custom-scrollbar::-webkit-scrollbar-button:horizontal:decrement,
+.custom-scrollbar::-webkit-scrollbar-button:horizontal:increment {
+	display: none;
+	width: 0;
+	height: 0;
+	background: transparent;
+}
