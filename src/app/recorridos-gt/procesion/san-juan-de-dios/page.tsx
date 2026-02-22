@@ -3,8 +3,8 @@ import {
   ClockIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
-import type { CSSProperties } from "react";
 import ProcesionMapWrapper from "@/components/ProcesionMapWrapper";
+import PuntosInteresTimeline from "@/components/PuntosInteresTimeline";
 import config from "@/data/config.json";
 import dataRecorrido from "@/data/dataRecorrido.json";
 
@@ -19,20 +19,6 @@ const formatearFecha = (fecha: string) => {
     day: "numeric",
     month: "long",
     year: "numeric",
-  });
-};
-
-const formatearHora = (hora: string) => {
-  const horaValida = /^\d{2}:\d{2}$/.test(hora);
-
-  if (!horaValida) {
-    return hora;
-  }
-
-  return new Date(`1970-01-01T${hora}:00`).toLocaleTimeString("es-GT", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
   });
 };
 
@@ -157,46 +143,14 @@ export default function InformacionPage() {
               Puntos de interés
             </h2>
 
-            <div
-              className="space-y-6 overflow-y-auto pr-2 flex-1 custom-scrollbar"
-              style={{ "--scroll-thumb-color": config.thirdColor } as CSSProperties}
-            >
-              {dataRecorrido.puntosInteres.map((punto, index) => (
-                <article key={`${punto.nombre}-${index}`} className="relative pl-6">
-                  <span
-                    className="absolute left-0 top-2 h-3 w-3 rounded-full"
-                    style={{ backgroundColor: config.thirdColor }}
-                  />
-
-                  {index < dataRecorrido.puntosInteres.length - 1 && (
-                    <span
-                      className="absolute left-[5px] top-5 h-[calc(100%+12px)] w-[2px]"
-                      style={{ backgroundColor: `${config.thirdColor}55` }}
-                    />
-                  )}
-
-                  <div className="flex items-start justify-between gap-3 mb-1">
-                    <h3 className="font-serif text-2xl leading-tight" style={{ color: config.neutralColor }}>
-                      {punto.nombre}
-                    </h3>
-
-                    <span
-                      className="text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap"
-                      style={{
-                        color: config.primaryColor,
-                        backgroundColor: config.thirdColor,
-                      }}
-                    >
-                      {formatearHora(punto.hora)}
-                    </span>
-                  </div>
-
-                  <p className="text-sm leading-relaxed" style={{ color: `${config.neutralColor}C7` }}>
-                    {punto.descripcion}
-                  </p>
-                </article>
-              ))}
-            </div>
+            <PuntosInteresTimeline
+              puntos={dataRecorrido.puntosInteres}
+              fecha={dataRecorrido.fecha}
+              primaryColor={config.primaryColor}
+              neutralColor={config.neutralColor}
+              thirdColor={config.thirdColor}
+              procesionId="san-juan-de-dios"
+            />
           </aside>
 
           <div
@@ -212,6 +166,11 @@ export default function InformacionPage() {
                 primaryColor={config.primaryColor}
                 vueltaColor={config.vueltaColor}
                 idaColor={config.idaColor}
+                fecha={dataRecorrido.fecha}
+                horaSalida={dataRecorrido.horaSalida}
+                horaEntrada={dataRecorrido.horaEntrada}
+                pinColor={config.thirdColor}
+                procesionId="san-juan-de-dios"
               />
             </div>
 
