@@ -38,22 +38,17 @@ export default function Footer() {
           </h3>
           <ul className="space-y-3">
             <li>
-              <a href="#" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
+              <a href="/#tradiciones-cuaresma" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
                 Tradiciones
               </a>
             </li>
             <li>
-              <a href="#" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
+              <a href="/#recorridos-procesionales" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
                 Recorridos
               </a>
             </li>
             <li>
-              <a href="#" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
-                Regiones
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
+              <a href="https://www.guatemalahoy.co/calendario-de-la-semana-santa-en-guatemala-2026/" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
                 Calendario
               </a>
             </li>
@@ -73,10 +68,6 @@ export default function Footer() {
             <div className="flex items-center gap-3 text-sm">
               <EnvelopeIcon className="w-5 h-5" style={{ color: config.thirdColor }} />
               <span>baquiax.diegoandres@gmail.com</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm">
-              <PhoneIcon className="w-5 h-5" style={{ color: config.thirdColor }} />
-              <span>+502 59504618</span>
             </div>
           </div>
         </div>

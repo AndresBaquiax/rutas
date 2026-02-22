@@ -13,6 +13,11 @@ type ProcesionMapWrapperProps = {
   primaryColor: string;
   vueltaColor: string;
   idaColor: string;
+  fecha: string;
+  horaSalida: string;
+  horaEntrada: string;
+  pinColor?: string;
+  procesionId?: string;
 };
 
 const ProcesionMap = dynamic(() => import("@/components/ProcesionMap"), {

@@ -1,6 +1,38 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+.leaflet-container {
+	z-index: 0;
+}
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-overlay-pane,
+.leaflet-shadow-pane,
+.leaflet-marker-pane,
+.leaflet-tooltip-pane,
+.leaflet-popup-pane {
+	z-index: 10;
+}
+
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-control {
+	z-index: 20;
+}
+
 .custom-scrollbar {
 	scrollbar-width: thin;
 	scrollbar-color: var(--scroll-thumb-color) transparent;

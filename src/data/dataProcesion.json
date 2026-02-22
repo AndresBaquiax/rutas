@@ -4,30 +4,13 @@
     "procesiones": [
         {
             "idProcesion": 1,
-            "nombreProcesion": "Jesus Nazareno de la Merced",
-            "iglesiaProcesion": "Iglesia La Merced, Antigua Guatemala",
-            "duracionProcesion": "14 horas",
+            "nombreProcesion": "Jesus Nazareno del templo San Juan de Dios",
+            "iglesiaProcesion": "Templo San Juan de Dios",
+            "duracionProcesion": "6 horas",
             "cantidadCargadores": "120",
             "fechaProcesion": "2026-02-22",
-            "descripcionProcesion": "Una de las procesiones más emblemáticas de Guatemala, conocida por su solemnidad y la devoción de sus participantes. La imagen de Jesús Nazareno es llevada por un grupo de cargadores que recorren las calles de Antigua Guatemala durante toda la noche."
-        },
-        {
-            "idProcesion": 2,
-            "nombreProcesion": "Jesús de Candelaria",
-            "iglesiaProcesion": "Parroquia de Candelaria, Ciudad de Guatemala",
-            "duracionProcesion": "16 horas",
-            "cantidadCargadores": "100",
-            "fechaProcesion": "Viernes de Dolores",
-            "descripcionProcesion": "La procesión más antigua de la capital, con más de 400 años de tradición ininterrumpida."
-        },
-        {
-            "idProcesion": 3,
-            "nombreProcesion": "Señor Sepultado El Calvario",
-            "iglesiaProcesion": "Iglesia El Calvario, Quetzaltenango",
-            "duracionProcesion": "12 horas",
-            "cantidadCargadores": "80",
-            "fechaProcesion": "Viernes Santo",
-            "descripcionProcesion": "La procesión más importante del occidente guatemalteco, en la fría ciudad de las alturas."
+            "descripcionProcesion": "Una de las procesiones más emblemáticas de Guatemala, conocida por su solemnidad y la devoción de sus participantes. La imagen de Jesús Nazareno es llevada por un grupo de cargadores que recorren las calles de ciudad de Quetzaltenango durante la tarde y noche."
         }
-    ]
+    ],
+    "ruta": "/recorridos-gt/procesion/san-juan-de-dios"
 }
