@@ -169,7 +169,7 @@ export default function InformacionPage() {
                 fecha={dataRecorrido.fecha}
                 horaSalida={dataRecorrido.horaSalida}
                 horaEntrada={dataRecorrido.horaEntrada}
-                pinColor={config.thirdColor}
+                pinColor={config.colorPin}
                 procesionId="san-juan-de-dios"
               />
             </div>

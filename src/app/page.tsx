@@ -1,6 +1,7 @@
 "use client";
 import config from "@/data/config.json";
 import dataProcesion from "@/data/dataProcesion.json";
+import Link from "next/link";
 import {
   CalendarDaysIcon,
   ClockIcon,
@@ -154,17 +155,19 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <button
-              className="px-8 py-4 rounded-sm font-medium text-base uppercase tracking-wide transition-all duration-300 hover:opacity-90 w-full md:w-auto"
+            <Link
+              href="#recorridos-procesionales"
+              className="px-8 py-4 rounded-sm font-medium text-base uppercase tracking-wide transition-all duration-300 hover:opacity-90 w-full md:w-auto text-center"
               style={{
                 backgroundColor: config.thirdColor,
                 color: config.secondaryColor,
               }}
             >
               Ver Recorridos
-            </button>
-            <button
-              className="px-8 py-4 rounded-sm font-medium text-base uppercase tracking-wide transition-all duration-300 hover:opacity-90 w-full md:w-auto"
+            </Link>
+            <Link
+              href="#tradiciones-cuaresma"
+              className="px-8 py-4 rounded-sm font-medium text-base uppercase tracking-wide transition-all duration-300 hover:opacity-90 w-full md:w-auto text-center"
               style={{
                 backgroundColor: "transparent",
                 color: config.thirdColor,
@@ -172,13 +175,13 @@ export default function Home() {
               }}
             >
               Conocer Tradiciones
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* 2da seccion */}
-      <section className="w-full py-20">
+      <section id="tradiciones-cuaresma" className="w-full py-20">
         <div className="w-full max-w-[1920px] mx-auto px-6 lg:px-12">
           
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -240,6 +243,7 @@ export default function Home() {
 
       {/* 3ra seccion */}
       <section
+        id="recorridos-procesionales"
         className="w-full py-20"
         style={{ backgroundColor: config.secondaryColor }}
       >
@@ -263,13 +267,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="w-full flex flex-wrap justify-center gap-6">
             {dataProcesion.procesiones.map((procesion) => (
               <article
                 key={procesion.idProcesion}
                 onMouseEnter={() => setTarjetaProcesionHover(procesion.idProcesion)}
                 onMouseLeave={() => setTarjetaProcesionHover(null)}
-                className={`rounded-2xl border p-6 h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer flex flex-col`}
+                className={`w-full md:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)] max-w-[520px] rounded-2xl border p-6 h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer flex flex-col`}
                 style={{
                   borderColor: tarjetaProcesionHover === procesion.idProcesion ? config.thirdColor : `${config.neutralColor}14`,
                   boxShadow: tarjetaProcesionHover === procesion.idProcesion ? `0 0 25px ${config.thirdColor}4D` : 'none',
@@ -317,8 +321,8 @@ export default function Home() {
                   {procesion.descripcionProcesion}
                 </p>
 
-                <button
-                  type="button"
+                <Link
+                  href={dataProcesion.ruta}
                   className="mt-auto pt-6 inline-flex flex-col items-start text-lg font-semibold"
                   style={{ color: config.thirdColor }}
                 >
@@ -332,7 +336,7 @@ export default function Home() {
                       width: tarjetaProcesionHover === procesion.idProcesion ? '100%' : '0%',
                     }}
                   ></span>
-                </button>
+                </Link>
               </article>
             ))}
           </div>

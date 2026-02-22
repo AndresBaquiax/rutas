@@ -1,39 +1,19 @@
 [
-  {
-    "id": "inicio",
-    "label": "Inicio",
-    "href": "/"
-  },
-  {
+    {
     "id": "recorridos",
     "label": "Recorridos",
     "href": "/recorridos",
     "subItems": [
       {
-        "id": "recorridos-activos",
-        "label": "Activos",
-        "href": "/recorridos/activos"
-      },
-      {
-        "id": "recorridos-archivados",
-        "label": "Archivados",
-        "href": "/recorridos/archivados"
+        "id": "san-juan-de-dios",
+        "label": "San Juan de Dios",
+        "href": "/recorridos-gt/procesion/san-juan-de-dios"
       }
     ]
   },
   {
-    "id": "regiones",
-    "label": "Regiones",
-    "href": "/regiones"
-  },
-  {
-    "id": "calendario",
-    "label": "Calendario",
-    "href": "/calendario"
-  },
-  {
-    "id": "footer",
-    "label": "Footer",
-    "href": "/footer"
+    "id": "inicio",
+    "label": "Inicio",
+    "href": "/"
   }
 ]

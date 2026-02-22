@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { divIcon } from "leaflet";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { divIcon, type Marker as LeafletMarker } from "leaflet";
 import { CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip } from "react-leaflet";
 import useProcesionTimeOffset from "@/components/useProcesionTimeOffset";
 
@@ -77,6 +77,9 @@ export default function ProcesionMap({
   const entrada = useMemo(() => parseFechaHora(fecha, horaEntrada), [fecha, horaEntrada]);
 
   const [ahoraMs, setAhoraMs] = useState(() => Date.now());
+  const marcadorProcesionRef = useRef<LeafletMarker | null>(null);
+  const posicionMarcadorActualRef = useRef<[number, number] | null>(null);
+  const animacionMarcadorRef = useRef<number | null>(null);
 
   const ahoraAjustadaMs = useMemo(() => {
     return ahoraMs + offsetMinutos * 60_000;
@@ -85,7 +88,7 @@ export default function ProcesionMap({
   useEffect(() => {
     const intervalo = window.setInterval(() => {
       setAhoraMs(Date.now());
-    }, 1000);
+    }, 250);
 
     return () => {
       window.clearInterval(intervalo);
@@ -197,6 +200,63 @@ export default function ProcesionMap({
     return ahoraAjustadaMs >= quinceMinutosAntes;
   }, [ahoraAjustadaMs, entrada, salida]);
 
+  useEffect(() => {
+    if (!mostrarPinProcesion || !posicionProcesion) {
+      if (animacionMarcadorRef.current !== null) {
+        window.cancelAnimationFrame(animacionMarcadorRef.current);
+        animacionMarcadorRef.current = null;
+      }
+      return;
+    }
+
+    const origen = posicionMarcadorActualRef.current ?? posicionProcesion;
+    const destino = posicionProcesion;
+
+    const deltaLatitud = destino[0] - origen[0];
+    const deltaLongitud = destino[1] - origen[1];
+
+    if (Math.abs(deltaLatitud) < 1e-9 && Math.abs(deltaLongitud) < 1e-9) {
+      marcadorProcesionRef.current?.setLatLng(destino);
+      posicionMarcadorActualRef.current = destino;
+      return;
+    }
+
+    if (animacionMarcadorRef.current !== null) {
+      window.cancelAnimationFrame(animacionMarcadorRef.current);
+    }
+
+    const duracionMs = 350;
+    const inicioAnimacion = performance.now();
+
+    const animar = (tiempoActual: number) => {
+      const progresoLineal = Math.min((tiempoActual - inicioAnimacion) / duracionMs, 1);
+      const progresoSuavizado = 0.5 - Math.cos(Math.PI * progresoLineal) / 2;
+
+      const posicionInterpolada: [number, number] = [
+        origen[0] + deltaLatitud * progresoSuavizado,
+        origen[1] + deltaLongitud * progresoSuavizado,
+      ];
+
+      marcadorProcesionRef.current?.setLatLng(posicionInterpolada);
+      posicionMarcadorActualRef.current = posicionInterpolada;
+
+      if (progresoLineal < 1) {
+        animacionMarcadorRef.current = window.requestAnimationFrame(animar);
+      } else {
+        animacionMarcadorRef.current = null;
+      }
+    };
+
+    animacionMarcadorRef.current = window.requestAnimationFrame(animar);
+
+    return () => {
+      if (animacionMarcadorRef.current !== null) {
+        window.cancelAnimationFrame(animacionMarcadorRef.current);
+        animacionMarcadorRef.current = null;
+      }
+    };
+  }, [mostrarPinProcesion, posicionProcesion]);
+
   const iconoMarcadorProcesion = useMemo(() => {
     const colorPin = pinColor ?? idaColor;
 
@@ -269,7 +329,11 @@ export default function ProcesionMap({
       )}
 
       {mostrarPinProcesion && posicionProcesion && (
-        <Marker position={posicionProcesion} icon={iconoMarcadorProcesion}>
+        <Marker
+          position={posicionMarcadorActualRef.current ?? posicionProcesion}
+          icon={iconoMarcadorProcesion}
+          ref={marcadorProcesionRef}
+        >
           <Tooltip direction="top" offset={[0, -26]}>
             Procesión en recorrido
           </Tooltip>
