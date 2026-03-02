@@ -4,6 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import sidebarItems from "@/data/sidebar.json";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Fonts
 const primaryFont = Geist({
@@ -28,6 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <SpeedInsights />
       <body className={`${primaryFont.variable}`}>
         <Sidebar items={sidebarItems} />
         <main className="min-h-screen">{children}</main>
