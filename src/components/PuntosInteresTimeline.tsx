@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { CSSProperties } from "react";
-import useProcesionTimeOffset from "@/components/useProcesionTimeOffset";
 
 type PuntoInteres = {
   nombre: string;
@@ -16,7 +15,6 @@ type PuntosInteresTimelineProps = {
   primaryColor: string;
   neutralColor: string;
   thirdColor: string;
-  procesionId?: string;
 };
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -55,18 +53,8 @@ export default function PuntosInteresTimeline({
   primaryColor,
   neutralColor,
   thirdColor,
-  procesionId = "default",
 }: PuntosInteresTimelineProps) {
-  const offsetMinutos = useProcesionTimeOffset(procesionId);
   const [ahoraMs, setAhoraMs] = useState(0);
-
-  const ahoraAjustadaMs = useMemo(() => {
-    if (ahoraMs === 0) {
-      return 0;
-    }
-
-    return ahoraMs + offsetMinutos * 60_000;
-  }, [ahoraMs, offsetMinutos]);
 
   useEffect(() => {
     const temporizadorInicial = window.setTimeout(() => {
@@ -103,7 +91,7 @@ export default function PuntosInteresTimeline({
       const inicioVentana = tiempoMs - ventanaMs;
       const finVentana = tiempoMs + ventanaMs;
 
-      if (ahoraAjustadaMs >= inicioVentana && ahoraAjustadaMs <= finVentana) {
+      if (ahoraMs >= inicioVentana && ahoraMs <= finVentana) {
         return item.index;
       }
     }
@@ -111,22 +99,22 @@ export default function PuntosInteresTimeline({
     const primer = tiempos[0];
     const ultimo = tiempos[tiempos.length - 1];
 
-    if (ahoraAjustadaMs < primer.fechaHora.getTime() - ventanaMs) {
+    if (ahoraMs < primer.fechaHora.getTime() - ventanaMs) {
       return -1;
     }
 
-    if (ahoraAjustadaMs > ultimo.fechaHora.getTime() + ventanaMs) {
+    if (ahoraMs > ultimo.fechaHora.getTime() + ventanaMs) {
       return -1;
     }
 
     for (const item of tiempos) {
-      if (ahoraAjustadaMs < item.fechaHora.getTime() - ventanaMs) {
+      if (ahoraMs < item.fechaHora.getTime() - ventanaMs) {
         return item.index;
       }
     }
 
     return ultimo.index;
-  }, [ahoraAjustadaMs, fecha, puntos]);
+  }, [ahoraMs, fecha, puntos]);
 
   return (
     <div

@@ -149,7 +149,6 @@ export default function InformacionPage() {
               primaryColor={config.primaryColor}
               neutralColor={config.neutralColor}
               thirdColor={config.thirdColor}
-              procesionId="san-juan-de-dios"
             />
           </aside>
 
@@ -170,7 +169,6 @@ export default function InformacionPage() {
                 horaSalida={dataRecorrido.horaSalida}
                 horaEntrada={dataRecorrido.horaEntrada}
                 pinColor={config.colorPin}
-                procesionId="san-juan-de-dios"
               />
             </div>
 
