@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
-import sidebarItems from "@/data/sidebar.json";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -30,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${primaryFont.variable}`}>
-        <Sidebar items={sidebarItems} />
+        <Sidebar />
         <main className="min-h-screen">{children}</main>
         <Footer />
         <SpeedInsights />
