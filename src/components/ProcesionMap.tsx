@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { divIcon, type Marker as LeafletMarker } from "leaflet";
 import { CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip } from "react-leaflet";
-import useProcesionTimeOffset from "@/components/useProcesionTimeOffset";
 
 type Coordenada = {
   latitud: number;
@@ -20,7 +19,6 @@ type ProcesionMapProps = {
   horaSalida: string;
   horaEntrada: string;
   pinColor?: string;
-  procesionId?: string;
 };
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -53,10 +51,7 @@ export default function ProcesionMap({
   horaSalida,
   horaEntrada,
   pinColor,
-  procesionId = "default",
 }: ProcesionMapProps) {
-  const offsetMinutos = useProcesionTimeOffset(procesionId);
-
   const rutaIda = coordenadas
     .filter((coordenada) => !coordenada.regreso)
     .map((coordenada) => [coordenada.latitud, coordenada.longitud] as [number, number]);
@@ -80,10 +75,6 @@ export default function ProcesionMap({
   const marcadorProcesionRef = useRef<LeafletMarker | null>(null);
   const posicionMarcadorActualRef = useRef<[number, number] | null>(null);
   const animacionMarcadorRef = useRef<number | null>(null);
-
-  const ahoraAjustadaMs = useMemo(() => {
-    return ahoraMs + offsetMinutos * 60_000;
-  }, [ahoraMs, offsetMinutos]);
 
   useEffect(() => {
     const intervalo = window.setInterval(() => {
@@ -134,11 +125,11 @@ export default function ProcesionMap({
     const inicioMs = salida.getTime();
     const finMs = entrada.getTime();
 
-    if (ahoraAjustadaMs <= inicioMs) {
+    if (ahoraMs <= inicioMs) {
       return puntoInicio;
     }
 
-    if (ahoraAjustadaMs >= finMs) {
+    if (ahoraMs >= finMs) {
       return puntoFinal;
     }
 
@@ -146,7 +137,7 @@ export default function ProcesionMap({
       return puntoInicio;
     }
 
-    const progreso = (ahoraAjustadaMs - inicioMs) / (finMs - inicioMs);
+    const progreso = (ahoraMs - inicioMs) / (finMs - inicioMs);
     const distanciaObjetivo = progreso * rutaConDistancias.totalDistancia;
 
     let indiceSegmento = rutaConDistancias.acumuladas.findIndex(
@@ -173,7 +164,7 @@ export default function ProcesionMap({
       origen[1] + (destino[1] - origen[1]) * factorSegmento,
     ] as [number, number];
   }, [
-    ahoraAjustadaMs,
+    ahoraMs,
     entrada,
     puntoFinal,
     puntoInicio,
@@ -194,11 +185,11 @@ export default function ProcesionMap({
     if (entrada && entrada.getTime() > salida.getTime()) {
       const quinceMinutosDespues = entrada.getTime() + ventanaMinutosMs;
 
-      return ahoraAjustadaMs >= quinceMinutosAntes && ahoraAjustadaMs <= quinceMinutosDespues;
+      return ahoraMs >= quinceMinutosAntes && ahoraMs <= quinceMinutosDespues;
     }
 
-    return ahoraAjustadaMs >= quinceMinutosAntes;
-  }, [ahoraAjustadaMs, entrada, salida]);
+    return ahoraMs >= quinceMinutosAntes;
+  }, [ahoraMs, entrada, salida]);
 
   useEffect(() => {
     if (!mostrarPinProcesion || !posicionProcesion) {

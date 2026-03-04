@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import config from "@/data/config.json";
 import logoImg from "@/assets/logoRutas.svg";
 
 interface SidebarItem {
@@ -12,13 +11,55 @@ interface SidebarItem {
   subItems?: SidebarItem[];
 }
 
-interface SidebarProps {
-  items: SidebarItem[];
+interface SidebarApiItem {
+  idSidebar: string;
+  tituloSidebar: string;
+  rutaSidebar: string;
+  parentId: string | null;
+  ordenSidebar: number;
 }
 
-export default function Sidebar({ items }: SidebarProps) {
+function buildTree(items: SidebarApiItem[]): SidebarItem[] {
+  const sorted = [...items].sort((a, b) => a.ordenSidebar - b.ordenSidebar);
+  const roots: SidebarItem[] = [];
+
+  for (const item of sorted.filter((i) => i.parentId === null)) {
+    const children = sorted
+      .filter((i) => i.parentId === item.idSidebar)
+      .map((i) => ({ id: i.idSidebar, label: i.tituloSidebar, href: i.rutaSidebar }));
+
+    roots.push({
+      id: item.idSidebar,
+      label: item.tituloSidebar,
+      href: item.rutaSidebar,
+      ...(children.length > 0 && { subItems: children }),
+    });
+  }
+
+  return roots;
+}
+
+export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
+  const [config, setConfig] = useState<Record<string, string>>({});
+  const [items, setItems] = useState<SidebarItem[]>([]);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL_BACKEND}/configuraciones`)
+      .then((res) => res.json())
+      .then((items: Array<{ idConfigurations: number; name: string; value: string }>) => {
+        setConfig(Object.fromEntries(items.map(({ name, value }) => [name, value])));
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL_BACKEND}/sidebar`)
+      .then((res) => res.json())
+      .then((data: SidebarApiItem[]) => setItems(buildTree(data)))
+      .catch(() => {});
+  }, []);
 
   // Helper to convert hex to rgba for backgrounds/borders
   const hexToRgba = (hex: string, alpha: number) => {

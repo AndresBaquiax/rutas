@@ -1,0 +1,118 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Configuration {
+  idConfigurations Int    @id @default(autoincrement())
+  name             String @db.VarChar(300)
+  value            String @db.Text
+
+  @@map("configuration")
+}
+
+model Departamento {
+  idDepartamento     Int         @id @default(autoincrement())
+  nombreDepartamento String      @db.VarChar(300)
+  municipios         Municipio[]
+
+  @@map("departamento")
+}
+
+model Municipio {
+  idMunicipio      Int          @id @default(autoincrement())
+  nombreMunicipio  String       @db.VarChar(300)
+  idDepartamento   Int
+  departamento     Departamento @relation(fields: [idDepartamento], references: [idDepartamento])
+  iglesias         Iglesia[]
+
+  @@map("municipio")
+}
+
+model Sidebar {
+  idSidebar     String    @id @db.VarChar(300)
+  tituloSidebar String    @db.VarChar(100)
+  rutaSidebar   String    @db.VarChar(300)
+  parentId      String?   @db.VarChar(300)
+  ordenSidebar  Int       @default(0)
+  parent        Sidebar?  @relation("SidebarToSidebar", fields: [parentId], references: [idSidebar])
+  children      Sidebar[] @relation("SidebarToSidebar")
+
+  @@map("sidebar")
+}
+
+model Iglesia {
+  idIglesia      Int       @id @default(autoincrement())
+  nombreIglesia  String    @db.VarChar(300)
+  historiaIglesia String?  @db.Text
+  idMunicipio    Int
+  municipio      Municipio @relation(fields: [idMunicipio], references: [idMunicipio])
+  procesiones    Procesion[]
+
+  @@map("iglesia")
+}
+
+model Hermandad {
+  idHermandad      Int         @id @default(autoincrement())
+  nombreHermandad  String      @db.VarChar(300)
+  historiaHermandad String?    @db.Text
+  historiaProcesion String?    @db.Text
+  procesiones      Procesion[]
+
+  @@map("hermandad")
+}
+
+model Procesion {
+  idProcesion        Int           @id @default(autoincrement())
+  idIglesia          Int
+  idHermandad        Int?
+  nombreProcesion    String        @db.VarChar(300)
+  fechaProcesion     DateTime?     @db.Date
+  horaSalida         DateTime?     @db.Time(0)
+  horaEntrada        DateTime?     @db.Time(0)
+  cantidadCargadores Int?
+  descripcionProcesion String?     @db.Text
+  slugProcesion      String        @unique @db.VarChar(300)
+
+  iglesia            Iglesia       @relation(fields: [idIglesia], references: [idIglesia])
+  hermandad          Hermandad?    @relation(fields: [idHermandad], references: [idHermandad])
+  puntosInteres      PuntoInteres[]
+  coordenadas        Coordenada[]
+
+  @@map("procesion")
+}
+
+model PuntoInteres {
+  idPunto          Int       @id @default(autoincrement())
+  idProcesion      Int
+  nombrePunto      String    @db.VarChar(300)
+  descripcionPunto String?   @db.VarChar(300)
+  horaEstimada     DateTime? @db.Time(0)
+  ordenPunto       Int       @default(0)
+
+  procesion        Procesion @relation(fields: [idProcesion], references: [idProcesion], onDelete: Cascade)
+
+  @@map("puntosInteres")
+}
+
+model Coordenada {
+  idCoordenada    Int       @id @default(autoincrement())
+  idProcesion     Int
+  latitud         Decimal   @db.Decimal(18, 15)
+  longitud        Decimal   @db.Decimal(18, 15)
+  esRegreso       Boolean   @default(false)
+  ordenCoordenada Int
+
+  procesion       Procesion @relation(fields: [idProcesion], references: [idProcesion], onDelete: Cascade)
+
+  @@map("coordenadas")
+}
