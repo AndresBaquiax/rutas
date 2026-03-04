@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/24/outline";
 import ProcesionMapWrapper from "@/components/ProcesionMapWrapper";
 import PuntosInteresTimeline from "@/components/PuntosInteresTimeline";
+import config from "@/data/config.json";
 import dataRecorrido from "@/data/dataRecorrido.json";
 
 const formatearFecha = (fecha: string) => {
@@ -44,15 +45,7 @@ const datosPrincipales = [
   },
 ];
 
-export default async function InformacionPage() {
-  let config: Record<string, string> = {};
-  try {
-    const res = await fetch(`${process.env.API_URL_BACKEND}/configuraciones`);
-    const items: Array<{ idConfigurations: number; name: string; value: string }> = await res.json();
-    config = Object.fromEntries(items.map(({ name, value }) => [name, value]));
-  } catch {
-    // API no disponible en build time
-  }
+export default function InformacionPage() {
   const tamanoSeccion = "h-[700px]";
   return (
     <main style={{ backgroundColor: config.primaryColor }}>

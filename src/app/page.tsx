@@ -1,4 +1,5 @@
 "use client";
+import config from "@/data/config.json";
 import dataProcesion from "@/data/dataProcesion.json";
 import Link from "next/link";
 import {
@@ -19,7 +20,6 @@ export default function Home() {
   const [tarjetaProcesionHover, setTarjetaProcesionHover] = useState<number | null>(null);
   const [imagenesCarrusel, setImagenesCarrusel] = useState<string[]>([]);
   const [indiceCarrusel, setIndiceCarrusel] = useState(0);
-  const [config, setConfig] = useState<Record<string, string>>({});
 
   const tradiciones = [
     {
@@ -61,15 +61,6 @@ export default function Home() {
       year: "numeric",
     });
   };
-
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL_BACKEND}/configuraciones`)
-      .then((res) => res.json())
-      .then((items: Array<{ idConfigurations: number; name: string; value: string }>) => {
-        setConfig(Object.fromEntries(items.map(({ name, value }) => [name, value])));
-      })
-      .catch(() => {});
-  }, []);
 
   useEffect(() => {
     const cargarImagenesCarrusel = async () => {

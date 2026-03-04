@@ -1,15 +1,8 @@
 import logoImg from "@/assets/logoRutas.svg";
+import config from "@/data/config.json";
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
-export default async function Footer() {
-  let config: Record<string, string> = {};
-  try {
-    const res = await fetch(`${process.env.API_URL_BACKEND}/configuraciones`);
-    const items: Array<{ idConfigurations: number; name: string; value: string }> = await res.json();
-    config = Object.fromEntries(items.map(({ name, value }) => [name, value]));
-  } catch {
-    // API no disponible en build time
-  }
+export default function Footer() {
   return (
     <footer
       className="px-3 sm:px-4 md:px-6 lg:px-8 pt-16 pb-8"
