@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import config from "@/data/config.json";
 import logoImg from "@/assets/logoRutas.svg";
 
 interface SidebarItem {
@@ -42,17 +43,7 @@ function buildTree(items: SidebarApiItem[]): SidebarItem[] {
 export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
-  const [config, setConfig] = useState<Record<string, string>>({});
   const [items, setItems] = useState<SidebarItem[]>([]);
-
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL_BACKEND}/configuraciones`)
-      .then((res) => res.json())
-      .then((items: Array<{ idConfigurations: number; name: string; value: string }>) => {
-        setConfig(Object.fromEntries(items.map(({ name, value }) => [name, value])));
-      })
-      .catch(() => {});
-  }, []);
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL_BACKEND}/sidebar`)
