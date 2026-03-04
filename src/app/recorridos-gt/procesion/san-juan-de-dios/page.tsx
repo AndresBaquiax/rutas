@@ -45,9 +45,14 @@ const datosPrincipales = [
 ];
 
 export default async function InformacionPage() {
-  const res = await fetch(`${process.env.API_URL_BACKEND}/configuraciones`);
-  const items: Array<{ idConfigurations: number; name: string; value: string }> = await res.json();
-  const config = Object.fromEntries(items.map(({ name, value }) => [name, value]));
+  let config: Record<string, string> = {};
+  try {
+    const res = await fetch(`${process.env.API_URL_BACKEND}/configuraciones`);
+    const items: Array<{ idConfigurations: number; name: string; value: string }> = await res.json();
+    config = Object.fromEntries(items.map(({ name, value }) => [name, value]));
+  } catch {
+    // API no disponible en build time
+  }
   const tamanoSeccion = "h-[700px]";
   return (
     <main style={{ backgroundColor: config.primaryColor }}>
