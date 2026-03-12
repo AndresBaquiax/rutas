@@ -4,13 +4,13 @@
     "procesiones": [
         {
             "idProcesion": 1,
-            "nombreProcesion": "Jesus Nazareno del templo San Juan de Dios",
-            "iglesiaProcesion": "Templo San Juan de Dios",
-            "duracionProcesion": "6 horas",
-            "cantidadCargadores": "120",
-            "fechaProcesion": "2026-02-22",
-            "descripcionProcesion": "Una de las procesiones más emblemáticas de Guatemala, conocida por su solemnidad y la devoción de sus participantes. La imagen de Jesús Nazareno es llevada por un grupo de cargadores que recorren las calles de ciudad de Quetzaltenango durante la tarde y noche."
+            "nombreProcesion": "Divino Justo Juez",
+            "iglesiaProcesion": "Santa Iglesia Catedral Metropolitana de los Altos",
+            "duracionProcesion": "5 horas",
+            "cantidadCargadores": "20",
+            "fechaProcesion": "2026-03-14",
+            "descripcionProcesion": "Solemne procesión de retorno de la venerada imagen del Justo Juez. Tras los actos de veneración, la imagen recorre nuevamente las calles de la ciudad para ser entronizada en su altar. Un evento que une la tradición guatemalteca con la devoción de sus fieles cargadores."
         }
     ],
-    "ruta": "/recorridos-gt/procesion/san-juan-de-dios"
+    "ruta": "/recorridos-gt/procesion/justo-juez"
 }
