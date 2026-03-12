@@ -54,7 +54,7 @@ export default function InformacionPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/carruselFotos/2.jpg')",
+            backgroundImage: "url('/carruselFotos/1.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -76,7 +76,7 @@ export default function InformacionPage() {
               background: `linear-gradient(90deg, ${config.primaryColor}00 0%, ${config.primaryColor}E6 20%, ${config.primaryColor}E6 80%, ${config.primaryColor}00 100%)`,
             }}
           >
-            Protector de Quetzaltenango
+            Caminando junto a ti
           </p>
 
           <h1
