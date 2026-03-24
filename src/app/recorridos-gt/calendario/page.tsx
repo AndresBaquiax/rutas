@@ -509,13 +509,14 @@ export default function CalendarioPage() {
                   borderColor: `${config.neutralColor}14`,
                 }}
               >
-                <span className="flex items-center gap-3">
+                <span className="flex items-center gap-2">
                   {selectedDate ? (
                     <>
-                      Día{" "}
+                      <span>Día</span>
                       <span style={{ color: config.thirdColor }}>
                         {selectedDate.getDate()}
                       </span>
+                      <span>de {MONTHS[selectedDate.getMonth()]}</span>
                     </>
                   ) : (
                     "Actividades"
