@@ -224,17 +224,17 @@ export default function CalendarioPage() {
             <div className="relative z-10 flex flex-col h-full">
               {/* Header */}
               <div
-                className="flex flex-row justify-between items-center gap-2 sm:gap-4 mb-8 pb-6 border-b w-full"
+                className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 sm:gap-6 mb-6 sm:mb-8 pb-4 sm:pb-6 border-b w-full"
                 style={{ borderColor: `${config.neutralColor}14` }}
               >
                 <h2
-                  className="text-xl sm:text-2xl md:text-3xl font-serif font-bold capitalize flex-shrink-0"
+                  className="text-2xl sm:text-3xl md:text-3xl font-serif font-bold capitalize flex-shrink-0"
                   style={{ color: config.neutralColor }}
                 >
                   {MONTHS[month]} {year}
                 </h2>
                 
-                <div className="flex flex-row items-center gap-2 sm:gap-4 ml-auto flex-shrink-0">
+                <div className="flex flex-row items-center justify-between w-full md:w-auto gap-2 sm:gap-4 flex-shrink-0">
                   {/* Select Especial (Custom Menu) */}
                   {fechasEspeciales.length > 0 && (
                     <div className="relative">
@@ -271,7 +271,7 @@ export default function CalendarioPage() {
 
                       {/* Dropdown Options */}
                       <div
-                        className={`absolute right-0 top-full mt-2 w-56 rounded-xl border overflow-hidden transition-all duration-300 z-50 ${
+                        className={`absolute left-0 sm:left-auto sm:right-0 top-full mt-2 w-56 sm:w-64 rounded-xl border overflow-hidden transition-all duration-300 z-50 ${
                           isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto shadow-2xl" : "opacity-0 -translate-y-2 pointer-events-none"
                         }`}
                         style={{
