@@ -1,0 +1,212 @@
+{
+  "actividades": [
+    {
+      "nombreActividad": "Cortejo Procesional De Justo Juez De Cofradia-Retorno-",
+      "fechaActividad": "2026-03-22",
+      "horaActividad": "15:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Cortejo Procesional Iglesia Cátedral Metropolitana de La Virgen De los Dolores",
+      "fechaActividad": "2026-03-22",
+      "horaActividad": "19:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Jueves de Dolores (Salida Hogar expresidenta)",
+      "fechaActividad": "2026-03-26",
+      "horaActividad": "14:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Procesión Infantil de Veneradas Imágenes de Jesús Nazareno y Virgen de Dolores Templo de San Juan De Dios",
+      "fechaActividad": "2026-03-26",
+      "horaActividad": "15:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Solemne viacrucis penitencial de Ntro Padre Jesús Cautivo Parroquia San Nicolás",
+      "fechaActividad": "2026-03-28",
+      "horaActividad": "15:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Cortejo Procesional De La Virgen De Dolores (Zona 9)",
+      "fechaActividad": "2026-03-28",
+      "horaActividad": "16:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Cortejo Procesional De Justo Juez Y Virgen De Dolores (Catedral)",
+      "fechaActividad": "2026-03-29",
+      "horaActividad": "09:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Solemne procesión de Ramos de Ntro Padre Jesús Cautivo",
+      "fechaActividad": "2026-03-29",
+      "horaActividad": "11:15",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Procesión de traslado de Jesús de la Paciencia y Virgen de Dolores de Santa Iglesia Catedral",
+      "fechaActividad": "2026-03-30",
+      "horaActividad": "17:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Jesús de la columna y Jesús Nazareno (Lunes Santo)",
+      "fechaActividad": "2026-03-30",
+      "horaActividad": "17:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Procesión de Jesús de la Paciencia y Virgen de Dolores de Santa Iglesia Catedral (Salida Catedral)",
+      "fechaActividad": "2026-03-30",
+      "horaActividad": "18:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Solemne Cortejo Procesional Penitencial (San Bartolomé)",
+      "fechaActividad": "2026-03-30",
+      "horaActividad": "",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Cortejo Procesional De Justo Juez Y Virgen De Dolores Retorno-",
+      "fechaActividad": "2026-03-31",
+      "horaActividad": "08:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Cortejo Procesional De Justo Juez De Catedral (Martes Santo)",
+      "fechaActividad": "2026-03-31",
+      "horaActividad": "18:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Jesús de la columna y Jesús Nazareno (Miércoles Santo)",
+      "fechaActividad": "2026-04-01",
+      "horaActividad": "22:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Traslado De Las Andarias De Justo Juez Y Virgen De Dolores De Santa Iglesia Catedral (Mañana)",
+      "fechaActividad": "2026-04-02",
+      "horaActividad": "12:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Traslado de andas procesionales (Catedral Metropolitana)",
+      "fechaActividad": "2026-04-02",
+      "horaActividad": "18:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Traslado De Las Andarias De Justo Juez Y Virgen De Dolores De Santa Iglesia Catedral (Noche)",
+      "fechaActividad": "2026-04-02",
+      "horaActividad": "20:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Solemne Cortejo Procesional de Jesús Nazareno y Virgen de Dolores Templo de San Juan de Dios",
+      "fechaActividad": "2026-04-03",
+      "horaActividad": "07:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Cortejo Procesional Infantil Justo Juez Y Virgen De Dolores",
+      "fechaActividad": "2026-04-03",
+      "horaActividad": "07:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Solemne Cortejo Procesional de Santo Entierro (San Bartolomé)",
+      "fechaActividad": "2026-04-03",
+      "horaActividad": "16:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Santo entierro del Señor Sepultado de Catedral",
+      "fechaActividad": "2026-04-03",
+      "horaActividad": "16:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Cortejo procesional virgen de dolores del templo la transfiguración",
+      "fechaActividad": "2026-04-03",
+      "horaActividad": "16:45",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Santo Entierro (Parroquia Nuestra Señora de la Merced)",
+      "fechaActividad": "2026-04-03",
+      "horaActividad": "17:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Santo entierro de la Hermandad del Señor Sepultado (Transfiguración)",
+      "fechaActividad": "2026-04-03",
+      "horaActividad": "17:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Traslado del Señor Sepultado a la Casa del presidente",
+      "fechaActividad": "2026-04-04",
+      "horaActividad": "06:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Procesión de Pésame de Nuestra Señora de Soledad el Calvario",
+      "fechaActividad": "2026-04-04",
+      "horaActividad": "15:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "La Resurrección de nuestro señor Jesús (Parroquia San Nicolás)",
+      "fechaActividad": "2026-04-05",
+      "horaActividad": "11:00",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Virgen de la Resurrección (Parroquia San Nicolás)",
+      "fechaActividad": "2026-04-05",
+      "horaActividad": "11:00",
+      "slugActividad": ""
+    }
+  ],
+  "fechas": [
+    {
+      "nombreFecha": "domingoDeRamos",
+      "fecha": "2026-03-29"
+    },
+    {
+      "nombreFecha": "lunesSanto",
+      "fecha": "2026-03-30"
+    },
+    {
+      "nombreFecha": "martesSanto",
+      "fecha": "2026-03-31"
+    },
+    {
+      "nombreFecha": "miercolesSanto",
+      "fecha": "2026-04-01"
+    },
+    {
+      "nombreFecha": "juevesSanto",
+      "fecha": "2026-04-02"
+    },
+    {
+      "nombreFecha": "viernesSanto",
+      "fecha": "2026-04-03"
+    },
+    {
+      "nombreFecha": "sabadoDeGloria",
+      "fecha": "2026-04-04"
+    },
+    {
+      "nombreFecha": "domingoDeResurreccion",
+      "fecha": "2026-04-05"
+    }
+  ]
+}
