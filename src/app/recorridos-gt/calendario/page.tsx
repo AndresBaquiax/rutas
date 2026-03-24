@@ -64,10 +64,10 @@ export default function CalendarioPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Attempt to start on the month where we have the first activity if running this exact example
-    const defaultDate = new Date("2026-03-23T12:00:00");
-    setCurrentDate(defaultDate);
-    setSelectedDate(defaultDate);
+    // Start with today's real date
+    const today = new Date();
+    setCurrentDate(today);
+    setSelectedDate(today);
   }, []);
 
   if (!currentDate) {
