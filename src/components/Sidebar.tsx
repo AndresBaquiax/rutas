@@ -107,8 +107,9 @@ export default function Sidebar() {
                   className="block px-6 py-3 text-sm transition-colors hover:pl-8 duration-200"
                   style={{ color: config.thirdColor }}
                 >
-                  <span className="border-l-2 border-transparent hover:border-current pl-2 transition-all block opacity-80 hover:opacity-100">
-                     {subItem.label}
+                  <span className="border-l-2 border-transparent hover:border-current pl-2 transition-all flex items-start opacity-80 hover:opacity-100">
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[6px] mr-2" style={{ backgroundColor: config.thirdColor }}></span>
+                    <span className="leading-snug">{subItem.label}</span>
                   </span>
                 </Link>
               ))}
@@ -224,11 +225,12 @@ export default function Sidebar() {
                         <Link
                           key={subItem.id}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm transition-colors"
+                          className="flex items-start px-4 py-2 text-sm transition-colors"
                           style={{ color: config.thirdColor }}
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          {subItem.label}
+                          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[6px] mr-2" style={{ backgroundColor: config.thirdColor }}></span>
+                          <span className="leading-snug">{subItem.label}</span>
                         </Link>
                       ))}
                     </div>
