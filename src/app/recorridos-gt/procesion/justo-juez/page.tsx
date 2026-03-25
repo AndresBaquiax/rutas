@@ -6,7 +6,7 @@ import {
 import ProcesionMapWrapper from "@/components/ProcesionMapWrapper";
 import PuntosInteresTimeline from "@/components/PuntosInteresTimeline";
 import config from "@/data/config.json";
-import dataRecorrido from "@/data/dataRecorrido.json";
+import dataRecorrido from "@/data/viernesSanto/dataRecorridoJustoJuez.json";
 import { formatearHora12 } from "@/lib/date-format";
 
 const formatearFecha = (fecha: string) => {
