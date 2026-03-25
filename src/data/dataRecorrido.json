@@ -1,311 +1,311 @@
 {
-    "nombreProcesion": "Divino Justo Juez",
-    "nombreIglesia": "de  Iglesia Catedral Metropolitana de los Altos",
-    "fecha": "2026-03-14",
-    "horaSalida": "16:00",
-    "horaEntrada": "21:00",
-    "cantidadCargadores": 20,
-    "puntosInteres": [
-        {
-            "nombre": "Casa social de la hermandad",
-            "descripcion": "Un lugar de encuentro para los miembros de la hermandad, donde se llevan a cabo actividades sociales y culturales relacionadas con la procesión.",
-            "hora": "16:00"
-        },
-        {
-            "nombre": "Plazuela San Antonio",
-            "descripcion": "Una plazuela histórica que es un punto de referencia importante en la ciudad, conocida por su arquitectura colonial y su importancia cultural en la comunidad.",
-            "hora": "16:45"
-        },
-        {
-            "nombre": "Tienda El Frutal",
-            "descripcion": "Una tienda local que ofrece una variedad de productos frescos y artesanales, con un enfoque en la calidad y la sostenibilidad, ideal para los visitantes que buscan productos auténticos de la región.",
-            "hora": "18:30"
-        },
-        {
-            "nombre": "Parque Bolivar",
-            "descripcion": "Un parque emblemático que rinde homenaje a Simón Bolívar, con áreas verdes, monumentos y espacios para eventos culturales, siendo un lugar de encuentro para la comunidad y los visitantes.",
-            "hora": "19:15"
-        },
-        {
-            "nombre": "Banco Industrial",
-            "descripcion": "Una institución financiera reconocida en Guatemala, que ofrece una amplia gama de servicios bancarios y financieros, con sucursales en todo el país, incluyendo una ubicación estratégica en el centro de la ciudad.",
-            "hora": "20:15"
-        },
-        {
-            "nombre": "Iglesia Catedral Metropolitana de los Altos",
-            "descripcion": "Una iglesia histórica que es el punto de partida y llegada de la procesión, conocida por su arquitectura impresionante y su importancia religiosa en la comunidad.",
-            "hora": "21:00"
-        }
-    ],
-    "coordenadas": [
-        {
-            "latitud": 14.832609990782862,
-            "longitud": -91.52424445678811,
-            "regreso": false
-        },
-        {
-            "latitud": 14.832580173043107,
-            "longitud": -91.52443221149102,
-            "regreso": false
-        },
-        {
-            "latitud": 14.832255537365864,
-            "longitud": -91.52440708958656,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831706799513285,
-            "longitud": -91.52437192519447,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831325110252411,
-            "longitud": -91.52434680799443,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830840470724365,
-            "longitud": -91.52426844190221,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830116293853575,
-            "longitud": -91.5241371208525,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830462629380396,
-            "longitud": -91.52338445102616,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830865717759727,
-            "longitud": -91.522556515326,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831233880760184,
-            "longitud": -91.52187610040295,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83145070301842,
-            "longitud": -91.52144708047493,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831523462398128,
-            "longitud": -91.52117310878191,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831565662641585,
-            "longitud": -91.52095483450213,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831558386270594,
-            "longitud": -91.52068236786306,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831542378906887,
-            "longitud": -91.52055441386014,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831463799546919,
-            "longitud": -91.52018711159631,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831305184382265,
-            "longitud": -91.51968282316294,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831005268982214,
-            "longitud": -91.51865343683889,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830846104595008,
-            "longitud": -91.51813242572486,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831413932931676,
-            "longitud": -91.51792050446078,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831196131434812,
-            "longitud": -91.51733310076811,
-            "regreso": false
-        },
-        {
-            "latitud": 14.831019782025583,
-            "longitud": -91.51676983594842,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830854931613006,
-            "longitud": -91.51620497868811,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830662049040296,
-            "longitud": -91.51557652010118,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830465701360458,
-            "longitud": -91.51481902424295,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830215489813416,
-            "longitud": -91.51400784300095,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830178690237174,
-            "longitud": -91.5137081828776,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830561782064327,
-            "longitud": -91.51358909969612,
-            "regreso": false
-        },
-        {
-            "latitud": 14.830943929633476,
-            "longitud": -91.51347684918916,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83155092135953,
-            "longitud": -91.51333993521736,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83213310375886,
-            "longitud": -91.51315643000216,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83217650785178,
-            "longitud": -91.5132901546161,
-            "regreso": false
-        },
-        {
-            "latitud": 14.832238783371498,
-            "longitud": -91.51333798312899,
-            "regreso": false
-        },
-        {
-            "latitud": 14.832268977565311,
-            "longitud": -91.51334286359425,
-            "regreso": false
-        },
-        {
-            "latitud": 14.832405794741826,
-            "longitud": -91.5138016267246,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83258035451061,
-            "longitud": -91.51434042919081,
-            "regreso": false
-        },
-        {
-            "latitud": 14.832764349880694,
-            "longitud": -91.51487923168821,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83299073664184,
-            "longitud": -91.51545077974393,
-            "regreso": false
-        },
-        {
-            "latitud": 14.833419114209523,
-            "longitud": -91.51641125422532,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83365028694009,
-            "longitud": -91.51697250667434,
-            "regreso": false
-        },
-        {
-            "latitud": 14.833767982586798,
-            "longitud": -91.51739589034736,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83418205524271,
-            "longitud": -91.51724410887768,
-            "regreso": false
-        },
-        {
-            "latitud": 14.834524573223032,
-            "longitud": -91.51796411415849,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83477542748428,
-            "longitud": -91.5179091288619,
-            "regreso": false
-        },
-        {
-            "latitud": 14.834930995766408,
-            "longitud": -91.51832755346933,
-            "regreso": false
-        },
-        {
-            "latitud": 14.834566331206034,
-            "longitud": -91.51849769343283,
-            "regreso": false
-        },
-        {
-            "latitud": 14.834044878993694,
-            "longitud": -91.51871079856026,
-            "regreso": false
-        },
-        {
-            "latitud": 14.833642992216143,
-            "longitud": -91.51886167275016,
-            "regreso": false
-        },
-        {
-            "latitud": 14.833540575965849,
-            "longitud": -91.51860820398025,
-            "regreso": false
-        },
-        {
-            "latitud": 14.833466032226145,
-            "longitud": -91.51838088690012,
-            "regreso": false
-        },
-        {
-            "latitud": 14.83373218917267,
-            "longitud": -91.51826926365956,
-            "regreso": false
-        },
-        {
-            "latitud": 14.833675795413585,
-            "longitud": -91.5181096722338,
-            "regreso": false
-        }
-    ],
-    "historia": [
-        {
-            "titulo": "Historia y devoción: El Justo Juez y la Catedral del Espíritu Santo",
-            "subtitulo": "Historia de la Catedral Metropolitana de Los Altos",
-            "historiaIglesia": "La Catedral de Quetzaltenango, dedicada al Espíritu Santo, es el corazón espiritual de Xela. Su fachada original data de 1532, siendo una de las primeras fundadas en el Reino de Guatemala. A pesar de los terremotos, como el de San Perfecto en 1902 que destruyó gran parte de la estructura antigua, la fe de los quetzaltecos la ha mantenido en pie. Hoy combina la majestuosidad de su fachada renacentista con una estructura moderna que resguarda las imágenes más veneradas de la ciudad.",
-            "subtituloProcesion": "Historia y Devoción a la Imagen del Justo Juez",
-            "historiaProcesion": "La venerada imagen del Justo Juez es una de las joyas del arte sacro que resguarda la Catedral de Quetzaltenango. Su devoción se ha arraigado profundamente en el corazón de los fieles, quienes ven en su mirada una mezcla de justicia divina y misericordia. La procesión de retorno es un acto de amor que simboliza la protección del Redentor sobre la ciudad. A través de las décadas, esta tradición ha pasado de generación en generación, convirtiéndose en un baluarte de la identidad católica de Xela. El cortejo, caracterizado por su solemnidad y el característico aroma a incienso y corozo, invita a los habitantes a un momento de introspección y renovación espiritual antes de los días mayores."
-        }
-    ]
+  "nombreProcesion": "Divino Justo Juez",
+  "nombreIglesia": "de  Iglesia Catedral Metropolitana de los Altos",
+  "fecha": "2026-03-14",
+  "horaSalida": "16:00",
+  "horaEntrada": "21:00",
+  "cantidadCargadores": 20,
+  "puntosInteres": [
+    {
+      "nombre": "Casa social de la hermandad",
+      "descripcion": "Un lugar de encuentro para los miembros de la hermandad, donde se llevan a cabo actividades sociales y culturales relacionadas con la procesión.",
+      "hora": "16:00"
+    },
+    {
+      "nombre": "Plazuela San Antonio",
+      "descripcion": "Una plazuela histórica que es un punto de referencia importante en la ciudad, conocida por su arquitectura colonial y su importancia cultural en la comunidad.",
+      "hora": "16:45"
+    },
+    {
+      "nombre": "Tienda El Frutal",
+      "descripcion": "Una tienda local que ofrece una variedad de productos frescos y artesanales, con un enfoque en la calidad y la sostenibilidad, ideal para los visitantes que buscan productos auténticos de la región.",
+      "hora": "18:30"
+    },
+    {
+      "nombre": "Parque Bolivar",
+      "descripcion": "Un parque emblemático que rinde homenaje a Simón Bolívar, con áreas verdes, monumentos y espacios para eventos culturales, siendo un lugar de encuentro para la comunidad y los visitantes.",
+      "hora": "19:15"
+    },
+    {
+      "nombre": "Banco Industrial",
+      "descripcion": "Una institución financiera reconocida en Guatemala, que ofrece una amplia gama de servicios bancarios y financieros, con sucursales en todo el país, incluyendo una ubicación estratégica en el centro de la ciudad.",
+      "hora": "20:15"
+    },
+    {
+      "nombre": "Iglesia Catedral Metropolitana de los Altos",
+      "descripcion": "Una iglesia histórica que es el punto de partida y llegada de la procesión, conocida por su arquitectura impresionante y su importancia religiosa en la comunidad.",
+      "hora": "21:00"
+    }
+  ],
+  "coordenadas": [
+    {
+      "latitud": 14.832609990782862,
+      "longitud": -91.52424445678811,
+      "regreso": false
+    },
+    {
+      "latitud": 14.832580173043107,
+      "longitud": -91.52443221149102,
+      "regreso": false
+    },
+    {
+      "latitud": 14.832255537365864,
+      "longitud": -91.52440708958656,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831706799513285,
+      "longitud": -91.52437192519447,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831325110252411,
+      "longitud": -91.52434680799443,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830840470724365,
+      "longitud": -91.52426844190221,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830116293853575,
+      "longitud": -91.5241371208525,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830462629380396,
+      "longitud": -91.52338445102616,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830865717759727,
+      "longitud": -91.522556515326,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831233880760184,
+      "longitud": -91.52187610040295,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83145070301842,
+      "longitud": -91.52144708047493,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831523462398128,
+      "longitud": -91.52117310878191,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831565662641585,
+      "longitud": -91.52095483450213,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831558386270594,
+      "longitud": -91.52068236786306,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831542378906887,
+      "longitud": -91.52055441386014,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831463799546919,
+      "longitud": -91.52018711159631,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831305184382265,
+      "longitud": -91.51968282316294,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831005268982214,
+      "longitud": -91.51865343683889,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830846104595008,
+      "longitud": -91.51813242572486,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831413932931676,
+      "longitud": -91.51792050446078,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831196131434812,
+      "longitud": -91.51733310076811,
+      "regreso": false
+    },
+    {
+      "latitud": 14.831019782025583,
+      "longitud": -91.51676983594842,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830854931613006,
+      "longitud": -91.51620497868811,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830662049040296,
+      "longitud": -91.51557652010118,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830465701360458,
+      "longitud": -91.51481902424295,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830215489813416,
+      "longitud": -91.51400784300095,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830178690237174,
+      "longitud": -91.5137081828776,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830561782064327,
+      "longitud": -91.51358909969612,
+      "regreso": false
+    },
+    {
+      "latitud": 14.830943929633476,
+      "longitud": -91.51347684918916,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83155092135953,
+      "longitud": -91.51333993521736,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83213310375886,
+      "longitud": -91.51315643000216,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83217650785178,
+      "longitud": -91.5132901546161,
+      "regreso": false
+    },
+    {
+      "latitud": 14.832238783371498,
+      "longitud": -91.51333798312899,
+      "regreso": false
+    },
+    {
+      "latitud": 14.832268977565311,
+      "longitud": -91.51334286359425,
+      "regreso": false
+    },
+    {
+      "latitud": 14.832405794741826,
+      "longitud": -91.5138016267246,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83258035451061,
+      "longitud": -91.51434042919081,
+      "regreso": false
+    },
+    {
+      "latitud": 14.832764349880694,
+      "longitud": -91.51487923168821,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83299073664184,
+      "longitud": -91.51545077974393,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833419114209523,
+      "longitud": -91.51641125422532,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83365028694009,
+      "longitud": -91.51697250667434,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833767982586798,
+      "longitud": -91.51739589034736,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83418205524271,
+      "longitud": -91.51724410887768,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834524573223032,
+      "longitud": -91.51796411415849,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83477542748428,
+      "longitud": -91.5179091288619,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834930995766408,
+      "longitud": -91.51832755346933,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834566331206034,
+      "longitud": -91.51849769343283,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834044878993694,
+      "longitud": -91.51871079856026,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833642992216143,
+      "longitud": -91.51886167275016,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833540575965849,
+      "longitud": -91.51860820398025,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833466032226145,
+      "longitud": -91.51838088690012,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83373218917267,
+      "longitud": -91.51826926365956,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833675795413585,
+      "longitud": -91.5181096722338,
+      "regreso": false
+    }
+  ],
+  "historia": [
+    {
+      "titulo": "El Justo Juez y la Catedral del Espíritu Santo",
+      "subtitulo": "Historia de la Catedral Metropolitana de Los Altos",
+      "historiaIglesia": "La Catedral de Quetzaltenango, dedicada al Espíritu Santo, es el corazón espiritual de Xela. Su fachada original data de 1532, siendo una de las primeras fundadas en el Reino de Guatemala. A pesar de los terremotos, como el de San Perfecto en 1902 que destruyó gran parte de la estructura antigua, la fe de los quetzaltecos la ha mantenido en pie. Hoy combina la majestuosidad de su fachada renacentista con una estructura moderna que resguarda las imágenes más veneradas de la ciudad.",
+      "subtituloProcesion": "Historia y Devoción a la Imagen del Justo Juez",
+      "historiaProcesion": "La venerada imagen del Justo Juez es una de las joyas del arte sacro que resguarda la Catedral de Quetzaltenango. Su devoción se ha arraigado profundamente en el corazón de los fieles, quienes ven en su mirada una mezcla de justicia divina y misericordia. La procesión de retorno es un acto de amor que simboliza la protección del Redentor sobre la ciudad. A través de las décadas, esta tradición ha pasado de generación en generación, convirtiéndose en un baluarte de la identidad católica de Xela. El cortejo, caracterizado por su solemnidad y el característico aroma a incienso y corozo, invita a los habitantes a un momento de introspección y renovación espiritual antes de los días mayores."
+    }
+  ]
 }
