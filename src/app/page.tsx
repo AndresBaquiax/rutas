@@ -11,13 +11,14 @@ import {
   PlusIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  
-  const alturaTarjetas = "min-h-[350px]"; 
+  const alturaTarjetas = "min-h-[350px]";
   const [tarjetaHover, setTarjetaHover] = useState<number | null>(null);
-  const [tarjetaProcesionHover, setTarjetaProcesionHover] = useState<number | null>(null);
+  const [tarjetaProcesionHover, setTarjetaProcesionHover] = useState<
+    number | null
+  >(null);
   const [imagenesCarrusel, setImagenesCarrusel] = useState<string[]>([]);
   const [indiceCarrusel, setIndiceCarrusel] = useState(0);
 
@@ -25,27 +26,31 @@ export default function Home() {
     {
       id: 1,
       titulo: "Las Andas",
-      descripcion: "Imponentes plataformas de madera tallada que portan las imágenes sagradas, algunas pesan más de 3 toneladas y son cargadas por hasta 120 cucuruchos.",
-      Icono: PlusIcon
+      descripcion:
+        "Imponentes plataformas de madera tallada que portan las imágenes sagradas, algunas pesan más de 3 toneladas y son cargadas por hasta 120 cucuruchos.",
+      Icono: PlusIcon,
     },
     {
       id: 2,
       titulo: "Los Cucuruchos",
-      descripcion: "Devotos vestidos con túnicas moradas que cargan las andas procesionales como acto de penitencia y fe durante la Cuaresma.",
-      Icono: UserGroupIcon
+      descripcion:
+        "Devotos vestidos con túnicas moradas que cargan las andas procesionales como acto de penitencia y fe durante la Cuaresma.",
+      Icono: UserGroupIcon,
     },
     {
       id: 3,
       titulo: "Las Alfombras",
-      descripcion: "Obras de arte efímeras elaboradas con aserrín teñido, flores y frutas que adornan las calles por donde pasan las procesiones.",
-      Icono: PaintBrushIcon
+      descripcion:
+        "Obras de arte efímeras elaboradas con aserrín teñido, flores y frutas que adornan las calles por donde pasan las procesiones.",
+      Icono: PaintBrushIcon,
     },
     {
       id: 4,
       titulo: "El Incienso",
-      descripcion: "El humo aromático del copal y el incienso crea una atmósfera mística que acompaña el paso solemne de las procesiones.",
-      Icono: FireIcon
-    }
+      descripcion:
+        "El humo aromático del copal y el incienso crea una atmósfera mística que acompaña el paso solemne de las procesiones.",
+      Icono: FireIcon,
+    },
   ];
 
   const formatearFecha = (fecha: string) => {
@@ -82,13 +87,16 @@ export default function Home() {
     }
 
     const temporizadorCarrusel = setInterval(() => {
-      setIndiceCarrusel((indiceAnterior) => (indiceAnterior + 1) % imagenesCarrusel.length);
+      setIndiceCarrusel(
+        (indiceAnterior) => (indiceAnterior + 1) % imagenesCarrusel.length,
+      );
     }, 5000);
 
     return () => clearInterval(temporizadorCarrusel);
   }, [imagenesCarrusel.length]);
 
-  const imagenesHero = imagenesCarrusel.length > 0 ? imagenesCarrusel : ["/carruselFotos/1.jpg"];
+  const imagenesHero =
+    imagenesCarrusel.length > 0 ? imagenesCarrusel : ["/carruselFotos/1.jpg"];
 
   return (
     <main style={{ backgroundColor: config.primaryColor }}>
@@ -104,7 +112,8 @@ export default function Home() {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                opacity: indice === (indiceCarrusel % imagenesHero.length) ? 1 : 0,
+                opacity:
+                  indice === indiceCarrusel % imagenesHero.length ? 1 : 0,
               }}
             ></div>
           ))}
@@ -117,7 +126,7 @@ export default function Home() {
           }}
         ></div>
 
-        <div className="relative z-10 text-center px-6 max-w-4xl">
+        <div className="relative z-10 text-center px-6 max-w-4xl pt-32 lg:pt-0">
           <p
             className="text-sm uppercase tracking-widest mb-4 font-medium px-6 py-3 rounded-full inline-block"
             style={{
@@ -143,8 +152,9 @@ export default function Home() {
             className="text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed"
             style={{ color: config.neutralColor, opacity: 0.9 }}
           >
-            Descubre la riqueza cultural y espiritual de las procesiones cuaresmales más
-            impresionantes de América Latina. Una tradición que une fe, arte y devoción.
+            Descubre la riqueza cultural y espiritual de las procesiones
+            cuaresmales más impresionantes de América Latina. Una tradición que
+            une fe, arte y devoción.
           </p>
 
           <p
@@ -166,7 +176,7 @@ export default function Home() {
               Ver Recorridos
             </Link>
             <Link
-              href="#tradiciones-cuaresma"
+              href="/recorridos-gt/calendario"
               className="px-8 py-4 rounded-sm font-medium text-base uppercase tracking-wide transition-all duration-300 hover:opacity-90 w-full md:w-auto text-center"
               style={{
                 backgroundColor: "transparent",
@@ -174,7 +184,7 @@ export default function Home() {
                 border: `2px solid ${config.thirdColor}`,
               }}
             >
-              Conocer Tradiciones
+              Calendario santo
             </Link>
           </div>
         </div>
@@ -183,7 +193,6 @@ export default function Home() {
       {/* 2da seccion */}
       <section id="tradiciones-cuaresma" className="w-full py-20">
         <div className="w-full max-w-[1920px] mx-auto px-6 lg:px-12">
-          
           <div className="text-center max-w-3xl mx-auto mb-14">
             <p
               className="text-sm uppercase tracking-[0.35em] mb-4"
@@ -195,9 +204,13 @@ export default function Home() {
               className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6"
               style={{ color: config.neutralColor }}
             >
-              Tradiciones de <span style={{ color: config.thirdColor }}>Cuaresma</span>
+              Tradiciones de{" "}
+              <span style={{ color: config.thirdColor }}>Cuaresma</span>
             </h2>
-            <p className="text-lg" style={{ color: `${config.neutralColor}B3` }}>
+            <p
+              className="text-lg"
+              style={{ color: `${config.neutralColor}B3` }}
+            >
               Las procesiones guatemaltecas son reconocidas mundialmente por su
               solemnidad, arte y profunda expresión de fe católica.
             </p>
@@ -211,9 +224,18 @@ export default function Home() {
                 onMouseLeave={() => setTarjetaHover(null)}
                 className={`rounded-2xl p-8 border h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer`}
                 style={{
-                  borderColor: tarjetaHover === item.id ? config.thirdColor : `${config.neutralColor}14`,
-                  boxShadow: tarjetaHover === item.id ? `0 0 25px ${config.thirdColor}4D` : 'none',
-                  transform: tarjetaHover === item.id ? 'translateY(-8px)' : 'translateY(0)',
+                  borderColor:
+                    tarjetaHover === item.id
+                      ? config.thirdColor
+                      : `${config.neutralColor}14`,
+                  boxShadow:
+                    tarjetaHover === item.id
+                      ? `0 0 25px ${config.thirdColor}4D`
+                      : "none",
+                  transform:
+                    tarjetaHover === item.id
+                      ? "translateY(-8px)"
+                      : "translateY(0)",
                   background: `linear-gradient(135deg, ${config.neutralColor}08 0%, ${config.neutralColor}05 100%)`,
                 }}
               >
@@ -222,7 +244,10 @@ export default function Home() {
                     className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
                     style={{ backgroundColor: `${config.thirdColor}1F` }}
                   >
-                    <item.Icono className="w-7 h-7" style={{ color: config.thirdColor }} />
+                    <item.Icono
+                      className="w-7 h-7"
+                      style={{ color: config.thirdColor }}
+                    />
                   </div>
                   <h3
                     className="text-2xl font-serif font-semibold"
@@ -231,14 +256,16 @@ export default function Home() {
                     {item.titulo}
                   </h3>
                 </div>
-                <p className="text-xl leading-relaxed" style={{ color: `${config.neutralColor}B3` }}>
+                <p
+                  className="text-xl leading-relaxed"
+                  style={{ color: `${config.neutralColor}B3` }}
+                >
                   {item.descripcion}
                 </p>
               </article>
             ))}
           </div>
-
-        </div> 
+        </div>
       </section>
 
       {/* 3ra seccion */}
@@ -248,7 +275,6 @@ export default function Home() {
         style={{ backgroundColor: config.secondaryColor }}
       >
         <div className="w-full max-w-[1920px] mx-auto px-6 lg:px-12">
-          
           <div className="text-center max-w-3xl mx-auto mb-14">
             <p
               className="text-sm uppercase tracking-[0.35em] mb-4"
@@ -260,10 +286,15 @@ export default function Home() {
               className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6"
               style={{ color: config.neutralColor }}
             >
-              Recorridos <span style={{ color: config.thirdColor }}>Procesionales</span>
+              Recorridos{" "}
+              <span style={{ color: config.thirdColor }}>Procesionales</span>
             </h2>
-            <p className="text-lg" style={{ color: `${config.neutralColor}B3` }}>
-              Conoce las rutas de las procesiones más importantes en diferentes regiones del país.
+            <p
+              className="text-lg"
+              style={{ color: `${config.neutralColor}B3` }}
+            >
+              Conoce las rutas de las procesiones más importantes en diferentes
+              regiones del país.
             </p>
           </div>
 
@@ -271,13 +302,24 @@ export default function Home() {
             {dataProcesion.procesiones.map((procesion) => (
               <article
                 key={procesion.idProcesion}
-                onMouseEnter={() => setTarjetaProcesionHover(procesion.idProcesion)}
+                onMouseEnter={() =>
+                  setTarjetaProcesionHover(procesion.idProcesion)
+                }
                 onMouseLeave={() => setTarjetaProcesionHover(null)}
                 className={`w-full md:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)] max-w-[520px] rounded-2xl border p-6 h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer flex flex-col`}
                 style={{
-                  borderColor: tarjetaProcesionHover === procesion.idProcesion ? config.thirdColor : `${config.neutralColor}14`,
-                  boxShadow: tarjetaProcesionHover === procesion.idProcesion ? `0 0 25px ${config.thirdColor}4D` : 'none',
-                  transform: tarjetaProcesionHover === procesion.idProcesion ? 'translateY(-8px)' : 'translateY(0)',
+                  borderColor:
+                    tarjetaProcesionHover === procesion.idProcesion
+                      ? config.thirdColor
+                      : `${config.neutralColor}14`,
+                  boxShadow:
+                    tarjetaProcesionHover === procesion.idProcesion
+                      ? `0 0 25px ${config.thirdColor}4D`
+                      : "none",
+                  transform:
+                    tarjetaProcesionHover === procesion.idProcesion
+                      ? "translateY(-8px)"
+                      : "translateY(0)",
                   background: `linear-gradient(135deg, ${config.neutralColor}08 0%, ${config.neutralColor}05 100%)`,
                 }}
               >
@@ -288,36 +330,81 @@ export default function Home() {
                   {procesion.nombreProcesion}
                 </h3>
 
-                <div className="flex items-center gap-2 mb-6" style={{ color: `${config.neutralColor}B3` }}>
-                  <MapPinIcon className="w-5 h-5" style={{ color: config.thirdColor }} />
+                <div
+                  className="flex items-center gap-2 mb-6"
+                  style={{ color: `${config.neutralColor}B3` }}
+                >
+                  <MapPinIcon
+                    className="w-5 h-5"
+                    style={{ color: config.thirdColor }}
+                  />
                   <p className="text-lg">{procesion.iglesiaProcesion}</p>
                 </div>
 
-                <div className="grid grid-cols-3 gap-3 py-4 border-y mb-5" style={{ borderColor: `${config.neutralColor}14` }}>
+                <div
+                  className="grid grid-cols-3 gap-3 py-4 border-y mb-5"
+                  style={{ borderColor: `${config.neutralColor}14` }}
+                >
                   <div className="text-center">
-                    <ClockIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
-                    <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Duración</p>
-                    <p className="text-base font-semibold" style={{ color: config.neutralColor }}>
+                    <ClockIcon
+                      className="w-5 h-5 mx-auto mb-2"
+                      style={{ color: config.thirdColor }}
+                    />
+                    <p
+                      className="text-sm"
+                      style={{ color: `${config.neutralColor}99` }}
+                    >
+                      Duración
+                    </p>
+                    <p
+                      className="text-base font-semibold"
+                      style={{ color: config.neutralColor }}
+                    >
                       {procesion.duracionProcesion}
                     </p>
                   </div>
                   <div className="text-center">
-                    <UserGroupIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
-                    <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Cargadores</p>
-                    <p className="text-base font-semibold" style={{ color: config.neutralColor }}>
+                    <UserGroupIcon
+                      className="w-5 h-5 mx-auto mb-2"
+                      style={{ color: config.thirdColor }}
+                    />
+                    <p
+                      className="text-sm"
+                      style={{ color: `${config.neutralColor}99` }}
+                    >
+                      Cargadores
+                    </p>
+                    <p
+                      className="text-base font-semibold"
+                      style={{ color: config.neutralColor }}
+                    >
                       {procesion.cantidadCargadores}
                     </p>
                   </div>
                   <div className="text-center">
-                    <CalendarDaysIcon className="w-5 h-5 mx-auto mb-2" style={{ color: config.thirdColor }} />
-                    <p className="text-sm" style={{ color: `${config.neutralColor}99` }}>Fecha</p>
-                    <p className="text-base font-semibold" style={{ color: config.neutralColor }}>
+                    <CalendarDaysIcon
+                      className="w-5 h-5 mx-auto mb-2"
+                      style={{ color: config.thirdColor }}
+                    />
+                    <p
+                      className="text-sm"
+                      style={{ color: `${config.neutralColor}99` }}
+                    >
+                      Fecha
+                    </p>
+                    <p
+                      className="text-base font-semibold"
+                      style={{ color: config.neutralColor }}
+                    >
                       {formatearFecha(procesion.fechaProcesion)}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-lg leading-relaxed" style={{ color: `${config.neutralColor}B3` }}>
+                <p
+                  className="text-lg leading-relaxed"
+                  style={{ color: `${config.neutralColor}B3` }}
+                >
                   {procesion.descripcionProcesion}
                 </p>
 
@@ -327,23 +414,25 @@ export default function Home() {
                   style={{ color: config.thirdColor }}
                 >
                   <span className="inline-flex items-center gap-2 transition-opacity duration-300 hover:opacity-80">
-                    Ver puntos del recorrido <span aria-hidden="true">&gt;</span>
+                    Ver puntos del recorrido{" "}
+                    <span aria-hidden="true">&gt;</span>
                   </span>
                   <span
                     className="h-[1px] mt-1 transition-all duration-300"
                     style={{
                       backgroundColor: config.thirdColor,
-                      width: tarjetaProcesionHover === procesion.idProcesion ? '100%' : '0%',
+                      width:
+                        tarjetaProcesionHover === procesion.idProcesion
+                          ? "100%"
+                          : "0%",
                     }}
                   ></span>
                 </Link>
               </article>
             ))}
           </div>
-
         </div>
       </section>
-
     </main>
   );
 }

@@ -186,7 +186,10 @@ export default function InformacionPage() {
                     className="h-3 w-3 rounded-full"
                     style={{ backgroundColor: config.idaColor }}
                   />
-                  <p className="text-sm font-medium" style={{ color: config.primaryColor }}>
+                  <p
+                    className="text-sm font-medium"
+                    style={{ color: config.primaryColor }}
+                  >
                     Recorrido de ida
                   </p>
                 </div>
@@ -196,13 +199,98 @@ export default function InformacionPage() {
                     className="h-3 w-3 rounded-full"
                     style={{ backgroundColor: config.vueltaColor }}
                   />
-                  <p className="text-sm font-medium" style={{ color: config.primaryColor }}>
+                  <p
+                    className="text-sm font-medium"
+                    style={{ color: config.primaryColor }}
+                  >
                     Recorrido de vuelta
                   </p>
                 </div>
               </div>
             </section>
           </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN DE HISTORIA */}
+      <section
+        className="px-6 py-28 mt-4 border-t"
+        style={{
+          backgroundColor: config.secondaryColor,
+          borderColor: `${config.thirdColor}22`,
+        }}
+      >
+        <div className="w-full max-w-[1000px] mx-auto flex flex-col gap-24">
+          {dataRecorrido.historia.map((item, idx) => (
+            <div key={idx} className="flex flex-col gap-20">
+              {/* Bloque de Título */}
+              <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
+                <div className="flex items-center gap-4 mb-8">
+                  <div
+                    className="h-px w-12 md:w-20"
+                    style={{ backgroundColor: config.thirdColor }}
+                  />
+                  <span
+                    className="uppercase tracking-[0.3em] text-xs md:text-sm font-semibold"
+                    style={{ color: config.thirdColor }}
+                  >
+                    Sección Histórica
+                  </span>
+                  <div
+                    className="h-px w-12 md:w-20"
+                    style={{ backgroundColor: config.thirdColor }}
+                  />
+                </div>
+
+                <h2
+                  className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium mb-10 leading-[1.2]"
+                  style={{ color: config.neutralColor }}
+                >
+                  {item.titulo}
+                </h2>
+
+                <div
+                  className="h-1 w-20 rounded-full"
+                  style={{ backgroundColor: config.thirdColor }}
+                />
+              </div>
+
+              {/* Bloque de Textos */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
+                {/* Historia de la Iglesia */}
+                <div className="flex flex-col gap-6">
+                  <h3
+                    className="text-xl md:text-2xl font-serif uppercase tracking-[0.15em] leading-snug"
+                    style={{ color: config.thirdColor }}
+                  >
+                    {item.subtitulo}
+                  </h3>
+                  <p
+                    className="text-lg leading-relaxed font-light text-left sm:text-justify"
+                    style={{ color: `${config.neutralColor}E6` }}
+                  >
+                    {item.historiaIglesia}
+                  </p>
+                </div>
+
+                {/* Historia de la Procesión */}
+                <div className="flex flex-col gap-6">
+                  <h3
+                    className="text-xl md:text-2xl font-serif uppercase tracking-[0.15em] leading-snug"
+                    style={{ color: config.thirdColor }}
+                  >
+                    {item.subtituloProcesion}
+                  </h3>
+                  <p
+                    className="text-lg leading-relaxed font-light text-left sm:text-justify"
+                    style={{ color: `${config.neutralColor}E6` }}
+                  >
+                    {item.historiaProcesion}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </main>
