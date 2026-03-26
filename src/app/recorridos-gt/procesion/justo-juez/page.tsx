@@ -55,6 +55,16 @@ export default function InformacionPage() {
   const [puntoSeleccionado, setPuntoSeleccionado] = useState<{latitud: number; longitud: number} | null>(null);
   const [centrarTrigger, setCentrarTrigger] = useState(0);
 
+  const handlePuntoClick = (punto: {latitud: number; longitud: number}) => {
+    setPuntoSeleccionado(punto);
+    setTimeout(() => {
+      const mapa = document.getElementById("contenedor-mapa");
+      if (mapa) {
+        mapa.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
+
   useEffect(() => {
     if (puntoSeleccionado) {
       const timer = setTimeout(() => {
@@ -166,11 +176,12 @@ export default function InformacionPage() {
               primaryColor={config.primaryColor}
               neutralColor={config.neutralColor}
               thirdColor={config.thirdColor}
-              onPuntoClick={setPuntoSeleccionado}
+              onPuntoClick={handlePuntoClick}
             />
           </aside>
 
           <div
+            id="contenedor-mapa"
             className={`col-span-12 lg:col-span-8 rounded-2xl border p-4 ${tamanoSeccion} flex flex-col`}
             style={{
               borderColor: `${config.neutralColor}2A`,

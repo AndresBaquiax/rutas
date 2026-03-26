@@ -133,7 +133,7 @@ export default function PuntosInteresTimeline({
               />
             )}
 
-            <div className="flex items-start justify-between gap-3 mb-1">
+            <div className="flex items-start justify-between gap-2 md:gap-3 mb-1">
               <button
                 type="button"
                 onClick={() => {
@@ -141,14 +141,14 @@ export default function PuntosInteresTimeline({
                     onPuntoClick(punto.ubicacion[0]);
                   }
                 }}
-                className={`font-serif text-2xl leading-tight text-left ${punto.ubicacion ? 'cursor-pointer' : ''}`}
+                className={`font-serif text-lg md:text-2xl leading-snug text-left break-words min-w-0 flex-1 ${punto.ubicacion ? 'cursor-pointer' : ''}`}
                 style={{ color: activo ? thirdColor : neutralColor, background: 'none', border: 'none', padding: 0 }}
               >
                 {punto.nombre}
               </button>
 
               <span
-                className="text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap"
+                className="text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap flex-shrink-0 mt-0.5"
                 style={{
                   color: primaryColor,
                   backgroundColor: thirdColor,
