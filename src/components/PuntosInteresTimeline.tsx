@@ -8,6 +8,7 @@ type PuntoInteres = {
   nombre: string;
   descripcion: string;
   hora: string;
+  ubicacion?: { latitud: number; longitud: number }[];
 };
 
 type PuntosInteresTimelineProps = {
@@ -16,6 +17,7 @@ type PuntosInteresTimelineProps = {
   primaryColor: string;
   neutralColor: string;
   thirdColor: string;
+  onPuntoClick?: (coordenada: { latitud: number; longitud: number }) => void;
 };
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -38,6 +40,7 @@ export default function PuntosInteresTimeline({
   primaryColor,
   neutralColor,
   thirdColor,
+  onPuntoClick,
 }: PuntosInteresTimelineProps) {
   const [ahoraMs, setAhoraMs] = useState(0);
 
@@ -131,12 +134,18 @@ export default function PuntosInteresTimeline({
             )}
 
             <div className="flex items-start justify-between gap-3 mb-1">
-              <h3
-                className="font-serif text-2xl leading-tight"
-                style={{ color: activo ? thirdColor : neutralColor }}
+              <button
+                type="button"
+                onClick={() => {
+                  if (punto.ubicacion && punto.ubicacion.length > 0 && onPuntoClick) {
+                    onPuntoClick(punto.ubicacion[0]);
+                  }
+                }}
+                className={`font-serif text-2xl leading-tight text-left ${punto.ubicacion ? 'cursor-pointer' : ''}`}
+                style={{ color: activo ? thirdColor : neutralColor, background: 'none', border: 'none', padding: 0 }}
               >
                 {punto.nombre}
-              </h3>
+              </button>
 
               <span
                 className="text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap"

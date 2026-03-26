@@ -1,40 +1,76 @@
 {
   "nombreProcesion": "Divino Justo Juez",
   "nombreIglesia": "de  Iglesia Catedral Metropolitana de los Altos",
-  "fecha": "2026-04-03",
-  "horaSalida": "07:00",
-  "horaEntrada": "13:30",
+  "fecha": "2026-03-25",
+  "horaSalida": "21:18",
+  "horaEntrada": "21:20",
   "cantidadCargadores": 90,
   "puntosInteres": [
     {
       "nombre": "Salida",
       "descripcion": "Inicio del cortejo procesional desde su templo de origen.",
-      "hora": "07:00"
+      "hora": "07:00",
+      "ubicacion": [
+        {
+          "latitud": 14.833673819295788,
+          "longitud": -91.5181099023267
+        }
+      ]
     },
     {
       "nombre": "Parque Bolívar",
       "descripcion": "Punto de paso del cortejo procesional por el emblemático Parque Bolívar.",
-      "hora": "08:15"
+      "hora": "08:15",
+      "ubicacion": [
+        {
+          "latitud": 14.832382940480759,
+          "longitud": -91.51287570977074
+        }
+      ]
     },
     {
       "nombre": "Esquina Más y Más (Transfiguración)",
       "descripcion": "Punto de referencia clave en el sector de la Transfiguración.",
-      "hora": "09:30"
+      "hora": "09:30",
+      "ubicacion": [
+        {
+          "latitud": 14.830444735911565,
+          "longitud": -91.51498744212556
+        }
+      ]
     },
     {
       "nombre": "Gasolinera Puma",
       "descripcion": "Referencia de paso por la zona comercial de la ruta.",
-      "hora": "10:45"
+      "hora": "10:45",
+      "ubicacion": [
+        {
+          "latitud": 14.832222961446892,
+          "longitud": -91.5192297803314
+        }
+      ]
     },
     {
       "nombre": "Parque Central",
       "descripcion": "Paso frente a la catedral y parque principal de la ciudad.",
-      "hora": "12:15"
+      "hora": "12:15",
+      "ubicacion": [
+        {
+          "latitud": 14.834476290349231,
+          "longitud": -91.51830213713285
+        }
+      ]
     },
     {
       "nombre": "Entrada",
       "descripcion": "Finalización del recorrido y retorno de la procesión a su templo.",
-      "hora": "13:30"
+      "hora": "13:30",
+      "ubicacion": [
+        {
+          "latitud": 14.833673819295788,
+          "longitud": -91.5181099023267
+        }
+      ]
     }
   ],
   "coordenadas": [
