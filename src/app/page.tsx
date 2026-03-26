@@ -184,7 +184,7 @@ export default function Home() {
                 border: `2px solid ${config.thirdColor}`,
               }}
             >
-              Calendario santo
+              Ver calendario
             </Link>
           </div>
         </div>

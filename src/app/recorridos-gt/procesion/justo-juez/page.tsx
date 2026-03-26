@@ -1,12 +1,16 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import {
   CalendarDaysIcon,
   ClockIcon,
   UserGroupIcon,
+  MapPinIcon,
 } from "@heroicons/react/24/outline";
 import ProcesionMapWrapper from "@/components/ProcesionMapWrapper";
 import PuntosInteresTimeline from "@/components/PuntosInteresTimeline";
 import config from "@/data/config.json";
-import dataRecorrido from "@/data/dataRecorrido.json";
+import dataRecorrido from "@/data/viernesSanto/dataRecorridoJustoJuez.json";
 import { formatearHora12 } from "@/lib/date-format";
 
 const formatearFecha = (fecha: string) => {
@@ -48,6 +52,18 @@ const datosPrincipales = [
 
 export default function InformacionPage() {
   const tamanoSeccion = "h-[700px]";
+  const [puntoSeleccionado, setPuntoSeleccionado] = useState<{latitud: number; longitud: number} | null>(null);
+  const [centrarTrigger, setCentrarTrigger] = useState(0);
+
+  useEffect(() => {
+    if (puntoSeleccionado) {
+      const timer = setTimeout(() => {
+        setPuntoSeleccionado(null);
+      }, 30000);
+      return () => clearTimeout(timer);
+    }
+  }, [puntoSeleccionado]);
+
   return (
     <main style={{ backgroundColor: config.primaryColor }}>
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-6 py-24">
@@ -150,6 +166,7 @@ export default function InformacionPage() {
               primaryColor={config.primaryColor}
               neutralColor={config.neutralColor}
               thirdColor={config.thirdColor}
+              onPuntoClick={setPuntoSeleccionado}
             />
           </aside>
 
@@ -170,6 +187,8 @@ export default function InformacionPage() {
                 horaSalida={dataRecorrido.horaSalida}
                 horaEntrada={dataRecorrido.horaEntrada}
                 pinColor={config.colorPin}
+                puntoInteresSeleccionado={puntoSeleccionado}
+                centrarTrigger={centrarTrigger}
               />
             </div>
 
@@ -180,7 +199,7 @@ export default function InformacionPage() {
                 borderColor: `${config.primaryColor}26`,
               }}
             >
-              <div className="flex items-center justify-center gap-8">
+              <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
                 <div className="flex items-center gap-2">
                   <span
                     className="h-3 w-3 rounded-full"
@@ -206,6 +225,21 @@ export default function InformacionPage() {
                     Recorrido de vuelta
                   </p>
                 </div>
+                
+                <div
+                  className="h-6 w-px hidden md:block"
+                  style={{ backgroundColor: `${config.primaryColor}33` }}
+                />
+
+                <button
+                  type="button"
+                  onClick={() => setCentrarTrigger((prev) => prev + 1)}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold transition-opacity hover:opacity-80 shadow-sm"
+                  style={{ backgroundColor: config.thirdColor, color: config.primaryColor }}
+                >
+                  <MapPinIcon className="w-4 h-4" />
+                  Centrar procesión
+                </button>
               </div>
             </section>
           </div>

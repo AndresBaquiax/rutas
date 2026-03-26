@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { divIcon, type Marker as LeafletMarker } from "leaflet";
-import { CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip } from "react-leaflet";
+import { CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
 
 type Coordenada = {
   latitud: number;
@@ -19,6 +19,8 @@ type ProcesionMapProps = {
   horaSalida: string;
   horaEntrada: string;
   pinColor?: string;
+  puntoInteresSeleccionado?: { latitud: number; longitud: number } | null;
+  centrarTrigger?: number;
 };
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -42,6 +44,53 @@ const calcularDistancia = (origen: [number, number], destino: [number, number]) 
   return Math.hypot(deltaLat, deltaLng);
 };
 
+function CentrarProcesionControl({ trigger, posicion }: { trigger: number; posicion: [number, number] | null }) {
+  const map = useMap();
+  const prevTrigger = useRef(0);
+
+  useEffect(() => {
+    if (trigger > prevTrigger.current && posicion) {
+      prevTrigger.current = trigger;
+      map.flyTo(posicion, 18, { animate: true, duration: 1.5 });
+    }
+  }, [trigger, posicion, map]);
+  
+  return null;
+}
+
+function PuntoSeleccionadoMarker({ punto, color }: { punto?: { latitud: number; longitud: number } | null; color: string }) {
+  const map = useMap();
+  
+  useEffect(() => {
+    if (punto) {
+      map.flyTo([punto.latitud, punto.longitud], 18, { animate: true, duration: 1.5 });
+    }
+  }, [punto, map]);
+
+  const icon = useMemo(() => {
+    return divIcon({
+      className: "",
+      iconSize: [32, 42],
+      iconAnchor: [16, 42],
+      html: `
+        <div style="display:flex;align-items:center;justify-content:center;width:32px;height:42px;">
+          <svg width="32" height="42" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.52-4.48-10-10-10zm0 13.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="${color}"/>
+          </svg>
+        </div>
+      `,
+    });
+  }, [color]);
+
+  if (!punto) return null;
+
+  return (
+    <Marker position={[punto.latitud, punto.longitud]} icon={icon}>
+      <Tooltip direction="top" offset={[0, -42]}>Punto de interés</Tooltip>
+    </Marker>
+  );
+}
+
 export default function ProcesionMap({
   coordenadas,
   primaryColor,
@@ -51,14 +100,21 @@ export default function ProcesionMap({
   horaSalida,
   horaEntrada,
   pinColor,
+  puntoInteresSeleccionado,
+  centrarTrigger = 0,
 }: ProcesionMapProps) {
-  const rutaIda = coordenadas
+  const puntosIda = coordenadas
     .filter((coordenada) => !coordenada.regreso)
     .map((coordenada) => [coordenada.latitud, coordenada.longitud] as [number, number]);
 
   const rutaRegreso = coordenadas
     .filter((coordenada) => coordenada.regreso)
     .map((coordenada) => [coordenada.latitud, coordenada.longitud] as [number, number]);
+
+  const rutaIda =
+    puntosIda.length > 0 && rutaRegreso.length > 0
+      ? [...puntosIda, rutaRegreso[0]]
+      : puntosIda;
 
   const todasLasCoordenadas = coordenadas.map((coordenada) => [
     coordenada.latitud,
@@ -330,6 +386,9 @@ export default function ProcesionMap({
           </Tooltip>
         </Marker>
       )}
+
+      <PuntoSeleccionadoMarker punto={puntoInteresSeleccionado} color={pinColor ?? idaColor} />
+      <CentrarProcesionControl trigger={centrarTrigger} posicion={posicionMarcadorActualRef.current ?? posicionProcesion} />
     </MapContainer>
   );
 }

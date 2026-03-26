@@ -48,7 +48,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://www.guatemalahoy.co/calendario-de-la-semana-santa-en-guatemala-2026/" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
+              <a href="/recorridos-gt/calendario" className="text-sm transition-opacity duration-300 hover:opacity-80" style={{ color: `${config.neutralColor}CC` }}>
                 Calendario
               </a>
             </li>
