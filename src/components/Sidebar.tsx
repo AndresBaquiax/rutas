@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import config from "@/data/config.json";
-import logoImg from "@/assets/logoRutas.svg";
+import logoImg from "../../public/images/logoRutas.svg";
 
 interface SidebarItem {
   id: string;

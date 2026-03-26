@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { MapPinIcon, ClockIcon } from "@heroicons/react/24/outline";
@@ -145,7 +145,7 @@ export default function CalendarioPage() {
         <div
           className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
           style={{
-            backgroundImage: "url(/images/fondoQuetgo.jpg)",
+            backgroundImage: "url(/images/fotoCatedral.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
