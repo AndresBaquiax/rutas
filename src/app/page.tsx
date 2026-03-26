@@ -11,6 +11,7 @@ import {
   PlusIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -21,6 +22,8 @@ export default function Home() {
   >(null);
   const [imagenesCarrusel, setImagenesCarrusel] = useState<string[]>([]);
   const [indiceCarrusel, setIndiceCarrusel] = useState(0);
+  const [filtroFecha, setFiltroFecha] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const tradiciones = [
     {
@@ -298,15 +301,144 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="w-full flex flex-wrap justify-center gap-6">
-            {dataProcesion.procesiones.map((procesion) => (
+          {/* MENÚ DESPLEGABLE DE FILTRO DE FECHAS */}
+          <div className="flex justify-center items-center mb-10 relative z-20">
+            {config.fechas && config.fechas.length > 0 && (
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  onBlur={() => setTimeout(() => setIsMenuOpen(false), 200)}
+                  className="flex items-center justify-between px-6 py-3 text-sm font-semibold uppercase tracking-wider rounded-xl transition-all duration-300 outline-none cursor-pointer w-[280px] md:w-[340px]"
+                  style={{
+                    color: config.thirdColor,
+                    backgroundColor: isMenuOpen ? `${config.thirdColor}1A` : `${config.secondaryColor}E6`,
+                    border: `1px solid ${config.thirdColor}40`,
+                    backdropFilter: "blur(8px)",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isMenuOpen) e.currentTarget.style.backgroundColor = `${config.thirdColor}1A`;
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isMenuOpen) e.currentTarget.style.backgroundColor = `${config.secondaryColor}E6`;
+                  }}
+                >
+                  <span className="truncate pr-3">
+                    {!filtroFecha 
+                      ? "Todas las fechas" 
+                      : (config.fechas.find(f => f.fecha === filtroFecha) 
+                          ? config.fechas.find(f => f.fecha === filtroFecha)!.nombreFecha 
+                          : "Fechas")}
+                  </span>
+                  
+                  <ChevronRightIcon 
+                    className={`h-4 w-4 transition-transform duration-300 flex-shrink-0 ${isMenuOpen ? "-rotate-90" : "rotate-90"}`} 
+                  />
+                </button>
+
+                <div
+                  className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[280px] md:w-[340px] rounded-xl border overflow-hidden transition-all duration-300 z-50 ${
+                    isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto shadow-2xl" : "opacity-0 -translate-y-2 pointer-events-none"
+                  }`}
+                  style={{
+                    backgroundColor: `${config.secondaryColor}FC`,
+                    backdropFilter: "blur(12px)",
+                    borderColor: `${config.thirdColor}40`,
+                    boxShadow: isMenuOpen ? `0 10px 40px -10px ${config.thirdColor}66` : "none"
+                  }}
+                >
+                  <div 
+                    className="max-h-[300px] overflow-y-auto custom-scrollbar flex flex-col py-2"
+                    style={{ "--scroll-thumb-color": config.thirdColor } as React.CSSProperties}
+                  >
+                    <button
+                      onClick={() => {
+                        setFiltroFecha(null);
+                        setIsMenuOpen(false);
+                      }}
+                      className="text-left px-6 py-3 text-sm font-serif transition-colors relative"
+                      style={{ color: !filtroFecha ? config.thirdColor : config.neutralColor }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = `${config.thirdColor}1A`;
+                        e.currentTarget.style.color = config.thirdColor;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "transparent";
+                        e.currentTarget.style.color = !filtroFecha ? config.thirdColor : config.neutralColor;
+                      }}
+                    >
+                      Todas las fechas
+                    </button>
+                    
+                    <div className="w-full h-px my-1 opacity-20" style={{ backgroundColor: config.thirdColor }}></div>
+                    
+                    {config.fechas.map((f) => {
+                      const isSelectedOption = filtroFecha === f.fecha;
+                      return (
+                        <button
+                          key={f.nombreFecha}
+                          onClick={() => {
+                            setFiltroFecha(f.fecha);
+                            setIsMenuOpen(false);
+                          }}
+                          className="text-left px-6 py-3 text-sm font-serif transition-colors relative"
+                          style={{ color: isSelectedOption ? config.thirdColor : config.neutralColor }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = `${config.thirdColor}1A`;
+                            e.currentTarget.style.color = config.thirdColor;
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = "transparent";
+                            e.currentTarget.style.color = isSelectedOption ? config.thirdColor : config.neutralColor;
+                          }}
+                        >
+                          {f.nombreFecha}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="w-full flex flex-wrap items-stretch justify-center gap-6 relative z-10">
+            {(() => {
+              const procesionesFiltradas = [...dataProcesion.procesiones]
+                .filter((procesion) => {
+                  const hoy = new Date();
+                  const hoyStr = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, "0")}-${String(hoy.getDate()).padStart(2, "0")}`;
+                  const esFuturo = procesion.fechaProcesion >= hoyStr;
+                  const pasaFiltro = filtroFecha ? procesion.fechaProcesion === filtroFecha : true;
+                  return esFuturo && pasaFiltro;
+                })
+                .sort(
+                  (a, b) =>
+                    new Date(a.fechaProcesion).getTime() -
+                    new Date(b.fechaProcesion).getTime()
+                );
+
+              if (procesionesFiltradas.length === 0) {
+                return (
+                  <div className="w-full py-20 flex justify-center items-center">
+                    <p
+                      className="text-2xl md:text-3xl lg:text-4xl font-serif italic text-center px-4"
+                      style={{ color: config.thirdColor }}
+                    >
+                      No hay procesiones programadas para el día de hoy.
+                    </p>
+                  </div>
+                );
+              }
+
+              return procesionesFiltradas.map((procesion) => (
               <article
                 key={procesion.idProcesion}
                 onMouseEnter={() =>
                   setTarjetaProcesionHover(procesion.idProcesion)
                 }
                 onMouseLeave={() => setTarjetaProcesionHover(null)}
-                className={`w-full md:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)] max-w-[520px] rounded-2xl border p-6 h-full ${alturaTarjetas} transition-all duration-300 cursor-pointer flex flex-col`}
+                className={`w-full md:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)] max-w-[520px] rounded-2xl border p-6 flex flex-col ${alturaTarjetas} transition-all duration-300 cursor-pointer`}
                 style={{
                   borderColor:
                     tarjetaProcesionHover === procesion.idProcesion
@@ -408,28 +540,40 @@ export default function Home() {
                   {procesion.descripcionProcesion}
                 </p>
 
-                <Link
-                  href={dataProcesion.ruta}
-                  className="mt-auto pt-6 inline-flex flex-col items-start text-lg font-semibold"
-                  style={{ color: config.thirdColor }}
-                >
-                  <span className="inline-flex items-center gap-2 transition-opacity duration-300 hover:opacity-80">
-                    Ver puntos del recorrido{" "}
-                    <span aria-hidden="true">&gt;</span>
-                  </span>
-                  <span
-                    className="h-[1px] mt-1 transition-all duration-300"
-                    style={{
-                      backgroundColor: config.thirdColor,
-                      width:
-                        tarjetaProcesionHover === procesion.idProcesion
-                          ? "100%"
-                          : "0%",
-                    }}
-                  ></span>
-                </Link>
+                {procesion.ruta ? (
+                  <Link
+                    href={procesion.ruta}
+                    className="mt-auto pt-6 inline-flex flex-col items-start text-lg font-semibold"
+                    style={{ color: config.thirdColor }}
+                  >
+                    <span className="inline-flex items-center gap-2 transition-opacity duration-300 hover:opacity-80">
+                      Ver puntos del recorrido{" "}
+                      <span aria-hidden="true">&gt;</span>
+                    </span>
+                    <span
+                      className="h-[1px] mt-1 transition-all duration-300"
+                      style={{
+                        backgroundColor: config.thirdColor,
+                        width:
+                          tarjetaProcesionHover === procesion.idProcesion
+                            ? "100%"
+                            : "0%",
+                      }}
+                    ></span>
+                  </Link>
+                ) : (
+                  <div
+                    className="mt-auto pt-6 inline-flex flex-col items-start text-base font-medium opacity-60"
+                    style={{ color: config.neutralColor }}
+                  >
+                    <span className="inline-flex items-center gap-2 cursor-not-allowed">
+                      Pendiente de confirmar recorrido
+                    </span>
+                  </div>
+                )}
               </article>
-            ))}
+            ));
+            })()}
           </div>
         </div>
       </section>

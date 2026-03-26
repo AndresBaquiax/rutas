@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { MapPinIcon, ClockIcon } from "@heroicons/react/24/outline";
@@ -21,18 +21,7 @@ interface FechaEspecial {
 }
 
 const actividades: Actividad[] = (data.actividades || []) as Actividad[];
-const fechasEspeciales: FechaEspecial[] = (data.fechas || []) as FechaEspecial[];
-
-const nombresVisuales: Record<string, string> = {
-  domingoDeRamos: "Domingo de Ramos",
-  lunesSanto: "Lunes Santo",
-  martesSanto: "Martes Santo",
-  miercolesSanto: "Miércoles Santo",
-  juevesSanto: "Jueves Santo",
-  viernesSanto: "Viernes Santo",
-  sabadoDeGloria: "Sábado de Gloria",
-  domingoDeResurreccion: "Domingo de Resurrección"
-};
+const fechasEspeciales: FechaEspecial[] = (config.fechas || []) as FechaEspecial[];
 
 const DAYS_OF_WEEK = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
 const MONTHS = [
@@ -156,7 +145,7 @@ export default function CalendarioPage() {
         <div
           className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
           style={{
-            backgroundImage: "url(/images/fondoQuetgo.jpg)",
+            backgroundImage: "url(/images/fotoCatedral.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -260,7 +249,7 @@ export default function CalendarioPage() {
                             : isToday(selectedDate)
                             ? "Día de Hoy"
                             : fechasEspeciales.some((f) => f.fecha === formatDate(selectedDate))
-                            ? nombresVisuales[fechasEspeciales.find((f) => f.fecha === formatDate(selectedDate))!.nombreFecha]
+                            ? fechasEspeciales.find((f) => f.fecha === formatDate(selectedDate))!.nombreFecha
                             : "Días Santos"}
                         </span>
                         
@@ -330,7 +319,7 @@ export default function CalendarioPage() {
                                   e.currentTarget.style.color = isSelectedOption ? config.thirdColor : config.neutralColor;
                                 }}
                               >
-                                {nombresVisuales[f.nombreFecha] || f.nombreFecha}
+                                {f.nombreFecha}
                               </button>
                             );
                           })}

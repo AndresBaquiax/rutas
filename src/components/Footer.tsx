@@ -1,4 +1,4 @@
-import logoImg from "@/assets/logoRutas.svg";
+import logoImg from "../../public/images/logoRutas.svg";
 import config from "@/data/config.json";
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
