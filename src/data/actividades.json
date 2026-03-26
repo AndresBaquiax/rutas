@@ -174,39 +174,5 @@
       "horaActividad": "11:00",
       "slugActividad": ""
     }
-  ],
-  "fechas": [
-    {
-      "nombreFecha": "domingoDeRamos",
-      "fecha": "2026-03-29"
-    },
-    {
-      "nombreFecha": "lunesSanto",
-      "fecha": "2026-03-30"
-    },
-    {
-      "nombreFecha": "martesSanto",
-      "fecha": "2026-03-31"
-    },
-    {
-      "nombreFecha": "miercolesSanto",
-      "fecha": "2026-04-01"
-    },
-    {
-      "nombreFecha": "juevesSanto",
-      "fecha": "2026-04-02"
-    },
-    {
-      "nombreFecha": "viernesSanto",
-      "fecha": "2026-04-03"
-    },
-    {
-      "nombreFecha": "sabadoDeGloria",
-      "fecha": "2026-04-04"
-    },
-    {
-      "nombreFecha": "domingoDeResurreccion",
-      "fecha": "2026-04-05"
-    }
   ]
 }

@@ -11,5 +11,39 @@
     "vueltaColor": "#FF7A00",
     "extraColor2": "#F4F1EA",
     "colorPin": "#DC143C",
-    "actualYear": 2026
+    "actualYear": 2026,
+    "fechas": [
+        {
+            "nombreFecha": "Domingo de ramos",
+            "fecha": "2026-03-29"
+        },
+        {
+            "nombreFecha": "Lunes Santo",
+            "fecha": "2026-03-30"
+        },
+        {
+            "nombreFecha": "Martes Santo",
+            "fecha": "2026-03-31"
+        },
+        {
+            "nombreFecha": "Miercoles Santo",
+            "fecha": "2026-04-01"
+        },
+        {
+            "nombreFecha": "Jueves Santo",
+            "fecha": "2026-04-02"
+        },
+        {
+            "nombreFecha": "Viernes Santo",
+            "fecha": "2026-04-03"
+        },
+        {
+            "nombreFecha": "Sabado de gloria",
+            "fecha": "2026-04-04"
+        },
+        {
+            "nombreFecha": "Domingo de resurreccion",
+            "fecha": "2026-04-05"
+        }
+    ]
 }
