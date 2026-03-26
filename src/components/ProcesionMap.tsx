@@ -52,13 +52,18 @@ export default function ProcesionMap({
   horaEntrada,
   pinColor,
 }: ProcesionMapProps) {
-  const rutaIda = coordenadas
+  const puntosIda = coordenadas
     .filter((coordenada) => !coordenada.regreso)
     .map((coordenada) => [coordenada.latitud, coordenada.longitud] as [number, number]);
 
   const rutaRegreso = coordenadas
     .filter((coordenada) => coordenada.regreso)
     .map((coordenada) => [coordenada.latitud, coordenada.longitud] as [number, number]);
+
+  const rutaIda =
+    puntosIda.length > 0 && rutaRegreso.length > 0
+      ? [...puntosIda, rutaRegreso[0]]
+      : puntosIda;
 
   const todasLasCoordenadas = coordenadas.map((coordenada) => [
     coordenada.latitud,
