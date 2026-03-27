@@ -1,0 +1,487 @@
+{
+  "nombreProcesion": "Señor Sepultado",
+  "nombreIglesia": "de  Iglesia el Calvario",
+  "fecha": "2026-04-03",
+  "horaSalida": "15:00",
+  "horaEntrada": "23:00",
+  "cantidadCargadores": 30,
+  "puntosInteres": [
+    {
+        "nombre": "Salida Parroquia",
+        "descripcion": "Inicio del cortejo procesional desde el Templo Parroquial de El Calvario tras los oficios de Viernes Santo.",
+        "hora": "15:00",
+        "ubicacion": [
+            {
+                "latitud": 14.836423528354901,
+                "longitud": -91.52587899467422
+            }
+        ]
+    },
+    {
+        "nombre": "23 av y 4a. Calle",
+        "descripcion": "Punto de paso del cortejo por la intersección de la 23 avenida y 4a calle.",
+        "hora": "15:30",
+        "ubicacion": [
+            {
+                "latitud": 14.83805823892727,
+                "longitud": -91.52900412861008
+            }
+        ]
+    },
+    {
+        "nombre": "Paso a desnivel",
+        "descripcion": "Referencia clave del recorrido en el sector del paso a desnivel.",
+        "hora": "18:00",
+        "ubicacion": [
+            {
+                "latitud": 14.839894268913842,
+                "longitud": -91.53558321655436
+            }
+            ]
+    },
+    {
+        "nombre": "Xelapan Santa María",
+        "descripcion": "Paso del cortejo frente a la emblemática panadería en el sector de Santa María.",
+        "hora": "20:30",
+        "ubicacion": [
+            {
+                "latitud": 14.833283272846941,
+                "longitud": -91.53462338853377
+            }
+        ]
+    },
+    {
+        "nombre": "Hospital Rodolfo Robles",
+        "descripcion": "Punto de oración y paso frente a las instalaciones del Hospital Rodolfo Robles.",
+        "hora": "21:45",
+        "ubicacion": [
+            {
+                "latitud": 14.832498273817354,
+                "longitud": -91.52939067851513
+            }
+        ]
+    },
+    {
+        "nombre": "Tanque el Calvario / Entrada",
+        "descripcion": "Finalización del recorrido penitencial y retorno de la imagen a su templo.",
+        "hora": "22:30",
+        "ubicacion": [
+            {
+                "latitud": 14.83415498535839,
+                "longitud": -91.52618194215721
+            }
+        ]
+    }
+  ],
+  "coordenadas": [
+    {
+        "latitud": 14.836423528354901,
+        "longitud": -91.52587899467422,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836358143868708,
+        "longitud": -91.52566917356238,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836410184702821,
+        "longitud": -91.52565951076288,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83659432918844,
+        "longitud": -91.52564156556508,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837030670774174,
+        "longitud": -91.52588589671693,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837162774097287,
+        "longitud": -91.5258776143679,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837260183477976,
+        "longitud": -91.52605154495524,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837565754207303,
+        "longitud": -91.52717105209494,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837733302896734,
+        "longitud": -91.52781116851088,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83806422660681,
+        "longitud": -91.52900659679571,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838425977261934,
+        "longitud": -91.53034065752601,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838648817133166,
+        "longitud": -91.53108193280205,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83897306788215,
+        "longitud": -91.53198609633827,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839097164513888,
+        "longitud": -91.53237398893175,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839259956804947,
+        "longitud": -91.53289163972798,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839468117045223,
+        "longitud": -91.53370055536075,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839665602261505,
+        "longitud": -91.53448186303619,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839824391595407,
+        "longitud": -91.53506301241498,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839969836656367,
+        "longitud": -91.53536532029435,
+        "regreso": false
+    },
+    {
+        "latitud": 14.84009660036223,
+        "longitud": -91.53559170666456,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840129959219126,
+        "longitud": -91.53564830334135,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840113946866412,
+        "longitud": -91.53566624855885,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840069913043358,
+        "longitud": -91.53565382479137,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83990578699907,
+        "longitud": -91.53560274943916,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83989318460915,
+        "longitud": -91.53559177822837,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83967491516194,
+        "longitud": -91.5355646821362,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839394802371158,
+        "longitud": -91.53555790804785,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838663597146049,
+        "longitud": -91.53555339196672,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838435140540897,
+        "longitud": -91.53555941341993,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838312908812135,
+        "longitud": -91.53555941336958,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83784152661593,
+        "longitud": -91.53558754400379,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837519018905835,
+        "longitud": -91.53561128536674,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837313115756954,
+        "longitud": -91.53564365004705,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837228717300135,
+        "longitud": -91.53566999360396,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836868029573454,
+        "longitud": -91.53576794457203,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836627929793835,
+        "longitud": -91.5357988040251,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83650642462728,
+        "longitud": -91.53581912599464,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836189675238515,
+        "longitud": -91.53583286871138,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83558567340064,
+        "longitud": -91.53589359390458,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83537226614678,
+        "longitud": -91.53591518290266,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835188036802716,
+        "longitud": -91.53591440812869,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835066715025667,
+        "longitud": -91.5359027872451,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834827066656636,
+        "longitud": -91.53587024889994,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834633101172615,
+        "longitud": -91.53585630374423,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834502792187235,
+        "longitud": -91.5358702489168,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834187504092931,
+        "longitud": -91.53588884211307,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834124596156496,
+        "longitud": -91.53589891372455,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83391340521158,
+        "longitud": -91.53589426525261,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833560670928856,
+        "longitud": -91.53576333684198,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833543634046698,
+        "longitud": -91.53542757234452,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833542572646136,
+        "longitud": -91.53489936811462,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833528312185363,
+        "longitud": -91.53464321714367,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833509514173585,
+        "longitud": -91.5345412932075,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833372094598316,
+        "longitud": -91.53381910846888,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83333255393233,
+        "longitud": -91.53362464838231,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833279401200741,
+        "longitud": -91.533452986877,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83325023197002,
+        "longitud": -91.53328467828271,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833246342725372,
+        "longitud": -91.53277908187643,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83324180507748,
+        "longitud": -91.5325148842249,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833297550982904,
+        "longitud": -91.5320931069055,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833294958171468,
+        "longitud": -91.53191339892498,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833250880081675,
+        "longitud": -91.53171491541846,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833081698304277,
+        "longitud": -91.53133203010063,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832977337023383,
+        "longitud": -91.53096054415401,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832918998403011,
+        "longitud": -91.53059442262669,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832836676094958,
+        "longitud": -91.5301692924872,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832819822687162,
+        "longitud": -91.52990576543911,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832843158165275,
+        "longitud": -91.5298085353907,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832954649764032,
+        "longitud": -91.52940553346907,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833191801334701,
+        "longitud": -91.5286885007226,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833382374001404,
+        "longitud": -91.52830092173721,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833546369972703,
+        "longitud": -91.52791870675311,
+        "regreso": true
+    },
+    {
+        "latitud": 14.8337985216397,
+        "longitud": -91.52728771712373,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834075952937463,
+        "longitud": -91.52656352074233,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834151781161715,
+        "longitud": -91.52618285546527,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834365530484364,
+        "longitud": -91.52614085641095,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834542489801546,
+        "longitud": -91.52609190616305,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834892518692827,
+        "longitud": -91.52602216871327,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836376894330956,
+        "longitud": -91.52565872938419,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836411693004171,
+        "longitud": -91.52588304331141,
+        "regreso": true
+    }
+  ],
+  "historia": [
+    {
+      "titulo": "El Calvario: Centinela de la Fe en Xelajú",
+      "subtitulo": "Historia de la Iglesia de San Nicolás (El Calvario)",
+      "historiaIglesia": "Ubicada en la parte alta de la ciudad, la Iglesia de El Calvario es un referente arquitectónico y espiritual de Quetzaltenango. Su estructura actual, de estilo neogótico con matices locales, se levanta sobre lo que fue un antiguo cementerio y una capilla colonial. Es famosa por sus imponentes escalinatas que conectan el fervor del pueblo con el templo. A lo largo de los años, ha sido el refugio de las imágenes más queridas de la ciudad, sobreviviendo a los embates sísmicos y consolidándose como el punto de inicio y fin de una de las tradiciones más solemnes de la región.",
+      "subtituloProcesion": "El Señor Sepultado de El Calvario: Una Nueva Era de Devoción",
+      "historiaProcesion": "La imagen del Señor Sepultado de la Iglesia de El Calvario es una obra de invaluable valor artístico y devocional, cuya mirada serena invita a la meditación sobre el misterio de la Redención. Tradicionalmente, su traslado o procesión se realizaba de formas distintas, pero este año marca un precedente histórico: por primera vez, la imagen recorrerá las calles de Xela en hombros de sus fieles. Este cambio de 'salir en brazos' transforma el cortejo en un acto de mayor cercanía y sacrificio, permitiendo que el suave balanceo del anda, eleve la oración de una comunidad que ve en esta imagen el descanso de su Salvador. Es un año de renovación para la iglesia y para todo el pueblo católico quetzalteco."
+    }
+  ]
+}

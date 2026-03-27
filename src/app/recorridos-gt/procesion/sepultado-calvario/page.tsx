@@ -10,7 +10,7 @@ import {
 import ProcesionMapWrapper from "@/components/ProcesionMapWrapper";
 import PuntosInteresTimeline from "@/components/PuntosInteresTimeline";
 import config from "@/data/config.json";
-import dataRecorrido from "@/data/viernesSanto/dataRecorridoJustoJuez.json";
+import dataRecorrido from "@/data/viernesSanto/dataRecorridoSepultadoCalvario.json";
 import { formatearHora12 } from "@/lib/date-format";
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -131,7 +131,7 @@ export default function InformacionPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/images/fotoCatedral.jpg')",
+            backgroundImage: "url('/carruselFotos/6.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -153,7 +153,7 @@ export default function InformacionPage() {
               background: `linear-gradient(90deg, ${config.primaryColor}00 0%, ${config.primaryColor}E6 20%, ${config.primaryColor}E6 80%, ${config.primaryColor}00 100%)`,
             }}
           >
-            Caminando junto a ti
+            Rey de la Paz
           </p>
 
           <h1
