@@ -74,6 +74,16 @@
         },
         {
             "idProcesion": 8,
+            "nombreProcesion": "Santo Entierro (Parroquia El Calvario)",
+            "iglesiaProcesion": "Parroquia El Calvario",
+            "duracionProcesion": "8 horas",
+            "cantidadCargadores": "30",
+            "fechaProcesion": "2026-04-03",
+            "descripcionProcesion": "Solemne procesión penitencial que conmemora el entierro de Cristo. Este año marca un hito histórico, ya que la consagrada imagen del Señor Sepultado recorrerá las calles de Quetzaltenango por primera vez en hombros de sus devotos. Entre el misticismo del silencio, el aroma a incienso y las marchas fúnebres, el cortejo parte del Calvario tras los oficios de la Pasión, uniendo a la comunidad en un acto de profunda fe y recogimiento espiritual.",
+            "ruta": "/recorridos-gt/procesion/sepultado-calvario"
+        },
+        {
+            "idProcesion": 9,
             "nombreProcesion": "Santo Entierro (Parroquia Nuestra Señora de la Merced)",
             "iglesiaProcesion": "Parroquia Nuestra Señora de la Merced",
             "duracionProcesion": "6 horas y 30 minutos",
@@ -83,7 +93,7 @@
             "ruta": ""
         },
         {
-            "idProcesion": 9,
+            "idProcesion": 10,
             "nombreProcesion": "Santo entierro de la Hermandad del Señor Sepultado (Transfiguración)",
             "iglesiaProcesion": "Parroquia Transfiguración",
             "duracionProcesion": "6 horas",
@@ -93,7 +103,7 @@
             "ruta": ""
         },
         {
-            "idProcesion": 10,
+            "idProcesion": 11,
             "nombreProcesion": "Procesión de Pésame de Nuestra Señora de Soledad el Calvario",
             "iglesiaProcesion": "Parroquia El Calvario",
             "duracionProcesion": "7 horas",
@@ -103,7 +113,7 @@
             "ruta": ""
         },
         {
-            "idProcesion": 11,
+            "idProcesion": 12,
             "nombreProcesion": "La Resurrección de nuestro señor Jesús y Virgen de la Resurrección (Parroquia San Nicolás)",
             "iglesiaProcesion": "Parroquia San Nicolás",
             "duracionProcesion": "3 horas",
