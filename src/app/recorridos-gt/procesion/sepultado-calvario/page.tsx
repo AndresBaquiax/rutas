@@ -153,7 +153,7 @@ export default function InformacionPage() {
               background: `linear-gradient(90deg, ${config.primaryColor}00 0%, ${config.primaryColor}E6 20%, ${config.primaryColor}E6 80%, ${config.primaryColor}00 100%)`,
             }}
           >
-            Caminando junto a ti
+            Rey de la Paz
           </p>
 
           <h1
