@@ -148,7 +148,7 @@ export default function Home() {
             <br />
             <span style={{ color: config.thirdColor }}>Semana Santa</span>
             <br />
-            Guatemala
+            Quetzaltenango
           </h1>
 
           <p

@@ -2,14 +2,14 @@
   "nombreProcesion": "Señor Sepultado",
   "nombreIglesia": "de  Iglesia el Calvario",
   "fecha": "2026-04-03",
-  "horaSalida": "15:00",
+  "horaSalida": "16:00",
   "horaEntrada": "23:00",
   "cantidadCargadores": 30,
   "puntosInteres": [
     {
         "nombre": "Salida Parroquia",
         "descripcion": "Inicio del cortejo procesional desde el Templo Parroquial de El Calvario tras los oficios de Viernes Santo.",
-        "hora": "15:00",
+        "hora": "16:00",
         "ubicacion": [
             {
                 "latitud": 14.836423528354901,
@@ -20,7 +20,7 @@
     {
         "nombre": "23 av y 4a. Calle",
         "descripcion": "Punto de paso del cortejo por la intersección de la 23 avenida y 4a calle.",
-        "hora": "15:30",
+        "hora": "16:30",
         "ubicacion": [
             {
                 "latitud": 14.83805823892727,
