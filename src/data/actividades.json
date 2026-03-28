@@ -115,7 +115,7 @@
       "slugActividad": ""
     },
     {
-      "nombreActividad": "Cortejo Procesional Infantil Justo Juez Y Virgen De Dolores",
+      "nombreActividad": "Cortejo Procesional Justo Juez Y Virgen De Dolores",
       "fechaActividad": "2026-04-03",
       "horaActividad": "07:30",
       "slugActividad": ""
@@ -124,6 +124,12 @@
       "nombreActividad": "Solemne Cortejo Procesional de Santo Entierro (San Bartolomé)",
       "fechaActividad": "2026-04-03",
       "horaActividad": "16:30",
+      "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Solemne Cortejo Procesional de Santo Entierro (El Calvario)",
+      "fechaActividad": "2026-04-03",
+      "horaActividad": "16:00",
       "slugActividad": ""
     },
     {
