@@ -1,0 +1,406 @@
+{
+  "nombreProcesion": "Santo Entierro Señor Sepultado y Virgen de Dolores",
+  "nombreIglesia": "Parroquia San Bartolomé",
+  "fecha": "2026-04-03",
+  "horaSalida": "16:45",
+  "horaEntrada": "23:30",
+  "cantidadCargadores": 80,
+  "puntosInteres": [
+    {
+        "nombre": "Parroquia San Bartolomé (Salida)",
+        "descripcion": "Egreso del Solemne Cortejo Procesional del Santo Entierro.",
+        "hora": "16:45",
+        "ubicacion": [
+            {
+                "latitud": 14.829229064906523,
+                "longitud": -91.51276420200125
+            }
+        ]
+    },
+    {
+        "nombre": "Parque a Simón Bolívar (Ida)",
+        "descripcion": "Paso del cortejo por el parque durante el trayecto de ida.",
+        "hora": "18:15",
+        "ubicacion": [
+            {
+                "latitud": 14.832188791830866,
+                "longitud": -91.5128890972509
+            }
+        ]
+    },
+    {
+        "nombre": "Parque a Centro América",
+        "descripcion": "Punto central del recorrido procesional en el corazón de la ciudad.",
+        "hora": "20:30",
+        "ubicacion": [
+            {
+                "latitud": 14.83446973409033,
+                "longitud": -91.5182908430411
+            }
+        ]
+    },
+    {
+        "nombre": "Parque a Simón Bolívar (Retorno)",
+        "descripcion": "Paso del cortejo por el parque durante el trayecto de regreso.",
+        "hora": "22:45",
+        "ubicacion": [
+            {
+                "latitud": 14.832188791830866,
+                "longitud": -91.5128890972509
+            }
+        ]
+    },
+    {
+        "nombre": "Parroquia San Bartolomé (Entrada)",
+        "descripcion": "Ingreso de las veneradas imágenes del Señor Sepultado y Virgen de Dolores.",
+        "hora": "23:30",
+        "ubicacion": [
+            {
+                "latitud": 14.829229064906523,
+                "longitud": -91.51276420200125
+            }
+        ]
+    }
+  ],
+  "coordenadas": [
+    {
+        "latitud": 14.829229064906523,
+        "longitud": -91.51276420200125,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829597704190075,
+        "longitud": -91.5127768662544,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829750056393436,
+        "longitud": -91.51288662507798,
+        "regreso": false
+    },
+    {
+        "latitud": 14.830555346241596,
+        "longitud": -91.51359301986578,
+        "regreso": false
+    },
+    {
+        "latitud": 14.830955269470595,
+        "longitud": -91.51347481828394,
+        "regreso": false
+    },
+    {
+        "latitud": 14.831550786521195,
+        "longitud": -91.5133345852401,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83212482315693,
+        "longitud": -91.51316572590264,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83217845811093,
+        "longitud": -91.51329478834903,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832226425567216,
+        "longitud": -91.51333233929387,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83226920736359,
+        "longitud": -91.51334172705289,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832264021730202,
+        "longitud": -91.51320024050756,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832375513334203,
+        "longitud": -91.51273889986199,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832427370340904,
+        "longitud": -91.51262691834715,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832478578818796,
+        "longitud": -91.51262758890174,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83307534800077,
+        "longitud": -91.5125043163411,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833702811074811,
+        "longitud": -91.51242720284012,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834631806430648,
+        "longitud": -91.51243971740634,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83465514170037,
+        "longitud": -91.51244239962323,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834668753935377,
+        "longitud": -91.51246184564805,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834644122243539,
+        "longitud": -91.51249939657083,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83451124060664,
+        "longitud": -91.51268782170757,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834268812929224,
+        "longitud": -91.51307405984903,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83411713347984,
+        "longitud": -91.51330338871044,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833878594460506,
+        "longitud": -91.513632629858,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833828038743055,
+        "longitud": -91.51376402842926,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833619316772705,
+        "longitud": -91.5144158051616,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833533105574075,
+        "longitud": -91.51469341384856,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833379019784237,
+        "longitud": -91.51514423219194,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832990715661813,
+        "longitud": -91.51544365177332,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833425472994096,
+        "longitud": -91.51640968136554,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833644576183902,
+        "longitud": -91.51697184362523,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833764878818064,
+        "longitud": -91.51739817764468,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834035261500999,
+        "longitud": -91.51815473582171,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834523617182915,
+        "longitud": -91.51795758704961,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834772559029892,
+        "longitud": -91.51791199655217,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834923829742676,
+        "longitud": -91.51832724106241,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83456649717815,
+        "longitud": -91.51849358523094,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834044790469347,
+        "longitud": -91.518715377469,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833648149588962,
+        "longitud": -91.51886570334447,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833549286939212,
+        "longitud": -91.51861310663118,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833461275212134,
+        "longitud": -91.5183747912323,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833740003743781,
+        "longitud": -91.51827286727753,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834026509900779,
+        "longitud": -91.51815887292192,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83451914436205,
+        "longitud": -91.51796173097131,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834175596556628,
+        "longitud": -91.517241557876,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833975950007872,
+        "longitud": -91.51682983879233,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833769821193663,
+        "longitud": -91.51623841167512,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833434050772494,
+        "longitud": -91.51529695618657,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833374415565755,
+        "longitud": -91.51515345798961,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832988085027361,
+        "longitud": -91.51543777216808,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832766398190477,
+        "longitud": -91.51489194263486,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832577120071218,
+        "longitud": -91.51433538386661,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832402104899653,
+        "longitud": -91.51380162476714,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832262740479985,
+        "longitud": -91.51334564918852,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832217365844045,
+        "longitud": -91.5133308970361,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832181066131882,
+        "longitud": -91.51329602832757,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832155785958983,
+        "longitud": -91.51323836085628,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832129209332665,
+        "longitud": -91.51316258848256,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83208253822847,
+        "longitud": -91.5127569042972,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832061147331178,
+        "longitud": -91.51242632198898,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831341323880123,
+        "longitud": -91.51254621414151,
+        "regreso": true
+    },
+    {
+        "latitud": 14.830745320312355,
+        "longitud": -91.51266032130968,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829811676708662,
+        "longitud": -91.51284413102239,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829743613973536,
+        "longitud": -91.51287967025617,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829599709822965,
+        "longitud": -91.51277238192351,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829233743371931,
+        "longitud": -91.51277029796479,
+        "regreso": true
+    }
+  ],
+  "historia": [
+    {
+        "titulo": "El Señor Sepultado de San Bartolomé: Devoción del Barrio de la Colina",
+        "subtitulo": "Historia de la Parroquia San Bartolomé Apóstol",
+        "historiaIglesia": "La Parroquia de San Bartolomé es uno de los baluartes espirituales más antiguos de Quetzaltenango, situada en un sector estratégico que históricamente ha unido a las comunidades del área rural con el centro urbano. Su templo, de líneas sencillas pero con una carga histórica profunda, ha sido testigo de la evolución de Xela desde la época colonial. Este recinto es el corazón de un barrio que se caracteriza por su hospitalidad y por mantener vivas las tradiciones más puras de la religiosidad popular, siendo un refugio de fe para miles de quetzaltecos.",
+        "subtituloProcesion": "El Santo Entierro de San Bartolomé: Un Camino de Soledad y Esperanza",
+        "historiaProcesion": "El cortejo procesional del Señor Sepultado de San Bartolomé es conocido por su ambiente de profunda humildad y recogimiento. A diferencia de las procesiones del centro histórico, este recorrido se distingue por el esfuerzo físico de sus cargadores al transitar por las pendientes del barrio, simbolizando el penoso camino al sepulcro. La imagen del Señor Sepultado, de una belleza serena y dramática, junto a la Virgen de Dolores, recorren las calles bajo el manto de la tarde-noche del Viernes Santo. Es una de las procesiones que mejor conserva el espíritu de hermandad vecinal, donde las familias del sector preparan alfombras de aserrín y flores con especial esmero para recibir el paso del Redentor en su descanso sagrado."
+    }
+  ]
+}

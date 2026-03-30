@@ -1,0 +1,574 @@
+{
+  "nombreProcesion": "Santo Entierro Señor Sepultado y Virgen de Dolores",
+  "nombreIglesia": "Parroquia San Nicolás",
+  "fecha": "2026-04-03",
+  "horaSalida": "15:00",
+  "horaEntrada": "00:00",
+  "cantidadCargadores": 90,
+  "puntosInteres": [
+    {
+      "nombre": "Templo de San Nicolás (Salida)",
+      "descripcion": "Solemne salida del cortejo procesional de Santo Entierro.",
+      "hora": "15:00",
+      "ubicacion": [
+        {
+          "latitud": 14.843613745412636,
+          "longitud": -91.51905898254779
+        }
+      ]
+    },
+    {
+      "nombre": "Estadio Mario Camposeco",
+      "descripcion": "Paso del cortejo por las cercanías del coloso de hielo.",
+      "hora": "15:45",
+      "ubicacion": [
+        {
+          "latitud": 14.841788290020599,
+          "longitud": -91.51706588111398
+        }
+      ]
+    },
+    {
+      "nombre": "Universidad Rafael Landívar",
+      "descripcion": "El cortejo avanza sobre la zona universitaria de la ruta.",
+      "hora": "16:15",
+      "ubicacion": [
+        {
+          "latitud": 14.840550141356616,
+          "longitud": -91.51796425458609
+        }
+      ]
+    },
+    {
+      "nombre": "INVO",
+      "descripcion": "Paso frente al emblemático Instituto Nacional Varones de Occidente.",
+      "hora": "17:00",
+      "ubicacion": [
+        {
+          "latitud": 14.840202168234951,
+          "longitud": -91.5172844936518
+        }
+      ]
+    },
+    {
+      "nombre": "IGSS",
+      "descripcion": "Punto de referencia en el sector de la zona 1.",
+      "hora": "17:45",
+      "ubicacion": [
+        {
+          "latitud": 14.838040910301808,
+          "longitud": -91.51727022789575
+        }
+      ]
+    },
+    {
+      "nombre": "Parque Central",
+      "descripcion": "Momento de mayor solemnidad al pasar frente al Palacio Municipal y Catedral.",
+      "hora": "18:45",
+      "ubicacion": [
+        {
+          "latitud": 14.834457308644168,
+          "longitud": -91.51828676466324
+        }
+      ]
+    },
+    {
+      "nombre": "McDonald's / Parque a la Madre",
+      "descripcion": "Punto de afluencia masiva en el trayecto hacia el oriente de la ciudad.",
+      "hora": "19:30",
+      "ubicacion": [
+        {
+          "latitud": 14.834563199043602,
+          "longitud": -91.51786893861423
+        }
+      ]
+    },
+    {
+      "nombre": "Gasolinera PUMA",
+      "descripcion": "Punto de retorno más lejano del recorrido para iniciar el regreso.",
+      "hora": "20:30",
+      "ubicacion": [
+        {
+          "latitud": 14.833417174494787,
+          "longitud": -91.5144831265445
+        }
+      ]
+    },
+    {
+      "nombre": "Funerales Reforma",
+      "descripcion": "Inicio del trayecto de retorno hacia el barrio de San Nicolás.",
+      "hora": "21:15",
+      "ubicacion": [
+        {
+          "latitud": 14.832960206779713,
+          "longitud": -91.51559979845044
+        }
+      ]
+    },
+    {
+      "nombre": "Plaza Polanco",
+      "descripcion": "El cortejo se enfila nuevamente hacia el centro de la ciudad.",
+      "hora": "22:00",
+      "ubicacion": [
+        {
+          "latitud": 14.835629843680646,
+          "longitud": -91.51955067742877
+        }
+      ]
+    },
+    {
+      "nombre": "Teatro Municipal",
+      "descripcion": "Paso frente a la joya arquitectónica de Quetzaltenango.",
+      "hora": "22:45",
+      "ubicacion": [
+        {
+          "latitud": 14.837769238492625,
+          "longitud": -91.51895220256772
+        }
+      ]
+    },
+    {
+      "nombre": "Parque Benito Juárez",
+      "descripcion": "Último punto de referencia antes del ingreso al templo.",
+      "hora": "23:30",
+      "ubicacion": [
+        {
+          "latitud": 14.8436796597662,
+          "longitud": -91.51983965807757
+        }
+      ]
+    },
+    {
+      "nombre": "Templo de San Nicolás (Entrada)",
+      "descripcion": "Finalización del solemne cortejo procesional.",
+      "hora": "00:00",
+      "ubicacion": [
+        {
+          "latitud": 14.843613745412636,
+          "longitud": -91.51905898254779
+        }
+      ]
+    }
+  ],
+  "coordenadas": [
+    {
+      "latitud": 14.843635318989618,
+      "longitud": -91.51906620059292,
+      "regreso": false
+    },
+    {
+      "latitud": 14.843670670140941,
+      "longitud": -91.51934277394939,
+      "regreso": false
+    },
+    {
+      "latitud": 14.843216547249368,
+      "longitud": -91.51941810920394,
+      "regreso": false
+    },
+    {
+      "latitud": 14.842970240142577,
+      "longitud": -91.51753989237643,
+      "regreso": false
+    },
+    {
+      "latitud": 14.84225363602656,
+      "longitud": -91.51764692815367,
+      "regreso": false
+    },
+    {
+      "latitud": 14.841268054614401,
+      "longitud": -91.51780388980907,
+      "regreso": false
+    },
+    {
+      "latitud": 14.841229811850935,
+      "longitud": -91.51781864195422,
+      "regreso": false
+    },
+    {
+      "latitud": 14.841193513627188,
+      "longitud": -91.51783808796677,
+      "regreso": false
+    },
+    {
+      "latitud": 14.841155270861885,
+      "longitud": -91.51783540574517,
+      "regreso": false
+    },
+    {
+      "latitud": 14.841140362668536,
+      "longitud": -91.51782266524741,
+      "regreso": false
+    },
+    {
+      "latitud": 14.841117028104527,
+      "longitud": -91.51779584315419,
+      "regreso": false
+    },
+    {
+      "latitud": 14.841110546280797,
+      "longitud": -91.51778109100573,
+      "regreso": false
+    },
+    {
+      "latitud": 14.840659263246838,
+      "longitud": -91.51788810833051,
+      "regreso": false
+    },
+    {
+      "latitud": 14.840070063275217,
+      "longitud": -91.51798802060765,
+      "regreso": false
+    },
+    {
+      "latitud": 14.840049321358075,
+      "longitud": -91.51782239424209,
+      "regreso": false
+    },
+    {
+      "latitud": 14.840027282859833,
+      "longitud": -91.51760245311564,
+      "regreso": false
+    },
+    {
+      "latitud": 14.8400104298441,
+      "longitud": -91.51749583523473,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83996570533596,
+      "longitud": -91.51727723526221,
+      "regreso": false
+    },
+    {
+      "latitud": 14.839910609550646,
+      "longitud": -91.51706936404233,
+      "regreso": false
+    },
+    {
+      "latitud": 14.839793935999369,
+      "longitud": -91.51664021056702,
+      "regreso": false
+    },
+    {
+      "latitud": 14.839663002302864,
+      "longitud": -91.51628347679397,
+      "regreso": false
+    },
+    {
+      "latitud": 14.839246217764986,
+      "longitud": -91.51649537131193,
+      "regreso": false
+    },
+    {
+      "latitud": 14.838699033338079,
+      "longitud": -91.51691396593347,
+      "regreso": false
+    },
+    {
+      "latitud": 14.838413181456382,
+      "longitud": -91.51711513160518,
+      "regreso": false
+    },
+    {
+      "latitud": 14.837951021054211,
+      "longitud": -91.51731965004788,
+      "regreso": false
+    },
+    {
+      "latitud": 14.837611368173272,
+      "longitud": -91.51744571386189,
+      "regreso": false
+    },
+    {
+      "latitud": 14.837017786111794,
+      "longitud": -91.5176430230095,
+      "regreso": false
+    },
+    {
+      "latitud": 14.836493395887343,
+      "longitud": -91.51781669604915,
+      "regreso": false
+    },
+    {
+      "latitud": 14.836260045046146,
+      "longitud": -91.51787771629785,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83563937196501,
+      "longitud": -91.51804426335528,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834931444549525,
+      "longitud": -91.51832670495229,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834564562442454,
+      "longitud": -91.51849434301378,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834048174726215,
+      "longitud": -91.51870811972923,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833644605877115,
+      "longitud": -91.51885922097269,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833549319626687,
+      "longitud": -91.51861648111506,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83346387788399,
+      "longitud": -91.5183806996105,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833815204949094,
+      "longitud": -91.51823720144078,
+      "regreso": false
+    },
+    {
+      "latitud": 14.8340310568692,
+      "longitud": -91.5181560645403,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834518505560437,
+      "longitud": -91.51796696882757,
+      "regreso": false
+    },
+    {
+      "latitud": 14.834182088280313,
+      "longitud": -91.51723472580504,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833985682576118,
+      "longitud": -91.5168424527617,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833766589526025,
+      "longitud": -91.51623694405228,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833581006558354,
+      "longitud": -91.515744197067,
+      "regreso": false
+    },
+    {
+      "latitud": 14.83342673367234,
+      "longitud": -91.51529358595084,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833373580718112,
+      "longitud": -91.51515947551874,
+      "regreso": false
+    },
+    {
+      "latitud": 14.833205695434508,
+      "longitud": -91.51528486870924,
+      "regreso": false
+    },
+    {
+      "latitud": 14.832987249914563,
+      "longitud": -91.5154565301394,
+      "regreso": true
+    },
+    {
+      "latitud": 14.833185601028681,
+      "longitud": -91.51586891980504,
+      "regreso": true
+    },
+    {
+      "latitud": 14.833259496587644,
+      "longitud": -91.516015100168,
+      "regreso": true
+    },
+    {
+      "latitud": 14.83342154799303,
+      "longitud": -91.51641743151808,
+      "regreso": true
+    },
+    {
+      "latitud": 14.833643234187456,
+      "longitud": -91.51698136594156,
+      "regreso": true
+    },
+    {
+      "latitud": 14.833761855613144,
+      "longitud": -91.51740113169411,
+      "regreso": true
+    },
+    {
+      "latitud": 14.833905108653004,
+      "longitud": -91.51777395882642,
+      "regreso": true
+    },
+    {
+      "latitud": 14.834032805021423,
+      "longitud": -91.5181601968066,
+      "regreso": true
+    },
+    {
+      "latitud": 14.834520872160526,
+      "longitud": -91.51796573866483,
+      "regreso": true
+    },
+    {
+      "latitud": 14.83477950471521,
+      "longitud": -91.51790807117156,
+      "regreso": true
+    },
+    {
+      "latitud": 14.83492470172539,
+      "longitud": -91.51832582526441,
+      "regreso": true
+    },
+    {
+      "latitud": 14.835166480590585,
+      "longitud": -91.51898766035394,
+      "regreso": true
+    },
+    {
+      "latitud": 14.835331771492593,
+      "longitud": -91.51946911693278,
+      "regreso": true
+    },
+    {
+      "latitud": 14.836321570576965,
+      "longitud": -91.5191197590778,
+      "regreso": true
+    },
+    {
+      "latitud": 14.83682586722686,
+      "longitud": -91.51894608607884,
+      "regreso": true
+    },
+    {
+      "latitud": 14.837394981976958,
+      "longitud": -91.5187610136273,
+      "regreso": true
+    },
+    {
+      "latitud": 14.837969928984673,
+      "longitud": -91.51857862341272,
+      "regreso": true
+    },
+    {
+      "latitud": 14.838738344250297,
+      "longitud": -91.51837578579989,
+      "regreso": true
+    },
+    {
+      "latitud": 14.839290601101077,
+      "longitud": -91.51821150044452,
+      "regreso": true
+    },
+    {
+      "latitud": 14.839638029593852,
+      "longitud": -91.51809482436501,
+      "regreso": true
+    },
+    {
+      "latitud": 14.840066480759875,
+      "longitud": -91.51799021823678,
+      "regreso": true
+    },
+    {
+      "latitud": 14.840655680698813,
+      "longitud": -91.51789030592916,
+      "regreso": true
+    },
+    {
+      "latitud": 14.84110940897682,
+      "longitud": -91.5177816765027,
+      "regreso": true
+    },
+    {
+      "latitud": 14.841113946262775,
+      "longitud": -91.51773406727115,
+      "regreso": true
+    },
+    {
+      "latitud": 14.841137280845826,
+      "longitud": -91.51769919853426,
+      "regreso": true
+    },
+    {
+      "latitud": 14.841167097259307,
+      "longitud": -91.51768310526319,
+      "regreso": true
+    },
+    {
+      "latitud": 14.841197561775791,
+      "longitud": -91.5176857874945,
+      "regreso": true
+    },
+    {
+      "latitud": 14.841225433624075,
+      "longitud": -91.51769651633045,
+      "regreso": true
+    },
+    {
+      "latitud": 14.841243582735759,
+      "longitud": -91.5177092568279,
+      "regreso": true
+    },
+    {
+      "latitud": 14.841547579943605,
+      "longitud": -91.51766298871816,
+      "regreso": true
+    },
+    {
+      "latitud": 14.8422370942901,
+      "longitud": -91.51755277161412,
+      "regreso": true
+    },
+    {
+      "latitud": 14.842955275605366,
+      "longitud": -91.51744414215834,
+      "regreso": true
+    },
+    {
+      "latitud": 14.843084422051769,
+      "longitud": -91.51847335869367,
+      "regreso": true
+    },
+    {
+      "latitud": 14.843212524762032,
+      "longitud": -91.51941638694107,
+      "regreso": true
+    },
+    {
+      "latitud": 14.843657821381049,
+      "longitud": -91.51934463788682,
+      "regreso": true
+    },
+    {
+      "latitud": 14.843611152716731,
+      "longitud": -91.51906501752359,
+      "regreso": true
+    }
+  ],
+  "historia": [
+    {
+      "titulo": "El Señor Sepultado de San Nicolás: Faro de Fe en Q'uetzaltenango",
+      "subtitulo": "Historia de la Parroquia San Nicolás de Bari",
+      "historiaIglesia": "La Parroquia de San Nicolás, con su distintiva arquitectura neogótica, es uno de los templos más icónicos de Quetzaltenango. Fundada originalmente por la orden de los Jesuitas, la estructura actual es un testimonio de la resiliencia quetzalteca tras el terremoto de 1902. Sus torres apuntando al cielo y sus vitrales importados crean un ambiente de misticismo único en la ciudad. A lo largo de los años, se ha convertido en el hogar de algunas de las asociaciones de pasión más antiguas y fervientes de Los Altos, siendo un pilar fundamental de la religiosidad popular guatemalteca.",
+      "subtituloProcesion": "Crónica de una Devoción Centenaria: El Santo Entierro",
+      "historiaProcesion": "La consagrada imagen del Señor Sepultado de San Nicolás es el epicentro de la fe el Viernes Santo en Xela. La procesión del Santo Entierro es reconocida por su rigor penitencial, su elegancia y el impresionante mueble procesional que transporta al 'Señor de la Nación Quetzalteca'. La historia cuenta que la devoción creció exponencialmente a principios del siglo XX, consolidando una hermandad que hoy es ejemplo de organización. El cortejo es famoso por su paso solemne, el acompañamiento de la Virgen de Dolores y la impresionante cantidad de fieles que abarrotan las calles, convirtiendo el centro histórico en un inmenso altar de duelo y esperanza. Ver al Señor Sepultado avanzar bajo el frío de la noche quetzalteca es una experiencia que define la identidad de la ciudad."
+    }
+  ]
+}
