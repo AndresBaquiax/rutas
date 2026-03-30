@@ -50,10 +50,20 @@
             "cantidadCargadores": "80",
             "fechaProcesion": "2026-04-03",
             "descripcionProcesion": "Solemne y fúnebre recorrido que conmemora el entierro de Cristo. La comunidad de San Bartolomé se vuelca a las calles en un ambiente de luto y respeto, acompañando la urna del Señor Sepultado entre el aroma a incienso y el sonido de las marchas fúnebres.",
-            "ruta": ""
+            "ruta": "/recorridos-gt/procesion/sepultado-san-bartolome"
         },
         {
             "idProcesion": 6,
+            "nombreProcesion": "Solemne Cortejo Procesional de Santo Entierro (San Nicolás)",
+            "iglesiaProcesion": "Parroquia San Nicolás",
+            "duracionProcesion": "9 horas", 
+            "cantidadCargadores": "90",
+            "fechaProcesion": "2026-04-03",
+            "descripcionProcesion": "Considerado uno de los cortejos más elegantes y solemnes de Quetzaltenango. El Señor Sepultado de San Nicolás recorre las calles en su imponente urna de bronce y cristal, acompañado por miles de fieles devotos vestidos de riguroso luto. El paso de la procesión destaca por la majestuosidad de sus andas y la interpretación de marchas fúnebres clásicas que resuenan en el centro histórico, creando una atmósfera de profunda reflexión y respeto al misterio de la muerte de Cristo.",
+            "ruta": "/recorridos-gt/procesion/sepultado-san-nicolas"
+        },
+        {
+            "idProcesion": 7,
             "nombreProcesion": "Santo entierro del Señor Sepultado de Catedral",
             "iglesiaProcesion": "Santa Iglesia Catedral Metropolitana de los Altos",
             "duracionProcesion": "6 horas y 30 minutos",
@@ -63,17 +73,7 @@
             "ruta": ""
         },
         {
-            "idProcesion": 7,
-            "nombreProcesion": "Cortejo procesional virgen de dolores del templo la transfiguración",
-            "iglesiaProcesion": "Templo la Transfiguración",
-            "duracionProcesion": "6 horas y 30 minutos",
-            "cantidadCargadores": "80",
-            "fechaProcesion": "2026-04-03",
-            "descripcionProcesion": "Procesión dedicada al dolor de la Santísima Virgen María. El cortejo de la Transfiguración destaca por la elegancia de su adorno y el fervor de las devotas cargadoras, quienes acompañan a la Madre de Dios en su soledad y tristeza tras la muerte de su Hijo.",
-            "ruta": ""
-        },
-        {
-            "idProcesion": 8,
+            "idProcesion": 9,
             "nombreProcesion": "Santo Entierro (Parroquia El Calvario)",
             "iglesiaProcesion": "Parroquia El Calvario",
             "duracionProcesion": "8 horas",
@@ -83,7 +83,7 @@
             "ruta": "/recorridos-gt/procesion/sepultado-calvario"
         },
         {
-            "idProcesion": 9,
+            "idProcesion": 10,
             "nombreProcesion": "Santo Entierro (Parroquia Nuestra Señora de la Merced)",
             "iglesiaProcesion": "Parroquia Nuestra Señora de la Merced",
             "duracionProcesion": "6 horas y 30 minutos",
@@ -93,17 +93,17 @@
             "ruta": ""
         },
         {
-            "idProcesion": 10,
+            "idProcesion": 11,
             "nombreProcesion": "Santo entierro de la Hermandad del Señor Sepultado (Transfiguración)",
             "iglesiaProcesion": "Parroquia Transfiguración",
             "duracionProcesion": "6 horas",
             "cantidadCargadores": "80",
             "fechaProcesion": "2026-04-03",
             "descripcionProcesion": "Cortejo procesional de la Hermandad del Señor Sepultado de la Transfiguración. Se distingue por su paso solemne por las cuestas y calles empedradas de su barrio, creando una atmósfera de recogimiento único en el atardecer del Viernes Santo.",
-            "ruta": ""
+            "ruta": "/recorridos-gt/procesion/sepultado-transfiguracion"
         },
         {
-            "idProcesion": 11,
+            "idProcesion": 12,
             "nombreProcesion": "Procesión de Pésame de Nuestra Señora de Soledad el Calvario",
             "iglesiaProcesion": "Parroquia El Calvario",
             "duracionProcesion": "7 horas",
@@ -113,7 +113,7 @@
             "ruta": ""
         },
         {
-            "idProcesion": 12,
+            "idProcesion": 13,
             "nombreProcesion": "La Resurrección de nuestro señor Jesús y Virgen de la Resurrección (Parroquia San Nicolás)",
             "iglesiaProcesion": "Parroquia San Nicolás",
             "duracionProcesion": "3 horas",
