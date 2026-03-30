@@ -10,55 +10,100 @@
         "nombre": "Templo La Transfiguración (Salida)",
         "descripcion": "Inicio del solemne cortejo procesional de Viernes Santo.",
         "hora": "17:00",
-        "ubicacion": []
+        "ubicacion": [
+        {
+          "latitud": 14.829491335471058,
+          "longitud": -91.51533295243514
+        }
+      ]
     },
     {
         "nombre": "Colegio Pestalozzi",
         "descripcion": "Punto de referencia número 1 del recorrido procesional.",
         "hora": "18:00",
-        "ubicacion": []
+        "ubicacion": [
+        {
+          "latitud": 14.831026538217339,
+          "longitud": -91.51542495762817
+        }
+      ]
     },
     {
         "nombre": "Parque a Bolívar",
         "descripcion": "Punto de referencia número 2, paso por el emblemático parque.",
         "hora": "18:30",
-        "ubicacion": []
+        "ubicacion": [
+        {
+          "latitud": 14.832194649877303,
+          "longitud": -91.51289854909767
+        }
+      ]
     },
     {
         "nombre": "Puente de Piedra",
         "descripcion": "Punto de referencia número 3 del trayecto.",
         "hora": "19:15",
-        "ubicacion": []
+        "ubicacion": [
+        {
+          "latitud": 14.83298437667582,
+          "longitud": -91.51546347503155
+        }
+      ]
     },
     {
         "nombre": "Parque a Centroamérica",
         "descripcion": "Punto de referencia número 4, paso por el corazón de la ciudad.",
         "hora": "20:15",
-        "ubicacion": []
+        "ubicacion": [
+        {
+          "latitud": 14.83447349513665,
+          "longitud": -91.51826773992181
+        }
+      ]
     },
     {
         "nombre": "Casa No'j",
         "descripcion": "Punto de referencia número 5, centro cultural icónico en la ruta.",
         "hora": "21:00",
-        "ubicacion": []
+        "ubicacion": [
+        {
+          "latitud": 14.833837444524987,
+          "longitud": -91.51884711713026
+        }
+      ]
     },
     {
         "nombre": "Colegio Teresa Martín",
         "descripcion": "Punto de referencia número 6 en el trayecto de retorno.",
         "hora": "21:45",
-        "ubicacion": []
+        "ubicacion": [
+        {
+          "latitud": 14.83208315203539,
+          "longitud": -91.51836390642171
+        }
+      ]
     },
     {
         "nombre": "Restaurante Ajitz",
         "descripcion": "Punto de referencia número 7, últimas cuadras del recorrido.",
         "hora": "22:45",
-        "ubicacion": []
+        "ubicacion": [
+        {
+          "latitud": 14.831244288067051,
+          "longitud": -91.51587163651197
+        }
+      ]
     },
     {
         "nombre": "Templo La Transfiguración (Entrada)",
         "descripcion": "Finalización del cortejo e ingreso de la venerada imagen a su templo.",
         "hora": "23:30",
-        "ubicacion": []
+        "ubicacion": [
+          {
+            "latitud": 14.829491335471058,
+            "longitud": -91.51533295243514
+          }
+        ]
     }
   ],
   "coordenadas": [
