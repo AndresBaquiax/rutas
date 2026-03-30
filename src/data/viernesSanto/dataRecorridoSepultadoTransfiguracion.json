@@ -1,0 +1,415 @@
+{
+  "nombreProcesion": "Santo Entierro Señor Sepultado y Virgen de Dolores",
+  "nombreIglesia": "Parroquia Transfiguración",
+  "fecha": "2026-04-03",
+  "horaSalida": "17:00",
+  "horaEntrada": "23:30",
+  "cantidadCargadores": 80,
+  "puntosInteres": [
+    {
+        "nombre": "Templo La Transfiguración (Salida)",
+        "descripcion": "Inicio del solemne cortejo procesional de Viernes Santo.",
+        "hora": "17:00",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Colegio Pestalozzi",
+        "descripcion": "Punto de referencia número 1 del recorrido procesional.",
+        "hora": "18:00",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Parque a Bolívar",
+        "descripcion": "Punto de referencia número 2, paso por el emblemático parque.",
+        "hora": "18:30",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Puente de Piedra",
+        "descripcion": "Punto de referencia número 3 del trayecto.",
+        "hora": "19:15",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Parque a Centroamérica",
+        "descripcion": "Punto de referencia número 4, paso por el corazón de la ciudad.",
+        "hora": "20:15",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Casa No'j",
+        "descripcion": "Punto de referencia número 5, centro cultural icónico en la ruta.",
+        "hora": "21:00",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Colegio Teresa Martín",
+        "descripcion": "Punto de referencia número 6 en el trayecto de retorno.",
+        "hora": "21:45",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Restaurante Ajitz",
+        "descripcion": "Punto de referencia número 7, últimas cuadras del recorrido.",
+        "hora": "22:45",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Templo La Transfiguración (Entrada)",
+        "descripcion": "Finalización del cortejo e ingreso de la venerada imagen a su templo.",
+        "hora": "23:30",
+        "ubicacion": []
+    }
+  ],
+  "coordenadas": [
+    {
+        "latitud": 14.829472821125599,
+        "longitud": -91.51533553215108,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829498749827822,
+        "longitud": -91.51537710638829,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829522733855788,
+        "longitud": -91.51546092546339,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829478006837343,
+        "longitud": -91.51547433648756,
+        "regreso": false
+    },
+    {
+        "latitud": 14.82938725637006,
+        "longitud": -91.51549110024193,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829260205741639,
+        "longitud": -91.5154341032658,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829154546147675,
+        "longitud": -91.51522086769289,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829262150373108,
+        "longitud": -91.51518130511596,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829334750774501,
+        "longitud": -91.51516454131612,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829419667299858,
+        "longitud": -91.51516789407822,
+        "regreso": false
+    },
+    {
+        "latitud": 14.82959468599959,
+        "longitud": -91.5151585063379,
+        "regreso": false
+    },
+    {
+        "latitud": 14.829769056280064,
+        "longitud": -91.5150579235096,
+        "regreso": false
+    },
+    {
+        "latitud": 14.82994731579638,
+        "longitud": -91.51500360872544,
+        "regreso": false
+    },
+    {
+        "latitud": 14.830459405762753,
+        "longitud": -91.51482524187674,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83090148758314,
+        "longitud": -91.51472331791575,
+        "regreso": false
+    },
+    {
+        "latitud": 14.831512103494045,
+        "longitud": -91.51457981976496,
+        "regreso": false
+    },
+    {
+        "latitud": 14.831469763672725,
+        "longitud": -91.51448081113772,
+        "regreso": false
+    },
+    {
+        "latitud": 14.831395219352874,
+        "longitud": -91.51439296880284,
+        "regreso": false
+    },
+    {
+        "latitud": 14.831264280544316,
+        "longitud": -91.51426690498941,
+        "regreso": false
+    },
+    {
+        "latitud": 14.831166400467989,
+        "longitud": -91.5141750394008,
+        "regreso": false
+    },
+    {
+        "latitud": 14.830920079687003,
+        "longitud": -91.5139416871213,
+        "regreso": false
+    },
+    {
+        "latitud": 14.830558376507364,
+        "longitud": -91.51359434105464,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83093760390043,
+        "longitud": -91.51347628250856,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83154692328707,
+        "longitud": -91.51333814874867,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832130057186806,
+        "longitud": -91.51315679177418,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832150799877812,
+        "longitud": -91.51322585864945,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832176728226255,
+        "longitud": -91.51328956112835,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832218861845652,
+        "longitud": -91.51333180588682,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832244790201809,
+        "longitud": -91.51334253473254,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832265532888666,
+        "longitud": -91.51334588750362,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832400242500162,
+        "longitud": -91.51380333655553,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832575079222549,
+        "longitud": -91.51434236642581,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832759818461756,
+        "longitud": -91.51488216099204,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832985394546679,
+        "longitud": -91.51545145983215,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833420270924899,
+        "longitud": -91.51641662909216,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833645197976399,
+        "longitud": -91.5169792225353,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833764467844537,
+        "longitud": -91.51740167036218,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83402940043726,
+        "longitud": -91.51815928098962,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834525302291649,
+        "longitud": -91.51796503955609,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834775508238208,
+        "longitud": -91.51791005424425,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834923298198614,
+        "longitud": -91.5183257966884,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834564842649156,
+        "longitud": -91.5184961169723,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834045632109884,
+        "longitud": -91.51870935251007,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833640504424592,
+        "longitud": -91.51885955624243,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833017578560192,
+        "longitud": -91.51911101337298,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832433261220979,
+        "longitud": -91.51929780041785,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832212573058118,
+        "longitud": -91.5186272845171,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832057430341916,
+        "longitud": -91.51822029676087,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831871182114128,
+        "longitud": -91.51769293873615,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831681256411077,
+        "longitud": -91.5171310159534,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831493366690061,
+        "longitud": -91.51654008180739,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831335289297197,
+        "longitud": -91.51603897680731,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831156981495418,
+        "longitud": -91.51543759764242,
+        "regreso": true
+    },
+    {
+        "latitud": 14.830906715504618,
+        "longitud": -91.51472142161899,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83045965557639,
+        "longitud": -91.51482247505491,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829946192219401,
+        "longitud": -91.51500419909368,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829772470276856,
+        "longitud": -91.5150558316171,
+        "regreso": true
+    },
+    {
+        "latitud": 14.82959809994356,
+        "longitud": -91.51515976717303,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829414254929778,
+        "longitud": -91.51516736304961,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829330634839812,
+        "longitud": -91.5151653513611,
+        "regreso": true
+    },
+    {
+        "latitud": 14.82927553632388,
+        "longitud": -91.51517540962413,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829156912409417,
+        "longitud": -91.51522100711368,
+        "regreso": true
+    },
+    {
+        "latitud": 14.82925803415645,
+        "longitud": -91.51543089007654,
+        "regreso": true
+    },
+    {
+        "latitud": 14.8293798990566,
+        "longitud": -91.51549258117201,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829506301580848,
+        "longitud": -91.51546642935745,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829565289416152,
+        "longitud": -91.51542351405043,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829532230387501,
+        "longitud": -91.51537858698602,
+        "regreso": true
+    },
+    {
+        "latitud": 14.829466112271973,
+        "longitud": -91.51533500102917,
+        "regreso": true
+    }
+  ],
+  "historia": [
+    {
+        "titulo": "El Señor Sepultado de La Transfiguración: Tradición en el Barrio Alto",
+        "subtitulo": "Historia del Templo de La Transfiguración",
+        "historiaIglesia": "El Templo de La Transfiguración es uno de los referentes históricos más importantes de la zona 1 de Quetzaltenango. Ubicado en una de las partes más altas de la ciudad, este templo ha sido por generaciones el epicentro espiritual de un barrio con profunda identidad indígena y mestiza. Su arquitectura, aunque más sencilla que la de los grandes templos del centro, resguarda un tesoro de imaginería colonial y del siglo XIX. Es conocido por su calidez comunitaria y por ser el punto desde donde la ciudad observa el atardecer antes de las solemnes noches de Semana Santa.",
+        "subtituloProcesion": "Devoción y Penitencia: El Santo Entierro de la 'Transfi'",
+        "historiaProcesion": "La procesión del Señor Sepultado de La Transfiguración es una de las muestras más auténticas de fe popular en Xela. A diferencia de otros cortejos, el de la 'Transfi' destaca por su recorrido serpenteante entre las cuestas y calles empedradas del barrio que le da nombre. La imagen del Señor Sepultado, poseedora de una anatomía impresionante y una expresión de paz absoluta, es acompañada tradicionalmente por la Virgen de Dolores en un ambiente de recogimiento. El descenso del cortejo hacia el Parque Central al anochecer es un espectáculo de devoción, donde el sonido de las marchas fúnebres y el paso de los 80 cargadores por turno marcan el ritmo del duelo sagrado de la ciudad."
+    }
+  ]
+}
