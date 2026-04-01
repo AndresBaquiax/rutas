@@ -1,0 +1,397 @@
+{
+  "nombreProcesion": "Jesus Nazareno Infantil",
+  "nombreIglesia": "de  Iglesia San Nicolas",
+  "fecha": "2026-04-02",
+  "horaSalida": "15:30",
+  "horaEntrada": "21:00",
+  "cantidadCargadores": 20,
+  "puntosInteres": [
+    {
+        "nombre": "Iglesia San Nicolás (Salida)",
+        "descripcion": "Inicio del solemne cortejo procesional desde su emblemático templo neogótico.",
+        "hora": "15:30",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Universidad Mesoamericana",
+        "descripcion": "El cortejo avanza buscando las principales arterias de la zona 3.",
+        "hora": "16:00",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Estadio Mario Camposeco",
+        "descripcion": "Paso frente al coloso de la zona 3, punto de gran afluencia de devotos.",
+        "hora": "16:30",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Universidad Rafael Landívar (Ida)",
+        "descripcion": "Tránsito solemne frente al campus universitario en el trayecto de ida.",
+        "hora": "16:50",
+        "ubicacion": []
+    },
+    {
+        "nombre": "INVO",
+        "descripcion": "Paso frente al histórico Instituto Nacional Varones de Occidente.",
+        "hora": "17:20",
+        "ubicacion": []
+    },
+    {
+        "nombre": "IGSS",
+        "descripcion": "Punto de referencia clave en el sector salud de la zona 1.",
+        "hora": "17:45",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Parque Central",
+        "descripcion": "Punto de máxima solemnidad frente a la Catedral Metropolitana de los Altos.",
+        "hora": "18:30",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Plaza Polanco",
+        "descripcion": "El cortejo enfila su retorno buscando el sector del Teatro Municipal.",
+        "hora": "19:15",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Teatro Municipal",
+        "descripcion": "Paso frente a la joya arquitectónica de Xela en un ambiente de recogimiento.",
+        "hora": "19:50",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Universidad Rafael Landívar (Retorno)",
+        "descripcion": "Último punto de referencia antes de enfilarse hacia el ingreso al templo.",
+        "hora": "20:30",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Iglesia San Nicolás (Entrada)",
+        "descripcion": "Finalización del recorrido procesional e ingreso de las veneradas imágenes.",
+        "hora": "21:00",
+        "ubicacion": []
+    }
+  ],
+  "coordenadas": [
+    {
+        "latitud": 14.84361179960109,
+        "longitud": -91.51906168919548,
+        "regreso": false
+    },
+    {
+        "latitud": 14.843632271408353,
+        "longitud": -91.51934632898764,
+        "regreso": false
+    },
+    {
+        "latitud": 14.843213827563694,
+        "longitud": -91.51941579457682,
+        "regreso": false
+    },
+    {
+        "latitud": 14.843087146777705,
+        "longitud": -91.51847774170088,
+        "regreso": false
+    },
+    {
+        "latitud": 14.842968211617647,
+        "longitud": -91.5175390716074,
+        "regreso": false
+    },
+    {
+        "latitud": 14.842249567121518,
+        "longitud": -91.51764655627632,
+        "regreso": false
+    },
+    {
+        "latitud": 14.841320600756962,
+        "longitud": -91.51779504935381,
+        "regreso": false
+    },
+    {
+        "latitud": 14.841251814796708,
+        "longitud": -91.51780606220609,
+        "regreso": false
+    },
+    {
+        "latitud": 14.841251814796708,
+        "longitud": -91.51780606220609,
+        "regreso": false
+    },
+    {
+        "latitud": 14.841224791739924,
+        "longitud": -91.51782469932563,
+        "regreso": false
+    },
+    {
+        "latitud": 14.841196949799262,
+        "longitud": -91.51783994787465,
+        "regreso": false
+    },
+    {
+        "latitud": 14.841158462409469,
+        "longitud": -91.51783147645756,
+        "regreso": false
+    },
+    {
+        "latitud": 14.841133077106127,
+        "longitud": -91.51781622791137,
+        "regreso": false
+    },
+    {
+        "latitud": 14.841110148438933,
+        "longitud": -91.51778149511618,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840648930275217,
+        "longitud": -91.51788858761583,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840069734159014,
+        "longitud": -91.51798611199953,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840012412102446,
+        "longitud": -91.51748629816427,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83977564786678,
+        "longitud": -91.51659890189711,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839659100213774,
+        "longitud": -91.51627716727073,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839260741406088,
+        "longitud": -91.5164919209372,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838692063491358,
+        "longitud": -91.51691903409707,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838409832129912,
+        "longitud": -91.51711668272317,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837614512994115,
+        "longitud": -91.51744637531142,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83701655457288,
+        "longitud": -91.51764393438923,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836494614136539,
+        "longitud": -91.5178133871048,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83600044382036,
+        "longitud": -91.51795017496752,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835642739334357,
+        "longitud": -91.51804267746304,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835275870934147,
+        "longitud": -91.51818415017658,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83492619892486,
+        "longitud": -91.51832647005185,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834564587409467,
+        "longitud": -91.51849474257514,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83404294365723,
+        "longitud": -91.51871076384151,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83364212661655,
+        "longitud": -91.51885646009143,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833462702490008,
+        "longitud": -91.5183797803377,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833717383397948,
+        "longitud": -91.51827558185283,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834026111955433,
+        "longitud": -91.5181603704319,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834521550863904,
+        "longitud": -91.51796298652468,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83477377376183,
+        "longitud": -91.51790876923444,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834928546876265,
+        "longitud": -91.51832725750367,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83516684803385,
+        "longitud": -91.51898802831401,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835333085398014,
+        "longitud": -91.51947005213609,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836319690642167,
+        "longitud": -91.51911888362584,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836831932985161,
+        "longitud": -91.51894525775778,
+        "regreso": true
+    },
+    {
+        "latitud": 14.837399926472374,
+        "longitud": -91.51876493610874,
+        "regreso": true
+    },
+    {
+        "latitud": 14.837964963471348,
+        "longitud": -91.51858110633718,
+        "regreso": true
+    },
+    {
+        "latitud": 14.838737879015069,
+        "longitud": -91.51837612524525,
+        "regreso": true
+    },
+    {
+        "latitud": 14.839291049523286,
+        "longitud": -91.51820424641825,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83963743894565,
+        "longitud": -91.51809581224256,
+        "regreso": true
+    },
+    {
+        "latitud": 14.840067354120245,
+        "longitud": -91.51798822519214,
+        "regreso": true
+    },
+    {
+        "latitud": 14.84064712408046,
+        "longitud": -91.51788995671254,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841108666346589,
+        "longitud": -91.51778044513539,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841114398499853,
+        "longitud": -91.51774062946897,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841128319462262,
+        "longitud": -91.51771182663848,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841165987973412,
+        "longitud": -91.51768641235527,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841198743215514,
+        "longitud": -91.51768810661774,
+        "regreso": true
+    },
+    {
+        "latitud": 14.84122330965192,
+        "longitud": -91.51769742516633,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841239687277753,
+        "longitud": -91.51770843800621,
+        "regreso": true
+    },
+    {
+        "latitud": 14.84223477129311,
+        "longitud": -91.51755369497572,
+        "regreso": true
+    },
+    {
+        "latitud": 14.842956075175042,
+        "longitud": -91.51744566189693,
+        "regreso": true
+    },
+    {
+        "latitud": 14.84308478883947,
+        "longitud": -91.51847438651329,
+        "regreso": true
+    },
+    {
+        "latitud": 14.843212382958669,
+        "longitud": -91.51941058611985,
+        "regreso": true
+    },
+    {
+        "latitud": 14.843658668472905,
+        "longitud": -91.51934620332065,
+        "regreso": true
+    },
+    {
+        "latitud": 14.843616086949886,
+        "longitud": -91.51905902204588,
+        "regreso": true
+    }
+  ],
+  "historia": [
+    {
+        "titulo": "Semilleros de Fe: El Nazareno Infantil de San Nicolás",
+        "subtitulo": "Historia de la Parroquia San Nicolás de Bari",
+        "historiaIglesia": "La Parroquia de San Nicolás, con su inconfundible arquitectura neogótica y torres que dominan el panorama de la zona 3, es mucho más que un monumento histórico de Quetzaltenango; es un centro vivo de tradición. Reconstruida con esfuerzo tras el terremoto de 1902, ha sido el hogar de las hermandades más emblemáticas de la ciudad. Su misticismo y la belleza de sus vitrales europeos ofrecen el marco perfecto para que, desde hace décadas, se cultive la devoción en los más pequeños, convirtiendo al templo en un guardián de la herencia espiritual quetzalteca.",
+        "subtituloProcesion": "Jesús Nazareno Infantil: La Tradición que no se detiene",
+        "historiaProcesion": "El cortejo de Jesús Nazareno Infantil es una de las expresiones más emotivas de la Semana Santa en Xela. Esta procesión representa el relevo generacional y la pureza de la fe infantil. Acompañado por pequeñas filas de cucuruchos y devotas cargadoras, el pequeño Nazareno recorre las calles en un ambiente de alegría y formación cristiana. Este cortejo permite que los niños vivan su propia penitencia a una escala adecuada para ellos, aprendiendo el valor del sacrificio y el amor al prójimo. Ver a los infantes portar con orgullo sus andas por el Parque Central y el Teatro Municipal asegura que las tradiciones del pueblo quetzalteco seguirán vivas por muchos siglos más."
+    }
+  ]
+}
