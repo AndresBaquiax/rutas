@@ -65,10 +65,10 @@ export default function Sidebar() {
       <div key={item.id} className="relative group h-full flex items-center">
         {item.subItems && item.subItems.length > 0 ? (
           <button 
-            className="px-2 lg:px-3 xl:px-4 py-2 font-medium transition-all duration-300 flex items-center gap-1.5 focus:outline-none hover:opacity-80"
+            className="px-1.5 lg:px-2 xl:px-3 py-2 font-medium transition-all duration-300 flex items-center gap-1 focus:outline-none hover:opacity-80"
             style={{ color: config.thirdColor }}
           >
-            <span className="uppercase tracking-wide text-xs lg:text-sm">{item.label}</span>
+            <span className="uppercase tracking-wide text-[10px] xl:text-xs 2xl:text-sm">{item.label}</span>
             <span 
               className="text-[10px] transform transition-transform duration-300 group-hover:rotate-180"
               aria-hidden="true"
@@ -79,10 +79,10 @@ export default function Sidebar() {
         ) : (
           <Link
             href={item.href}
-            className="px-2 lg:px-3 xl:px-4 py-2 font-medium transition-all duration-300 block hover:opacity-80 relative"
+            className="px-1.5 lg:px-2 xl:px-3 py-2 font-medium transition-all duration-300 block hover:opacity-80 relative"
             style={{ color: config.thirdColor }}
           >
-            <span className="uppercase tracking-wide text-xs lg:text-sm relative z-10">{item.label}</span>
+            <span className="uppercase tracking-wide text-[10px] xl:text-xs 2xl:text-sm relative z-10">{item.label}</span>
             <span 
               className="absolute bottom-0 left-1/2 w-0 h-[2px] -translate-x-1/2 transition-all duration-300 group-hover:w-4/5"
               style={{ backgroundColor: config.thirdColor }}
@@ -122,7 +122,7 @@ export default function Sidebar() {
 
   return (
     <header 
-      className="w-full fixed top-0 z-50 transition-all duration-500 ease-in-out px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-2 sm:py-3 md:py-4"
+      className="w-full fixed top-0 z-50 transition-all duration-500 ease-in-out px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3"
     >
       <div 
         className="w-full mx-auto px-3 sm:px-4 md:px-6 h-16 sm:h-18 md:h-20 rounded-full shadow-2xl backdrop-blur-md"
@@ -159,13 +159,13 @@ export default function Sidebar() {
           </Link>
 
           {/* Navigation Section - Desktop */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2 h-full">
+          <nav className="hidden xl:flex items-center gap-0.5 xl:gap-1.5 h-full">
             {renderItems(items)}
           </nav>
 
           {/* Hamburger Menu Button - Mobile */}
           <button
-            className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center focus:outline-none"
+            className="xl:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -194,7 +194,7 @@ export default function Sidebar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div
-          className="md:hidden mx-2 sm:mx-4 mt-2 rounded-3xl overflow-hidden transition-all duration-300 shadow-2xl border backdrop-blur-sm"
+          className="xl:hidden mx-2 sm:mx-4 mt-2 rounded-3xl overflow-hidden transition-all duration-300 shadow-2xl border backdrop-blur-sm"
           style={{ 
             backgroundColor: `${config.headerColor}f5`,
             borderColor: `${config.thirdColor}30`
