@@ -251,6 +251,7 @@ export default function InformacionPage() {
                 pinColor={config.colorPin}
                 puntoInteresSeleccionado={puntoSeleccionado}
                 centrarTrigger={centrarTrigger}
+                imagenUrl={(dataRecorrido as any).imagenIcono}
               />
             </div>
 
