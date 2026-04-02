@@ -129,7 +129,7 @@ export default function Home() {
           }}
         ></div>
 
-        <div className="relative z-10 text-center px-6 max-w-4xl pt-32 lg:pt-0">
+        <div className="relative z-10 text-center px-4 md:px-6 w-full max-w-4xl pt-32 lg:pt-0">
           <p
             className="text-sm uppercase tracking-widest mb-4 font-medium px-6 py-3 rounded-full inline-block"
             style={{
@@ -141,7 +141,7 @@ export default function Home() {
           </p>
 
           <h1
-            className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight"
+            className="text-4xl md:text-7xl font-serif font-bold mb-6 leading-tight break-words"
             style={{ color: config.neutralColor }}
           >
             Procesiones de
@@ -167,7 +167,7 @@ export default function Home() {
             Explorar
           </p>
 
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center w-full md:w-auto mx-auto">
             <Link
               href="#recorridos-procesionales"
               className="px-8 py-4 rounded-sm font-medium text-base uppercase tracking-wide transition-all duration-300 hover:opacity-90 w-full md:w-auto text-center"
