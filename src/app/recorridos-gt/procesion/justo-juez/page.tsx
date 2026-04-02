@@ -131,7 +131,7 @@ export default function InformacionPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/images/fotoCatedral.jpg')",
+            backgroundImage: "url('/images/fotoCatedral.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

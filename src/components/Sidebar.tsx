@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import config from "@/data/config.json";
+import sidebarData from "@/data/sidebar.json";
 import logoImg from "../../public/images/logoRutas.svg";
 
 interface SidebarItem {
@@ -43,14 +44,7 @@ function buildTree(items: SidebarApiItem[]): SidebarItem[] {
 export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
-  const [items, setItems] = useState<SidebarItem[]>([]);
-
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL_BACKEND}/sidebar`)
-      .then((res) => res.json())
-      .then((data: SidebarApiItem[]) => setItems(buildTree(data)))
-      .catch(() => {});
-  }, []);
+  const [items, setItems] = useState<SidebarItem[]>(() => buildTree(sidebarData as SidebarApiItem[]));
 
   // Helper to convert hex to rgba for backgrounds/borders
   const hexToRgba = (hex: string, alpha: number) => {
