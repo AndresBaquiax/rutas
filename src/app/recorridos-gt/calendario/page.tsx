@@ -145,7 +145,7 @@ export default function CalendarioPage() {
         <div
           className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
           style={{
-            backgroundImage: "url(/images/fotoCatedral.jpg)",
+            backgroundImage: "url(/images/fotoCatedral.webp)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

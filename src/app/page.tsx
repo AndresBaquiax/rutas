@@ -99,7 +99,7 @@ export default function Home() {
   }, [imagenesCarrusel.length]);
 
   const imagenesHero =
-    imagenesCarrusel.length > 0 ? imagenesCarrusel : ["/carruselFotos/1.jpg"];
+    imagenesCarrusel.length > 0 ? imagenesCarrusel : ["/carruselFotos/1.webp"];
 
   return (
     <main style={{ backgroundColor: config.primaryColor }}>
@@ -283,7 +283,7 @@ export default function Home() {
               className="text-sm uppercase tracking-[0.35em] mb-4"
               style={{ color: config.thirdColor }}
             >
-              Explora Guatemala
+              Explora Quetzaltenango
             </p>
             <h2
               className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6"
@@ -297,7 +297,7 @@ export default function Home() {
               style={{ color: `${config.neutralColor}B3` }}
             >
               Conoce las rutas de las procesiones más importantes en diferentes
-              regiones del país.
+              partes de la ciudad.
             </p>
           </div>
 

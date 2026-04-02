@@ -131,7 +131,7 @@ export default function InformacionPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/carruselFotos/5.jpg')",
+            backgroundImage: "url('/carruselFotos/5.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
