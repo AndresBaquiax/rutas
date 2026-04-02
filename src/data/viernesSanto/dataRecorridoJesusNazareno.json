@@ -1,9 +1,9 @@
 {
   "nombreProcesion": "Jesus Nazareno y Virgen de Dolores",
   "nombreIglesia": "de  San Juan de Dios",
-  "fecha": "2026-04-03",
+  "fecha": "2026-04-02",
   "horaSalida": "06:15",
-  "horaEntrada": "13:30",
+  "horaEntrada": "13:45",
   "cantidadCargadores": 120,
   "puntosInteres": [
     {
@@ -427,5 +427,6 @@
         "subtituloProcesion": "El Magno Cortejo del Viernes Santo: Tradición de San Juan de Dios",
         "historiaProcesion": "La procesión de Jesús Nazareno y Virgen de Dolores del Templo San Juan de Dios es un cortejo emblemático que recorre las calles de Xela durante la mañana del Viernes Santo. Se caracteriza por su paso por puntos clave del centro histórico como el Pasaje Enríquez y la Catedral Metropolitana. Con una participación de 120 cargadores por turno, este cortejo destaca por el orden, la disciplina de su hermandad y la profunda devoción de los fieles que madrugan para acompañar la imagen. Es un recorrido que simboliza el camino de Cristo hacia el calvario, vivido con gran solemnidad y respeto por la comunidad católica quetzalteca."
     }
-  ]
+  ],
+  "imagenIcono": "/iconos/jesus-nazareno-sjd.webp"
 }
