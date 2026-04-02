@@ -1,0 +1,410 @@
+{
+  "nombreProcesion": "Señor Sepultado y Virgen de Dolores",
+  "nombreIglesia": "de la Parroquia Nuestra Señora de la Merced",
+  "fecha": "2026-04-03",
+  "horaSalida": "16:45",
+  "horaEntrada": "00:00",
+  "cantidadCargadores": 80,
+  "puntosInteres": [
+    {
+        "nombre": "Iglesia La Merced",
+        "descripcion": "Paso del solemne cortejo frente al templo mercedario.",
+        "hora": "16:45",
+        "ubicacion": [
+        {
+            "latitud": 14.836343934872824,
+            "longitud": -91.51045254496678
+        }
+        ]
+    },
+    {
+        "nombre": "La Torre Xela",
+        "descripcion": "Punto de referencia comercial en el trayecto de la zona 1.",
+        "hora": "17:30",
+        "ubicacion": [
+        {
+            "latitud": 14.835220724126149,
+            "longitud": -91.51214999744114
+        }
+        ]
+    },
+    {
+        "nombre": "Gasolinera Puma",
+        "descripcion": "Referencia importante en la ruta hacia el sector sur.",
+        "hora": "18:15",
+        "ubicacion": [
+        {
+            "latitud": 14.833428816856978,
+            "longitud": -91.51449534104746
+        }
+        ]
+    },
+    {
+        "nombre": "Funerales Reforma",
+        "descripcion": "Tránsito solemne por el sector de la 12 avenida.",
+        "hora": "19:00",
+        "ubicacion": [
+        {
+            "latitud": 14.832954743829992,
+            "longitud": -91.51560165644
+        }
+        ]
+    },
+    {
+        "nombre": "Municipalidad de Quetzaltenango",
+        "descripcion": "Paso frente al Palacio Municipal en el corazón del Centro Histórico.",
+        "hora": "20:15",
+        "ubicacion": [
+        {
+            "latitud": 14.834279089456691,
+            "longitud": -91.51797366588345
+        }
+        ]
+    },
+    {
+        "nombre": "Colegio Mixto Teresa Martín",
+        "descripcion": "El cortejo avanza impartiendo bendiciones a la comunidad educativa.",
+        "hora": "21:30",
+        "ubicacion": [
+        {
+            "latitud": 14.832084215826892,
+            "longitud": -91.51836874404172
+        }
+        ]
+    },
+    {
+        "nombre": "Parque Simón Bolívar",
+        "descripcion": "Punto emblemático del recorrido donde se reúnen familias quetzaltecas.",
+        "hora": "22:45",
+        "ubicacion": [
+        {
+            "latitud": 14.832204642816883,
+            "longitud": -91.51292337554179
+        }
+        ]
+    },
+    {
+        "nombre": "Oratorio La Ciénaga",
+        "descripcion": "Llegada al sector de la Ciénaga antes de enfilar al cierre del recorrido.",
+        "hora": "00:00",
+        "ubicacion": [
+        {
+            "latitud": 14.834871382754626,
+            "longitud": -91.5076150623965
+        }
+        ]
+    }
+  ],
+  "coordenadas": [
+    {
+        "latitud": 14.836343934872824,
+        "longitud": -91.51045254496678,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83617929281254,
+        "longitud": -91.51028490690724,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835221213642509,
+        "longitud": -91.5115709035025,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834673623047717,
+        "longitud": -91.51243909272952,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834658066194677,
+        "longitud": -91.51246792647576,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834491478273758,
+        "longitud": -91.51271603079135,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834275626758775,
+        "longitud": -91.51307075291783,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833884486122237,
+        "longitud": -91.51363331872871,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833828740552327,
+        "longitud": -91.51375066538587,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833614832970026,
+        "longitud": -91.51441384155713,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833372423764837,
+        "longitud": -91.51515948254826,
+        "regreso": false
+    },
+    {
+        "latitud": 14.832989343083867,
+        "longitud": -91.51545284417618,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833233179478697,
+        "longitud": -91.51596601124106,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833420473345518,
+        "longitud": -91.51641945719052,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833642869676027,
+        "longitud": -91.51698092865517,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833760842926496,
+        "longitud": -91.51739667105663,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834028517388578,
+        "longitud": -91.51815921146222,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834521873958847,
+        "longitud": -91.51796420585858,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834774672721897,
+        "longitud": -91.51791056171112,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834925055408071,
+        "longitud": -91.51832764522065,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834565313361338,
+        "longitud": -91.5184949221555,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834048340243632,
+        "longitud": -91.5187092181689,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833640679735481,
+        "longitud": -91.5188582104167,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833020754467125,
+        "longitud": -91.51911080209959,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832436698416346,
+        "longitud": -91.5192966899586,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832210754624503,
+        "longitud": -91.51862531999782,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83186720562536,
+        "longitud": -91.51768856653779,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831681709066476,
+        "longitud": -91.51712082587086,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831495500544616,
+        "longitud": -91.5165364530755,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831336040500728,
+        "longitud": -91.51604158553504,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83115960362349,
+        "longitud": -91.51543487815754,
+        "regreso": true
+    },
+    {
+        "latitud": 14.830911252527189,
+        "longitud": -91.51472179920042,
+        "regreso": true
+    },
+    {
+        "latitud": 14.831510715148859,
+        "longitud": -91.51458290134218,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83196122154856,
+        "longitud": -91.51447561291558,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832580429137776,
+        "longitud": -91.51434545536569,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832397103145896,
+        "longitud": -91.51380085251995,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832266719436253,
+        "longitud": -91.5133476544661,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832265422940102,
+        "longitud": -91.51326517650642,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832262830012251,
+        "longitud": -91.51319409791051,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832297185275594,
+        "longitud": -91.51304858816057,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832378211309146,
+        "longitud": -91.5127414752073,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832426178624207,
+        "longitud": -91.51262681059815,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83251015831831,
+        "longitud": -91.51240860364679,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832833558684065,
+        "longitud": -91.51150659532361,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832998588300772,
+        "longitud": -91.51105271105664,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833087392543995,
+        "longitud": -91.51084551004739,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83322486460081,
+        "longitud": -91.51052364069689,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833274128230512,
+        "longitud": -91.5104378098997,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833315613358318,
+        "longitud": -91.51033655629513,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833379785716566,
+        "longitud": -91.5102453615149,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833633661506866,
+        "longitud": -91.51000459393558,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833890998674848,
+        "longitud": -91.50981683862881,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834594902125108,
+        "longitud": -91.50928109036964,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834902342691406,
+        "longitud": -91.5090925085425,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83539266856717,
+        "longitud": -91.50881326609314,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83521559225587,
+        "longitud": -91.50840900593617,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835109600476725,
+        "longitud": -91.5081952007014,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834957466647602,
+        "longitud": -91.50787297795206,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834888109132214,
+        "longitud": -91.50773618529227,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834871382754626,
+        "longitud": -91.5076150623965,
+        "regreso": true
+    }
+  ],
+  "historia": [
+    {
+        "titulo": "La Merced: Tradición y Soledad en el Corazón de Xela",
+        "subtitulo": "Historia del Templo de Nuestra Señora de La Merced",
+        "historiaIglesia": "El Templo de La Merced es uno de los edificios más emblemáticos del Centro Histórico de Quetzaltenango. Su arquitectura, que destaca por su elegancia y proporciones, ha sido testigo silencioso del crecimiento de la ciudad desde la época colonial. Este recinto no solo es un monumento artístico, sino el hogar de una comunidad ferviente que ha sabido resguardar con celo sus tradiciones. La Merced es reconocida por ser un espacio de recogimiento espiritual, donde el arte sacro y la fe se encuentran para dar vida a las celebraciones más solemnes de la Semana Santa quetzalteca.",
+        "subtituloProcesion": "Santo Entierro de La Merced: El Silencio que Predica",
+        "historiaProcesion": "La procesión del Señor Sepultado y la Virgen de Dolores de la Iglesia La Merced es una de las muestras más puras de luto y respeto en la ciudad. El cortejo se distingue por su misticismo, acentuado por el paso cadencioso de los 80 cargadores y el eco de las marchas fúnebres que resuenan en las calles empedradas. Al caer la noche, la iluminación de las andas crea una atmósfera de oración profunda, mientras el pueblo acompaña el cuerpo yacente de Cristo en su camino al sepulcro. Es una procesión que une el centro de la ciudad con barrios tradicionales, manteniendo viva la esencia del Viernes Santo a través del silencio, el incienso y la devoción inquebrantable de sus fieles."
+    }
+  ],
+  "imagenIcono": ""
+}

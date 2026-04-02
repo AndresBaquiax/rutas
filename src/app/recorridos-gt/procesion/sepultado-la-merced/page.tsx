@@ -10,7 +10,7 @@ import {
 import ProcesionMapWrapper from "@/components/ProcesionMapWrapper";
 import PuntosInteresTimeline from "@/components/PuntosInteresTimeline";
 import config from "@/data/config.json";
-import dataRecorrido from "@/data/viernesSanto/dataRecorridoSepultadoSanNicolas.json";
+import dataRecorrido from "@/data/viernesSanto/dataRecorridoLaMerced.json";
 import { formatearHora12 } from "@/lib/date-format";
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -131,7 +131,7 @@ export default function InformacionPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/carruselFotos/12.webp')",
+            backgroundImage: "url('/carruselFotos/3.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
