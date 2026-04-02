@@ -7,7 +7,7 @@ import { formatearHora12 } from "@/lib/date-format";
 type PuntoInteres = {
   nombre: string;
   descripcion: string;
-  hora: string;
+  hora?: string;
   ubicacion?: { latitud: number; longitud: number }[];
 };
 
@@ -20,8 +20,8 @@ type PuntosInteresTimelineProps = {
   onPuntoClick?: (coordenada: { latitud: number; longitud: number }) => void;
 };
 
-const parseFechaHora = (fecha: string, hora: string) => {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(fecha) || !/^\d{2}:\d{2}$/.test(hora)) {
+const parseFechaHora = (fecha: string, hora?: string) => {
+  if (!hora || !/^\d{4}-\d{2}-\d{2}$/.test(fecha) || !/^\d{2}:\d{2}$/.test(hora)) {
     return null;
   }
 
@@ -147,15 +147,17 @@ export default function PuntosInteresTimeline({
                 {punto.nombre}
               </button>
 
-              <span
-                className="text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap flex-shrink-0 mt-0.5"
-                style={{
-                  color: primaryColor,
-                  backgroundColor: thirdColor,
-                }}
-              >
-                {formatearHora12(punto.hora)}
-              </span>
+              {punto.hora && (
+                <span
+                  className="text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap flex-shrink-0 mt-0.5"
+                  style={{
+                    color: primaryColor,
+                    backgroundColor: thirdColor,
+                  }}
+                >
+                  {formatearHora12(punto.hora)}
+                </span>
+              )}
             </div>
 
             <p className="text-sm leading-relaxed" style={{ color: `${neutralColor}C7` }}>
