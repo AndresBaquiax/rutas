@@ -20,7 +20,7 @@
     {
       "nombre": "Parque Bolívar",
       "descripcion": "Punto de paso del cortejo procesional por el emblemático Parque Bolívar.",
-      "hora": "08:15",
+      "hora": "",
       "ubicacion": [
         {
           "latitud": 14.832382940480759,
@@ -31,7 +31,7 @@
     {
       "nombre": "Esquina Más y Más (Transfiguración)",
       "descripcion": "Punto de referencia clave en el sector de la Transfiguración.",
-      "hora": "09:30",
+      "hora": "",
       "ubicacion": [
         {
           "latitud": 14.830444735911565,
@@ -42,7 +42,7 @@
     {
       "nombre": "Gasolinera Puma",
       "descripcion": "Referencia de paso por la zona comercial de la ruta.",
-      "hora": "10:45",
+      "hora": "",
       "ubicacion": [
         {
           "latitud": 14.832222961446892,
@@ -53,7 +53,7 @@
     {
       "nombre": "Parque Central",
       "descripcion": "Paso frente a la catedral y parque principal de la ciudad.",
-      "hora": "12:15",
+      "hora": "",
       "ubicacion": [
         {
           "latitud": 14.834476290349231,
@@ -64,7 +64,7 @@
     {
       "nombre": "Entrada",
       "descripcion": "Finalización del recorrido y retorno de la procesión a su templo.",
-      "hora": "13:30",
+      "hora": "13:45",
       "ubicacion": [
         {
           "latitud": 14.833673819295788,
