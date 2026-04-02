@@ -21,6 +21,7 @@ type ProcesionMapProps = {
   pinColor?: string;
   puntoInteresSeleccionado?: { latitud: number; longitud: number } | null;
   centrarTrigger?: number;
+  imagenUrl?: string;
 };
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -102,6 +103,7 @@ export default function ProcesionMap({
   pinColor,
   puntoInteresSeleccionado,
   centrarTrigger = 0,
+  imagenUrl,
 }: ProcesionMapProps) {
   const puntosIda = coordenadas
     .filter((coordenada) => !coordenada.regreso)
@@ -307,6 +309,22 @@ export default function ProcesionMap({
   const iconoMarcadorProcesion = useMemo(() => {
     const colorPin = pinColor ?? idaColor;
 
+    if (imagenUrl) {
+      return divIcon({
+        className: "",
+        iconSize: [52, 62],
+        iconAnchor: [26, 62],
+        html: `
+          <div style="display:flex;flex-direction:column;align-items:center;width:52px;height:62px;">
+            <div style="width:48px;height:48px;border-radius:50%;border:4px solid ${colorPin};overflow:hidden;background:${primaryColor};z-index:2;box-shadow:0 3px 6px rgba(0,0,0,0.3);flex-shrink:0;">
+              <img src="${imagenUrl}" style="width:100%;height:100%;object-fit:cover;" alt="Procesión" onerror="this.style.display='none'" />
+            </div>
+            <div style="width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:16px solid ${colorPin};margin-top:-2px;z-index:1;"></div>
+          </div>
+        `,
+      });
+    }
+
     return divIcon({
       className: "",
       iconSize: [36, 36],
@@ -320,7 +338,7 @@ export default function ProcesionMap({
         </div>
       `,
     });
-  }, [idaColor, pinColor, primaryColor]);
+  }, [idaColor, pinColor, primaryColor, imagenUrl]);
 
   if (todasLasCoordenadas.length === 0) {
     return (
