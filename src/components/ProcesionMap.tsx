@@ -127,7 +127,13 @@ export default function ProcesionMap({
   const puntoFinal = todasLasCoordenadas[todasLasCoordenadas.length - 1];
 
   const salida = useMemo(() => parseFechaHora(fecha, horaSalida), [fecha, horaSalida]);
-  const entrada = useMemo(() => parseFechaHora(fecha, horaEntrada), [fecha, horaEntrada]);
+  const entrada = useMemo(() => {
+    const e = parseFechaHora(fecha, horaEntrada);
+    if (e && salida && e.getTime() < salida.getTime()) {
+      e.setDate(e.getDate() + 1);
+    }
+    return e;
+  }, [fecha, horaEntrada, salida]);
 
   const [ahoraMs, setAhoraMs] = useState(() => Date.now());
   const marcadorProcesionRef = useRef<LeafletMarker | null>(null);
