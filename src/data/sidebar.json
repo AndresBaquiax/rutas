@@ -27,7 +27,7 @@
     "idx": 3,
     "idSidebar": "entierro-catedral",
     "tituloSidebar": "Santo entierro del Señor Sepultado de Catedral",
-    "rutaSidebar": "/#recorridos-procesionales",
+    "rutaSidebar": "/recorridos-gt/procesion/sepultado-catedral",
     "parentId": "viernes-santo",
     "ordenSidebar": 4
   },
@@ -35,7 +35,7 @@
     "idx": 4,
     "idSidebar": "entierro-la-merced",
     "tituloSidebar": "Santo entierro del Señor Sepultado de La Merced",
-    "rutaSidebar": "/#recorridos-procesionales",
+    "rutaSidebar": "/recorridos-gt/procesion/sepultado-la-merced",
     "parentId": "viernes-santo",
     "ordenSidebar": 8
   },
