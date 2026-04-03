@@ -1,0 +1,408 @@
+{
+  "nombreProcesion": "Señor Sepultado y Virgen de Dolores",
+  "nombreIglesia": "de  la Catedral Metropolitana de los Altos",
+  "fecha": "2026-04-03",
+  "horaSalida": "16:30",
+  "horaEntrada": "01:00",
+  "cantidadCargadores": 90,
+  "puntosInteres": [
+    {
+        "nombre": "Iglesia Catedral Metropolitana (Salida)",
+        "descripcion": "Solemne salida del cortejo procesional.",
+        "hora": "16:30",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Gasolinera Puma",
+        "descripcion": "Paso del cortejo por el sector de la Gasolinera Puma.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Parque Bolivar",
+        "descripcion": "Paso del cortejo por el Parque Bolívar.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Parque central",
+        "descripcion": "Tránsito del cortejo por el Parque Central.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Cementerio General",
+        "descripcion": "Paso del cortejo frente al Cementerio General.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Parroquia El Calvario (Entrada)",
+        "descripcion": "Solemne ingreso del cortejo procesional.",
+        "hora": "01:00",
+        "ubicacion": []
+    }
+  ],
+  "coordenadas": [
+    {
+        "latitud": 14.839705062700293,
+        "longitud": -91.51793110139472,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839723211870181,
+        "longitud": -91.51807325852592,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840068525985647,
+        "longitud": -91.51798715786342,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840014156415968,
+        "longitud": -91.51749048112787,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83985318030291,
+        "longitud": -91.51684463590777,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83978297609504,
+        "longitud": -91.51660373315087,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839666950550525,
+        "longitud": -91.51628186800998,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839246925174413,
+        "longitud": -91.51649979755379,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838692069169374,
+        "longitud": -91.51691951863185,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838413559179497,
+        "longitud": -91.51711662904104,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837956278844079,
+        "longitud": -91.51731480367185,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837019802051659,
+        "longitud": -91.51764410493126,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836493958794623,
+        "longitud": -91.51781693025757,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836260130466185,
+        "longitud": -91.51787727349641,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835999326094822,
+        "longitud": -91.51795354530783,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835642616573372,
+        "longitud": -91.5180416253293,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834928733923078,
+        "longitud": -91.51832609377904,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834566070081758,
+        "longitud": -91.51849447308523,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834047739589046,
+        "longitud": -91.51870910260206,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83364167518589,
+        "longitud": -91.51886242318486,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833464066999193,
+        "longitud": -91.51837493177786,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83403319060493,
+        "longitud": -91.51815968433112,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834520464685399,
+        "longitud": -91.51796614829823,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834181938493579,
+        "longitud": -91.51722741636686,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833989689806106,
+        "longitud": -91.5168420540257,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833769445052924,
+        "longitud": -91.51623240864782,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833423958859719,
+        "longitud": -91.5152902393094,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833372750517094,
+        "longitud": -91.51515948161959,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833533505305873,
+        "longitud": -91.5146934477635,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833620067423468,
+        "longitud": -91.51440974918896,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833839238456362,
+        "longitud": -91.51372124377735,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833880723527543,
+        "longitud": -91.51363004867234,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834503912122457,
+        "longitud": -91.51269896196163,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834641979160612,
+        "longitud": -91.51249511411726,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834641979160612,
+        "longitud": -91.51249511411726,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83465514170037,
+        "longitud": -91.51244482264735,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834635497087021,
+        "longitud": -91.51243744659027,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834592067542344,
+        "longitud": -91.51243744664,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834455945068209,
+        "longitud": -91.51243543511274,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83370907868205,
+        "longitud": -91.51242901774327,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833102279831891,
+        "longitud": -91.51250036642504,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832474848481707,
+        "longitud": -91.51262489656999,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832430770315277,
+        "longitud": -91.51262690821365,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832378913568842,
+        "longitud": -91.51273486707193,
+        "regreso": true
+    },
+    {
+        "latitud": 14.8322631362007,
+        "longitud": -91.51319729651941,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832267025399746,
+        "longitud": -91.51334414749284,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832400242500162,
+        "longitud": -91.51380354706625,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832579749149366,
+        "longitud": -91.51434631440452,
+        "regreso": true
+    },
+    {
+        "latitud": 14.832761838831434,
+        "longitud": -91.51488496586087,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83298779126029,
+        "longitud": -91.51544982019368,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833192577481743,
+        "longitud": -91.51587865957403,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83342528340925,
+        "longitud": -91.51641979523443,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83364425228158,
+        "longitud": -91.5169769552374,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833761577333682,
+        "longitud": -91.51739873260638,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834033792491182,
+        "longitud": -91.51815193416242,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834518580657923,
+        "longitud": -91.51796617031687,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83477786145964,
+        "longitud": -91.51790850280481,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834927595909575,
+        "longitud": -91.51832491577846,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835166133754315,
+        "longitud": -91.51898675086609,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835333010434042,
+        "longitud": -91.51946766932737,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836322362727813,
+        "longitud": -91.51911881862738,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836826523430608,
+        "longitud": -91.51894411514706,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83739528787841,
+        "longitud": -91.51876093388688,
+        "regreso": true
+    },
+    {
+        "latitud": 14.837965600251604,
+        "longitud": -91.51857923680653,
+        "regreso": true
+    },
+    {
+        "latitud": 14.838741239824778,
+        "longitud": -91.51837394526176,
+        "regreso": true
+    },
+    {
+        "latitud": 14.839124861340524,
+        "longitud": -91.5182604915796,
+        "regreso": true
+    },
+    {
+        "latitud": 14.839290149381233,
+        "longitud": -91.51820818850341,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83964084454592,
+        "longitud": -91.51809541666306,
+        "regreso": true
+    },
+    {
+        "latitud": 14.839730294387993,
+        "longitud": -91.51807261785713,
+        "regreso": true
+    },
+    {
+        "latitud": 14.839710200532647,
+        "longitud": -91.51793649563142,
+        "regreso": true
+    }
+  ],
+  "historia": [
+    {
+        "titulo": "Catedral Metropolitana: Corazón y Refugio de la Fe Quetzalteca",
+        "subtitulo": "Historia de la Catedral del Espíritu Santo",
+        "historiaIglesia": "La Catedral Metropolitana de Quetzaltenango, dedicada al Espíritu Santo, es uno de los monumentos más antiguos e importantes de Guatemala. Su fachada renacentista original, que data de 1532, sobrevive como un testimonio de piedra de la era colonial. Tras el terremoto de San Perfecto en 1902, la estructura fue reconstruida integrando elementos modernos, convirtiéndola en un complejo arquitectónico único donde el pasado y el presente convergen. Es el epicentro espiritual de la diócesis y el hogar de las imágenes más insignes de la ciudad, consolidándose como el baluarte de la identidad católica en el occidente del país.",
+        "subtituloProcesion": "El Señor Sepultado de Catedral: Solemne Duelo en el Centro Histórico",
+        "historiaProcesion": "El cortejo procesional del Señor Sepultado y la Virgen de Dolores de la Catedral Metropolitana es una de las expresiones de luto más respetadas de Xela. El Viernes Santo al atardecer, la imponente urna sale de las naves catedralicias para recorrer las principales arterias de la ciudad. Con 90 cargadores por turno, la procesión destaca por su rigor litúrgico y el ambiente de silencio que solo se rompe por las marchas fúnebres. El trayecto de este año es particularmente emblemático al enfilarse hacia el Cementerio General y concluir su jornada en la Parroquia El Calvario, simbolizando el cumplimiento del misterio pascual y la unión de las dos parroquias más antiguas de la zona alta en una noche de profunda oración y penitencia."
+    }
+  ],
+  "imagenIcono": ""
+}
