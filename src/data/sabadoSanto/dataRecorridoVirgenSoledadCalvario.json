@@ -1,0 +1,375 @@
+{
+  "nombreProcesion": "Nuestra Señora de la Soledad",
+  "nombreIglesia": "Parroquia El Calvario",
+  "fecha": "2026-04-03",
+  "horaSalida": "15:00",
+  "horaEntrada": "00:00",
+  "cantidadCargadores": 60,
+  "puntosInteres": [
+    {
+        "nombre": "Iglesia El Calvario (Salida)",
+        "descripcion": "Solemne salida del cortejo procesional.",
+        "hora": "15:00",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Agencia Claro",
+        "descripcion": "Paso del cortejo por el sector de la Agencia Claro.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Plaza Polanco",
+        "descripcion": "Paso del cortejo por la Plaza Polanco.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Iglesia San Juan de Dios",
+        "descripcion": "Tránsito del cortejo por la Iglesia San Juan de Dios.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "INVO",
+        "descripcion": "Paso del cortejo frente al INVO.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "IGSS",
+        "descripcion": "Paso del cortejo frente al IGSS.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Iglesia Catedral Metropolitana",
+        "descripcion": "Paso del cortejo por la Catedral Metropolitana.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Iglesia El Calvario (Entrada)",
+        "descripcion": "Solemne ingreso del cortejo procesional.",
+        "hora": "00:00",
+        "ubicacion": []
+    }
+  ],
+  "coordenadas": [
+    {
+        "latitud": 14.836410315610568,
+        "longitud": -91.52587972518688,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83635586707042,
+        "longitud": -91.52566581901915,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83638049854068,
+        "longitud": -91.52565710182508,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836413868485334,
+        "longitud": -91.52544928784546,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83665288310295,
+        "longitud": -91.52434694783612,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836726129270637,
+        "longitud": -91.52433152517683,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836656772141033,
+        "longitud": -91.52390438315916,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836531042339844,
+        "longitud": -91.52301064757376,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83646233356314,
+        "longitud": -91.52278333041161,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836364455909656,
+        "longitud": -91.52253857885074,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835963024217712,
+        "longitud": -91.5216194148338,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835814586817696,
+        "longitud": -91.52109504299342,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83567815777098,
+        "longitud": -91.5205209924219,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835491303546528,
+        "longitud": -91.51996605051401,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835333198093451,
+        "longitud": -91.51947118290138,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836322257856825,
+        "longitud": -91.51911916116094,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836831028792167,
+        "longitud": -91.5189434501782,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837399175636591,
+        "longitud": -91.51876539512422,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837966723157997,
+        "longitud": -91.518584412606,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838738202457838,
+        "longitud": -91.51837430844394,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839639031192798,
+        "longitud": -91.51809673019707,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840069568419107,
+        "longitud": -91.5179902169283,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840014472626686,
+        "longitud": -91.51748462053654,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83984594424779,
+        "longitud": -91.51681876215156,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839779181029693,
+        "longitud": -91.51659479771011,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839656025578401,
+        "longitud": -91.51628164979947,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839241833656079,
+        "longitud": -91.51650092025183,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838690349036263,
+        "longitud": -91.51691651733051,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838401055035993,
+        "longitud": -91.5171199595905,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838176780904286,
+        "longitud": -91.51722255393072,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837954915890002,
+        "longitud": -91.5173181787126,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837612021977987,
+        "longitud": -91.5174469244925,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83701852422934,
+        "longitud": -91.51764538586887,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836493010630916,
+        "longitud": -91.51781696988171,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83600136780513,
+        "longitud": -91.51795199264329,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83563358479106,
+        "longitud": -91.51804406247382,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834929461766372,
+        "longitud": -91.51832560604485,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834772597112517,
+        "longitud": -91.51790651101352,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83452344080566,
+        "longitud": -91.51796760235956,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834032102996336,
+        "longitud": -91.51815870979755,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833726798790995,
+        "longitud": -91.51827035788752,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833463627542802,
+        "longitud": -91.51837094062455,
+        "regreso": true
+    },
+    {
+        "latitud": 14.833639939343367,
+        "longitud": -91.51886178496235,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834047095606712,
+        "longitud": -91.51870191968246,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83456306512771,
+        "longitud": -91.51849606017147,
+        "regreso": true
+    },
+    {
+        "latitud": 14.834925953269716,
+        "longitud": -91.51832988929227,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83516525701114,
+        "longitud": -91.51898948754503,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835329251556798,
+        "longitud": -91.51946423858458,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835489832256771,
+        "longitud": -91.51996206813004,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835672761521879,
+        "longitud": -91.5205174270918,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835813610240828,
+        "longitud": -91.52109136742166,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83596177722644,
+        "longitud": -91.52161204000724,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836368421273251,
+        "longitud": -91.52253895210329,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836526133603826,
+        "longitud": -91.52299672580921,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836649938912748,
+        "longitud": -91.52390733588032,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836729456304711,
+        "longitud": -91.5243329816047,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836651672830467,
+        "longitud": -91.52434371044644,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836416382427037,
+        "longitud": -91.52545330330726,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83637878683361,
+        "longitud": -91.52565581010096,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836348969952718,
+        "longitud": -91.52566788009902,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83641119666592,
+        "longitud": -91.52588849214203,
+        "regreso": true
+    }
+  ],
+  "historia": [
+    {
+        "titulo": "La Soledad del Calvario: Madre y Protectora de Xelajú",
+        "subtitulo": "Historia de la Parroquia El Calvario",
+        "historiaIglesia": "Ubicada en la parte alta de la ciudad, la Parroquia El Calvario es uno de los puntos más emblemáticos de Quetzaltenango. Su templo, con una arquitectura neogótica imponente, se erige sobre lo que fue un antiguo cementerio colonial. Históricamente, ha sido el centro de la devoción de los barrios altos de la ciudad, sobreviviendo a los terremotos que han marcado la historia de Xela. Sus famosas escalinatas no solo son un referente geográfico, sino el escenario de la fe de miles de devotos que ven en este templo el final del camino penitencial.",
+        "subtituloProcesion": "Nuestra Señora de la Soledad: El Consuelo del Viernes Santo",
+        "historiaProcesion": "La procesión de Nuestra Señora de la Soledad de El Calvario es el cierre místico del Viernes Santo en Quetzaltenango. Esta imagen, poseedora de una belleza melancólica única, representa el dolor de la Madre tras el entierro de su Hijo. El cortejo se distingue por su extrema solemnidad y el característico paso por puntos históricos como el INVO y la Catedral Metropolitana. Acompañada por 60 cargadoras por turno, la Virgen recorre las calles en un ambiente de profundo silencio y oración, siendo la procesión que despide la jornada de duelo para preparar al pueblo católico quetzalteco para la esperanza de la Resurrección."
+    }
+  ],
+  "imagenIcono": "/iconos/virgen-soledad.webp"
+}
