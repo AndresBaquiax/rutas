@@ -1,0 +1,303 @@
+{
+  "nombreProcesion": "Señor Resucitado",
+  "nombreIglesia": "de San Nicolás",
+  "fecha": "2026-04-05",
+  "horaSalida": "09:30",
+  "horaEntrada": "15:00",
+  "cantidadCargadores": 20,
+  "puntosInteres": [
+    {
+        "nombre": "Iglesia San Nicolás (Salida)",
+        "descripcion": "Solemne salida del cortejo procesional.",
+        "hora": "15:00",
+        "ubicacion": []
+    },
+    {
+        "nombre": "INVO",
+        "descripcion": "Paso del cortejo por el INVO.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Parque a Centro America",
+        "descripcion": "Paso del cortejo por el Parque a Centro America.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Iglesia Catedral Metropolitana",
+        "descripcion": "Tránsito del cortejo por la Iglesia Catedral Metropolitana.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Monumento a el bombero",
+        "descripcion": "Paso del cortejo por el Monumento a el bombero.",
+        "hora": "",
+        "ubicacion": []
+    },
+    {
+        "nombre": "Iglesia San Nicolás (Entrada)",
+        "descripcion": "Solemne ingreso del cortejo procesional.",
+        "hora": "",
+        "ubicacion": []
+    }
+  ],
+  "coordenadas": [
+    {
+        "latitud": 14.843609984588852,
+        "longitud": -91.51905925152565,
+        "regreso": false
+    },
+    {
+        "latitud": 14.84363526339284,
+        "longitud": -91.51934960079636,
+        "regreso": false
+    },
+    {
+        "latitud": 14.843214597394319,
+        "longitud": -91.51941330308246,
+        "regreso": false
+    },
+    {
+        "latitud": 14.842300078861202,
+        "longitud": -91.51955658369405,
+        "regreso": false
+    },
+    {
+        "latitud": 14.84144001554905,
+        "longitud": -91.51968548464676,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840189293418272,
+        "longitud": -91.51982254735206,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840116127627024,
+        "longitud": -91.51923749018286,
+        "regreso": false
+    },
+    {
+        "latitud": 14.84007853286739,
+        "longitud": -91.51864203978701,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840066865542815,
+        "longitud": -91.51799361576242,
+        "regreso": false
+    },
+    {
+        "latitud": 14.840011769720109,
+        "longitud": -91.51748533715757,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839785552768516,
+        "longitud": -91.51660959592628,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839659804553028,
+        "longitud": -91.51628236644257,
+        "regreso": false
+    },
+    {
+        "latitud": 14.839240427138522,
+        "longitud": -91.51650163698231,
+        "regreso": false
+    },
+    {
+        "latitud": 14.838405770207139,
+        "longitud": -91.51711780086868,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837610628441327,
+        "longitud": -91.51744870512621,
+        "regreso": false
+    },
+    {
+        "latitud": 14.837018145541043,
+        "longitud": -91.51764206123985,
+        "regreso": false
+    },
+    {
+        "latitud": 14.836494240297785,
+        "longitud": -91.51781973469129,
+        "regreso": false
+    },
+    {
+        "latitud": 14.835638700106957,
+        "longitud": -91.51804492482053,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834927611154836,
+        "longitud": -91.51832688529264,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834565018245412,
+        "longitud": -91.51849629177426,
+        "regreso": false
+    },
+    {
+        "latitud": 14.83404933207367,
+        "longitud": -91.51870708812359,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833645678165334,
+        "longitud": -91.51885495186951,
+        "regreso": false
+    },
+    {
+        "latitud": 14.833463532440252,
+        "longitud": -91.51837818917392,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834033723720163,
+        "longitud": -91.51815781266134,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834519493947143,
+        "longitud": -91.51796469007662,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834778126510146,
+        "longitud": -91.51790702257681,
+        "regreso": false
+    },
+    {
+        "latitud": 14.834929805299351,
+        "longitud": -91.5183234363129,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835166133754315,
+        "longitud": -91.5189862368591,
+        "regreso": true
+    },
+    {
+        "latitud": 14.835327094211317,
+        "longitud": -91.51946970502702,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836322571688175,
+        "longitud": -91.51911808900265,
+        "regreso": true
+    },
+    {
+        "latitud": 14.836830333341881,
+        "longitud": -91.51894669637812,
+        "regreso": true
+    },
+    {
+        "latitud": 14.837396588951611,
+        "longitud": -91.51876570245979,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83796858210046,
+        "longitud": -91.5185819312951,
+        "regreso": true
+    },
+    {
+        "latitud": 14.838740630739407,
+        "longitud": -91.5183749914467,
+        "regreso": true
+    },
+    {
+        "latitud": 14.83929223939351,
+        "longitud": -91.5182107061362,
+        "regreso": true
+    },
+    {
+        "latitud": 14.839639019703968,
+        "longitud": -91.51809201837985,
+        "regreso": true
+    },
+    {
+        "latitud": 14.840071389210117,
+        "longitud": -91.51798845408348,
+        "regreso": true
+    },
+    {
+        "latitud": 14.84065717237493,
+        "longitud": -91.51788878995538,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841109056978544,
+        "longitud": -91.51778105369925,
+        "regreso": true
+    },
+    {
+        "latitud": 14.84113628061332,
+        "longitud": -91.51781592241096,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841160263342937,
+        "longitud": -91.51783536843276,
+        "regreso": true
+    },
+    {
+        "latitud": 14.84117257880215,
+        "longitud": -91.51783805064822,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841195913360137,
+        "longitud": -91.51783805066212,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841269141238563,
+        "longitud": -91.51852920170458,
+        "regreso": true
+    },
+    {
+        "latitud": 14.841438857887784,
+        "longitud": -91.51968351482705,
+        "regreso": true
+    },
+    {
+        "latitud": 14.842297316421943,
+        "longitud": -91.51954819237416,
+        "regreso": true
+    },
+    {
+        "latitud": 14.843221753011559,
+        "longitud": -91.51941529455691,
+        "regreso": true
+    },
+    {
+        "latitud": 14.843637230018071,
+        "longitud": -91.51934982039882,
+        "regreso": true
+    },
+    {
+        "latitud": 14.843608062064003,
+        "longitud": -91.51905880061622,
+        "regreso": true
+    }
+  ],
+  "historia": [
+    {
+        "titulo": "¡Aleluya! El Triunfo de la Vida en San Nicolás",
+        "subtitulo": "Historia de la Iglesia de San Nicolás",
+        "historiaIglesia": "La Iglesia de San Nicolás, situada en el corazón de la zona 3 de Quetzaltenango, es una joya de la arquitectura neogótica local. Tras el terremoto de 1902, el templo fue reconstruido con el esfuerzo de la comunidad, convirtiéndose en un símbolo de resiliencia para Xelajú. Sus torres y vitrales resguardan no solo arte sacro, sino la fe de un barrio que ha mantenido vivas las tradiciones más profundas de la ciudad. Es el escenario principal donde la tristeza del Viernes Santo se transforma en la alegría desbordante del Domingo de Pascua.",
+        "subtituloProcesion": "El Señor Resucitado: La Victoria sobre la Muerte",
+        "historiaProcesion": "El cortejo procesional del Señor Resucitado es la culminación festiva de la Semana Santa en San Nicolás. A diferencia de los cortejos de pasión, esta procesión se caracteriza por un ambiente de júbilo, flores blancas y marchas alegres que anuncian la buena nueva. El recorrido une puntos emblemáticos como el INVO y la Catedral Metropolitana, llevando un mensaje de esperanza y renovación a las calles de Xela. Cargado por devotos que celebran la vida, el Resucitado marca el inicio del tiempo pascual, recordándole al pueblo quetzalteco que la luz siempre prevalece sobre las sombras."
+    }
+  ],
+  "imagenIcono": ""
+}
