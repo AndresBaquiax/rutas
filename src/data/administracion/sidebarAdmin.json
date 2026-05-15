@@ -1,0 +1,10 @@
+[
+  {
+    "idx": 0,
+    "idSidebar": "dashboard",
+    "tituloSidebar": "Dashboard",
+    "rutaSidebar": "/administracion/dashboard",
+    "parentId": null,
+    "ordenSidebar": 1
+  }
+]
