@@ -1,5 +1,5 @@
 import logoImg from "../../public/images/logoRutas.svg";
-import config from "@/data/config.json";
+import config from "@/data/procesiones/config.json";
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
 export default function Footer() {

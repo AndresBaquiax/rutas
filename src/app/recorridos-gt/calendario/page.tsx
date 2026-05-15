@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { MapPinIcon, ClockIcon } from "@heroicons/react/24/outline";
-import data from "@/data/actividades.json";
-import config from "@/data/config.json";
+import data from "@/data/procesiones/actividades.json";
+import config from "@/data/procesiones/config.json";
 import { formatearHora12 } from "@/lib/date-format";
 
 interface Actividad {

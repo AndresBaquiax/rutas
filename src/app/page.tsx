@@ -1,6 +1,6 @@
 "use client";
-import config from "@/data/config.json";
-import dataProcesion from "@/data/dataProcesion.json";
+import config from "@/data/procesiones/config.json";
+import dataProcesion from "@/data/procesiones/dataProcesion.json";
 import Link from "next/link";
 import {
   CalendarDaysIcon,

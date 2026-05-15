@@ -9,8 +9,8 @@ import {
 } from "@heroicons/react/24/outline";
 import ProcesionMapWrapper from "@/components/ProcesionMapWrapper";
 import PuntosInteresTimeline from "@/components/PuntosInteresTimeline";
-import config from "@/data/config.json";
-import dataRecorrido from "@/data/domingoResureccion/dataRecorridoResucitadoSanNicolas.json";
+import config from "@/data/procesiones/config.json";
+import dataRecorrido from "@/data/procesiones/domingoResureccion/dataRecorridoResucitadoSanNicolas.json";
 import { formatearHora12 } from "@/lib/date-format";
 
 const parseFechaHora = (fecha: string, hora: string) => {
