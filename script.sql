@@ -52,7 +52,8 @@ CREATE TABLE procesion (
   horaEntrada TIME,
   cantidadCargadores INT,
   descripcionProcesion TEXT,
-  slugProcesion VARCHAR(300) UNIQUE NOT NULL
+  slugProcesion VARCHAR(300) UNIQUE NOT NULL,
+  urlProcesion TEXT NOT NULL
 );
 
 -- 6. Detalles del recorrido (Puntos de Interés y Mapa)
@@ -72,4 +73,44 @@ CREATE TABLE coordenadas (
   longitud DECIMAL(18, 15) NOT NULL,
   esRegreso BOOLEAN DEFAULT FALSE,
   ordenCoordenada INT NOT NULL
+);
+
+CREATE TABLE roles (
+  idRol INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  nombreRol VARCHAR(300) NOT NULL,
+  nivelRol INT NOT NULL DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+CREATE TABLE usuarios (
+  idUsuario INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  nombreUsuario VARCHAR(200) NOT NULL,
+  correoUsuario VARCHAR(300) UNIQUE NOT NULL,
+  passwordUsuario TEXT NOT NULL,
+  idRol INT NOT NULL REFERENCES roles(idRol) ON DELETE CASCADE,
+  estado BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  ultimoAcceso TIMESTAMP,
+  idHermandad INT REFERENCES hermandad(idHermandad) ON DELETE CASCADE
+);
+
+CREATE TABLE logs (
+  idLog INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  idUsuario INT REFERENCES usuarios(idUsuario) ON DELETE SET NULL,
+  accion VARCHAR(100) NOT NULL,
+  tabla_afectada VARCHAR(100) NOT NULL,
+  id_registro_afectado INT,
+  descripcion TEXT,
+  fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Esta tabla sera exclusiva para guardar informacion sobre la galeria de fotos
+CREATE TABLE media (
+  idMedia INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  idProcesion INT REFERENCES procesion(idProcesion) ON DELETE CASCADE,
+  urlMedia TEXT NOT NULL,
+  descripcionMedia VARCHAR(300),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

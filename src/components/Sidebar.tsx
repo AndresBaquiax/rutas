@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import config from "@/data/config.json";
-import sidebarData from "@/data/sidebar.json";
+import config from "@/data/procesiones/config.json";
+import sidebarData from "@/data/procesiones/sidebar.json";
 import logoImg from "../../public/images/logoRutas.svg";
 
 interface SidebarItem {

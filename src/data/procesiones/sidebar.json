@@ -1,0 +1,34 @@
+[
+  {
+    "idx": 0,
+    "idSidebar": "calendario",
+    "tituloSidebar": "Calendario Santo",
+    "rutaSidebar": "/recorridos-gt/calendario",
+    "parentId": null,
+    "ordenSidebar": 2
+  },
+  {
+    "idx": 8,
+    "idSidebar": "inicio",
+    "tituloSidebar": "Inicio",
+    "rutaSidebar": "/",
+    "parentId": null,
+    "ordenSidebar": 3
+  },
+  {
+    "idx": 12,
+    "idSidebar": "recorridos",
+    "tituloSidebar": "Recorridos",
+    "rutaSidebar": "/#recorridos-procesionales",
+    "parentId": null,
+    "ordenSidebar": 1
+  },
+  {
+    "idx": 12,
+    "idSidebar": "Velacion de la Virgen de Soledad",
+    "tituloSidebar": "Velacion de la Virgen de Soledad",
+    "rutaSidebar": "/recorridos-gt/procesion/velacion-virgen-soledad-calvario",
+    "parentId": null,
+    "ordenSidebar": 2
+  }
+]

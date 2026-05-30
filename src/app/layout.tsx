@@ -29,9 +29,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${primaryFont.variable}`}>
-        <Sidebar />
         <main className="min-h-screen">{children}</main>
-        <Footer />
         <SpeedInsights />
       </body>
     </html>
