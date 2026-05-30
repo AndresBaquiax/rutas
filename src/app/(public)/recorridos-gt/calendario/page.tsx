@@ -627,7 +627,7 @@ export default function CalendarioPage() {
 
                         {hasSlug ? (
                           <Link
-                            href={`/recorridos-gt/calendario/${actividad.slugActividad}`}
+                            href={`${actividad.slugActividad}`}
                             className="block rounded-2xl p-5 border transition-all duration-300 cursor-pointer overflow-hidden relative group-hover:-translate-y-1"
                             style={{
                               backgroundColor: `${config.cardColor}80`,

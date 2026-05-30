@@ -1,0 +1,274 @@
+{
+    "nombreProcesion": "Nuestra Señora de la Soledad",
+    "nombreIglesia": "Parroquia El Calvario",
+    "fecha": "2026-05-31",
+    "horaSalida": "15:00",
+    "horaEntrada": "21:00",
+    "cantidadCargadores": 60,
+    "puntosInteres": [
+        {
+            "nombre": "Iglesia El Calvario (Salida)",
+            "descripcion": "Solemne salida del cortejo procesional.",
+            "hora": "15:00",
+            "ubicacion": []
+        },
+        {
+            "nombre": "Cementerio General",
+            "descripcion": "Paso del cortejo frente al Cementerio General de Quetzaltenango.",
+            "hora": "",
+            "ubicacion": []
+        },
+        {
+            "nombre": "Calle Real del Calvario",
+            "descripcion": "Tránsito del cortejo por la Calle Real del Calvario.",
+            "hora": "",
+            "ubicacion": []
+        },
+        {
+            "nombre": "Pasaje Enríquez",
+            "descripcion": "Paso del cortejo por el Pasaje Enríquez.",
+            "hora": "",
+            "ubicacion": []
+        },
+        {
+            "nombre": "Iglesia Catedral Metropolitana",
+            "descripcion": "Paso del cortejo por la Catedral Metropolitana.",
+            "hora": "",
+            "ubicacion": []
+        },
+        {
+            "nombre": "Agencia Claro",
+            "descripcion": "Paso del cortejo por el sector de la Agencia Claro.",
+            "hora": "",
+            "ubicacion": []
+        },
+        {
+            "nombre": "Iglesia El Calvario (Entrada)",
+            "descripcion": "Solemne ingreso del cortejo procesional.",
+            "hora": "21:00",
+            "ubicacion": []
+        }
+    ],
+    "coordenadas": [
+        {
+            "latitud": 14.836407158289513,
+            "longitud": -91.52588376106114,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836350116999567,
+            "longitud": -91.52566516105861,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836377989452345,
+            "longitud": -91.52565979662974,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836580874994775,
+            "longitud": -91.5256423621511,
+            "regreso": false
+        },
+        {
+            "latitud": 14.837009980478616,
+            "longitud": -91.5258763850747,
+            "regreso": false
+        },
+        {
+            "latitud": 14.837157768720015,
+            "longitud": -91.52587437335934,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83690237997375,
+            "longitud": -91.5250207603111,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836727367223036,
+            "longitud": -91.52432875039155,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836653472866999,
+            "longitud": -91.52390898472281,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836529667463196,
+            "longitud": -91.52303324343896,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836452532091048,
+            "longitud": -91.52275898755964,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836362432630905,
+            "longitud": -91.52253636420721,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835965126044563,
+            "longitud": -91.52162245315493,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835815392248369,
+            "longitud": -91.52108869357897,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835676029546507,
+            "longitud": -91.52051805362763,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835489348220557,
+            "longitud": -91.51996417744029,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83533097437101,
+            "longitud": -91.5194673489898,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835163342919191,
+            "longitud": -91.51898491587195,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834931935287285,
+            "longitud": -91.51832576293442,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834564623006697,
+            "longitud": -91.51849642359926,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834046711850394,
+            "longitud": -91.51871326459172,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833640901640988,
+            "longitud": -91.51886042518481,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83346264502188,
+            "longitud": -91.51838030993954,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834033007936394,
+            "longitud": -91.51815423566232,
+            "regreso": true
+        },
+        {
+            "latitud": 14.834524653341912,
+            "longitud": -91.5179615476849,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83477615567516,
+            "longitud": -91.51790723296013,
+            "regreso": true
+        },
+        {
+            "latitud": 14.834929131169156,
+            "longitud": -91.51832766920928,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835166372470002,
+            "longitud": -91.51898883383232,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835329070843022,
+            "longitud": -91.51946626696135,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835491120766166,
+            "longitud": -91.51996582840032,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835674561098829,
+            "longitud": -91.52051903396296,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835812328449851,
+            "longitud": -91.52109971343614,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835961414058993,
+            "longitud": -91.52161201531307,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83636848173463,
+            "longitud": -91.52253000181386,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836525993764852,
+            "longitud": -91.52299871740553,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836652300940075,
+            "longitud": -91.52390234338179,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83673008448625,
+            "longitud": -91.52433015569721,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836651004611314,
+            "longitud": -91.52434557836303,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836415037851088,
+            "longitud": -91.52545240908809,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836376146067995,
+            "longitud": -91.52565491584372,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83634926892485,
+            "longitud": -91.52566634466503,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836410847461284,
+            "longitud": -91.52588226257059,
+            "regreso": true
+        }
+    ],
+    "historia": [
+        {
+            "titulo": "La Soledad del Calvario: Madre y Protectora de Xelajú",
+            "subtitulo": "Historia de la Parroquia El Calvario",
+            "historiaIglesia": "Ubicada en la parte alta de la ciudad, la Parroquia El Calvario es uno de los puntos más emblemáticos de Quetzaltenango. Su templo, erigido en 1601, se levanta sobre lo que fue un antiguo cementerio colonial y es referente de la devoción de los barrios altos de Xela. A la Virgen de la Soledad le fueron donadas 385 cuerdas de terreno, hoy parte del Cementerio General que flanquea el templo. Sus escalinatas y la arquitectura del recinto han sido escenario de siglos de fe popular en el occidente guatemalteco.",
+            "subtituloProcesion": "Velación de Nuestra Señora de Soledad: Devoción Mariana en el Mes de Mayo",
+            "historiaProcesion": "La solemne velación de Nuestra Señora de Soledad del Templo El Calvario es una tradición mariana que se celebra en el mes de mayo, dedicado a la Virgen María. Con registro como la Dolorosa más antigua de Quetzaltenango —con más de cuatro siglos de devoción—, la imagen conocida cariñosamente como «La Sole» es venerada en actos que incluyen novena, velación en altar mayor y un cortejo procesional que sale a las tres de la tarde al compás de la marcha oficial «Lágrimas de Soledad». Esta festividad cobró especial relevancia tras la coronación y consagración de la imagen el 28 de mayo de 2016, cuando fue denominada «Reina de la Fe». El recorrido atraviesa el Cementerio General, la Calle Real del Calvario, el Pasaje Enríquez y la Catedral Metropolitana, antes de regresar al templo pasadas las nueve de la noche, en un ambiente de profunda solemnidad y oración mariana."
+        }
+    ],
+    "imagenIcono": "/iconos/virgen-soledad.webp"
+}

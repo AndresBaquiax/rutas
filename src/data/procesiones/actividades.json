@@ -173,6 +173,12 @@
       "fechaActividad": "2026-04-05",
       "horaActividad": "11:00",
       "slugActividad": ""
+    },
+    {
+      "nombreActividad": "Velación de la Virgen de Soledad (Parroquia El Calvario)",
+      "fechaActividad": "2026-05-31",
+      "horaActividad": "15:00",
+      "slugActividad": "/recorridos-gt/procesion/velacion-virgen-soledad-calvario"
     }
   ]
 }
