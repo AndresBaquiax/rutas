@@ -13,7 +13,7 @@
     "tituloSidebar": "Inicio",
     "rutaSidebar": "/",
     "parentId": null,
-    "ordenSidebar": 3
+    "ordenSidebar": 4
   },
   {
     "idx": 12,
@@ -25,10 +25,10 @@
   },
   {
     "idx": 12,
-    "idSidebar": "Velacion de la Virgen de Soledad",
-    "tituloSidebar": "Velacion de la Virgen de Soledad",
-    "rutaSidebar": "/recorridos-gt/procesion/velacion-virgen-soledad-calvario",
+    "idSidebar": "VelacionVirgenDoloresSanNicolas",
+    "tituloSidebar": "Velacion Virgen de Dolores Parroquia San Nicolás",
+    "rutaSidebar": "/recorridos-gt/procesion/velacion-virgen-san-nicolas",
     "parentId": null,
-    "ordenSidebar": 2
+    "ordenSidebar": 3
   }
 ]

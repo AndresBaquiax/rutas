@@ -1,0 +1,324 @@
+{
+    "nombreProcesion": "Virgen de dolores | XIV Velación",
+    "nombreIglesia": "Parroquia de San Nicolás",
+    "fecha": "2026-08-30",
+    "horaSalida": "09:00",
+    "horaEntrada": "14:00",
+    "cantidadCargadores": 40,
+    "puntosInteres": [
+        {
+            "nombre": "Parroquia de San Nicolás (Salida)",
+            "descripcion": "Solemne salida del cortejo procesional.",
+            "hora": "09:00",
+            "ubicacion": [
+                {
+                "latitud": 14.843611334061189,
+                "longitud": -91.51906401758104
+                }
+            ]
+        },
+        {
+            "nombre": "15av. y Calle Rodolfo Robles",
+            "descripcion": "Paso del cortejo por la 15 Avenida y Calle Rodolfo Robles.",
+            "hora": "",
+            "ubicacion": [
+                {
+                "latitud": 14.840194061238305,
+                "longitud": -91.51982150947481
+                }
+            ]
+        },
+        {
+            "nombre": "Instituto Normal para Varones de Occidente (INVO)",
+            "descripcion": "Paso del cortejo frente a las instalaciones del INVO.",
+            "hora": "",
+            "ubicacion": [
+                {
+                "latitud": 14.840114978571998,
+                "longitud": -91.5168785797066
+                }
+            ]
+        },
+        {
+            "nombre": "Parque a Centroamérica",
+            "descripcion": "Tránsito del cortejo procesional por el Parque a Centroamérica.",
+            "hora": "",
+            "ubicacion": [
+                {
+                "latitud": 14.83423971264009,
+                "longitud": -91.51837321369347
+                }
+            ]
+        },
+        {
+            "nombre": "Teatro Municipal",
+            "descripcion": "Paso del cortejo procesional frente al Teatro Municipal de Quetzaltenango.",
+            "hora": "",
+            "ubicacion": [
+                {
+                "latitud": 14.83774893660661,
+                "longitud": -91.51896161834365
+                }
+            ]
+        },
+        {
+            "nombre": "Universidad Mesoamericana",
+            "descripcion": "Paso del cortejo en las inmediaciones de la Universidad Mesoamericana.",
+            "hora": "",
+            "ubicacion": [
+                {
+                "latitud": 14.843168141002288,
+                "longitud": -91.51848204794513
+                }
+            ]
+        },
+        {
+            "nombre": "Parroquia de San Nicolás (Entrada)",
+            "descripcion": "Solemne ingreso del cortejo procesional al templo.",
+            "hora": "14:00",
+            "ubicacion": [
+                {
+                "latitud": 14.843611334061189,
+                "longitud": -91.51906401758104
+                }
+            ]
+        }
+    ],
+    "coordenadas": [
+        {
+        "latitud": 14.843611334061189,
+        "longitud": -91.51906401758104,
+        "regreso": false
+        },
+        {
+        "latitud": 14.843637260979513,
+        "longitud": -91.51935034340336,
+        "regreso": false
+        },
+        {
+        "latitud": 14.843213553366844,
+        "longitud": -91.51941680210275,
+        "regreso": false
+        },
+        {
+        "latitud": 14.842736661282654,
+        "longitud": -91.51948311776094,
+        "regreso": false
+        },
+        {
+        "latitud": 14.842303865952728,
+        "longitud": -91.51955105879142,
+        "regreso": false
+        },
+        {
+        "latitud": 14.841437889214799,
+        "longitud": -91.51968286137398,
+        "regreso": false
+        },
+        {
+        "latitud": 14.840795637545007,
+        "longitud": -91.51975699215956,
+        "regreso": false
+        },
+        {
+        "latitud": 14.840192103280572,
+        "longitud": -91.51982166540702,
+        "regreso": false
+        },
+        {
+        "latitud": 14.840111728299336,
+        "longitud": -91.51918329968845,
+        "regreso": false
+        },
+        {
+        "latitud": 14.840075630583451,
+        "longitud": -91.51864402288396,
+        "regreso": false
+        },
+        {
+        "latitud": 14.840074334203464,
+        "longitud": -91.5179922460988,
+        "regreso": false
+        },
+        {
+        "latitud": 14.839999144663196,
+        "longitud": -91.51740819509631,
+        "regreso": false
+        },
+        {
+        "latitud": 14.839783946836494,
+        "longitud": -91.5166015207344,
+        "regreso": false
+        },
+        {
+        "latitud": 14.839664032115111,
+        "longitud": -91.51628233784767,
+        "regreso": false
+        },
+        {
+        "latitud": 14.839252176049706,
+        "longitud": -91.51649701385568,
+        "regreso": false
+        },
+        {
+        "latitud": 14.838411626224934,
+        "longitud": -91.51711240053316,
+        "regreso": false
+        },
+        {
+        "latitud": 14.837960599368195,
+        "longitud": -91.51731688593095,
+        "regreso": false
+        },
+        {
+        "latitud": 14.837609007130467,
+        "longitud": -91.51744416859052,
+        "regreso": false
+        },
+        {
+        "latitud": 14.837019232752466,
+        "longitud": -91.51764291433751,
+        "regreso": false
+        },
+        {
+        "latitud": 14.836495656645658,
+        "longitud": -91.51780974453327,
+        "regreso": false
+        },
+        {
+        "latitud": 14.835996296902778,
+        "longitud": -91.51795459890393,
+        "regreso": false
+        },
+        {
+        "latitud": 14.835644973369455,
+        "longitud": -91.51804110013347,
+        "regreso": false
+        },
+        {
+        "latitud": 14.834925967734772,
+        "longitud": -91.51832671841639,
+        "regreso": true
+        },
+        {
+        "latitud": 14.835170339375397,
+        "longitud": -91.51898520081217,
+        "regreso": true
+        },
+        {
+        "latitud": 14.835334681954562,
+        "longitud": -91.51946780631104,
+        "regreso": true
+        },
+        {
+        "latitud": 14.836320126583082,
+        "longitud": -91.51911511869598,
+        "regreso": true
+        },
+        {
+        "latitud": 14.836830548374957,
+        "longitud": -91.5189447274772,
+        "regreso": true
+        },
+        {
+        "latitud": 14.837398453412083,
+        "longitud": -91.51875880996197,
+        "regreso": true
+        },
+        {
+        "latitud": 14.837967776978134,
+        "longitud": -91.51858162593467,
+        "regreso": true
+        },
+        {
+        "latitud": 14.83874287217903,
+        "longitud": -91.51837470157002,
+        "regreso": true
+        },
+        {
+        "latitud": 14.839290681083629,
+        "longitud": -91.51820714455242,
+        "regreso": true
+        },
+        {
+        "latitud": 14.839639645443793,
+        "longitud": -91.51809560048295,
+        "regreso": true
+        },
+        {
+        "latitud": 14.840072093345519,
+        "longitud": -91.51798710753835,
+        "regreso": true
+        },
+        {
+        "latitud": 14.840655281230164,
+        "longitud": -91.5178883823544,
+        "regreso": true
+        },
+        {
+        "latitud": 14.841104472190429,
+        "longitud": -91.51778243507393,
+        "regreso": true
+        },
+        {
+        "latitud": 14.841112898547705,
+        "longitud": -91.51773683750211,
+        "regreso": true
+        },
+        {
+        "latitud": 14.841121973096309,
+        "longitud": -91.51771806202508,
+        "regreso": true
+        },
+        {
+        "latitud": 14.841139474020345,
+        "longitud": -91.51769995709122,
+        "regreso": true
+        },
+        {
+        "latitud": 14.841173827699293,
+        "longitud": -91.51768520490117,
+        "regreso": true
+        },
+        {
+        "latitud": 14.842242964389493,
+        "longitud": -91.51755441381,
+        "regreso": true
+        },
+        {
+        "latitud": 14.842959275785665,
+        "longitud": -91.51744417212365,
+        "regreso": true
+        },
+        {
+        "latitud": 14.8430827463283,
+        "longitud": -91.51846832158446,
+        "regreso": true
+        },
+        {
+        "latitud": 14.84321562234877,
+        "longitud": -91.51940910638254,
+        "regreso": true
+        },
+        {
+        "latitud": 14.843636660794894,
+        "longitud": -91.51935179326078,
+        "regreso": true
+        },
+        {
+        "latitud": 14.843611334061189,
+        "longitud": -91.51906401758104,
+        "regreso": true
+        }
+    ],
+    "historia": [
+        {
+        "titulo": "Virgen de Dolores de San Nicolás: Reina y Madre de la Zona 3",
+        "subtitulo": "Historia del Templo y Parroquia San Nicolás",
+        "historiaIglesia": "Ubicada en el corazón de la zona 3 de Quetzaltenango, la Parroquia de San Nicolás de Tolentino es uno de los baluartes arquitectónicos y espirituales más representativos de la ciudad altense. Con su imponente estilo neogótico en piedra volcánica canteada, característico de los maestros canteros quetzaltecos, el templo actual comenzó a proyectarse a finales del siglo XIX y principios del XX tras la destrucción de estructuras anteriores por terremotos. El recinto se convirtió rápidamente en el epicentro devocional del floreciente barrio de San Nicolás, resguardando un invaluable patrimonio escultórico sacro de gran arraigo en la Cuaresma y Semana Santa altense.",
+        "subtituloProcesion": "Velación y Devoción a la Santísima Virgen de Dolores",
+        "historiaProcesion": "La devoción a la Santísima Virgen de Dolores de la Parroquia de San Nicolás representa una profunda manifestación de fe mariana en Quetzaltenango, custodiada por su fervorosa Hermandad. La bella escultura, caracterizada por su expresión de resignación y dolor maternal al pie de la cruz, es objeto de veneración tanto en los solemnes cortejos del Viernes Santo como durante su anual y tradicional velación. Esta festividad extraordinaria incluye actos litúrgicos, elaboración de altares conmemorativos y un solemne cortejo procesional que recorre las principales arterias de la zona 3 y el centro histórico, visitando puntos emblemáticos como el Parque a Centroamérica y el Teatro Municipal, consolidándose como un testimonio vivo de arte, tradición y oración en Xelajú."
+        }
+    ],
+    "imagenIcono": "/carruselFotos/17.webp"
+}

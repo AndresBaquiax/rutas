@@ -131,6 +131,16 @@
             "fechaProcesion": "2026-05-31",
             "descripcionProcesion": "Solemne procesión penitencial que conmemora la velación de la Santísima Virgen de Soledad. Este cortejo se distingue por su extrema solemnidad y el paso por puntos históricos como la Catedral Metropolitana, creando una atmósfera de profundo silencio y oración que invita a la meditación sobre el misterio de la Redención.",
             "ruta": "/recorridos-gt/procesion/velacion-virgen-soledad-calvario"
+        },
+        {
+            "idProcesion": 15,
+            "nombreProcesion": "Procesion de velación de Virgen de Dolores (Parroquia San Nicolás)",
+            "iglesiaProcesion": "Parroquia San Nicolás",
+            "duracionProcesion": "5 horas",
+            "cantidadCargadores": "40",
+            "fechaProcesion": "2026-08-30",
+            "descripcionProcesion": "Solemne procesión penitencial que conmemora la velación de la Santísima Virgen de Dolores. Este cortejo se distingue por su extrema solemnidad y el paso por puntos históricos como la Catedral Metropolitana, creando una atmósfera de profundo silencio y oración que invita a la meditación sobre el misterio de la Redención.",
+            "ruta": "/recorridos-gt/procesion/velacion-virgen-san-nicolas"
         }
     ]
 }

@@ -179,6 +179,12 @@
       "fechaActividad": "2026-05-31",
       "horaActividad": "15:00",
       "slugActividad": "/recorridos-gt/procesion/velacion-virgen-soledad-calvario"
+    },
+    {
+      "nombreActividad": "Velación Virgen de Dolores | XIV Velación (Parroquia San Nicolás)",
+      "fechaActividad": "2026-08-30",
+      "horaActividad": "09:00",
+      "slugActividad": "/recorridos-gt/procesion/velacion-virgen-san-nicolas"
     }
   ]
 }
