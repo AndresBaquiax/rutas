@@ -12,5 +12,10 @@
     "extraColor2": "#F4F1EA",
     "colorPin": "#DC143C",
     "actualYear": 2026,
-    "fechas": []
+    "fechas": [
+        {
+            "nombreFecha": "Velación de la Virgen de Dolores (Parroquia San Nicolás)",
+            "fecha": "2026-08-30"
+        }
+    ]
 }
