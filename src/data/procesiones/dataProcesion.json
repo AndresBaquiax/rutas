@@ -56,7 +56,7 @@
             "idProcesion": 6,
             "nombreProcesion": "Solemne Cortejo Procesional de Santo Entierro (San Nicolás)",
             "iglesiaProcesion": "Parroquia San Nicolás",
-            "duracionProcesion": "9 horas", 
+            "duracionProcesion": "9 horas",
             "cantidadCargadores": "90",
             "fechaProcesion": "2026-04-03",
             "descripcionProcesion": "Considerado uno de los cortejos más elegantes y solemnes de Quetzaltenango. El Señor Sepultado de San Nicolás recorre las calles en su imponente urna de bronce y cristal, acompañado por miles de fieles devotos vestidos de riguroso luto. El paso de la procesión destaca por la majestuosidad de sus andas y la interpretación de marchas fúnebres clásicas que resuenan en el centro histórico, creando una atmósfera de profunda reflexión y respeto al misterio de la muerte de Cristo.",
@@ -141,6 +141,16 @@
             "fechaProcesion": "2026-08-30",
             "descripcionProcesion": "Solemne procesión penitencial que conmemora la velación de la Santísima Virgen de Dolores. Este cortejo se distingue por su extrema solemnidad y el paso por puntos históricos como la Catedral Metropolitana, creando una atmósfera de profundo silencio y oración que invita a la meditación sobre el misterio de la Redención.",
             "ruta": "/recorridos-gt/procesion/velacion-virgen-san-nicolas"
+        },
+        {
+            "idProcesion": 16,
+            "nombreProcesion": "Procesion de velación de Virgen de Dolores (Parroquia San Juan de Dios)",
+            "iglesiaProcesion": "Parroquia San Juan de Dios",
+            "duracionProcesion": "4 horas y 30 minutos",
+            "cantidadCargadores": "30",
+            "fechaProcesion": "2026-09-20",
+            "descripcionProcesion": "Solemne procesión penitencial que conmemora la velación de la Santísima Virgen de Dolores. Este cortejo se distingue por su extrema solemnidad y el paso por puntos históricos como la Catedral Metropolitana, creando una atmósfera de profundo silencio y oración que invita a la meditación sobre el misterio de la Redención.",
+            "ruta": "/recorridos-gt/procesion/velacion-virgen-dolores-san-juan-de-dios"
         }
     ]
 }
