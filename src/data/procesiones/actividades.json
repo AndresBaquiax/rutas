@@ -185,6 +185,12 @@
       "fechaActividad": "2026-08-30",
       "horaActividad": "09:00",
       "slugActividad": "/recorridos-gt/procesion/velacion-virgen-san-nicolas"
+    },
+    {
+      "nombreActividad": "Velación Virgen de los Dolores (Parroquia San Juan de Dios)",
+      "fechaActividad": "2026-09-20",
+      "horaActividad": "09:30",
+      "slugActividad": "/recorridos-gt/procesion/velacion-virgen-dolores-san-juan-de-dios"
     }
   ]
 }

@@ -1,0 +1,252 @@
+{
+    "nombreProcesion": "Virgen de dolores | XIV Velación",
+    "nombreIglesia": "Parroquia San Juan de Dios",
+    "fecha": "2026-09-20",
+    "horaSalida": "09:30",
+    "horaEntrada": "14:00",
+    "cantidadCargadores": 30,
+    "puntosInteres": [
+        {
+            "nombre": "Parroquia San Juan de Dios (Salida)",
+            "descripcion": "Solemne salida del cortejo procesional.",
+            "hora": "09:30",
+            "ubicacion": [
+                {
+                    "latitud": 14.839701142449899,
+                    "longitud": -91.51793341279364
+                }
+            ]
+        },
+        {
+            "nombre": "Instituto Normal para Varones de Occidente (INVO)",
+            "descripcion": "Paso del cortejo frente a las instalaciones del INVO.",
+            "hora": "",
+            "ubicacion": [
+                {
+                    "latitud": 14.840114978571998,
+                    "longitud": -91.5168785797066
+                }
+            ]
+        },
+        {
+            "nombre": "Parque a Centroamérica",
+            "descripcion": "Tránsito del cortejo procesional por el Parque a Centroamérica.",
+            "hora": "",
+            "ubicacion": [
+                {
+                    "latitud": 14.83423971264009,
+                    "longitud": -91.51837321369347
+                }
+            ]
+        },
+        {
+            "nombre": "Teatro Municipal",
+            "descripcion": "Paso del cortejo procesional frente al Teatro Municipal de Quetzaltenango.",
+            "hora": "",
+            "ubicacion": [
+                {
+                    "latitud": 14.83774893660661,
+                    "longitud": -91.51896161834365
+                }
+            ]
+        },
+        {
+            "nombre": "Parroquia San Juan de Dios (Entrada)",
+            "descripcion": "Solemne entrada del cortejo procesional.",
+            "hora": "14:00",
+            "ubicacion": [
+                {
+                    "latitud": 14.839701142449899,
+                    "longitud": -91.51793341279364
+                }
+            ]
+        }
+    ],
+    "coordenadas": [
+        {
+            "latitud": 14.83970430707444,
+            "longitud": -91.51793043734804,
+            "regreso": false
+        },
+        {
+            "latitud": 14.839722456273849,
+            "longitud": -91.5180746060655,
+            "regreso": false
+        },
+        {
+            "latitud": 14.84007015654439,
+            "longitud": -91.51798849540386,
+            "regreso": false
+        },
+        {
+            "latitud": 14.840000566578286,
+            "longitud": -91.51740770752745,
+            "regreso": false
+        },
+        {
+            "latitud": 14.839782127781481,
+            "longitud": -91.51659969206959,
+            "regreso": false
+        },
+        {
+            "latitud": 14.839655590970166,
+            "longitud": -91.51628288940854,
+            "regreso": false
+        },
+        {
+            "latitud": 14.839235936559081,
+            "longitud": -91.51651422232375,
+            "regreso": false
+        },
+        {
+            "latitud": 14.838695264267866,
+            "longitud": -91.51691949835633,
+            "regreso": false
+        },
+        {
+            "latitud": 14.838399776716303,
+            "longitud": -91.51711666345015,
+            "regreso": false
+        },
+        {
+            "latitud": 14.837946348283328,
+            "longitud": -91.51732036105868,
+            "regreso": false
+        },
+        {
+            "latitud": 14.837605468171041,
+            "longitud": -91.5174479756843,
+            "regreso": false
+        },
+        {
+            "latitud": 14.837011324577139,
+            "longitud": -91.51764477263778,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836495395745683,
+            "longitud": -91.5178156125614,
+            "regreso": false
+        },
+        {
+            "latitud": 14.836013778737778,
+            "longitud": -91.51794927855029,
+            "regreso": false
+        },
+        {
+            "latitud": 14.835636369869018,
+            "longitud": -91.51805029100008,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834930428965652,
+            "longitud": -91.51832549989231,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834775109584514,
+            "longitud": -91.51790664165621,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834524336183867,
+            "longitud": -91.51796682423199,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834029996410122,
+            "longitud": -91.5181616335841,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833467319670477,
+            "longitud": -91.51837216617173,
+            "regreso": true
+        },
+        {
+            "latitud": 14.833638434445506,
+            "longitud": -91.51885705604536,
+            "regreso": true
+        },
+        {
+            "latitud": 14.834042393979269,
+            "longitud": -91.51871044157188,
+            "regreso": true
+        },
+        {
+            "latitud": 14.834565541988477,
+            "longitud": -91.51849650331312,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83492795125741,
+            "longitud": -91.51832963869197,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835169277048141,
+            "longitud": -91.51898202957916,
+            "regreso": true
+        },
+        {
+            "latitud": 14.835331587872394,
+            "longitud": -91.51946260696505,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836320241007419,
+            "longitud": -91.51911565978017,
+            "regreso": true
+        },
+        {
+            "latitud": 14.836826384261853,
+            "longitud": -91.51894607660833,
+            "regreso": true
+        },
+        {
+            "latitud": 14.837398138323863,
+            "longitud": -91.51876109736017,
+            "regreso": true
+        },
+        {
+            "latitud": 14.837974020790167,
+            "longitud": -91.51857867923515,
+            "regreso": true
+        },
+        {
+            "latitud": 14.838740458916888,
+            "longitud": -91.51837557806228,
+            "regreso": true
+        },
+        {
+            "latitud": 14.839287939205176,
+            "longitud": -91.51821103987177,
+            "regreso": true
+        },
+        {
+            "latitud": 14.8396458659569,
+            "longitud": -91.51809366577942,
+            "regreso": true
+        },
+        {
+            "latitud": 14.839737440916673,
+            "longitud": -91.51807154651394,
+            "regreso": true
+        },
+        {
+            "latitud": 14.8397043833803,
+            "longitud": -91.51792871892782,
+            "regreso": true
+        }
+    ],
+    "historia": [
+        {
+            "titulo": "Virgen de Dolores de San Juan de Dios: Madre, Consuelo y Esperanza de Xelajú",
+            "subtitulo": "Historia de la Parroquia y Templo San Juan de Dios",
+            "historiaIglesia": "Ubicado en la zona 1 de Quetzaltenango, el Templo y Parroquia de San Juan de Dios es un baluarte histórico y espiritual de profunda significación para el pueblo altense. Ligado desde sus orígenes a la caridad y la labor hospitalaria por su estrecha relación con el antiguo hospital regional, este recinto sagrado se ha consolidado como un refugio de fe, consuelo y esperanza para los enfermos y sus familias. Su arquitectura resguarda un invaluable patrimonio de arte sacro y devoción popular, siendo epicentro de tradiciones trascendentales tanto en la Semana Santa como en las festividades marianas de la ciudad.",
+            "subtituloProcesion": "Velación y Devoción a la Consagrada Imagen de la Santísima Virgen de Dolores",
+            "historiaProcesion": "La devoción a la Santísima Virgen de Dolores del Templo de San Juan de Dios es una de las expresiones marianas más queridas de Quetzaltenango. Su historia se remonta a 1854, cuando la hermosa imagen fue hallada en la residencia de don Francisco Anguiano —motivo por el cual fue conocida tradicionalmente como la «Dolorosa de Anguiano»—, siendo trasladada al templo en abril de 1864. Para velar por su culto, el 8 de marzo de 1925 se fundó la Hermandad de Nuestra Señora de Dolores. Un hito de gran júbilo fue su solemne Consagración el 22 de septiembre de 2013 por Monseñor Mario Alberto Molina Palma. Cada mes de septiembre, en el marco de la fiesta de los Dolores de María y su aniversario de consagración, la hermandad celebra su solemne velación anual y septenario, culminando con un magno cortejo procesional en el que la Dolorosa recorre las calles altenses, transitando por puntos emblemáticos como el INVO, el Parque a Centroamérica y el Teatro Municipal, impartiendo su bendición maternal a los devotos."
+        }
+    ],
+    "imagenIcono": "/carruselFotos/2.webp"
+}
