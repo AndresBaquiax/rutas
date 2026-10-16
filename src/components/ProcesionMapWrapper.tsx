@@ -20,6 +20,7 @@ type ProcesionMapWrapperProps = {
   puntoInteresSeleccionado?: { latitud: number; longitud: number } | null;
   centrarTrigger?: number;
   imagenUrl?: string;
+  identificadorDispositivo?: string;
 };
 
 const ProcesionMap = dynamic(() => import("@/components/ProcesionMap"), {

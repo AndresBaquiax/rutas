@@ -248,5 +248,6 @@
             "historiaProcesion": "La devoción a la Santísima Virgen de Dolores del Templo de San Juan de Dios es una de las expresiones marianas más queridas de Quetzaltenango. Su historia se remonta a 1854, cuando la hermosa imagen fue hallada en la residencia de don Francisco Anguiano —motivo por el cual fue conocida tradicionalmente como la «Dolorosa de Anguiano»—, siendo trasladada al templo en abril de 1864. Para velar por su culto, el 8 de marzo de 1925 se fundó la Hermandad de Nuestra Señora de Dolores. Un hito de gran júbilo fue su solemne Consagración el 22 de septiembre de 2013 por Monseñor Mario Alberto Molina Palma. Cada mes de septiembre, en el marco de la fiesta de los Dolores de María y su aniversario de consagración, la hermandad celebra su solemne velación anual y septenario, culminando con un magno cortejo procesional en el que la Dolorosa recorre las calles altenses, transitando por puntos emblemáticos como el INVO, el Parque a Centroamérica y el Teatro Municipal, impartiendo su bendición maternal a los devotos."
         }
     ],
-    "imagenIcono": "/carruselFotos/2.webp"
+    "imagenIcono": "/carruselFotos/2.webp",
+    "identificadorDispositivo": "pruebas-localizacion"
 }

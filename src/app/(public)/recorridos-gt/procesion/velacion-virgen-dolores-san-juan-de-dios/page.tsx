@@ -252,6 +252,7 @@ export default function InformacionPage() {
                 puntoInteresSeleccionado={puntoSeleccionado}
                 centrarTrigger={centrarTrigger}
                 imagenUrl={(dataRecorrido as any).imagenIcono}
+                identificadorDispositivo={(dataRecorrido as any).identificadorDispositivo}
               />
             </div>
 
