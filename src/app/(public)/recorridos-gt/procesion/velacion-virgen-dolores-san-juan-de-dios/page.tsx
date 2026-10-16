@@ -83,10 +83,6 @@ export default function InformacionPage() {
   }, []);
 
   const mostrarBotonCentrar = useMemo(() => {
-    if ((dataRecorrido as any).identificadorDispositivo) {
-      return true;
-    }
-
     if (ahoraMs === null) return false;
 
     const salida = parseFechaHora(dataRecorrido.fecha, dataRecorrido.horaSalida);

@@ -151,6 +151,16 @@
             "fechaProcesion": "2026-09-20",
             "descripcionProcesion": "Solemne procesión penitencial que conmemora la velación de la Santísima Virgen de Dolores. Este cortejo se distingue por su extrema solemnidad y el paso por puntos históricos como la Catedral Metropolitana, creando una atmósfera de profundo silencio y oración que invita a la meditación sobre el misterio de la Redención.",
             "ruta": "/recorridos-gt/procesion/velacion-virgen-dolores-san-juan-de-dios"
+        },
+        {
+            "idProcesion": 17,
+            "nombreProcesion": "Procesion de velación de Señor Sepultado (Parroquia San Nicolás)",
+            "iglesiaProcesion": "Parroquia San Nicolás",
+            "duracionProcesion": "6 horas",
+            "cantidadCargadores": "90",
+            "fechaProcesion": "2026-11-15",
+            "descripcionProcesion": "Solemne procesión penitencial que conmemora la velación del Señor Sepultado. Este cortejo se distingue por su extrema solemnidad y el paso por puntos históricos como la Catedral Metropolitana, creando una atmósfera de profundo silencio y oración que invita a la meditación sobre el misterio de la Redención.",
+            "ruta": "/recorridos-gt/procesion/velacion-sepultado-san-nicolas"
         }
     ]
 }
