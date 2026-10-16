@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { divIcon, type Marker as LeafletMarker } from "leaflet";
 import { CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
+import { ajustarCoordenadaARuta } from "@/lib/geo-snapping";
 
 type Coordenada = {
   latitud: number;
@@ -22,6 +23,7 @@ type ProcesionMapProps = {
   puntoInteresSeleccionado?: { latitud: number; longitud: number } | null;
   centrarTrigger?: number;
   imagenUrl?: string;
+  identificadorDispositivo?: string;
 };
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -45,17 +47,32 @@ const calcularDistancia = (origen: [number, number], destino: [number, number]) 
   return Math.hypot(deltaLat, deltaLng);
 };
 
-function CentrarProcesionControl({ trigger, posicion }: { trigger: number; posicion: [number, number] | null }) {
+function CentrarProcesionControl({
+  trigger,
+  posicion,
+  autoCentrarGps,
+}: {
+  trigger: number;
+  posicion: [number, number] | null;
+  autoCentrarGps?: boolean;
+}) {
   const map = useMap();
   const prevTrigger = useRef(0);
+  const primeraVezGps = useRef(true);
 
   useEffect(() => {
+    if (autoCentrarGps && posicion && primeraVezGps.current) {
+      primeraVezGps.current = false;
+      map.flyTo(posicion, 17, { animate: true, duration: 1.2 });
+      return;
+    }
+
     if (trigger > prevTrigger.current && posicion) {
       prevTrigger.current = trigger;
       map.flyTo(posicion, 18, { animate: true, duration: 1.5 });
     }
-  }, [trigger, posicion, map]);
-  
+  }, [trigger, posicion, autoCentrarGps, map]);
+
   return null;
 }
 
@@ -104,6 +121,7 @@ export default function ProcesionMap({
   puntoInteresSeleccionado,
   centrarTrigger = 0,
   imagenUrl,
+  identificadorDispositivo,
 }: ProcesionMapProps) {
   const puntosIda = coordenadas
     .filter((coordenada) => !coordenada.regreso)
@@ -139,6 +157,61 @@ export default function ProcesionMap({
   const marcadorProcesionRef = useRef<LeafletMarker | null>(null);
   const posicionMarcadorActualRef = useRef<[number, number] | null>(null);
   const animacionMarcadorRef = useRef<number | null>(null);
+
+  // Consulta ligera de GPS en vivo
+  const [gpsData, setGpsData] = useState<{
+    latitud: number;
+    longitud: number;
+    precision: number | null;
+    recibidoEn: string;
+    segundosInactivo: number;
+    activo: boolean;
+  } | null>(null);
+
+  const consultarGps = useCallback(async () => {
+    if (!identificadorDispositivo) return;
+    try {
+      const res = await fetch(`/api/gps/posicion?id=${encodeURIComponent(identificadorDispositivo)}`, {
+        cache: "no-store",
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.encontrado) {
+        setGpsData(data);
+      } else {
+        setGpsData(null);
+      }
+    } catch {
+      // En caso de corte o desconexión, se conserva el estado para evaluar expiración
+    }
+  }, [identificadorDispositivo]);
+
+  useEffect(() => {
+    if (!identificadorDispositivo) return;
+
+    consultarGps();
+    const intervaloGps = window.setInterval(consultarGps, 10000);
+
+    return () => {
+      window.clearInterval(intervaloGps);
+    };
+  }, [identificadorDispositivo, consultarGps]);
+
+  const usandoGps = useMemo(() => {
+    if (!identificadorDispositivo || !gpsData) return false;
+    const segundosInactivo = Math.max(0, (ahoraMs - new Date(gpsData.recibidoEn).getTime()) / 1000);
+    return gpsData.activo && segundosInactivo <= 180;
+  }, [identificadorDispositivo, gpsData, ahoraMs]);
+
+  const posicionGpsAjustada = useMemo<[number, number] | null>(() => {
+    if (!usandoGps || !gpsData) return null;
+    const resultado = ajustarCoordenadaARuta(
+      [gpsData.latitud, gpsData.longitud],
+      coordenadas,
+      35,
+    );
+    return resultado ? resultado.posicionAjustada : [gpsData.latitud, gpsData.longitud];
+  }, [usandoGps, gpsData, coordenadas]);
 
   useEffect(() => {
     const intervalo = window.setInterval(() => {
@@ -177,7 +250,7 @@ export default function ProcesionMap({
     };
   }, [todasLasCoordenadas]);
 
-  const posicionProcesion = useMemo(() => {
+  const posicionProcesionPorHorario = useMemo(() => {
     if (!puntoInicio || !puntoFinal) {
       return null;
     }
@@ -238,7 +311,13 @@ export default function ProcesionMap({
     todasLasCoordenadas,
   ]);
 
+  const posicionProcesion = posicionGpsAjustada ?? posicionProcesionPorHorario;
+
   const mostrarPinProcesion = useMemo(() => {
+    if (usandoGps) {
+      return true;
+    }
+
     if (!salida) {
       return true;
     }
@@ -253,7 +332,7 @@ export default function ProcesionMap({
     }
 
     return ahoraMs >= quinceMinutosAntes;
-  }, [ahoraMs, entrada, salida]);
+  }, [ahoraMs, entrada, salida, usandoGps]);
 
   useEffect(() => {
     if (!mostrarPinProcesion || !posicionProcesion) {
@@ -412,7 +491,11 @@ export default function ProcesionMap({
       )}
 
       <PuntoSeleccionadoMarker punto={puntoInteresSeleccionado} color={pinColor ?? idaColor} />
-      <CentrarProcesionControl trigger={centrarTrigger} posicion={posicionMarcadorActualRef.current ?? posicionProcesion} />
+      <CentrarProcesionControl
+        trigger={centrarTrigger}
+        posicion={posicionMarcadorActualRef.current ?? posicionProcesion}
+        autoCentrarGps={usandoGps}
+      />
     </MapContainer>
   );
 }

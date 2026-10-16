@@ -83,6 +83,10 @@ export default function InformacionPage() {
   }, []);
 
   const mostrarBotonCentrar = useMemo(() => {
+    if ((dataRecorrido as any).identificadorDispositivo) {
+      return true;
+    }
+
     if (ahoraMs === null) return false;
 
     const salida = parseFechaHora(dataRecorrido.fecha, dataRecorrido.horaSalida);
@@ -252,6 +256,7 @@ export default function InformacionPage() {
                 puntoInteresSeleccionado={puntoSeleccionado}
                 centrarTrigger={centrarTrigger}
                 imagenUrl={(dataRecorrido as any).imagenIcono}
+                identificadorDispositivo={(dataRecorrido as any).identificadorDispositivo}
               />
             </div>
 
