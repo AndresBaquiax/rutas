@@ -108,7 +108,7 @@ export default function GpsPruebasPanel() {
 
   const consultar = useCallback(async () => {
     try {
-      const respuesta = await fetch("/api/gps/posiciones", { cache: "no-store" });
+      const respuesta = await fetch(`/api/gps/posiciones?_t=${Date.now()}`, { cache: "no-store" });
       if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
       setDatos(await respuesta.json());
       setErrorConsulta(null);

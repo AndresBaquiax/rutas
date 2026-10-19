@@ -24,6 +24,14 @@ const obtenerIpsLocales = () =>
     .filter((red): red is os.NetworkInterfaceInfo => !!red && red.family === "IPv4" && !red.internal)
     .map((red) => red.address);
 
+const HEADERS_SIN_CACHE = {
+  "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate",
+  "CDN-Cache-Control": "no-store",
+  "Cloudflare-CDN-Cache-Control": "no-store",
+  Pragma: "no-cache",
+  Expires: "0",
+};
+
 export async function GET(request: NextRequest) {
   const deviceId =
     request.nextUrl.searchParams.get("deviceId") ||
@@ -42,9 +50,7 @@ export async function GET(request: NextRequest) {
           mensaje: "No hay registros para este dispositivo",
         },
         {
-          headers: {
-            "Cache-Control": "no-store, max-age=0",
-          },
+          headers: HEADERS_SIN_CACHE,
         },
       );
     }
@@ -73,9 +79,7 @@ export async function GET(request: NextRequest) {
         activo,
       },
       {
-        headers: {
-          "Cache-Control": "no-store, max-age=0",
-        },
+        headers: HEADERS_SIN_CACHE,
       },
     );
   }
@@ -95,9 +99,7 @@ export async function GET(request: NextRequest) {
       solicitudes: await obtenerSolicitudes(),
     },
     {
-      headers: {
-        "Cache-Control": "no-store, max-age=0",
-      },
+      headers: HEADERS_SIN_CACHE,
     },
   );
 }
