@@ -5,6 +5,14 @@ export const dynamic = "force-dynamic";
 
 const UMBRAL_ACTIVO_SEGUNDOS = 180; // 3 minutos
 
+const HEADERS_SIN_CACHE = {
+  "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate",
+  "CDN-Cache-Control": "no-store",
+  "Cloudflare-CDN-Cache-Control": "no-store",
+  Pragma: "no-cache",
+  Expires: "0",
+};
+
 /**
  * Endpoint ligero para obtener la última posición de un dispositivo GPS.
  * Uso: GET /api/gps/posicion?id=pruebas-localizacion
@@ -17,7 +25,7 @@ export async function GET(request: NextRequest) {
   if (!deviceId) {
     return NextResponse.json(
       { error: "Se requiere el parámetro 'id' del dispositivo" },
-      { status: 400, headers: { "Cache-Control": "no-store, max-age=0" } },
+      { status: 400, headers: HEADERS_SIN_CACHE },
     );
   }
 
@@ -31,7 +39,7 @@ export async function GET(request: NextRequest) {
         posicion: null,
         mensaje: "No hay registros para este dispositivo",
       },
-      { status: 200, headers: { "Cache-Control": "no-store, max-age=0" } },
+      { status: 200, headers: HEADERS_SIN_CACHE },
     );
   }
 
@@ -55,6 +63,6 @@ export async function GET(request: NextRequest) {
       segundosInactivo,
       activo,
     },
-    { headers: { "Cache-Control": "no-store, max-age=0" } },
+    { headers: HEADERS_SIN_CACHE },
   );
 }

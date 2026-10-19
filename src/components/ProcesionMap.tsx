@@ -171,9 +171,12 @@ export default function ProcesionMap({
   const consultarGps = useCallback(async () => {
     if (!identificadorDispositivo) return;
     try {
-      const res = await fetch(`/api/gps/posicion?id=${encodeURIComponent(identificadorDispositivo)}`, {
-        cache: "no-store",
-      });
+      const res = await fetch(
+        `/api/gps/posicion?id=${encodeURIComponent(identificadorDispositivo)}&_t=${Date.now()}`,
+        {
+          cache: "no-store",
+        },
+      );
       if (!res.ok) return;
       const data = await res.json();
       if (data.encontrado) {
