@@ -137,6 +137,13 @@ export default function GpsPruebasPanel() {
 
   const urlsServidor = useMemo(() => {
     if (!datos) return [];
+    if (
+      typeof window !== "undefined" &&
+      !window.location.hostname.includes("localhost") &&
+      !window.location.hostname.includes("127.0.0.1")
+    ) {
+      return [`${window.location.origin}/api/gps`];
+    }
     const ips = datos.servidor.ipsLocales.length > 0 ? datos.servidor.ipsLocales : ["TU-IP-LOCAL"];
     return ips.map((ip) => `http://${ip}:${datos.servidor.puerto}/api/gps`);
   }, [datos]);

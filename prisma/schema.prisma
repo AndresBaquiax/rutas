@@ -116,3 +116,63 @@ model Coordenada {
 
   @@map("coordenadas")
 }
+
+model GpsDispositivo {
+  deviceId       String         @id @db.VarChar(100)
+  latitud        Float
+  longitud       Float
+  precision      Float?
+  velocidad      Float?
+  rumbo          Float?
+  altitud        Float?
+  bateria        Float?
+  cargando       Boolean?
+  enMovimiento   Boolean?
+  evento         String?        @db.VarChar(100)
+  timestamp      DateTime       @default(now())
+  recibidoEn     DateTime       @default(now())
+  totalRecibidas Int            @default(1)
+  updatedAt      DateTime       @updatedAt
+  historial      GpsHistorial[]
+
+  @@map("gps_dispositivo")
+}
+
+model GpsHistorial {
+  id           Int            @id @default(autoincrement())
+  deviceId     String         @db.VarChar(100)
+  latitud      Float
+  longitud     Float
+  precision    Float?
+  velocidad    Float?
+  rumbo        Float?
+  altitud      Float?
+  bateria      Float?
+  cargando     Boolean?
+  enMovimiento Boolean?
+  evento       String?        @db.VarChar(100)
+  timestamp    DateTime       @default(now())
+  recibidoEn   DateTime       @default(now())
+
+  dispositivo  GpsDispositivo @relation(fields: [deviceId], references: [deviceId], onDelete: Cascade)
+
+  @@index([deviceId, recibidoEn(sort: Desc)])
+  @@map("gps_historial")
+}
+
+model GpsSolicitud {
+  id                   Int      @id @default(autoincrement())
+  recibidoEn           DateTime @default(now())
+  metodo               String   @db.VarChar(10)
+  ip                   String?  @db.VarChar(100)
+  userAgent            String?  @db.Text
+  contentType          String?  @db.VarChar(200)
+  query                String?  @db.Text
+  cuerpo               String?  @db.Text
+  ok                   Boolean
+  mensaje              String?  @db.Text
+  posicionesProcesadas Int      @default(0)
+
+  @@index([recibidoEn(sort: Desc)])
+  @@map("gps_solicitud")
+}

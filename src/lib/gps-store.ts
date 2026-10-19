@@ -1,9 +1,4 @@
-/**
- * Almacenamiento EN MEMORIA de posiciones GPS recibidas desde Traccar Client.
- *
- * Fase de pruebas: los datos se pierden al reiniciar el servidor y NO se comparten
- * entre instancias serverless (Vercel). Para producción se debe migrar a base de datos.
- */
+import { prisma } from "@/lib/prisma";
 
 export type PosicionGps = {
   deviceId: string;
@@ -47,69 +42,203 @@ export type DispositivoGps = {
   totalRecibidas: number;
 };
 
-type GpsStore = {
-  dispositivos: Map<string, DispositivoGps>;
-  solicitudes: SolicitudGps[];
-};
+export async function guardarPosicion(posicion: PosicionGps): Promise<void> {
+  const fechaRecibido = new Date(posicion.recibidoEn);
+  const fechaTimestamp = new Date(posicion.timestamp);
 
-const MAX_HISTORIAL = 500;
-const MAX_SOLICITUDES = 50;
-
-// Se guarda en globalThis para sobrevivir al hot-reload de Next.js en desarrollo.
-const globalGps = globalThis as unknown as { __gpsStore?: GpsStore };
-
-const store: GpsStore =
-  globalGps.__gpsStore ??
-  (globalGps.__gpsStore = {
-    dispositivos: new Map(),
-    solicitudes: [],
-  });
-
-export function guardarPosicion(posicion: PosicionGps) {
-  const existente = store.dispositivos.get(posicion.deviceId);
-
-  if (!existente) {
-    store.dispositivos.set(posicion.deviceId, {
-      deviceId: posicion.deviceId,
-      ultima: posicion,
-      historial: [posicion],
-      totalRecibidas: 1,
+  try {
+    // 1. Guardar o actualizar la última posición en gps_dispositivo
+    await prisma.gpsDispositivo.upsert({
+      where: { deviceId: posicion.deviceId },
+      create: {
+        deviceId: posicion.deviceId,
+        latitud: posicion.latitud,
+        longitud: posicion.longitud,
+        precision: posicion.precision,
+        velocidad: posicion.velocidad,
+        rumbo: posicion.rumbo,
+        altitud: posicion.altitud,
+        bateria: posicion.bateria,
+        cargando: posicion.cargando,
+        enMovimiento: posicion.enMovimiento,
+        evento: posicion.evento,
+        timestamp: fechaTimestamp,
+        recibidoEn: fechaRecibido,
+        totalRecibidas: 1,
+      },
+      update: {
+        latitud: posicion.latitud,
+        longitud: posicion.longitud,
+        precision: posicion.precision,
+        velocidad: posicion.velocidad,
+        rumbo: posicion.rumbo,
+        altitud: posicion.altitud,
+        bateria: posicion.bateria,
+        cargando: posicion.cargando,
+        enMovimiento: posicion.enMovimiento,
+        evento: posicion.evento,
+        timestamp: fechaTimestamp,
+        recibidoEn: fechaRecibido,
+        totalRecibidas: { increment: 1 },
+      },
     });
-    return;
+
+    // 2. Guardar en el historial de puntos recibidos
+    await prisma.gpsHistorial.create({
+      data: {
+        deviceId: posicion.deviceId,
+        latitud: posicion.latitud,
+        longitud: posicion.longitud,
+        precision: posicion.precision,
+        velocidad: posicion.velocidad,
+        rumbo: posicion.rumbo,
+        altitud: posicion.altitud,
+        bateria: posicion.bateria,
+        cargando: posicion.cargando,
+        enMovimiento: posicion.enMovimiento,
+        evento: posicion.evento,
+        timestamp: fechaTimestamp,
+        recibidoEn: fechaRecibido,
+      },
+    });
+  } catch (err) {
+    console.error("[GPS Store] Error guardando posición en base de datos:", err);
   }
+}
 
-  existente.historial.push(posicion);
-  existente.historial.sort((a, b) => a.timestamp.localeCompare(b.timestamp));
-  if (existente.historial.length > MAX_HISTORIAL) {
-    existente.historial.splice(0, existente.historial.length - MAX_HISTORIAL);
+export async function registrarSolicitud(solicitud: SolicitudGps): Promise<void> {
+  try {
+    await prisma.gpsSolicitud.create({
+      data: {
+        recibidoEn: new Date(solicitud.recibidoEn),
+        metodo: solicitud.metodo,
+        ip: solicitud.ip,
+        userAgent: solicitud.userAgent,
+        contentType: solicitud.contentType,
+        query: solicitud.query,
+        cuerpo: solicitud.cuerpo,
+        ok: solicitud.ok,
+        mensaje: solicitud.mensaje,
+        posicionesProcesadas: solicitud.posicionesProcesadas,
+      },
+    });
+  } catch (err) {
+    console.error("[GPS Store] Error registrando solicitud en base de datos:", err);
   }
-  existente.ultima = existente.historial[existente.historial.length - 1];
-  existente.totalRecibidas += 1;
 }
 
-export function registrarSolicitud(solicitud: SolicitudGps) {
-  store.solicitudes.unshift(solicitud);
-  if (store.solicitudes.length > MAX_SOLICITUDES) {
-    store.solicitudes.length = MAX_SOLICITUDES;
+export async function obtenerDispositivos(): Promise<DispositivoGps[]> {
+  try {
+    const dispositivos = await prisma.gpsDispositivo.findMany({
+      orderBy: { recibidoEn: "desc" },
+      include: {
+        historial: {
+          orderBy: { timestamp: "asc" },
+          take: 500,
+        },
+      },
+    });
+
+    return dispositivos.map((disp) => ({
+      deviceId: disp.deviceId,
+      totalRecibidas: disp.totalRecibidas,
+      ultima: {
+        deviceId: disp.deviceId,
+        latitud: disp.latitud,
+        longitud: disp.longitud,
+        precision: disp.precision,
+        velocidad: disp.velocidad,
+        rumbo: disp.rumbo,
+        altitud: disp.altitud,
+        bateria: disp.bateria,
+        cargando: disp.cargando,
+        enMovimiento: disp.enMovimiento,
+        evento: disp.evento,
+        timestamp: disp.timestamp.toISOString(),
+        recibidoEn: disp.recibidoEn.toISOString(),
+      },
+      historial: disp.historial.map((h) => ({
+        deviceId: h.deviceId,
+        latitud: h.latitud,
+        longitud: h.longitud,
+        precision: h.precision,
+        velocidad: h.velocidad,
+        rumbo: h.rumbo,
+        altitud: h.altitud,
+        bateria: h.bateria,
+        cargando: h.cargando,
+        enMovimiento: h.enMovimiento,
+        evento: h.evento,
+        timestamp: h.timestamp.toISOString(),
+        recibidoEn: h.recibidoEn.toISOString(),
+      })),
+    }));
+  } catch (err) {
+    console.error("[GPS Store] Error obteniendo dispositivos de base de datos:", err);
+    return [];
   }
 }
 
-export function obtenerDispositivos(): DispositivoGps[] {
-  return Array.from(store.dispositivos.values()).sort((a, b) =>
-    b.ultima.recibidoEn.localeCompare(a.ultima.recibidoEn),
-  );
+export async function obtenerUltimaPosicion(deviceId: string): Promise<PosicionGps | null> {
+  try {
+    const disp = await prisma.gpsDispositivo.findUnique({
+      where: { deviceId },
+    });
+
+    if (!disp) return null;
+
+    return {
+      deviceId: disp.deviceId,
+      latitud: disp.latitud,
+      longitud: disp.longitud,
+      precision: disp.precision,
+      velocidad: disp.velocidad,
+      rumbo: disp.rumbo,
+      altitud: disp.altitud,
+      bateria: disp.bateria,
+      cargando: disp.cargando,
+      enMovimiento: disp.enMovimiento,
+      evento: disp.evento,
+      timestamp: disp.timestamp.toISOString(),
+      recibidoEn: disp.recibidoEn.toISOString(),
+    };
+  } catch (err) {
+    console.error("[GPS Store] Error obteniendo última posición de base de datos:", err);
+    return null;
+  }
 }
 
-export function obtenerUltimaPosicion(deviceId: string): PosicionGps | null {
-  const dispositivo = store.dispositivos.get(deviceId);
-  return dispositivo ? dispositivo.ultima : null;
+export async function obtenerSolicitudes(): Promise<SolicitudGps[]> {
+  try {
+    const solicitudes = await prisma.gpsSolicitud.findMany({
+      orderBy: { recibidoEn: "desc" },
+      take: 50,
+    });
+
+    return solicitudes.map((s) => ({
+      recibidoEn: s.recibidoEn.toISOString(),
+      metodo: s.metodo,
+      ip: s.ip,
+      userAgent: s.userAgent,
+      contentType: s.contentType,
+      query: s.query ?? "",
+      cuerpo: s.cuerpo ?? "",
+      ok: s.ok,
+      mensaje: s.mensaje ?? "",
+      posicionesProcesadas: s.posicionesProcesadas,
+    }));
+  } catch (err) {
+    console.error("[GPS Store] Error obteniendo solicitudes de base de datos:", err);
+    return [];
+  }
 }
 
-export function obtenerSolicitudes(): SolicitudGps[] {
-  return store.solicitudes;
-}
-
-export function limpiarDatosGps() {
-  store.dispositivos.clear();
-  store.solicitudes.length = 0;
+export async function limpiarDatosGps(): Promise<void> {
+  try {
+    await prisma.gpsHistorial.deleteMany();
+    await prisma.gpsDispositivo.deleteMany();
+    await prisma.gpsSolicitud.deleteMany();
+  } catch (err) {
+    console.error("[GPS Store] Error limpiando datos GPS en base de datos:", err);
+  }
 }

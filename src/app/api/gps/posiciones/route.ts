@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
 
   // Consulta ligera para un dispositivo específico (mapa del recorrido)
   if (deviceId) {
-    const ultima = obtenerUltimaPosicion(deviceId);
+    const ultima = await obtenerUltimaPosicion(deviceId);
 
     if (!ultima) {
       return NextResponse.json(
@@ -91,8 +91,8 @@ export async function GET(request: NextRequest) {
         ipsLocales: obtenerIpsLocales(),
         puerto,
       },
-      dispositivos: obtenerDispositivos(),
-      solicitudes: obtenerSolicitudes(),
+      dispositivos: await obtenerDispositivos(),
+      solicitudes: await obtenerSolicitudes(),
     },
     {
       headers: {
@@ -103,6 +103,6 @@ export async function GET(request: NextRequest) {
 }
 
 export async function DELETE() {
-  limpiarDatosGps();
+  await limpiarDatosGps();
   return NextResponse.json({ ok: true });
 }
