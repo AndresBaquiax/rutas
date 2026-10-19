@@ -47,7 +47,9 @@ async function manejar(request: NextRequest) {
     cuerpoTexto = texto;
 
     const posiciones = parsearPosicionesTraccar(query, datos, recibidoEn);
-    posiciones.forEach(guardarPosicion);
+    for (const posicion of posiciones) {
+      await guardarPosicion(posicion);
+    }
     procesadas = posiciones.length;
 
     if (procesadas > 0) {
@@ -60,7 +62,7 @@ async function manejar(request: NextRequest) {
     mensaje = error instanceof Error ? error.message : "Error desconocido";
   }
 
-  registrarSolicitud({
+  await registrarSolicitud({
     recibidoEn,
     metodo: request.method,
     ip: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,

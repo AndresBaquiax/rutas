@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const ultima = obtenerUltimaPosicion(deviceId);
+  const ultima = await obtenerUltimaPosicion(deviceId);
 
   if (!ultima) {
     return NextResponse.json(
