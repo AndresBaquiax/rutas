@@ -197,6 +197,12 @@
       "fechaActividad": "2026-11-15",
       "horaActividad": "09:00",
       "slugActividad": "/recorridos-gt/procesion/velacion-sepultado-san-nicolas"
+    },
+    {
+      "nombreActividad": "Velación del Divino Justo Juez (Catedral)",
+      "fechaActividad": "2026-11-08",
+      "horaActividad": "15:00",
+      "slugActividad": "/recorridos-gt/procesion/velacion/justo-juez-catedral"
     }
   ]
 }

@@ -1,0 +1,300 @@
+{
+    "nombreProcesion": "Justo Juez | Décima Velación",
+    "nombreIglesia": "Catedral de Quetzaltenango",
+    "fecha": "2026-11-08",
+    "horaSalida": "15:00",
+    "horaEntrada": "20:30",
+    "cantidadCargadores": 80,
+    "puntosInteres": [
+        {
+            "nombre": "Salida",
+            "descripcion": "Solemne salida del cortejo procesional de la Décima Velación desde la Catedral Metropolitana de los Altos.",
+            "hora": "15:00",
+            "ubicacion": [
+                {
+                    "latitud": 14.833671584173977,
+                    "longitud": -91.51810975739576
+                }
+            ]
+        },
+        {
+            "nombre": "Atrás de la Municipalidad",
+            "descripcion": "Paso del cortejo procesional en la parte posterior del Palacio Municipal de Quetzaltenango.",
+            "hora": "15:50",
+            "ubicacion": [
+                {
+                    "latitud": 14.833978743084362,
+                    "longitud": -91.5173684913055
+                }
+            ]
+        },
+        {
+            "nombre": "Parque Bolívar",
+            "descripcion": "Tránsito del cortejo procesional en las inmediaciones del emblemático Parque Bolívar.",
+            "hora": "17:00",
+            "ubicacion": [
+                {
+                    "latitud": 14.832237825587866,
+                    "longitud": -91.51293249729515
+                }
+            ]
+        },
+        {
+            "nombre": "Más y más la Transfiguración",
+            "descripcion": "Paso del cortejo procesional por el sector de Más y Más en el histórico barrio La Transfiguración.",
+            "hora": "18:00",
+            "ubicacion": [
+                {
+                    "latitud": 14.830440498035731,
+                    "longitud": -91.51498948167425
+                }
+            ]
+        },
+        {
+            "nombre": "Gasolinera Shell",
+            "descripcion": "Tránsito del cortejo procesional frente a la Gasolinera Shell en su recorrido de retorno.",
+            "hora": "18:45",
+            "ubicacion": [
+                {
+                    "latitud": 14.83136515834932,
+                    "longitud": -91.5180720136392
+                }
+            ]
+        },
+        {
+            "nombre": "Casa de la Cultura",
+            "descripcion": "Paso solemne de la procesión frente a la Casa de la Cultura de Occidente.",
+            "hora": "19:50",
+            "ubicacion": [
+                {
+                    "latitud": 14.833451594011207,
+                    "longitud": -91.51868819304055
+                }
+            ]
+        },
+        {
+            "nombre": "Ingreso",
+            "descripcion": "Solemne y emotivo ingreso del cortejo procesional a la Catedral Metropolitana de los Altos.",
+            "hora": "20:30",
+            "ubicacion": [
+                {
+                    "latitud": 14.833671584173977,
+                    "longitud": -91.51810975739576
+                }
+            ]
+        }
+    ],
+    "coordenadas": [
+        {
+            "latitud": 14.83366924735418,
+            "longitud": -91.5181088470846,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833728233949133,
+            "longitud": -91.51826977969453,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83403548274043,
+            "longitud": -91.51816047967792,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834520238822776,
+            "longitud": -91.51796293347797,
+            "regreso": false
+        },
+        {
+            "latitud": 14.834180209178427,
+            "longitud": -91.51724033538163,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833761737320756,
+            "longitud": -91.5173954653533,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83364909788213,
+            "longitud": -91.5169825134057,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833418286747108,
+            "longitud": -91.51641883420196,
+            "regreso": false
+        },
+        {
+            "latitud": 14.833241500420975,
+            "longitud": -91.51598489748956,
+            "regreso": false
+        },
+        {
+            "latitud": 14.832982307874437,
+            "longitud": -91.51545516654491,
+            "regreso": false
+        },
+        {
+            "latitud": 14.832757727322164,
+            "longitud": -91.51488908087867,
+            "regreso": false
+        },
+        {
+            "latitud": 14.83257023819673,
+            "longitud": -91.51434384850694,
+            "regreso": false
+        },
+        {
+            "latitud": 14.8324023523734,
+            "longitud": -91.51380606548435,
+            "regreso": false
+        },
+        {
+            "latitud": 14.8322651488685,
+            "longitud": -91.51334636227608,
+            "regreso": false
+        },
+        {
+            "latitud": 14.832221467839938,
+            "longitud": -91.51333030523807,
+            "regreso": false
+        },
+        {
+            "latitud": 14.832181278840194,
+            "longitud": -91.5132954364653,
+            "regreso": false
+        },
+        {
+            "latitud": 14.832155350460123,
+            "longitud": -91.51322905174108,
+            "regreso": false
+        },
+        {
+            "latitud": 14.832128125646717,
+            "longitud": -91.51316266703742,
+            "regreso": false
+        },
+        {
+            "latitud": 14.831550214846537,
+            "longitud": -91.51334081785508,
+            "regreso": false
+        },
+        {
+            "latitud": 14.830943667843659,
+            "longitud": -91.51347598811977,
+            "regreso": false
+        },
+        {
+            "latitud": 14.830557980735641,
+            "longitud": -91.51359199362291,
+            "regreso": false
+        },
+        {
+            "latitud": 14.830175288319415,
+            "longitud": -91.5137086805156,
+            "regreso": false
+        },
+        {
+            "latitud": 14.830207460270751,
+            "longitud": -91.51400890144404,
+            "regreso": false
+        },
+        {
+            "latitud": 14.8304619686884,
+            "longitud": -91.51482280538383,
+            "regreso": false
+        },
+        {
+            "latitud": 14.830664897820142,
+            "longitud": -91.51557368634187,
+            "regreso": false
+        },
+        {
+            "latitud": 14.830850935106747,
+            "longitud": -91.51620199381169,
+            "regreso": true
+        },
+        {
+            "latitud": 14.831008450877,
+            "longitud": -91.5167511760963,
+            "regreso": true
+        },
+        {
+            "latitud": 14.831192543235513,
+            "longitud": -91.51731108722915,
+            "regreso": true
+        },
+        {
+            "latitud": 14.831398026412709,
+            "longitud": -91.51790452597639,
+            "regreso": true
+        },
+        {
+            "latitud": 14.830837340222098,
+            "longitud": -91.51813235393773,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83100522739678,
+            "longitud": -91.51864934973649,
+            "regreso": true
+        },
+        {
+            "latitud": 14.831305997590986,
+            "longitud": -91.51967998872435,
+            "regreso": true
+        },
+        {
+            "latitud": 14.831587236014533,
+            "longitud": -91.51959953120516,
+            "regreso": true
+        },
+        {
+            "latitud": 14.831849761371366,
+            "longitud": -91.51950833608339,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83243585534571,
+            "longitud": -91.5192983884877,
+            "regreso": true
+        },
+        {
+            "latitud": 14.833019472251886,
+            "longitud": -91.5191112029272,
+            "regreso": true
+        },
+        {
+            "latitud": 14.833642423243461,
+            "longitud": -91.51886017963092,
+            "regreso": true
+        },
+        {
+            "latitud": 14.833468196595216,
+            "longitud": -91.51837525078143,
+            "regreso": true
+        },
+        {
+            "latitud": 14.833732569246159,
+            "longitud": -91.51826679408563,
+            "regreso": true
+        },
+        {
+            "latitud": 14.83366839697464,
+            "longitud": -91.51811055542899,
+            "regreso": true
+        }
+    ],
+    "historia": [
+        {
+            "titulo": "Divino Justo Juez de Catedral: Solemne Velación y Fe de la Ciudad Altense",
+            "subtitulo": "Historia de la Santa Iglesia Catedral Metropolitana del Espíritu Santo",
+            "historiaIglesia": "Ubicada en el corazón del Centro Histórico de Quetzaltenango, frente al emblemático Parque a Centroamérica, la Santa Iglesia Catedral Metropolitana del Espíritu Santo es el principal baluarte espiritual y arquitectónico del occidente guatemalteco. Fundada originalmente en 1532 por el primer obispo de Guatemala, Francisco Marroquín, constituye una de las primeras instituciones eclesiásticas establecidas en el Reino de Guatemala. Su imponente fachada colonial renacentista, labrada en piedra volcánica con elaborados motivos ornamentales, hornacinas e imaginería en relieve, sobrevive majestuosamente como un histórico frontispicio que resistió los embates de sucesivos movimientos telúricos, entre ellos el terremoto de San Perfecto en 1902. Detrás de esta fachada histórica se erigió durante el siglo XX la amplia nave contemporánea que conforma el templo actual, sede de la Arquidiócesis de Los Altos Quetzaltenango-Totonicapán y custodio de trascendentales devociones de la feligresía quetzalteca, tales como la Virgen del Rosario, Patrona de la ciudad, y la venerada imagen del Divino Justo Juez.",
+            "subtituloProcesion": "Historia y Devoción al Divino Justo Juez de Catedral y su Solemne Velación",
+            "historiaProcesion": "La venerada imagen del Divino Justo Juez, resguardada en las naves de la Catedral Metropolitana de Los Altos, es una de las expresiones escultóricas más insignes, devotas y de mayor arraigo en el pueblo de Quetzaltenango. Esculpida en la época colonial, la imagen representa a Cristo cargando el madero del martirio, caracterizándose por una mirada penetrante, serena y de profunda unción sagrada que transmite justicia divina y compasión redentora a los fieles. Custodiada con celo y fervor por su Centenaria Hermandad, fundada a inicios del siglo XX, la sagrada imagen protagoniza una arraigada tradición procesional en la Cuaresma y Semana Santa altense, así como su solemne Velación Anual en el mes de noviembre a cargo de su Comité de Velación. En esta festividad, la consagrada efigie es expuesta en un magno altar de veneración en el presbiterio catedralicio para la plegaria comunitaria y posteriormente sale en hombros a bendecir el Centro Histórico, transitando por puntos neurálgicos como el Palacio Municipal, el Parque Bolívar y el tradicional barrio de La Transfiguración bajo el místico marco de las marchas fúnebres y la fe del pueblo quetzalteco."
+        }
+    ],
+    "imagenIcono": "/carruselFotos/18.webp",
+    "identificadorDispositivo": "velacion-justo-juez-catedral"
+}

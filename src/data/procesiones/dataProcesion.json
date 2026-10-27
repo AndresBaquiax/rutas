@@ -157,10 +157,20 @@
             "nombreProcesion": "Procesion de velación de Señor Sepultado (Parroquia San Nicolás)",
             "iglesiaProcesion": "Parroquia San Nicolás",
             "duracionProcesion": "6 horas",
-            "cantidadCargadores": "90",
+            "cantidadCargadores": "80",
             "fechaProcesion": "2026-11-15",
             "descripcionProcesion": "Solemne procesión penitencial que conmemora la velación del Señor Sepultado. Este cortejo se distingue por su extrema solemnidad y el paso por puntos históricos como la Catedral Metropolitana, creando una atmósfera de profundo silencio y oración que invita a la meditación sobre el misterio de la Redención.",
             "ruta": "/recorridos-gt/procesion/velacion-sepultado-san-nicolas"
+        },
+        {
+            "idProcesion": 18,
+            "nombreProcesion": "Procesion de velación de Divino Justo Juez (Catedral)",
+            "iglesiaProcesion": "Catedral",
+            "duracionProcesion": "5 horas y 30 minutos",
+            "cantidadCargadores": "80",
+            "fechaProcesion": "2026-11-08",
+            "descripcionProcesion": "Solemne procesión penitencial que conmemora la velación del Divino Justo Juez. Este cortejo se distingue por su extrema solemnidad y el paso por puntos históricos como la Catedral Metropolitana, creando una atmósfera de profundo silencio y oración que invita a la meditación sobre el misterio de la Redención.",
+            "ruta": "/recorridos-gt/procesion/velacion/justo-juez-catedral"
         }
     ]
 }
