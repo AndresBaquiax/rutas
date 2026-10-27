@@ -11,6 +11,39 @@ type Coordenada = {
   regreso: boolean;
 };
 
+export type Cancion = {
+  titulo: string;
+  coordenada?:
+    | { latitud: number; longitud: number }[]
+    | { latitud: number; longitud: number };
+};
+
+const obtenerCoordenadaCancion = (
+  coordenadaProp?:
+    | { latitud: number; longitud: number }[]
+    | { latitud: number; longitud: number }
+): { latitud: number; longitud: number } | null => {
+  if (!coordenadaProp) return null;
+  if (Array.isArray(coordenadaProp) && coordenadaProp.length > 0) {
+    return {
+      latitud: Number(coordenadaProp[0].latitud),
+      longitud: Number(coordenadaProp[0].longitud),
+    };
+  }
+  if (
+    typeof coordenadaProp === "object" &&
+    coordenadaProp !== null &&
+    "latitud" in coordenadaProp &&
+    "longitud" in coordenadaProp
+  ) {
+    return {
+      latitud: Number((coordenadaProp as any).latitud),
+      longitud: Number((coordenadaProp as any).longitud),
+    };
+  }
+  return null;
+};
+
 type ProcesionMapProps = {
   coordenadas: Coordenada[];
   primaryColor: string;
@@ -24,6 +57,10 @@ type ProcesionMapProps = {
   centrarTrigger?: number;
   imagenUrl?: string;
   identificadorDispositivo?: string;
+  canciones?: Cancion[];
+  neutralColor?: string;
+  thirdColor?: string;
+  onCancionActivaChange?: (cancion: Cancion | null, indice: number | null) => void;
 };
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -122,6 +159,10 @@ export default function ProcesionMap({
   centrarTrigger = 0,
   imagenUrl,
   identificadorDispositivo,
+  canciones,
+  neutralColor,
+  thirdColor,
+  onCancionActivaChange,
 }: ProcesionMapProps) {
   const puntosIda = coordenadas
     .filter((coordenada) => !coordenada.regreso)
@@ -337,6 +378,90 @@ export default function ProcesionMap({
     return ahoraMs >= quinceMinutosAntes;
   }, [ahoraMs, entrada, salida, usandoGps]);
 
+  const cancionesConDistancia = useMemo(() => {
+    if (!canciones || canciones.length === 0 || !coordenadas || coordenadas.length === 0) {
+      return [];
+    }
+
+    return canciones.map((cancion, idx) => {
+      const coord = obtenerCoordenadaCancion(cancion.coordenada);
+      if (!coord) {
+        return { cancion, index: idx, distancia: 0 };
+      }
+
+      const ajuste = ajustarCoordenadaARuta([coord.latitud, coord.longitud], coordenadas, 500);
+      if (!ajuste || rutaConDistancias.acumuladas.length === 0) {
+        return {
+          cancion,
+          index: idx,
+          distancia: (idx / Math.max(1, canciones.length)) * rutaConDistancias.totalDistancia,
+        };
+      }
+
+      const i = ajuste.indiceSegmento;
+      const distPrev = i === 0 ? 0 : (rutaConDistancias.acumuladas[i - 1] ?? 0);
+      const distSeg = (rutaConDistancias.acumuladas[i] ?? distPrev) - distPrev;
+      const distancia = distPrev + ajuste.factorSegmento * distSeg;
+
+      return {
+        cancion,
+        index: idx,
+        distancia,
+      };
+    });
+  }, [canciones, coordenadas, rutaConDistancias]);
+
+  const distanciaActualProcesion = useMemo(() => {
+    if (rutaConDistancias.totalDistancia <= 0) return 0;
+
+    if (usandoGps && gpsData) {
+      const resultado = ajustarCoordenadaARuta([gpsData.latitud, gpsData.longitud], coordenadas, 35);
+      if (resultado) {
+        const i = resultado.indiceSegmento;
+        const distPrev = i === 0 ? 0 : (rutaConDistancias.acumuladas[i - 1] ?? 0);
+        const distSeg = (rutaConDistancias.acumuladas[i] ?? distPrev) - distPrev;
+        return distPrev + resultado.factorSegmento * distSeg;
+      }
+    }
+
+    if (!salida || !entrada || entrada.getTime() <= salida.getTime()) {
+      return 0;
+    }
+
+    const inicioMs = salida.getTime();
+    const finMs = entrada.getTime();
+
+    if (ahoraMs <= inicioMs) return 0;
+    if (ahoraMs >= finMs) return rutaConDistancias.totalDistancia;
+
+    const progreso = (ahoraMs - inicioMs) / (finMs - inicioMs);
+    return progreso * rutaConDistancias.totalDistancia;
+  }, [ahoraMs, coordenadas, entrada, gpsData, rutaConDistancias, salida, usandoGps]);
+
+  const cancionActivaInfo = useMemo(() => {
+    if (!cancionesConDistancia || cancionesConDistancia.length === 0) return null;
+    if (!mostrarPinProcesion) return null;
+
+    let seleccionada = cancionesConDistancia[0];
+    for (let i = 0; i < cancionesConDistancia.length; i++) {
+      if (distanciaActualProcesion >= cancionesConDistancia[i].distancia) {
+        seleccionada = cancionesConDistancia[i];
+      } else {
+        break;
+      }
+    }
+    return seleccionada;
+  }, [cancionesConDistancia, distanciaActualProcesion, mostrarPinProcesion]);
+
+  useEffect(() => {
+    if (onCancionActivaChange) {
+      onCancionActivaChange(
+        cancionActivaInfo ? cancionActivaInfo.cancion : null,
+        cancionActivaInfo ? cancionActivaInfo.index : null
+      );
+    }
+  }, [cancionActivaInfo, onCancionActivaChange]);
+
   useEffect(() => {
     if (!mostrarPinProcesion || !posicionProcesion) {
       if (animacionMarcadorRef.current !== null) {
@@ -440,65 +565,92 @@ export default function ProcesionMap({
   }
 
   return (
-    <MapContainer
-      bounds={todasLasCoordenadas}
-      scrollWheelZoom={false}
-      className="h-full w-full rounded-2xl"
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-
-      {rutaIda.length > 1 && (
-        <Polyline positions={rutaIda} pathOptions={{ color: idaColor, weight: 5, opacity: 0.95 }} />
-      )}
-
-      {rutaRegreso.length > 1 && (
-        <Polyline
-          positions={rutaRegreso}
-          pathOptions={{ color: vueltaColor, weight: 4, opacity: 0.85, dashArray: "10 8" }}
+    <div className="relative h-full w-full">
+      <MapContainer
+        bounds={todasLasCoordenadas}
+        scrollWheelZoom={false}
+        className="h-full w-full rounded-2xl"
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-      )}
 
-      {puntoInicio && (
-        <CircleMarker
-          center={puntoInicio}
-          radius={7}
-          pathOptions={{ color: primaryColor, fillColor: idaColor, fillOpacity: 1, weight: 2 }}
+        {rutaIda.length > 1 && (
+          <Polyline positions={rutaIda} pathOptions={{ color: idaColor, weight: 5, opacity: 0.95 }} />
+        )}
+
+        {rutaRegreso.length > 1 && (
+          <Polyline
+            positions={rutaRegreso}
+            pathOptions={{ color: vueltaColor, weight: 4, opacity: 0.85, dashArray: "10 8" }}
+          />
+        )}
+
+        {puntoInicio && (
+          <CircleMarker
+            center={puntoInicio}
+            radius={7}
+            pathOptions={{ color: primaryColor, fillColor: idaColor, fillOpacity: 1, weight: 2 }}
+          >
+            <Tooltip direction="top">Salida</Tooltip>
+          </CircleMarker>
+        )}
+
+        {puntoFinal && (
+          <CircleMarker
+            center={puntoFinal}
+            radius={7}
+            pathOptions={{ color: primaryColor, fillColor: vueltaColor, fillOpacity: 1, weight: 2 }}
+          >
+            <Tooltip direction="top">Entrada</Tooltip>
+          </CircleMarker>
+        )}
+
+        {mostrarPinProcesion && posicionProcesion && (
+          <Marker
+            position={posicionMarcadorActualRef.current ?? posicionProcesion}
+            icon={iconoMarcadorProcesion}
+            ref={marcadorProcesionRef}
+          >
+            <Tooltip direction="top" offset={[0, -26]}>
+              Procesión en recorrido
+            </Tooltip>
+          </Marker>
+        )}
+
+        <PuntoSeleccionadoMarker punto={puntoInteresSeleccionado} color={pinColor ?? idaColor} />
+        <CentrarProcesionControl
+          trigger={centrarTrigger}
+          posicion={posicionMarcadorActualRef.current ?? posicionProcesion}
+          autoCentrarGps={usandoGps}
+        />
+      </MapContainer>
+
+      {/* Widget flotante Sonando ahora en la esquina superior derecha */}
+      {cancionActivaInfo && (
+        <div
+          className="absolute top-3.5 right-3.5 z-[1000] flex items-center gap-2.5 px-3.5 py-2 rounded-xl shadow-2xl border backdrop-blur-md pointer-events-none select-none max-w-[85%] sm:max-w-[340px] transition-all duration-300"
+          style={{
+            backgroundColor: `${primaryColor}E6`,
+            borderColor: `${neutralColor ?? "#FFFFFF"}33`,
+            color: neutralColor ?? "#FFFFFF",
+          }}
         >
-          <Tooltip direction="top">Salida</Tooltip>
-        </CircleMarker>
+          <span className="text-base sm:text-lg animate-pulse flex-shrink-0">🎵</span>
+          <div className="flex flex-col min-w-0">
+            <span
+              className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold leading-tight"
+              style={{ color: thirdColor ?? "#EAB308" }}
+            >
+              Sonando ahora
+            </span>
+            <span className="text-xs sm:text-sm font-semibold truncate leading-tight mt-0.5">
+              {cancionActivaInfo.cancion.titulo}
+            </span>
+          </div>
+        </div>
       )}
-
-      {puntoFinal && (
-        <CircleMarker
-          center={puntoFinal}
-          radius={7}
-          pathOptions={{ color: primaryColor, fillColor: vueltaColor, fillOpacity: 1, weight: 2 }}
-        >
-          <Tooltip direction="top">Entrada</Tooltip>
-        </CircleMarker>
-      )}
-
-      {mostrarPinProcesion && posicionProcesion && (
-        <Marker
-          position={posicionMarcadorActualRef.current ?? posicionProcesion}
-          icon={iconoMarcadorProcesion}
-          ref={marcadorProcesionRef}
-        >
-          <Tooltip direction="top" offset={[0, -26]}>
-            Procesión en recorrido
-          </Tooltip>
-        </Marker>
-      )}
-
-      <PuntoSeleccionadoMarker punto={puntoInteresSeleccionado} color={pinColor ?? idaColor} />
-      <CentrarProcesionControl
-        trigger={centrarTrigger}
-        posicion={posicionMarcadorActualRef.current ?? posicionProcesion}
-        autoCentrarGps={usandoGps}
-      />
-    </MapContainer>
+    </div>
   );
 }
