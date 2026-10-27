@@ -2,8 +2,17 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { divIcon, type Marker as LeafletMarker } from "leaflet";
-import { CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
+import {
+  CircleMarker,
+  MapContainer,
+  Marker,
+  Polyline,
+  TileLayer,
+  Tooltip,
+  useMap,
+} from "react-leaflet";
 import { ajustarCoordenadaARuta } from "@/lib/geo-snapping";
+import { formatearHora12 } from "@/lib/date-format";
 
 type Coordenada = {
   latitud: number;
@@ -16,6 +25,13 @@ export type Cancion = {
   coordenada?:
     | { latitud: number; longitud: number }[]
     | { latitud: number; longitud: number };
+};
+
+export type PuntoInteresMapa = {
+  nombre: string;
+  descripcion: string;
+  hora?: string;
+  ubicacion?: { latitud: number; longitud: number }[];
 };
 
 const obtenerCoordenadaCancion = (
@@ -37,8 +53,8 @@ const obtenerCoordenadaCancion = (
     "longitud" in coordenadaProp
   ) {
     return {
-      latitud: Number((coordenadaProp as any).latitud),
-      longitud: Number((coordenadaProp as any).longitud),
+      latitud: Number((coordenadaProp as { latitud: number }).latitud),
+      longitud: Number((coordenadaProp as { longitud: number }).longitud),
     };
   }
   return null;
@@ -58,9 +74,13 @@ type ProcesionMapProps = {
   imagenUrl?: string;
   identificadorDispositivo?: string;
   canciones?: Cancion[];
+  puntosInteres?: PuntoInteresMapa[];
   neutralColor?: string;
   thirdColor?: string;
-  onCancionActivaChange?: (cancion: Cancion | null, indice: number | null) => void;
+  onCancionActivaChange?: (
+    cancion: Cancion | null,
+    indice: number | null
+  ) => void;
 };
 
 const parseFechaHora = (fecha: string, hora: string) => {
@@ -77,12 +97,82 @@ const parseFechaHora = (fecha: string, hora: string) => {
   return fechaHora;
 };
 
-const calcularDistancia = (origen: [number, number], destino: [number, number]) => {
+const calcularDistancia = (
+  origen: [number, number],
+  destino: [number, number]
+) => {
   const deltaLat = destino[0] - origen[0];
   const deltaLng = destino[1] - origen[1];
 
   return Math.hypot(deltaLat, deltaLng);
 };
+
+type FlechaDireccion = {
+  posicion: [number, number];
+  anguloGrados: number;
+};
+
+function calcularFlechasRuta(
+  puntos: [number, number][],
+  cantidadObjetivo = 8
+): FlechaDireccion[] {
+  if (puntos.length < 2) return [];
+
+  const segmentos: {
+    origen: [number, number];
+    destino: [number, number];
+    longitud: number;
+    acumuladaAntes: number;
+  }[] = [];
+
+  let total = 0;
+  for (let i = 0; i < puntos.length - 1; i++) {
+    const origen = puntos[i];
+    const destino = puntos[i + 1];
+    const len = calcularDistancia(origen, destino);
+    if (len > 1e-7) {
+      segmentos.push({
+        origen,
+        destino,
+        longitud: len,
+        acumuladaAntes: total,
+      });
+      total += len;
+    }
+  }
+
+  if (total <= 0 || segmentos.length === 0) return [];
+
+  const flechas: FlechaDireccion[] = [];
+  const paso = total / (cantidadObjetivo + 1);
+
+  for (let k = 1; k <= cantidadObjetivo; k++) {
+    const distObjetivo = paso * k;
+    const seg =
+      segmentos.find(
+        (s) => s.acumuladaAntes + s.longitud >= distObjetivo
+      ) ?? segmentos[segmentos.length - 1];
+
+    const factor = Math.min(
+      1,
+      Math.max(0, (distObjetivo - seg.acumuladaAntes) / seg.longitud)
+    );
+    const lat = seg.origen[0] + (seg.destino[0] - seg.origen[0]) * factor;
+    const lng = seg.origen[1] + (seg.destino[1] - seg.origen[1]) * factor;
+
+    const dLat = seg.destino[0] - seg.origen[0];
+    const dLng =
+      (seg.destino[1] - seg.origen[1]) * Math.cos((lat * Math.PI) / 180);
+    const anguloGrados = (Math.atan2(dLng, dLat) * 180) / Math.PI;
+
+    flechas.push({
+      posicion: [lat, lng],
+      anguloGrados,
+    });
+  }
+
+  return flechas;
+}
 
 function CentrarProcesionControl({
   trigger,
@@ -113,24 +203,33 @@ function CentrarProcesionControl({
   return null;
 }
 
-function PuntoSeleccionadoMarker({ punto, color }: { punto?: { latitud: number; longitud: number } | null; color: string }) {
+function PuntoSeleccionadoMarker({
+  punto,
+  color,
+}: {
+  punto?: { latitud: number; longitud: number } | null;
+  color: string;
+}) {
   const map = useMap();
-  
+
   useEffect(() => {
     if (punto) {
-      map.flyTo([punto.latitud, punto.longitud], 18, { animate: true, duration: 1.5 });
+      map.flyTo([punto.latitud, punto.longitud], 18, {
+        animate: true,
+        duration: 1.5,
+      });
     }
   }, [punto, map]);
 
   const icon = useMemo(() => {
     return divIcon({
       className: "",
-      iconSize: [32, 42],
-      iconAnchor: [16, 42],
+      iconSize: [34, 44],
+      iconAnchor: [17, 44],
       html: `
-        <div style="display:flex;align-items:center;justify-content:center;width:32px;height:42px;">
-          <svg width="32" height="42" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.52-4.48-10-10-10zm0 13.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="${color}"/>
+        <div style="display:flex;align-items:center;justify-content:center;width:34px;height:44px;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.45));">
+          <svg width="34" height="44" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.52-4.48-10-10-10zm0 13.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="${color}" stroke="#FFFFFF" stroke-width="1.5"/>
           </svg>
         </div>
       `,
@@ -140,8 +239,14 @@ function PuntoSeleccionadoMarker({ punto, color }: { punto?: { latitud: number; 
   if (!punto) return null;
 
   return (
-    <Marker position={[punto.latitud, punto.longitud]} icon={icon}>
-      <Tooltip direction="top" offset={[0, -42]}>Punto de interés</Tooltip>
+    <Marker
+      position={[punto.latitud, punto.longitud]}
+      icon={icon}
+      zIndexOffset={900}
+    >
+      <Tooltip direction="top" offset={[0, -42]}>
+        Punto seleccionado
+      </Tooltip>
     </Marker>
   );
 }
@@ -160,32 +265,54 @@ export default function ProcesionMap({
   imagenUrl,
   identificadorDispositivo,
   canciones,
+  puntosInteres,
   neutralColor,
   thirdColor,
   onCancionActivaChange,
 }: ProcesionMapProps) {
+  const colorDorado = thirdColor ?? primaryColor;
+  const colorBlanco = neutralColor ?? "#FFFFFF";
+
   const puntosIda = coordenadas
     .filter((coordenada) => !coordenada.regreso)
-    .map((coordenada) => [coordenada.latitud, coordenada.longitud] as [number, number]);
+    .map(
+      (coordenada) =>
+        [coordenada.latitud, coordenada.longitud] as [number, number]
+    );
 
   const rutaRegreso = coordenadas
     .filter((coordenada) => coordenada.regreso)
-    .map((coordenada) => [coordenada.latitud, coordenada.longitud] as [number, number]);
+    .map(
+      (coordenada) =>
+        [coordenada.latitud, coordenada.longitud] as [number, number]
+    );
 
   const rutaIda =
     puntosIda.length > 0 && rutaRegreso.length > 0
       ? [...puntosIda, rutaRegreso[0]]
       : puntosIda;
 
-  const todasLasCoordenadas = coordenadas.map((coordenada) => [
-    coordenada.latitud,
-    coordenada.longitud,
-  ] as [number, number]);
+  const todasLasCoordenadas = coordenadas.map(
+    (coordenada) =>
+      [coordenada.latitud, coordenada.longitud] as [number, number]
+  );
 
   const puntoInicio = todasLasCoordenadas[0];
   const puntoFinal = todasLasCoordenadas[todasLasCoordenadas.length - 1];
 
-  const salida = useMemo(() => parseFechaHora(fecha, horaSalida), [fecha, horaSalida]);
+  const flechasIda = useMemo(
+    () => calcularFlechasRuta(rutaIda, 7),
+    [rutaIda]
+  );
+  const flechasRegreso = useMemo(
+    () => calcularFlechasRuta(rutaRegreso, 5),
+    [rutaRegreso]
+  );
+
+  const salida = useMemo(
+    () => parseFechaHora(fecha, horaSalida),
+    [fecha, horaSalida]
+  );
   const entrada = useMemo(() => {
     const e = parseFechaHora(fecha, horaEntrada);
     if (e && salida && e.getTime() < salida.getTime()) {
@@ -216,7 +343,7 @@ export default function ProcesionMap({
         `/api/gps/posicion?id=${encodeURIComponent(identificadorDispositivo)}&_t=${Date.now()}`,
         {
           cache: "no-store",
-        },
+        }
       );
       if (!res.ok) return;
       const data = await res.json();
@@ -243,7 +370,10 @@ export default function ProcesionMap({
 
   const usandoGps = useMemo(() => {
     if (!identificadorDispositivo || !gpsData) return false;
-    const segundosInactivo = Math.max(0, (ahoraMs - new Date(gpsData.recibidoEn).getTime()) / 1000);
+    const segundosInactivo = Math.max(
+      0,
+      (ahoraMs - new Date(gpsData.recibidoEn).getTime()) / 1000
+    );
     return gpsData.activo && segundosInactivo <= 180;
   }, [identificadorDispositivo, gpsData, ahoraMs]);
 
@@ -252,9 +382,11 @@ export default function ProcesionMap({
     const resultado = ajustarCoordenadaARuta(
       [gpsData.latitud, gpsData.longitud],
       coordenadas,
-      35,
+      35
     );
-    return resultado ? resultado.posicionAjustada : [gpsData.latitud, gpsData.longitud];
+    return resultado
+      ? resultado.posicionAjustada
+      : [gpsData.latitud, gpsData.longitud];
   }, [usandoGps, gpsData, coordenadas]);
 
   useEffect(() => {
@@ -281,7 +413,7 @@ export default function ProcesionMap({
     for (let indice = 1; indice < todasLasCoordenadas.length; indice += 1) {
       const distanciaSegmento = calcularDistancia(
         todasLasCoordenadas[indice - 1],
-        todasLasCoordenadas[indice],
+        todasLasCoordenadas[indice]
       );
 
       totalDistancia += distanciaSegmento;
@@ -314,7 +446,10 @@ export default function ProcesionMap({
       return puntoFinal;
     }
 
-    if (rutaConDistancias.totalDistancia === 0 || rutaConDistancias.acumuladas.length === 0) {
+    if (
+      rutaConDistancias.totalDistancia === 0 ||
+      rutaConDistancias.acumuladas.length === 0
+    ) {
       return puntoInicio;
     }
 
@@ -322,21 +457,26 @@ export default function ProcesionMap({
     const distanciaObjetivo = progreso * rutaConDistancias.totalDistancia;
 
     let indiceSegmento = rutaConDistancias.acumuladas.findIndex(
-      (distanciaAcumulada) => distanciaAcumulada >= distanciaObjetivo,
+      (distanciaAcumulada) => distanciaAcumulada >= distanciaObjetivo
     );
 
     if (indiceSegmento < 0) {
       indiceSegmento = rutaConDistancias.acumuladas.length - 1;
     }
 
-    const distanciaAnterior = indiceSegmento === 0 ? 0 : rutaConDistancias.acumuladas[indiceSegmento - 1];
-    const distanciaSegmento = rutaConDistancias.acumuladas[indiceSegmento] - distanciaAnterior;
+    const distanciaAnterior =
+      indiceSegmento === 0
+        ? 0
+        : rutaConDistancias.acumuladas[indiceSegmento - 1];
+    const distanciaSegmento =
+      rutaConDistancias.acumuladas[indiceSegmento] - distanciaAnterior;
 
     if (distanciaSegmento <= 0) {
       return todasLasCoordenadas[indiceSegmento] ?? puntoInicio;
     }
 
-    const factorSegmento = (distanciaObjetivo - distanciaAnterior) / distanciaSegmento;
+    const factorSegmento =
+      (distanciaObjetivo - distanciaAnterior) / distanciaSegmento;
     const origen = todasLasCoordenadas[indiceSegmento];
     const destino = todasLasCoordenadas[indiceSegmento + 1] ?? puntoFinal;
 
@@ -379,7 +519,12 @@ export default function ProcesionMap({
   }, [ahoraMs, entrada, salida, usandoGps]);
 
   const cancionesConDistancia = useMemo(() => {
-    if (!canciones || canciones.length === 0 || !coordenadas || coordenadas.length === 0) {
+    if (
+      !canciones ||
+      canciones.length === 0 ||
+      !coordenadas ||
+      coordenadas.length === 0
+    ) {
       return [];
     }
 
@@ -389,12 +534,18 @@ export default function ProcesionMap({
         return { cancion, index: idx, distancia: 0 };
       }
 
-      const ajuste = ajustarCoordenadaARuta([coord.latitud, coord.longitud], coordenadas, 500);
+      const ajuste = ajustarCoordenadaARuta(
+        [coord.latitud, coord.longitud],
+        coordenadas,
+        500
+      );
       if (!ajuste || rutaConDistancias.acumuladas.length === 0) {
         return {
           cancion,
           index: idx,
-          distancia: (idx / Math.max(1, canciones.length)) * rutaConDistancias.totalDistancia,
+          distancia:
+            (idx / Math.max(1, canciones.length)) *
+            rutaConDistancias.totalDistancia,
         };
       }
 
@@ -415,11 +566,17 @@ export default function ProcesionMap({
     if (rutaConDistancias.totalDistancia <= 0) return 0;
 
     if (usandoGps && gpsData) {
-      const resultado = ajustarCoordenadaARuta([gpsData.latitud, gpsData.longitud], coordenadas, 35);
+      const resultado = ajustarCoordenadaARuta(
+        [gpsData.latitud, gpsData.longitud],
+        coordenadas,
+        35
+      );
       if (resultado) {
         const i = resultado.indiceSegmento;
-        const distPrev = i === 0 ? 0 : (rutaConDistancias.acumuladas[i - 1] ?? 0);
-        const distSeg = (rutaConDistancias.acumuladas[i] ?? distPrev) - distPrev;
+        const distPrev =
+          i === 0 ? 0 : (rutaConDistancias.acumuladas[i - 1] ?? 0);
+        const distSeg =
+          (rutaConDistancias.acumuladas[i] ?? distPrev) - distPrev;
         return distPrev + resultado.factorSegmento * distSeg;
       }
     }
@@ -436,10 +593,19 @@ export default function ProcesionMap({
 
     const progreso = (ahoraMs - inicioMs) / (finMs - inicioMs);
     return progreso * rutaConDistancias.totalDistancia;
-  }, [ahoraMs, coordenadas, entrada, gpsData, rutaConDistancias, salida, usandoGps]);
+  }, [
+    ahoraMs,
+    coordenadas,
+    entrada,
+    gpsData,
+    rutaConDistancias,
+    salida,
+    usandoGps,
+  ]);
 
   const cancionActivaInfo = useMemo(() => {
-    if (!cancionesConDistancia || cancionesConDistancia.length === 0) return null;
+    if (!cancionesConDistancia || cancionesConDistancia.length === 0)
+      return null;
     if (!mostrarPinProcesion) return null;
 
     let seleccionada = cancionesConDistancia[0];
@@ -491,7 +657,10 @@ export default function ProcesionMap({
     const inicioAnimacion = performance.now();
 
     const animar = (tiempoActual: number) => {
-      const progresoLineal = Math.min((tiempoActual - inicioAnimacion) / duracionMs, 1);
+      const progresoLineal = Math.min(
+        (tiempoActual - inicioAnimacion) / duracionMs,
+        1
+      );
       const progresoSuavizado = 0.5 - Math.cos(Math.PI * progresoLineal) / 2;
 
       const posicionInterpolada: [number, number] = [
@@ -553,11 +722,40 @@ export default function ProcesionMap({
     });
   }, [idaColor, pinColor, primaryColor, imagenUrl]);
 
+  // Puntos de interés con ubicación válida y su número original (1, 2, 3...)
+  const puntosInteresConCoordenada = useMemo(() => {
+    if (!puntosInteres) return [];
+    return puntosInteres
+      .map((p, index) => ({
+        ...p,
+        numero: index + 1,
+        coordenada:
+          p.ubicacion &&
+          p.ubicacion.length > 0 &&
+          typeof p.ubicacion[0].latitud === "number" &&
+          typeof p.ubicacion[0].longitud === "number"
+            ? ([p.ubicacion[0].latitud, p.ubicacion[0].longitud] as [
+                number,
+                number,
+              ])
+            : null,
+      }))
+      .filter(
+        (
+          item
+        ): item is typeof item & { coordenada: [number, number] } =>
+          item.coordenada !== null
+      );
+  }, [puntosInteres]);
+
   if (todasLasCoordenadas.length === 0) {
     return (
       <div
         className="h-full w-full rounded-2xl flex items-center justify-center text-sm"
-        style={{ color: `${vueltaColor}CC`, backgroundColor: `${primaryColor}B3` }}
+        style={{
+          color: `${vueltaColor}CC`,
+          backgroundColor: `${primaryColor}B3`,
+        }}
       >
         No hay coordenadas disponibles para mostrar el recorrido.
       </div>
@@ -576,22 +774,170 @@ export default function ProcesionMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
 
+        {/* Glow / Sombra suave para Recorrido de Ida */}
         {rutaIda.length > 1 && (
-          <Polyline positions={rutaIda} pathOptions={{ color: idaColor, weight: 5, opacity: 0.95 }} />
+          <>
+            <Polyline
+              positions={rutaIda}
+              pathOptions={{
+                color: idaColor,
+                weight: 14,
+                opacity: 0.25,
+                lineCap: "round",
+                lineJoin: "round",
+              }}
+            />
+            <Polyline
+              positions={rutaIda}
+              pathOptions={{
+                color: colorBlanco,
+                weight: 8,
+                opacity: 0.65,
+                lineCap: "round",
+                lineJoin: "round",
+              }}
+            />
+            <Polyline
+              positions={rutaIda}
+              pathOptions={{
+                color: idaColor,
+                weight: 5.5,
+                opacity: 1,
+                lineCap: "round",
+                lineJoin: "round",
+              }}
+            />
+          </>
         )}
 
+        {/* Glow / Sombra suave para Recorrido de Regreso */}
         {rutaRegreso.length > 1 && (
-          <Polyline
-            positions={rutaRegreso}
-            pathOptions={{ color: vueltaColor, weight: 4, opacity: 0.85, dashArray: "10 8" }}
-          />
+          <>
+            <Polyline
+              positions={rutaRegreso}
+              pathOptions={{
+                color: vueltaColor,
+                weight: 13,
+                opacity: 0.25,
+                lineCap: "round",
+                lineJoin: "round",
+              }}
+            />
+            <Polyline
+              positions={rutaRegreso}
+              pathOptions={{
+                color: colorBlanco,
+                weight: 7.5,
+                opacity: 0.65,
+                lineCap: "round",
+                lineJoin: "round",
+              }}
+            />
+            <Polyline
+              positions={rutaRegreso}
+              pathOptions={{
+                color: vueltaColor,
+                weight: 4.5,
+                opacity: 0.95,
+                dashArray: "10 8",
+                lineCap: "round",
+                lineJoin: "round",
+              }}
+            />
+          </>
         )}
+
+        {/* Pequeñas flechas indicando la dirección del recorrido de Ida */}
+        {flechasIda.map((f, idx) => (
+          <Marker
+            key={`flecha-ida-${idx}`}
+            position={f.posicion}
+            interactive={false}
+            icon={divIcon({
+              className: "",
+              iconSize: [20, 20],
+              iconAnchor: [10, 10],
+              html: `
+                <div style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;transform:rotate(${f.anguloGrados}deg);filter:drop-shadow(0 1px 3px rgba(0,0,0,0.45));">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L20 19L12 15L4 19L12 3Z" fill="${idaColor}" stroke="${colorBlanco}" stroke-width="2" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              `,
+            })}
+          />
+        ))}
+
+        {/* Pequeñas flechas indicando la dirección del recorrido de Vuelta */}
+        {flechasRegreso.map((f, idx) => (
+          <Marker
+            key={`flecha-regreso-${idx}`}
+            position={f.posicion}
+            interactive={false}
+            icon={divIcon({
+              className: "",
+              iconSize: [20, 20],
+              iconAnchor: [10, 10],
+              html: `
+                <div style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;transform:rotate(${f.anguloGrados}deg);filter:drop-shadow(0 1px 3px rgba(0,0,0,0.45));">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L20 19L12 15L4 19L12 3Z" fill="${vueltaColor}" stroke="${colorBlanco}" stroke-width="2" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              `,
+            })}
+          />
+        ))}
+
+        {/* Círculos numerados para Puntos de Interés */}
+        {puntosInteresConCoordenada.map((punto) => (
+          <Marker
+            key={`poi-${punto.numero}-${punto.nombre}`}
+            position={punto.coordenada}
+            zIndexOffset={400}
+            icon={divIcon({
+              className: "",
+              iconSize: [26, 26],
+              iconAnchor: [13, 13],
+              html: `
+                <div style="
+                  width:26px;
+                  height:26px;
+                  border-radius:9999px;
+                  background:${primaryColor};
+                  border:2px solid ${colorDorado};
+                  color:${colorDorado};
+                  font-weight:800;
+                  font-size:11px;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  box-shadow:0 3px 8px rgba(0,0,0,0.5), 0 0 0 2px ${primaryColor}80;
+                ">
+                  ${punto.numero}
+                </div>
+              `,
+            })}
+          >
+            <Tooltip direction="top" offset={[0, -14]}>
+              <span>
+                {punto.numero}. {punto.nombre}
+                {punto.hora ? ` (${formatearHora12(punto.hora)})` : ""}
+              </span>
+            </Tooltip>
+          </Marker>
+        ))}
 
         {puntoInicio && (
           <CircleMarker
             center={puntoInicio}
             radius={7}
-            pathOptions={{ color: primaryColor, fillColor: idaColor, fillOpacity: 1, weight: 2 }}
+            pathOptions={{
+              color: primaryColor,
+              fillColor: idaColor,
+              fillOpacity: 1,
+              weight: 2,
+            }}
           >
             <Tooltip direction="top">Salida</Tooltip>
           </CircleMarker>
@@ -601,7 +947,12 @@ export default function ProcesionMap({
           <CircleMarker
             center={puntoFinal}
             radius={7}
-            pathOptions={{ color: primaryColor, fillColor: vueltaColor, fillOpacity: 1, weight: 2 }}
+            pathOptions={{
+              color: primaryColor,
+              fillColor: vueltaColor,
+              fillOpacity: 1,
+              weight: 2,
+            }}
           >
             <Tooltip direction="top">Entrada</Tooltip>
           </CircleMarker>
@@ -612,6 +963,7 @@ export default function ProcesionMap({
             position={posicionMarcadorActualRef.current ?? posicionProcesion}
             icon={iconoMarcadorProcesion}
             ref={marcadorProcesionRef}
+            zIndexOffset={700}
           >
             <Tooltip direction="top" offset={[0, -26]}>
               Procesión en recorrido
@@ -619,7 +971,10 @@ export default function ProcesionMap({
           </Marker>
         )}
 
-        <PuntoSeleccionadoMarker punto={puntoInteresSeleccionado} color={pinColor ?? idaColor} />
+        <PuntoSeleccionadoMarker
+          punto={puntoInteresSeleccionado}
+          color={pinColor ?? idaColor}
+        />
         <CentrarProcesionControl
           trigger={centrarTrigger}
           posicion={posicionMarcadorActualRef.current ?? posicionProcesion}
@@ -633,15 +988,17 @@ export default function ProcesionMap({
           className="absolute top-3.5 right-3.5 z-[1000] flex items-center gap-2.5 px-3.5 py-2 rounded-xl shadow-2xl border backdrop-blur-md pointer-events-none select-none max-w-[85%] sm:max-w-[340px] transition-all duration-300"
           style={{
             backgroundColor: `${primaryColor}E6`,
-            borderColor: `${neutralColor ?? "#FFFFFF"}33`,
-            color: neutralColor ?? "#FFFFFF",
+            borderColor: `${colorBlanco}33`,
+            color: colorBlanco,
           }}
         >
-          <span className="text-base sm:text-lg animate-pulse flex-shrink-0">🎵</span>
+          <span className="text-base sm:text-lg animate-pulse flex-shrink-0">
+            🎵
+          </span>
           <div className="flex flex-col min-w-0">
             <span
               className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold leading-tight"
-              style={{ color: thirdColor ?? "#EAB308" }}
+              style={{ color: colorDorado }}
             >
               Sonando ahora
             </span>

@@ -15,6 +15,13 @@ export type Cancion = {
     | { latitud: number; longitud: number };
 };
 
+export type PuntoInteresMapa = {
+  nombre: string;
+  descripcion: string;
+  hora?: string;
+  ubicacion?: { latitud: number; longitud: number }[];
+};
+
 type ProcesionMapWrapperProps = {
   coordenadas: Coordenada[];
   primaryColor: string;
@@ -29,9 +36,13 @@ type ProcesionMapWrapperProps = {
   imagenUrl?: string;
   identificadorDispositivo?: string;
   canciones?: Cancion[];
+  puntosInteres?: PuntoInteresMapa[];
   neutralColor?: string;
   thirdColor?: string;
-  onCancionActivaChange?: (cancion: Cancion | null, indice: number | null) => void;
+  onCancionActivaChange?: (
+    cancion: Cancion | null,
+    indice: number | null
+  ) => void;
 };
 
 const ProcesionMap = dynamic(() => import("@/components/ProcesionMap"), {
