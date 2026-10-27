@@ -8,6 +8,13 @@ type Coordenada = {
   regreso: boolean;
 };
 
+export type Cancion = {
+  titulo: string;
+  coordenada?:
+    | { latitud: number; longitud: number }[]
+    | { latitud: number; longitud: number };
+};
+
 type ProcesionMapWrapperProps = {
   coordenadas: Coordenada[];
   primaryColor: string;
@@ -21,6 +28,10 @@ type ProcesionMapWrapperProps = {
   centrarTrigger?: number;
   imagenUrl?: string;
   identificadorDispositivo?: string;
+  canciones?: Cancion[];
+  neutralColor?: string;
+  thirdColor?: string;
+  onCancionActivaChange?: (cancion: Cancion | null, indice: number | null) => void;
 };
 
 const ProcesionMap = dynamic(() => import("@/components/ProcesionMap"), {

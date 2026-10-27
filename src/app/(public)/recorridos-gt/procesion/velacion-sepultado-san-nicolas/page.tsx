@@ -68,6 +68,7 @@ export default function InformacionPage() {
   const tamanoSeccion = "h-[700px]";
   const [puntoSeleccionado, setPuntoSeleccionado] = useState<{ latitud: number; longitud: number } | null>(null);
   const [centrarTrigger, setCentrarTrigger] = useState(0);
+  const [cancionActivaTitulo, setCancionActivaTitulo] = useState<string | null>(null);
 
   const [ahoraMs, setAhoraMs] = useState<number | null>(null);
 
@@ -253,6 +254,10 @@ export default function InformacionPage() {
                 centrarTrigger={centrarTrigger}
                 imagenUrl={(dataRecorrido as any).imagenIcono}
                 identificadorDispositivo={(dataRecorrido as any).identificadorDispositivo}
+                canciones={(dataRecorrido as any).canciones}
+                neutralColor={config.neutralColor}
+                thirdColor={config.thirdColor}
+                onCancionActivaChange={(cancion) => setCancionActivaTitulo(cancion?.titulo ?? null)}
               />
             </div>
 
@@ -313,6 +318,128 @@ export default function InformacionPage() {
           </div>
         </div>
       </section>
+
+      {/* SECCIÓN DE CANCIONES / MARCHAS SACRAS */}
+      {(dataRecorrido as any).canciones && (dataRecorrido as any).canciones.length > 0 && (
+        <section
+          className="px-6 py-24 border-t"
+          style={{
+            backgroundColor: config.secondaryColor,
+            borderColor: `${config.thirdColor}22`,
+          }}
+        >
+          <div className="w-full max-w-[1200px] mx-auto">
+            {/* Bloque de Título */}
+            <div className="text-center max-w-2xl mx-auto mb-10 flex flex-col items-center">
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className="h-px w-8 md:w-16"
+                  style={{ backgroundColor: config.thirdColor }}
+                />
+                <span
+                  className="uppercase tracking-[0.25em] text-xs md:text-sm font-semibold flex items-center gap-2"
+                  style={{ color: config.thirdColor }}
+                >
+                  <span>🎵</span>
+                  <span>Acompañamiento Musical</span>
+                </span>
+                <div
+                  className="h-px w-8 md:w-16"
+                  style={{ backgroundColor: config.thirdColor }}
+                />
+              </div>
+
+              <h2
+                className="text-3xl md:text-5xl font-serif font-bold mb-4"
+                style={{ color: config.neutralColor }}
+              >
+                Marchas del Recorrido
+              </h2>
+
+              <div
+                className="h-1 w-16 rounded-full"
+                style={{ backgroundColor: config.thirdColor }}
+              />
+            </div>
+
+            {/* Grid de Canciones */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {(dataRecorrido as any).canciones.map((cancion: any, idx: number) => {
+                const esActiva = Boolean(mostrarBotonCentrar && cancionActivaTitulo === cancion.titulo);
+                const coord = Array.isArray(cancion.coordenada) && cancion.coordenada[0]
+                  ? cancion.coordenada[0]
+                  : cancion.coordenada && typeof cancion.coordenada === "object" && "latitud" in cancion.coordenada
+                  ? cancion.coordenada
+                  : null;
+
+                return (
+                  <article
+                    key={`${cancion.titulo}-${idx}`}
+                    onClick={() => {
+                      if (coord && typeof coord.latitud === "number" && typeof coord.longitud === "number") {
+                        handlePuntoClick(coord);
+                      }
+                    }}
+                    className={`group relative rounded-xl p-4 border transition-all duration-300 ${
+                      coord ? "cursor-pointer hover:scale-[1.01]" : ""
+                    }`}
+                    style={{
+                      borderColor: esActiva ? config.thirdColor : `${config.neutralColor}2A`,
+                      backgroundColor: esActiva ? `${config.primaryColor}F2` : `${config.cardColor ?? config.primaryColor}CC`,
+                      backdropFilter: "blur(4px)",
+                      boxShadow: esActiva ? `0 0 24px ${config.thirdColor}4D` : "none",
+                    }}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3.5 min-w-0">
+                        <span
+                          className="text-xs font-mono font-bold px-2.5 py-1 rounded transition-colors"
+                          style={{
+                            backgroundColor: esActiva ? config.thirdColor : `${config.neutralColor}1A`,
+                            color: esActiva ? config.primaryColor : `${config.neutralColor}B3`,
+                          }}
+                        >
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <div className="min-w-0">
+                          <h3
+                            className="font-serif font-semibold text-base truncate transition-colors"
+                            style={{
+                              color: esActiva ? config.thirdColor : config.neutralColor,
+                            }}
+                          >
+                            {cancion.titulo}
+                          </h3>
+                        </div>
+                      </div>
+
+                      {esActiva ? (
+                        <span
+                          className="flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full animate-pulse flex-shrink-0 shadow-sm"
+                          style={{
+                            backgroundColor: config.thirdColor,
+                            color: config.primaryColor,
+                          }}
+                        >
+                          <span>🎵</span>
+                          <span>Sonando ahora</span>
+                        </span>
+                      ) : (
+                        <span
+                          className="text-sm opacity-35 group-hover:opacity-75 transition-opacity"
+                          title={coord ? "Ver punto en el mapa" : undefined}
+                        >
+                          🎵
+                        </span>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SECCIÓN DE HISTORIA */}
       <section
