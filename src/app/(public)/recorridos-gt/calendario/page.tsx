@@ -3,7 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
-import { MapPinIcon, ClockIcon } from "@heroicons/react/24/outline";
+import {
+  MapPinIcon,
+  ClockIcon,
+  CalendarDaysIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/outline";
 import data from "@/data/procesiones/actividades.json";
 import config from "@/data/procesiones/config.json";
 import { formatearHora12 } from "@/lib/date-format";
@@ -21,9 +26,19 @@ interface FechaEspecial {
 }
 
 const actividades: Actividad[] = (data.actividades || []) as Actividad[];
-const fechasEspeciales: FechaEspecial[] = (config.fechas || []) as FechaEspecial[];
+const fechasEspeciales: FechaEspecial[] = (config.fechas ||
+  []) as FechaEspecial[];
 
 const DAYS_OF_WEEK = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+const DAYS_FULL = [
+  "Domingo",
+  "Lunes",
+  "Martes",
+  "Miércoles",
+  "Jueves",
+  "Viernes",
+  "Sábado",
+];
 const MONTHS = [
   "Enero",
   "Febrero",
@@ -53,7 +68,6 @@ export default function CalendarioPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Start with today's real date
     const today = new Date();
     setCurrentDate(today);
     setSelectedDate(today);
@@ -66,25 +80,14 @@ export default function CalendarioPage() {
         style={{ backgroundColor: config.primaryColor }}
       >
         <div className="animate-pulse flex flex-col items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
+          <CalendarDaysIcon
             className="w-12 h-12 mb-4"
             style={{ color: config.thirdColor }}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
-            />
-          </svg>
+          />
           <div
-            className="h-4 rounded w-32"
+            className="h-3 rounded-full w-36"
             style={{ backgroundColor: `${config.thirdColor}4D` }}
-          ></div>
+          />
         </div>
       </div>
     );
@@ -104,7 +107,7 @@ export default function CalendarioPage() {
     setSelectedDate(today);
   };
 
-  const days = [];
+  const days: (Date | null)[] = [];
   for (let i = 0; i < firstDayOfMonth; i++) days.push(null);
   for (let i = 1; i <= daysInMonth; i++) days.push(new Date(year, month, i));
 
@@ -137,10 +140,10 @@ export default function CalendarioPage() {
 
   return (
     <main
-      className="min-h-screen relative flex flex-col justify-start overflow-hidden pt-36 pb-16 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen relative flex flex-col justify-start overflow-hidden pt-32 pb-24 px-4 sm:px-6 lg:px-10"
       style={{ backgroundColor: config.primaryColor }}
     >
-      {/* Background Image with Overlay */}
+      {/* Background Image with Multi-Layer Sacred Overlay */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
@@ -149,177 +152,266 @@ export default function CalendarioPage() {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
+            opacity: 0.45,
           }}
-        ></div>
+        />
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(180deg, transparent 0%, ${config.primaryColor}33 25%, ${config.primaryColor}80 40%, ${config.primaryColor}CC 60%, ${config.primaryColor} 100%)`,
+            background: `radial-gradient(circle at 50% 20%, ${config.primaryColor}66 0%, ${config.primaryColor}E6 70%, ${config.primaryColor} 100%)`,
           }}
-        ></div>
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(180deg, ${config.headerColor}B3 0%, transparent 25%, ${config.primaryColor}CC 65%, ${config.primaryColor} 100%)`,
+          }}
+        />
       </div>
 
-      <div className="max-w-6xl mx-auto w-full relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        {/* Page Header */}
         <div className="text-center mb-14 mt-4 px-4">
-          <p
-            className="text-sm uppercase tracking-widest mb-4 font-medium px-6 py-3 rounded-full inline-block"
+          <div
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-full mb-6 border backdrop-blur-md"
             style={{
-              color: config.thirdColor,
-              background: `linear-gradient(90deg, ${config.primaryColor}00 0%, ${config.primaryColor}E6 50%, ${config.primaryColor}00 100%)`,
+              backgroundColor: `${config.secondaryColor}BF`,
+              borderColor: `${config.thirdColor}55`,
+              boxShadow: `0 0 20px ${config.thirdColor}22`,
             }}
           >
-            Planifica tu Recorrido
-          </p>
+            <span
+              className="w-1.5 h-1.5 rotate-45"
+              style={{ backgroundColor: config.thirdColor }}
+            />
+            <span
+              className="text-xs uppercase tracking-[0.28em] font-semibold"
+              style={{ color: config.thirdColor }}
+            >
+              Planifica tu Recorrido
+            </span>
+            <span
+              className="w-1.5 h-1.5 rotate-45"
+              style={{ backgroundColor: config.thirdColor }}
+            />
+          </div>
 
           <h1
-            className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight"
+            className="text-4xl sm:text-6xl md:text-7xl font-serif font-bold mb-5 leading-tight"
             style={{ color: config.neutralColor }}
           >
-            Calendario de
-            <br />
+            Calendario de{" "}
             <span className="italic" style={{ color: config.thirdColor }}>
               Actividades
             </span>
           </h1>
 
           <p
-            className="text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed"
-            style={{ color: config.neutralColor, opacity: 0.9 }}
+            className="text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light"
+            style={{ color: `${config.neutralColor}D9` }}
           >
-            Descubre las fechas, horarios y rutas de las majestuosas procesiones
-            y eventos solemnes. Selecciona un día para ver los detalles y vivir
-            la devoción.
+            Consulta las fechas solemnes, horarios de salida y rutas oficiales
+            de las procesiones y velaciones. Selecciona cualquier día para
+            explorar su programación.
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Calendar Section */}
+        {/* Main 2-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* ==================== LEFT: CALENDAR GRID ==================== */}
           <div
-            className="rounded-[2rem] border p-8 flex-1 h-[650px] lg:h-[700px] flex flex-col backdrop-blur-md transition-all duration-300 relative overflow-hidden"
+            className="lg:col-span-7 rounded-3xl border p-6 sm:p-8 flex flex-col backdrop-blur-xl transition-all duration-300 relative overflow-hidden"
             style={{
-              backgroundColor: `${config.secondaryColor}D9`,
+              backgroundColor: `${config.secondaryColor}E6`,
               borderColor: `${config.thirdColor}40`,
-              boxShadow: `0 8px 32px 0 ${config.thirdColor}1A`,
+              boxShadow: `0 20px 50px -15px rgba(0,0,0,0.7), 0 0 30px 0 ${config.thirdColor}18`,
             }}
           >
-            {/* Subtle glow effect behind calendar */}
+            {/* Top Ornamental Line */}
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] rounded-full blur-[100px] pointer-events-none opacity-20"
+              className="absolute top-0 left-0 right-0 h-1"
               style={{
-                background: `radial-gradient(circle, ${config.thirdColor} 0%, transparent 60%)`,
+                background: `linear-gradient(90deg, transparent, ${config.thirdColor}, transparent)`,
               }}
-            ></div>
+            />
 
-            <div className="relative z-10 flex flex-col h-full">
-              {/* Header */}
+            {/* Subtle glow behind calendar */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full blur-[110px] pointer-events-none opacity-15"
+              style={{
+                background: `radial-gradient(circle, ${config.thirdColor} 0%, transparent 65%)`,
+              }}
+            />
+
+            <div className="relative z-10 flex flex-col">
+              {/* Calendar Controls Header */}
               <div
-                className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 sm:gap-6 mb-6 sm:mb-8 pb-4 sm:pb-6 border-b w-full"
-                style={{ borderColor: `${config.neutralColor}14` }}
+                className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pb-6 border-b"
+                style={{ borderColor: `${config.neutralColor}1A` }}
               >
-                <h2
-                  className="text-2xl sm:text-3xl md:text-3xl font-serif font-bold capitalize flex-shrink-0"
-                  style={{ color: config.neutralColor }}
-                >
-                  {MONTHS[month]} {year}
-                </h2>
-                
-                <div className="flex flex-row items-center justify-between w-full md:w-auto gap-2 sm:gap-4 flex-shrink-0">
-                  {/* Select Especial (Custom Menu) */}
+                <div>
+                  <span
+                    className="text-[11px] uppercase tracking-[0.25em] font-semibold block mb-1"
+                    style={{ color: config.thirdColor }}
+                  >
+                    Mes Seleccionado
+                  </span>
+                  <h2
+                    className="text-3xl sm:text-4xl font-serif font-bold capitalize"
+                    style={{ color: config.neutralColor }}
+                  >
+                    {MONTHS[month]}{" "}
+                    <span
+                      className="italic font-normal"
+                      style={{ color: config.thirdColor }}
+                    >
+                      {year}
+                    </span>
+                  </h2>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end">
+                  {/* Select Especial (Días Santos / Fechas de config.json) */}
                   {fechasEspeciales.length > 0 && (
                     <div className="relative">
                       <button
+                        type="button"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        onBlur={() => setTimeout(() => setIsMenuOpen(false), 200)}
-                        className="flex items-center justify-between px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-widest rounded transition-all duration-300 outline-none cursor-pointer w-[150px] sm:w-[230px]"
+                        onBlur={() =>
+                          setTimeout(() => setIsMenuOpen(false), 200)
+                        }
+                        className="flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-xl transition-all duration-300 outline-none cursor-pointer w-[190px] sm:w-[220px]"
                         style={{
                           color: config.thirdColor,
-                          backgroundColor: isMenuOpen ? `${config.thirdColor}1A` : "transparent",
-                          border: `1px solid ${config.thirdColor}4D`,
-                        }}
-                        onMouseEnter={(e) => {
-                          if (!isMenuOpen) e.currentTarget.style.backgroundColor = `${config.thirdColor}0D`;
-                        }}
-                        onMouseLeave={(e) => {
-                          if (!isMenuOpen) e.currentTarget.style.backgroundColor = "transparent";
+                          backgroundColor: isMenuOpen
+                            ? `${config.thirdColor}24`
+                            : `${config.primaryColor}B3`,
+                          border: `1px solid ${config.thirdColor}55`,
                         }}
                       >
-                        <span className="truncate pr-3">
-                          {!selectedDate
-                            ? "Día de Hoy"
-                            : isToday(selectedDate)
-                            ? "Día de Hoy"
-                            : fechasEspeciales.some((f) => f.fecha === formatDate(selectedDate))
-                            ? fechasEspeciales.find((f) => f.fecha === formatDate(selectedDate))!.nombreFecha
-                            : "Días Santos"}
+                        <span className="truncate pr-2 flex items-center gap-1.5">
+                          <SparklesIcon className="w-3.5 h-3.5 shrink-0" />
+                          <span className="truncate">
+                            {!selectedDate
+                              ? "Día de Hoy"
+                              : isToday(selectedDate)
+                                ? "Día de Hoy"
+                                : fechasEspeciales.some(
+                                      (f) =>
+                                        f.fecha === formatDate(selectedDate)
+                                    )
+                                  ? fechasEspeciales.find(
+                                      (f) =>
+                                        f.fecha === formatDate(selectedDate)
+                                    )!.nombreFecha
+                                  : "Fechas Destacadas"}
+                          </span>
                         </span>
-                        
-                        <ChevronRightIcon 
-                          className={`h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 flex-shrink-0 ${isMenuOpen ? "-rotate-90" : "rotate-90"}`} 
+
+                        <ChevronRightIcon
+                          className={`h-3.5 w-3.5 transition-transform duration-300 flex-shrink-0 ${
+                            isMenuOpen ? "-rotate-90" : "rotate-90"
+                          }`}
                         />
                       </button>
 
                       {/* Dropdown Options */}
                       <div
-                        className={`absolute left-0 sm:left-auto sm:right-0 top-full mt-2 w-56 sm:w-64 rounded-xl border overflow-hidden transition-all duration-300 z-50 ${
-                          isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto shadow-2xl" : "opacity-0 -translate-y-2 pointer-events-none"
+                        className={`absolute left-0 sm:left-auto sm:right-0 top-full mt-2 w-64 sm:w-72 rounded-2xl border overflow-hidden transition-all duration-300 z-50 ${
+                          isMenuOpen
+                            ? "opacity-100 translate-y-0 pointer-events-auto shadow-2xl"
+                            : "opacity-0 -translate-y-2 pointer-events-none"
                         }`}
                         style={{
-                          backgroundColor: `${config.secondaryColor}F2`,
-                          backdropFilter: "blur(12px)",
-                          borderColor: `${config.thirdColor}40`,
-                          boxShadow: isMenuOpen ? `0 10px 40px -10px ${config.thirdColor}4D` : "none"
+                          backgroundColor: `${config.headerColor}FA`,
+                          backdropFilter: "blur(16px)",
+                          borderColor: `${config.thirdColor}55`,
+                          boxShadow: isMenuOpen
+                            ? `0 20px 50px -10px rgba(0,0,0,0.8), 0 0 25px ${config.thirdColor}33`
+                            : "none",
                         }}
                       >
-                        <div 
+                        <div
                           className="max-h-[300px] overflow-y-auto custom-scrollbar flex flex-col py-2"
-                          style={{ "--scroll-thumb-color": config.thirdColor } as React.CSSProperties}
+                          style={
+                            {
+                              "--scroll-thumb-color": config.thirdColor,
+                            } as React.CSSProperties
+                          }
                         >
                           <button
+                            type="button"
                             onClick={() => {
                               goToToday();
                               setIsMenuOpen(false);
                             }}
-                            className="text-left px-5 py-3 text-sm font-serif transition-colors relative"
-                            style={{ color: (selectedDate && isToday(selectedDate)) ? config.thirdColor : config.neutralColor }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = `${config.thirdColor}1A`;
-                              e.currentTarget.style.color = config.thirdColor;
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = "transparent";
-                              e.currentTarget.style.color = (selectedDate && isToday(selectedDate)) ? config.thirdColor : config.neutralColor;
+                            className="text-left px-5 py-2.5 text-sm font-serif transition-colors flex items-center justify-between"
+                            style={{
+                              color:
+                                selectedDate && isToday(selectedDate)
+                                  ? config.thirdColor
+                                  : config.neutralColor,
+                              backgroundColor:
+                                selectedDate && isToday(selectedDate)
+                                  ? `${config.thirdColor}1A`
+                                  : "transparent",
                             }}
                           >
-                            Día de Hoy
+                            <span>Ir al Día de Hoy</span>
+                            <span
+                              className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full"
+                              style={{
+                                backgroundColor: `${config.thirdColor}26`,
+                                color: config.thirdColor,
+                              }}
+                            >
+                              Hoy
+                            </span>
                           </button>
-                          
-                          {/* Separator line */}
-                          <div className="w-full h-px my-1 opacity-20" style={{ backgroundColor: config.thirdColor }}></div>
-                          
+
+                          <div
+                            className="w-full h-px my-1 opacity-20"
+                            style={{ backgroundColor: config.thirdColor }}
+                          />
+
                           {fechasEspeciales.map((f) => {
-                            const isSelectedOption = selectedDate && formatDate(selectedDate) === f.fecha;
+                            const isSelectedOption =
+                              selectedDate &&
+                              formatDate(selectedDate) === f.fecha;
                             return (
                               <button
+                                type="button"
                                 key={f.nombreFecha}
                                 onClick={() => {
-                                  const [y, m, d] = f.fecha.split("-").map(Number);
+                                  const [y, m, d] = f.fecha
+                                    .split("-")
+                                    .map(Number);
                                   const date = new Date(y, m - 1, d, 12, 0, 0);
                                   setCurrentDate(date);
                                   setSelectedDate(date);
                                   setIsMenuOpen(false);
                                 }}
-                                className="text-left px-5 py-3 text-sm font-serif transition-colors relative"
-                                style={{ color: isSelectedOption ? config.thirdColor : config.neutralColor }}
-                                onMouseEnter={(e) => {
-                                  e.currentTarget.style.backgroundColor = `${config.thirdColor}1A`;
-                                  e.currentTarget.style.color = config.thirdColor;
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.currentTarget.style.backgroundColor = "transparent";
-                                  e.currentTarget.style.color = isSelectedOption ? config.thirdColor : config.neutralColor;
+                                className="text-left px-5 py-2.5 text-sm font-serif transition-colors flex items-center justify-between gap-2"
+                                style={{
+                                  color: isSelectedOption
+                                    ? config.thirdColor
+                                    : config.neutralColor,
+                                  backgroundColor: isSelectedOption
+                                    ? `${config.thirdColor}1A`
+                                    : "transparent",
                                 }}
                               >
-                                {f.nombreFecha}
+                                <span className="leading-snug">
+                                  {f.nombreFecha}
+                                </span>
+                                {isSelectedOption && (
+                                  <span
+                                    className="w-1.5 h-1.5 rotate-45 shrink-0"
+                                    style={{
+                                      backgroundColor: config.thirdColor,
+                                    }}
+                                  />
+                                )}
                               </button>
                             );
                           })}
@@ -328,31 +420,40 @@ export default function CalendarioPage() {
                     </div>
                   )}
 
+                  {/* Prev / Next Month Buttons */}
                   <div
-                    className="flex flex-row items-center rounded overflow-hidden flex-shrink-0"
-                    style={{ border: `1px solid ${config.thirdColor}4D` }}
+                    className="flex items-center rounded-xl overflow-hidden shrink-0"
+                    style={{
+                      border: `1px solid ${config.thirdColor}55`,
+                      backgroundColor: `${config.primaryColor}B3`,
+                    }}
                   >
                     <button
+                      type="button"
                       onClick={prevMonth}
-                      className="px-2 sm:px-3 py-2 transition-colors cursor-pointer hover:opacity-80 disabled:opacity-30 disabled:cursor-not-allowed"
-                      style={{
-                        color: config.thirdColor,
-                        backgroundColor: `${config.thirdColor}1A`,
-                      }}
+                      aria-label="Mes anterior"
+                      className="px-3 py-2.5 transition-colors cursor-pointer hover:opacity-80"
+                      style={{ color: config.thirdColor }}
                     >
                       <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
-                    <div
-                      className="w-px h-6 sm:h-8"
-                      style={{ backgroundColor: `${config.thirdColor}4D` }}
-                    ></div>
                     <button
-                      onClick={nextMonth}
-                      className="px-2 sm:px-3 py-2 transition-colors cursor-pointer hover:opacity-80 disabled:opacity-30 disabled:cursor-not-allowed"
+                      type="button"
+                      onClick={goToToday}
+                      className="px-2.5 py-2 text-[11px] uppercase tracking-widest font-semibold border-x transition-colors cursor-pointer hover:opacity-80"
                       style={{
-                        color: config.thirdColor,
-                        backgroundColor: `${config.thirdColor}1A`,
+                        color: config.neutralColor,
+                        borderColor: `${config.thirdColor}33`,
                       }}
+                    >
+                      Hoy
+                    </button>
+                    <button
+                      type="button"
+                      onClick={nextMonth}
+                      aria-label="Mes siguiente"
+                      className="px-3 py-2.5 transition-colors cursor-pointer hover:opacity-80"
+                      style={{ color: config.thirdColor }}
                     >
                       <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
@@ -360,30 +461,36 @@ export default function CalendarioPage() {
                 </div>
               </div>
 
-              {/* Grid Header */}
+              {/* Days of Week Header */}
               <div
-                className="grid gap-2 mb-4"
+                className="grid gap-2 mb-3"
                 style={{ gridTemplateColumns: "repeat(7, minmax(0, 1fr))" }}
               >
                 {DAYS_OF_WEEK.map((day) => (
                   <div
                     key={day}
-                    className="text-center font-medium text-xs sm:text-sm py-2 uppercase tracking-[0.2em]"
-                    style={{ color: `${config.neutralColor}80` }}
+                    className="text-center font-semibold text-xs py-2 uppercase tracking-[0.2em]"
+                    style={{ color: `${config.thirdColor}CC` }}
                   >
                     {day}
                   </div>
                 ))}
               </div>
 
-              {/* Grid Body */}
+              {/* Calendar Days Grid */}
               <div
-                className="grid gap-2 flex-1 min-h-0"
+                className="grid gap-2 sm:gap-2.5"
                 style={{ gridTemplateColumns: "repeat(7, minmax(0, 1fr))" }}
               >
                 {days.map((date, index) => {
                   if (!date) {
-                    return <div key={`empty-${index}`} className="p-1"></div>;
+                    return (
+                      <div
+                        key={`empty-${index}`}
+                        className="aspect-square rounded-2xl opacity-20"
+                        style={{ backgroundColor: `${config.primaryColor}40` }}
+                      />
+                    );
                   }
 
                   const dateActividades = getActividadesForDate(date);
@@ -394,38 +501,50 @@ export default function CalendarioPage() {
 
                   return (
                     <button
+                      type="button"
                       key={index}
                       onClick={() => setSelectedDate(date)}
                       onMouseEnter={() => setHoveredDate(date.getTime())}
                       onMouseLeave={() => setHoveredDate(null)}
-                      className="relative w-full h-full flex flex-col items-center justify-center p-2 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden group min-h-[50px]"
+                      className="relative aspect-square flex flex-col items-center justify-center p-1.5 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden group"
                       style={{
                         border: isDaySelected
-                          ? `1px solid ${config.thirdColor}`
-                          : isDayHovered
-                            ? `1px solid ${config.thirdColor}4D`
-                            : `1px solid ${config.neutralColor}08`,
+                          ? `1.5px solid ${config.thirdColor}`
+                          : hasActividades
+                            ? `1px solid ${config.thirdColor}55`
+                            : isDayHovered
+                              ? `1px solid ${config.thirdColor}40`
+                              : `1px solid ${config.neutralColor}12`,
                         backgroundColor: isDaySelected
-                          ? `${config.thirdColor}1A`
-                          : isDayHovered
-                            ? `${config.thirdColor}0A`
-                            : `${config.cardColor}4D`,
+                          ? `${config.thirdColor}26`
+                          : hasActividades
+                            ? `${config.cardColor}B3`
+                            : isDayHovered
+                              ? `${config.cardColor}80`
+                              : `${config.primaryColor}73`,
                         transform:
                           isDaySelected || isDayHovered
                             ? "translateY(-2px)"
                             : "translateY(0)",
                         boxShadow: isDaySelected
-                          ? `0 8px 20px ${config.thirdColor}33`
-                          : isDayHovered
-                            ? `0 4px 12px ${config.thirdColor}1A`
-                            : "none",
+                          ? `0 10px 24px -4px ${config.thirdColor}40`
+                          : "none",
                       }}
                     >
+                      {/* Today top pill */}
+                      {isDayToday && (
+                        <span
+                          className="absolute top-1.5 w-1.5 h-1.5 rounded-full"
+                          style={{ backgroundColor: config.thirdColor }}
+                          title="Hoy"
+                        />
+                      )}
+
                       <span
-                        className={`text-sm sm:text-base lg:text-lg font-serif font-bold z-10 transition-colors duration-300`}
+                        className="text-base sm:text-lg md:text-xl font-serif font-bold z-10 transition-colors duration-300"
                         style={{
                           color:
-                            isDaySelected || isDayToday
+                            isDaySelected || isDayToday || hasActividades
                               ? config.thirdColor
                               : config.neutralColor,
                         }}
@@ -435,98 +554,152 @@ export default function CalendarioPage() {
 
                       {/* Activity Indicators */}
                       {hasActividades && (
-                        <div className="absolute bottom-1.5 flex gap-1 justify-center w-full z-10">
+                        <div className="mt-1 flex items-center gap-1 justify-center z-10">
                           {dateActividades.slice(0, 3).map((_, i) => (
-                            <div
+                            <span
                               key={i}
                               className="h-1.5 w-1.5 rounded-full"
                               style={{
-                                backgroundColor: isDaySelected
-                                  ? config.thirdColor
-                                  : config.thirdColor,
+                                backgroundColor: config.thirdColor,
                                 boxShadow: `0 0 6px ${config.thirdColor}`,
                               }}
                             />
                           ))}
                           {dateActividades.length > 3 && (
-                            <div
-                              className="h-1.5 w-1.5 rounded-full opacity-50"
-                              style={{ backgroundColor: config.thirdColor }}
-                            />
+                            <span
+                              className="text-[9px] font-bold leading-none"
+                              style={{ color: config.thirdColor }}
+                            >
+                              +
+                            </span>
                           )}
                         </div>
                       )}
 
-                      {/* Today indicator border */}
-                      {isDayToday && !isDaySelected && (
-                        <div
-                          className="absolute inset-x-2 bottom-0 h-0.5 rounded-t-lg mx-auto w-1/2 opacity-50"
-                          style={{ backgroundColor: config.thirdColor }}
-                        ></div>
-                      )}
-
-                      {/* Selected background glow */}
+                      {/* Selected radial spotlight */}
                       {isDaySelected && (
                         <div
-                          className="absolute inset-0 opacity-20"
+                          className="absolute inset-0 opacity-25 pointer-events-none"
                           style={{
-                            background: `radial-gradient(circle at center, ${config.thirdColor} 0%, transparent 70%)`,
+                            background: `radial-gradient(circle at center, ${config.thirdColor} 0%, transparent 75%)`,
                           }}
-                        ></div>
+                        />
                       )}
                     </button>
                   );
                 })}
               </div>
+
+              {/* Calendar Footer Legend */}
+              <div
+                className="mt-6 pt-5 border-t flex flex-wrap items-center justify-center sm:justify-between gap-4 text-xs"
+                style={{
+                  borderColor: `${config.neutralColor}14`,
+                  color: `${config.neutralColor}B3`,
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-2.5 h-2.5 rounded-full"
+                    style={{
+                      backgroundColor: config.thirdColor,
+                      boxShadow: `0 0 8px ${config.thirdColor}`,
+                    }}
+                  />
+                  <span>Día con procesión / actividad</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-3 h-3 rounded-md border"
+                    style={{
+                      borderColor: config.thirdColor,
+                      backgroundColor: `${config.thirdColor}26`,
+                    }}
+                  />
+                  <span>Día seleccionado</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Activities List Section */}
-          <div className="w-full lg:w-[480px] flex flex-col">
+          {/* ==================== RIGHT: SELECTED DAY AGENDA ==================== */}
+          <div className="lg:col-span-5 flex flex-col">
             <div
-              className="rounded-[2rem] border p-8 flex flex-col h-[650px] lg:h-[700px] backdrop-blur-md transition-all duration-300"
+              className="rounded-3xl border p-6 sm:p-8 flex flex-col h-[620px] lg:h-[680px] backdrop-blur-xl transition-all duration-300 relative overflow-hidden"
               style={{
-                backgroundColor: `${config.secondaryColor}D9`,
+                backgroundColor: `${config.secondaryColor}E6`,
                 borderColor: `${config.thirdColor}40`,
-                boxShadow: `0 8px 32px 0 ${config.thirdColor}1A`,
+                boxShadow: `0 20px 50px -15px rgba(0,0,0,0.7), 0 0 30px 0 ${config.thirdColor}18`,
               }}
             >
-              <h3
-                className="text-2xl font-serif font-bold mb-8 flex items-center justify-between pb-6 border-b"
+              {/* Top Ornamental Line */}
+              <div
+                className="absolute top-0 left-0 right-0 h-1"
                 style={{
-                  color: config.neutralColor,
-                  borderColor: `${config.neutralColor}14`,
+                  background: `linear-gradient(90deg, transparent, ${config.thirdColor}, transparent)`,
                 }}
+              />
+
+              {/* Agenda Header */}
+              <div
+                className="pb-5 mb-6 border-b flex items-start justify-between gap-4"
+                style={{ borderColor: `${config.neutralColor}1A` }}
               >
-                <span className="flex items-center gap-2">
-                  {selectedDate ? (
-                    <>
-                      <span>Día</span>
-                      <span style={{ color: config.thirdColor }}>
-                        {selectedDate.getDate()}
-                      </span>
-                      <span>de {MONTHS[selectedDate.getMonth()]}</span>
-                    </>
-                  ) : (
-                    "Actividades"
-                  )}
-                </span>
-                {selectedDate && actividadesDelDiaSeleccionado.length > 0 && (
+                <div>
                   <span
-                    className="text-xs py-1.5 px-3 rounded-full font-bold flex-shrink-0 tracking-widest"
+                    className="text-[11px] uppercase tracking-[0.25em] font-semibold block mb-1"
+                    style={{ color: config.thirdColor }}
+                  >
+                    {selectedDate
+                      ? DAYS_FULL[selectedDate.getDay()]
+                      : "Programación"}
+                  </span>
+                  <h3
+                    className="text-2xl sm:text-3xl font-serif font-bold"
+                    style={{ color: config.neutralColor }}
+                  >
+                    {selectedDate ? (
+                      <>
+                        <span style={{ color: config.thirdColor }}>
+                          {selectedDate.getDate()}
+                        </span>{" "}
+                        de {MONTHS[selectedDate.getMonth()]}
+                      </>
+                    ) : (
+                      "Actividades"
+                    )}
+                  </h3>
+                </div>
+
+                {selectedDate && (
+                  <span
+                    className="text-[11px] py-1.5 px-3.5 rounded-full font-bold shrink-0 tracking-widest uppercase border"
                     style={{
-                      backgroundColor: `${config.thirdColor}33`,
-                      color: config.thirdColor,
-                      border: `1px solid ${config.thirdColor}4D`,
+                      backgroundColor:
+                        actividadesDelDiaSeleccionado.length > 0
+                          ? `${config.thirdColor}26`
+                          : `${config.primaryColor}80`,
+                      color:
+                        actividadesDelDiaSeleccionado.length > 0
+                          ? config.thirdColor
+                          : `${config.neutralColor}99`,
+                      borderColor:
+                        actividadesDelDiaSeleccionado.length > 0
+                          ? `${config.thirdColor}55`
+                          : `${config.neutralColor}1F`,
                     }}
                   >
-                    {actividadesDelDiaSeleccionado.length} EVENTOS
+                    {actividadesDelDiaSeleccionado.length}{" "}
+                    {actividadesDelDiaSeleccionado.length === 1
+                      ? "Evento"
+                      : "Eventos"}
                   </span>
                 )}
-              </h3>
+              </div>
 
+              {/* Scrollable Timeline List */}
               <div
-                className="space-y-0 overflow-y-auto pr-3 flex-1 custom-scrollbar"
+                className="space-y-1 overflow-y-auto pr-2 flex-1 custom-scrollbar"
                 style={
                   {
                     "--scroll-thumb-color": config.thirdColor,
@@ -540,63 +713,58 @@ export default function CalendarioPage() {
                         actividad.slugActividad.trim() !== ""
                     );
 
-                    const cardContent = (
+                    const cardInner = (
                       <>
-                        {/* Left highlight strip */}
+                        {/* Left Highlight Bar */}
                         <div
-                          className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 group-hover:w-2"
+                          className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 group-hover:w-1.5"
                           style={{ backgroundColor: config.thirdColor }}
-                        ></div>
+                        />
 
-                        <div className="flex items-start justify-between">
-                          <div className="flex-1 pr-4 pl-3">
+                        <div className="flex items-center justify-between gap-3 pl-2">
+                          <div className="flex-1 min-w-0">
+                            {actividad.horaActividad && (
+                              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-2"
+                                style={{
+                                  backgroundColor: `${config.thirdColor}22`,
+                                  color: config.thirdColor,
+                                }}
+                              >
+                                <ClockIcon className="h-3.5 w-3.5 shrink-0" />
+                                <span>
+                                  {formatearHora12(actividad.horaActividad)}
+                                </span>
+                              </div>
+                            )}
+
                             <h4
-                              className="text-lg md:text-xl font-serif font-semibold transition-colors leading-tight mb-2"
+                              className="text-lg sm:text-xl font-serif font-bold leading-snug mb-2 transition-colors"
                               style={{ color: config.neutralColor }}
-                              onMouseEnter={(e) =>
-                                (e.currentTarget.style.color =
-                                  config.thirdColor)
-                              }
-                              onMouseLeave={(e) =>
-                                (e.currentTarget.style.color =
-                                  config.neutralColor)
-                              }
                             >
                               {actividad.nombreActividad}
                             </h4>
-                            
-                            <div className="flex flex-col gap-2 mt-3">
-                              {hasSlug && (
-                                <div
-                                  className="flex items-center text-xs uppercase tracking-widest opacity-80"
-                                  style={{ color: config.thirdColor }}
-                                >
-                                  <MapPinIcon className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                                  <span>Ver detalles</span>
-                                </div>
-                              )}
-                              
-                              {actividad.horaActividad && (
-                                <div
-                                  className="flex items-center text-xs uppercase tracking-widest opacity-80"
-                                  style={{ color: config.thirdColor }}
-                                >
-                                  <ClockIcon className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                                  <span>{formatearHora12(actividad.horaActividad)}</span>
-                                </div>
-                              )}
-                            </div>
+
+                            {hasSlug && (
+                              <div
+                                className="inline-flex items-center text-xs uppercase tracking-[0.18em] font-semibold mt-1"
+                                style={{ color: config.thirdColor }}
+                              >
+                                <MapPinIcon className="h-3.5 w-3.5 mr-1.5 shrink-0" />
+                                <span>Ver recorrido y mapa</span>
+                              </div>
+                            )}
                           </div>
 
                           {hasSlug && (
                             <div
-                              className="h-10 w-10 rounded-full flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-100 flex-shrink-0 mt-auto mb-auto"
+                              className="h-10 w-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-105 shrink-0 border"
                               style={{
-                                backgroundColor: `${config.thirdColor}26`,
+                                backgroundColor: `${config.thirdColor}1F`,
+                                borderColor: `${config.thirdColor}4D`,
                                 color: config.thirdColor,
                               }}
                             >
-                              <ChevronRightIcon className="h-5 w-5 stroke-2" />
+                              <ChevronRightIcon className="h-5 w-5" />
                             </div>
                           )}
                         </div>
@@ -606,63 +774,56 @@ export default function CalendarioPage() {
                     return (
                       <article
                         key={`${actividad.slugActividad || index}-${index}`}
-                        className="relative pl-8 pt-3 pb-3 group"
+                        className="relative pl-7 py-2.5 group"
                       >
-                        {/* Timeline Dot */}
+                        {/* Timeline Diamond Node */}
                         <span
-                          className="absolute left-[3px] top-9 h-3.5 w-3.5 rounded-full transition-all duration-300 z-20 group-hover:scale-125"
+                          className="absolute left-[3px] top-8 h-3 w-3 rotate-45 transition-all duration-300 z-20 group-hover:scale-125"
                           style={{
                             backgroundColor: config.thirdColor,
                             boxShadow: `0 0 10px ${config.thirdColor}80`,
                           }}
                         />
 
-                        {/* Timeline Line */}
+                        {/* Timeline Connecting Line */}
                         {index < actividadesDelDiaSeleccionado.length - 1 && (
                           <span
-                            className="absolute left-[9px] top-11 h-[calc(100%+6px)] w-[2px] z-10"
-                            style={{ backgroundColor: `${config.thirdColor}55` }}
+                            className="absolute left-[8px] top-10 h-[calc(100%+4px)] w-[1.5px] z-10"
+                            style={{
+                              backgroundColor: `${config.thirdColor}40`,
+                            }}
                           />
                         )}
 
                         {hasSlug ? (
                           <Link
                             href={`${actividad.slugActividad}`}
-                            className="block rounded-2xl p-5 border transition-all duration-300 cursor-pointer overflow-hidden relative group-hover:-translate-y-1"
+                            className="block rounded-2xl p-4 sm:p-5 border transition-all duration-300 cursor-pointer overflow-hidden relative group-hover:-translate-y-0.5"
                             style={{
-                              backgroundColor: `${config.cardColor}80`,
-                              borderColor: `${config.neutralColor}14`,
-                              background: `linear-gradient(135deg, ${config.neutralColor}08 0%, ${config.neutralColor}02 100%)`,
+                              backgroundColor: `${config.cardColor}B3`,
+                              borderColor: `${config.neutralColor}1A`,
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.borderColor = config.thirdColor;
-                              e.currentTarget.style.boxShadow = `0 6px 20px ${config.thirdColor}33`;
+                              e.currentTarget.style.borderColor =
+                                config.thirdColor;
+                              e.currentTarget.style.boxShadow = `0 10px 25px -5px ${config.thirdColor}33`;
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.borderColor = `${config.neutralColor}14`;
+                              e.currentTarget.style.borderColor = `${config.neutralColor}1A`;
                               e.currentTarget.style.boxShadow = "none";
                             }}
                           >
-                            {cardContent}
+                            {cardInner}
                           </Link>
                         ) : (
                           <div
-                            className="block rounded-2xl p-5 border transition-all duration-300 overflow-hidden relative group-hover:-translate-y-1"
+                            className="block rounded-2xl p-4 sm:p-5 border transition-all duration-300 overflow-hidden relative"
                             style={{
                               backgroundColor: `${config.cardColor}80`,
                               borderColor: `${config.neutralColor}14`,
-                              background: `linear-gradient(135deg, ${config.neutralColor}08 0%, ${config.neutralColor}02 100%)`,
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.borderColor = config.thirdColor;
-                              e.currentTarget.style.boxShadow = `0 6px 20px ${config.thirdColor}33`;
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.borderColor = `${config.neutralColor}14`;
-                              e.currentTarget.style.boxShadow = "none";
                             }}
                           >
-                            {cardContent}
+                            {cardInner}
                           </div>
                         )}
                       </article>
@@ -670,46 +831,55 @@ export default function CalendarioPage() {
                   })
                 ) : (
                   <div className="text-center py-12 px-4 h-full flex flex-col justify-center items-center">
-                    <div className="h-24 w-24 rounded-full flex items-center justify-center mb-8 relative">
-                      {/* Decorative rings */}
+                    <div className="h-20 w-20 rounded-full flex items-center justify-center mb-6 relative">
                       <div
-                        className="absolute inset-0 rounded-full border-2 animate-pulse"
+                        className="absolute inset-0 rounded-full border animate-pulse"
                         style={{ borderColor: `${config.thirdColor}4D` }}
-                      ></div>
+                      />
                       <div
                         className="absolute inset-2 rounded-full border border-dashed"
                         style={{ borderColor: `${config.thirdColor}80` }}
-                      ></div>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1}
-                        stroke="currentColor"
-                        className="w-10 h-10"
+                      />
+                      <CalendarDaysIcon
+                        className="w-8 h-8"
                         style={{ color: config.thirdColor }}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
+                      />
                     </div>
+
                     <p
-                      className="text-2xl font-serif font-medium mb-3"
+                      className="text-2xl font-serif font-bold mb-2"
                       style={{ color: config.neutralColor }}
                     >
-                      Día de descanso
+                      Sin cortejos programados
                     </p>
                     <p
-                      className="text-base leading-relaxed px-4"
+                      className="text-sm leading-relaxed max-w-xs mb-6"
                       style={{ color: `${config.neutralColor}99` }}
                     >
-                      Sin procesiones programadas para este día. Selecciona otra
-                      fecha.
+                      No hay procesiones ni velaciones registradas para esta
+                      fecha. Selecciona un día marcado en el calendario.
                     </p>
+
+                    {fechasEspeciales.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const f = fechasEspeciales[0];
+                          const [y, m, d] = f.fecha.split("-").map(Number);
+                          const date = new Date(y, m - 1, d, 12, 0, 0);
+                          setCurrentDate(date);
+                          setSelectedDate(date);
+                        }}
+                        className="px-5 py-2.5 rounded-xl text-xs uppercase tracking-widest font-semibold transition-opacity hover:opacity-90 cursor-pointer"
+                        style={{
+                          backgroundColor: `${config.thirdColor}26`,
+                          color: config.thirdColor,
+                          border: `1px solid ${config.thirdColor}55`,
+                        }}
+                      >
+                        Ir a próxima fecha destacada
+                      </button>
+                    )}
                   </div>
                 )}
               </div>
