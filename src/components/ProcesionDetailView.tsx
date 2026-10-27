@@ -466,7 +466,7 @@ export default function ProcesionDetailView({
             {/* Right Container: Interactive Map & Legend */}
             <div
               id="contenedor-mapa"
-              className="col-span-12 lg:col-span-8 rounded-3xl border p-3 sm:p-5 h-[500px] sm:h-[620px] lg:h-[720px] flex flex-col relative overflow-hidden"
+              className="col-span-12 lg:col-span-8 rounded-3xl border p-3 sm:p-5 h-[560px] sm:h-[660px] lg:h-[720px] flex flex-col relative overflow-hidden"
               style={{
                 borderColor: `${config.thirdColor}40`,
                 backgroundColor: `${config.secondaryColor}EB`,
@@ -479,6 +479,58 @@ export default function ProcesionDetailView({
                   background: `linear-gradient(90deg, transparent, ${config.thirdColor}, transparent)`,
                 }}
               />
+
+              {/* Encabezado interno del Croquis (Nombre, Iglesia e Ícono si aplica) */}
+              <div
+                className="mb-3 pb-3 border-b flex items-center justify-center sm:justify-between gap-3 px-2"
+                style={{ borderColor: `${config.thirdColor}26` }}
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  {dataRecorrido.imagenIcono &&
+                    dataRecorrido.imagenIcono.trim() !== "" && (
+                      <div
+                        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden shrink-0 border-2 shadow-md"
+                        style={{
+                          borderColor: config.thirdColor,
+                          backgroundColor: config.primaryColor,
+                        }}
+                      >
+                        <img
+                          src={dataRecorrido.imagenIcono}
+                          alt={dataRecorrido.nombreProcesion}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+
+                  <div className="min-w-0 text-center sm:text-left">
+                    <h3
+                      className="text-lg sm:text-xl md:text-2xl font-serif font-bold leading-tight truncate"
+                      style={{ color: config.thirdColor }}
+                    >
+                      {dataRecorrido.nombreProcesion}
+                    </h3>
+                    <p
+                      className="text-xs sm:text-sm font-serif italic truncate opacity-90"
+                      style={{ color: config.thirdColor }}
+                    >
+                      {dataRecorrido.nombreIglesia}
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border shrink-0 text-xs font-semibold"
+                  style={{
+                    backgroundColor: `${config.primaryColor}B3`,
+                    borderColor: `${config.thirdColor}33`,
+                    color: config.thirdColor,
+                  }}
+                >
+                  <CalendarDaysIcon className="w-4 h-4" />
+                  <span>{formatearFecha(dataRecorrido.fecha)}</span>
+                </div>
+              </div>
 
               <div
                 className="flex-1 min-h-0 w-full rounded-2xl overflow-hidden border"
@@ -500,6 +552,7 @@ export default function ProcesionDetailView({
                     dataRecorrido.identificadorDispositivo
                   }
                   canciones={dataRecorrido.canciones}
+                  puntosInteres={dataRecorrido.puntosInteres}
                   neutralColor={config.neutralColor}
                   thirdColor={config.thirdColor}
                   onCancionActivaChange={(cancion) =>
@@ -508,56 +561,72 @@ export default function ProcesionDetailView({
                 />
               </div>
 
-              {/* Legend & Controls Bar */}
+              {/* Legend & Controls Bar + Watermark */}
               <section
-                className="mt-4 rounded-2xl border px-4 py-3.5 shadow-inner"
+                className="mt-3.5 rounded-2xl border px-4 py-3 shadow-inner relative"
                 style={{
                   backgroundColor: config.extraColor2,
                   borderColor: `${config.primaryColor}33`,
                 }}
               >
-                <div className="flex flex-wrap items-center justify-center sm:justify-between gap-4">
-                  <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-7">
-                    <div className="flex items-center gap-2.5">
-                      <span
-                        className="h-3.5 w-7 rounded-full inline-block shadow-sm"
-                        style={{ backgroundColor: config.idaColor }}
-                      />
-                      <p
-                        className="text-xs sm:text-sm font-bold uppercase tracking-wider"
-                        style={{ color: config.primaryColor }}
-                      >
-                        Recorrido de Ida
-                      </p>
-                    </div>
-
-                    <div className="flex items-center gap-2.5">
-                      <span
-                        className="h-0 w-7 inline-block border-t-[3.5px] border-dashed"
-                        style={{ borderColor: config.vueltaColor }}
-                      />
-                      <p
-                        className="text-xs sm:text-sm font-bold uppercase tracking-wider"
-                        style={{ color: config.primaryColor }}
-                      >
-                        Recorrido de Vuelta
-                      </p>
-                    </div>
+                <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-7">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="h-3.5 w-7 rounded-full inline-block shadow-sm"
+                      style={{ backgroundColor: config.idaColor }}
+                    />
+                    <p
+                      className="text-xs sm:text-sm font-bold uppercase tracking-wider"
+                      style={{ color: config.primaryColor }}
+                    >
+                      Recorrido de Ida
+                    </p>
                   </div>
 
-                  {mostrarBotonCentrar && (
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="h-0 w-7 inline-block border-t-[3.5px] border-dashed"
+                      style={{ borderColor: config.vueltaColor }}
+                    />
+                    <p
+                      className="text-xs sm:text-sm font-bold uppercase tracking-wider"
+                      style={{ color: config.primaryColor }}
+                    >
+                      Recorrido de Vuelta
+                    </p>
+                  </div>
+
+                  <div
+                    className="h-5 w-px hidden sm:block"
+                    style={{ backgroundColor: `${config.primaryColor}33` }}
+                  />
+
+                  {mostrarBotonCentrar ? (
                     <button
                       type="button"
                       onClick={() => setCentrarTrigger((prev) => prev + 1)}
-                      className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-bold transition-all duration-300 hover:scale-[1.02] shadow-md cursor-pointer"
+                      className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs uppercase tracking-wider font-bold transition-all duration-300 hover:scale-[1.02] shadow-md cursor-pointer"
                       style={{
                         backgroundColor: config.thirdColor,
                         color: config.primaryColor,
                       }}
                     >
-                      <MapPinIcon className="w-4 h-4" />
+                      <MapPinIcon className="w-3.5 h-3.5" />
                       Centrar Procesión
                     </button>
+                  ) : (
+                    <div
+                      className="flex items-center gap-1.5 opacity-80 select-none"
+                      style={{ color: config.primaryColor }}
+                    >
+                      <span
+                        className="w-1.5 h-1.5 rotate-45 shrink-0"
+                        style={{ backgroundColor: config.idaColor }}
+                      />
+                      <span className="text-[11px] sm:text-xs font-serif font-bold tracking-wider uppercase whitespace-nowrap">
+                        Recorridos Procesionales GT
+                      </span>
+                    </div>
                   )}
                 </div>
               </section>
