@@ -254,7 +254,7 @@ export default function Sidebar() {
             className="flex items-center gap-3 sm:gap-3.5 group focus:outline-none shrink-0"
           >
             <div
-              className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 rounded-full flex items-center justify-center p-1.5 transition-transform duration-300 group-hover:scale-105"
+              className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 rounded-full flex items-center justify-center p-2 transition-transform duration-300 group-hover:scale-105"
               style={{
                 backgroundColor: `${config.primaryColor}CC`,
                 border: `1px solid ${config.thirdColor}55`,

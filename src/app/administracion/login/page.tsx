@@ -40,7 +40,15 @@ export default function LoginPage() {
         
         {/* Logo */}
         <div className="absolute top-8 sm:top-12 lg:top-12 left-0 right-0 flex flex-col items-center justify-center z-10">
-          <Image src="/logoRutas.png" alt="Logo" width={250} height={100} className="h-24 w-auto object-contain mb-3" />
+          <div
+            className="w-20 h-20 rounded-2xl flex items-center justify-center p-3 mb-3 shadow-lg border"
+            style={{
+              backgroundColor: config.primaryColor,
+              borderColor: `${config.thirdColor}66`,
+            }}
+          >
+            <Image src="/images/logoRutas.svg" alt="Logo Recorridos Procesionales" width={80} height={80} className="w-full h-full object-contain" />
+          </div>
           <h1 className="text-2xl font-bold text-center font-serif" style={{ color: config.thirdColor }}>
             Recorridos <br /> Procesionales
           </h1>
