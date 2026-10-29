@@ -18,14 +18,57 @@ const serifFont = Cormorant_Garamond({
   style: ["normal", "italic"],
 });
 
+function resolveSiteUrl(): string {
+  const raw =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+    process.env.VERCEL_URL;
+  if (!raw) return "http://localhost:3000";
+  return raw.startsWith("http://") || raw.startsWith("https://")
+    ? raw
+    : `https://${raw}`;
+}
+
 export const metadata: Metadata = {
-  title: "Recorridos Procesionales GT | Semana Santa y Velaciones",
+  metadataBase: new URL(resolveSiteUrl()),
+  title: {
+    default: "Recorridos Procesionales Xela | Semana Santa y Velaciones",
+    template: "%s | Recorridos Procesionales Xela",
+  },
   description:
-    "Patrimonio, fe y tradición de los recorridos procesionales cuaresmales y velaciones en Quetzaltenango, Guatemala.",
+    "Consulta mapas de recorridos en vivo, horarios de paso, calendario oficial e historia de los cortejos procesionales y velaciones en Quetzaltenango (Xela), Guatemala.",
+  openGraph: {
+    title: "Recorridos Procesionales Xela | Semana Santa y Velaciones",
+    description:
+      "Consulta mapas de rutas en vivo, horarios de paso, calendario oficial e historia de cada cortejo en Quetzaltenango.",
+    url: "/",
+    siteName: "Recorridos Procesionales Xela",
+    locale: "es_GT",
+    type: "website",
+    images: [
+      {
+        url: "/og-recorridos-xela.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Recorridos Procesionales en Quetzaltenango (Xela) — Mapas en vivo, calendario y cortejos",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Recorridos Procesionales Xela | Semana Santa y Velaciones",
+    description:
+      "Consulta mapas de rutas en vivo, horarios de paso, calendario oficial e historia de cada cortejo en Quetzaltenango.",
+    images: ["/og-recorridos-xela.jpg"],
+  },
   icons: {
-    icon: "/logoRutas.png",
+    icon: [
+      { url: "/images/logoRutas.svg", type: "image/svg+xml" },
+      { url: "/logoRutas.png", type: "image/png" },
+    ],
     shortcut: "/logoRutas.png",
-    apple: "/logoRutas.png",
+    apple: "/redes/facebook-perfil.png",
   },
 };
 
